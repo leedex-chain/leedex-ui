@@ -530,6 +530,30 @@ class AccountPortfolioList extends React.Component {
             settings.get("unit") || this.props.core_asset.get("symbol");
         const showAssetPercent = settings.get("showAssetPercent", false);
 
+        function getImageName(symbol) {
+            //if (symbol === "OPEN.BTC" || symbol === "GDEX.BTC") return symbol;
+            if (symbol.startsWith("RUDEX.")) return symbol;
+
+            if (
+                symbol == "PPY" ||
+                symbol == "DONATE" ||
+                symbol == "BTS" ||
+                symbol == "CNY" ||
+                symbol == "USD" ||
+                symbol == "EUR" ||
+                symbol == "RUBLE" ||
+                symbol == "BTC" ||
+                symbol == "GOLD" ||
+                symbol == "SILVER"
+            )
+                return symbol;
+
+            return "unknown";
+
+            //let imgName = symbol.split(".");
+            //return imgName.length === 2 ? imgName[1] : imgName[0];
+        }
+
         let headerItems = [
             {
                 title: <Translate content="account.asset" />,
@@ -540,6 +564,21 @@ class AccountPortfolioList extends React.Component {
                 render: item => {
                     return (
                         <span style={{whiteSpace: "nowrap"}}>
+                            {getImageName(item.get("symbol")) === "unknown" ? (
+                                ""
+                            ) : (
+                                <img
+                                    ref={item.get("symbol").toLowerCase()}
+                                    className="column-hide-small"
+                                    //onError={this._onError.bind(this, item.get("symbol").toLowerCase())}
+                                    style={{maxWidth: 25, marginRight: 10}}
+                                    //src={`${__BASE_URL__}asset-symbols/${item.get("symbol").toLowerCase()}.png`}
+                                    src={`${__BASE_URL__}asset-symbols/${getImageName(
+                                        item.get("symbol")
+                                    ).toLowerCase()}.png`}
+                                />
+                            )}
+
                             <LinkToAssetById asset={item.get("id")} />
                         </span>
                     );

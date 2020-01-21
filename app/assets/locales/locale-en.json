@@ -804,6 +804,7 @@
         "to_market": "Go to market",
         "total": "Total",
         "trading_pair": "Trading pair",
+        "trollbox": "Trollbox",
         "value": "Value",
         "vertical": "Vertical",
         "vol_short": "Vol",
@@ -1247,7 +1248,9 @@
             "min_amount": "Minimum amount: %(minAmount)s %(symbol)s",
             "min_amount_error": "Please enter number >= minimum",
             "support_block": "For support, please contact RuDEX at:",
-            "under_construction": "Under Construction"
+            "under_construction": "Under Construction",
+            "rudex_notice1": "Please see the Service Agreement of RuDEX for usage of their gateways",
+            "rudex_notice1_informed": "I have read and agree with RuDEX Service Agreement."
         },
         "scan_qr": "Scan QR",
         "service": "Transfer Service",
@@ -1317,7 +1320,7 @@
         "create_account": "Create Account",
         "create_asset": "Create Asset",
         "current": "Current Account",
-        "dashboard": "Dashboard",
+        "dashboard": "Account",
         "deposit-withdraw": "Deposit/Withdraw",
         "deposit_legacy": "or Legacy Deposit",
         "exchange": "Exchange",
@@ -1381,7 +1384,7 @@
             "operation_failed": "Operation failed",
             "remove": "Remove"
         },
-        "dashboard": "Dashboard",
+        "dashboard": "Account",
         "debug-report": "Report your error log console, or create a screenshot",
         "deposit": {
             "deposit": "Deposit",

@@ -64,7 +64,7 @@ class RuDexGateway extends React.Component {
             activeCoin: activeCoin
         });
 
-        SettingsActions.changeViewSetting({[`rudexAction`]: type});
+        SettingsActions.changeViewSetting({["rudexAction"]: type});
     }
 
     render() {

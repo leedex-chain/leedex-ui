@@ -50,7 +50,9 @@ class AccountDepositWithdraw extends React.Component {
             btService: props.viewSettings.get("btService", "bridge"),
             citadelService: props.viewSettings.get("citadelService", "bridge"),
             metaService: props.viewSettings.get("metaService", "bridge"),
-            activeService: props.viewSettings.get("activeService", 0)
+            activeService: props.viewSettings.get("activeService", 0),
+
+            RudexNotice1Informed: false
         };
     }
 
@@ -77,7 +79,10 @@ class AccountDepositWithdraw extends React.Component {
             nextState.btService !== this.state.btService ||
             nextState.citadelService !== this.state.citadelService ||
             nextState.metaService !== this.state.metaService ||
-            nextState.activeService !== this.state.activeService
+            nextState.activeService !== this.state.activeService ||
+            nextState.RudexNotice1Informed !==
+                this.state.RudexNotice1Informed ||
+            nextProps.currentLocale !== this.props.currentLocale
         );
     }
 
@@ -92,6 +97,12 @@ class AccountDepositWithdraw extends React.Component {
 
         SettingsActions.changeViewSetting({
             olService: service
+        });
+    }
+
+    onRudexNotice1Informed() {
+        this.setState({
+            RudexNotice1Informed: !this.state.RudexNotice1Informed
         });
     }
 
@@ -180,81 +191,14 @@ class AccountDepositWithdraw extends React.Component {
             rudexService,
             bitsparkService,
             xbtsxService,
-            citadelService
+            citadelService,
+            RudexNotice1Informed
         } = this.state;
-        serList.push({
-            name: "Openledger (OPEN.X)",
-            identifier: "OPEN",
-            template: (
-                <div className="content-block">
-                    <div
-                        className="service-selector"
-                        style={{marginBottom: "2rem"}}
-                    >
-                        <ul className="button-group segmented no-margin">
-                            <li
-                                onClick={this.toggleOLService.bind(
-                                    this,
-                                    "gateway"
-                                )}
-                                className={
-                                    olService === "gateway" ? "is-active" : ""
-                                }
-                            >
-                                <a>
-                                    <Translate content="gateway.gateway" />
-                                </a>
-                            </li>
-                            <li
-                                onClick={this.toggleOLService.bind(
-                                    this,
-                                    "fiat"
-                                )}
-                                className={
-                                    olService === "fiat" ? "is-active" : ""
-                                }
-                            >
-                                <Translate
-                                    component="a"
-                                    content="gateway.fiat"
-                                />
-                            </li>
-                        </ul>
-                    </div>
 
-                    {olService === "gateway" &&
-                    openLedgerGatewayCoins.length ? (
-                        <OpenledgerGateway
-                            account={account}
-                            coins={openLedgerGatewayCoins}
-                            provider="openledger"
-                        />
-                    ) : null}
-
-                    {olService === "fiat" ? (
-                        <div>
-                            <div style={{paddingBottom: 15}}>
-                                <Translate
-                                    component="h5"
-                                    content="gateway.fiat_text"
-                                    unsafe
-                                />
-                            </div>
-
-                            <OpenLedgerFiatDepositWithdrawal
-                                rpc_url={openledgerAPIs.RPC_URL}
-                                account={account}
-                                issuer_account="openledger-fiat"
-                            />
-                            <OpenLedgerFiatTransactionHistory
-                                rpc_url={openledgerAPIs.RPC_URL}
-                                account={account}
-                            />
-                        </div>
-                    ) : null}
-                </div>
-            )
-        });
+        let agreement_ru =
+            "https://rudex.freshdesk.com/support/solutions/articles/35000138247-cоглашение-об-оказании-услуг-шлюза";
+        let agreement_en =
+            "https://rudex.freshdesk.com/support/solutions/articles/35000138245-gateway-service-agreement";
 
         serList.push({
             name: "RuDEX (RUDEX.X)",
@@ -296,10 +240,42 @@ class AccountDepositWithdraw extends React.Component {
                     </div>
 
                     {rudexService === "gateway" && rudexGatewayCoins.length ? (
-                        <RuDexGateway
-                            account={account}
-                            coins={rudexGatewayCoins}
-                        />
+                        <div>
+                            <div>
+                                <Translate
+                                    href={
+                                        this.props.currentLocale == "ru"
+                                            ? agreement_ru
+                                            : agreement_en
+                                    }
+                                    content="gateway.rudex.rudex_notice1"
+                                    component="a"
+                                    target="_blank"
+                                />
+
+                                <h5>
+                                    <input
+                                        type="checkbox"
+                                        defaultChecked={
+                                            this.state.RudexNotice1Informed
+                                        }
+                                        onChange={this.onRudexNotice1Informed.bind(
+                                            this
+                                        )}
+                                    />{" "}
+                                    -{" "}
+                                    <Translate content="gateway.rudex.rudex_notice1_informed" />
+                                </h5>
+                            </div>
+
+                            <hr />
+                            {RudexNotice1Informed ? (
+                                <RuDexGateway
+                                    account={account}
+                                    coins={rudexGatewayCoins}
+                                />
+                            ) : null}
+                        </div>
                     ) : null}
 
                     {rudexService === "fiat" ? (
@@ -307,206 +283,6 @@ class AccountDepositWithdraw extends React.Component {
                             <Translate content="gateway.rudex.coming_soon" />
                         </div>
                     ) : null}
-                </div>
-            )
-        });
-
-        serList.push({
-            name: "BitSpark (SPARKDEX.X)",
-            identifier: "SPARKDEX",
-            template: (
-                <div className="content-block">
-                    <div
-                        className="service-selector"
-                        style={{marginBottom: "2rem"}}
-                    >
-                        <ul className="button-group segmented no-margin">
-                            <li
-                                onClick={this.toggleBitSparkService.bind(
-                                    this,
-                                    "gateway"
-                                )}
-                                className={
-                                    bitsparkService === "gateway"
-                                        ? "is-active"
-                                        : ""
-                                }
-                            >
-                                <a>
-                                    <Translate content="gateway.gateway" />
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {bitsparkService === "gateway" &&
-                    bitsparkGatewayCoins.length ? (
-                        <BitsparkGateway
-                            account={account}
-                            coins={bitsparkGatewayCoins}
-                            provider="bitspark"
-                        />
-                    ) : null}
-                </div>
-            )
-        });
-
-        serList.push({
-            name: "XBTS (XBTSX.X)",
-            identifier: "XBTSX",
-            template: (
-                <div className="content-block">
-                    <div
-                        className="service-selector"
-                        style={{marginBottom: "2rem"}}
-                    >
-                        <ul className="button-group segmented no-margin">
-                            <li
-                                onClick={this.toggleXbtsxService.bind(
-                                    this,
-                                    "gateway"
-                                )}
-                                className={
-                                    xbtsxService === "gateway"
-                                        ? "is-active"
-                                        : ""
-                                }
-                            >
-                                <a>
-                                    <Translate content="gateway.gateway" />
-                                </a>
-                            </li>
-                            <li
-                                onClick={this.toggleXbtsxService.bind(
-                                    this,
-                                    "fiat"
-                                )}
-                                className={
-                                    xbtsxService === "fiat" ? "is-active" : ""
-                                }
-                            >
-                                <a>Fiat</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {xbtsxService === "gateway" && xbtsxGatewayCoins.length ? (
-                        <XbtsxGateway
-                            account={account}
-                            coins={xbtsxGatewayCoins}
-                        />
-                    ) : null}
-
-                    {xbtsxService === "fiat" ? (
-                        <div>
-                            <Translate content="gateway.xbtsx.coming_soon" />
-                        </div>
-                    ) : null}
-                </div>
-            )
-        });
-
-        serList.push({
-            name: "BlockTrades",
-            identifier: "TRADE",
-            template: (
-                <div>
-                    <div className="content-block">
-                        <div
-                            className="service-selector"
-                            style={{marginBottom: "2rem"}}
-                        >
-                            <ul className="button-group segmented no-margin">
-                                <li
-                                    onClick={this.toggleBTService.bind(
-                                        this,
-                                        "bridge"
-                                    )}
-                                    className={
-                                        btService === "bridge"
-                                            ? "is-active"
-                                            : ""
-                                    }
-                                >
-                                    <a>
-                                        <Translate content="gateway.bridge" />
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <BlockTradesBridgeDepositRequest
-                            gateway="blocktrades"
-                            issuer_account="blocktrades"
-                            account={account}
-                            initial_deposit_input_coin_type="btc"
-                            initial_deposit_output_coin_type="bts"
-                            initial_deposit_estimated_input_amount="1.0"
-                            initial_withdraw_input_coin_type="bts"
-                            initial_withdraw_output_coin_type="btc"
-                            initial_withdraw_estimated_input_amount="100000"
-                            initial_conversion_input_coin_type="bts"
-                            initial_conversion_output_coin_type="bitbtc"
-                            initial_conversion_estimated_input_amount="1000"
-                            params={this.props.location}
-                        />
-                    </div>
-                    <div className="content-block" />
-                </div>
-            )
-        });
-
-        serList.push({
-            name: "Citadel",
-            identifier: "CITADEL",
-            template: (
-                <div>
-                    <div className="content-block">
-                        <div
-                            className="service-selector"
-                            style={{marginBottom: "2rem"}}
-                        >
-                            <ul className="button-group segmented no-margin">
-                                <li
-                                    onClick={this.toggleCitadelService.bind(
-                                        this,
-                                        "bridge"
-                                    )}
-                                    className={
-                                        citadelService === "bridge"
-                                            ? "is-active"
-                                            : ""
-                                    }
-                                >
-                                    <a>
-                                        <Translate content="gateway.bridge" />
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <CitadelBridgeDepositRequest
-                            gateway="citadel"
-                            issuer_account="citadel-wallet"
-                            account={account}
-                            initial_deposit_input_coin_type="xmr"
-                            initial_deposit_output_coin_type="citadel.monero"
-                            initial_deposit_estimated_input_amount="1.0"
-                            initial_withdraw_input_coin_type="citadel.monero"
-                            initial_withdraw_output_coin_type="xmr"
-                            initial_withdraw_estimated_input_amount="1.0"
-                        />
-                    </div>
-                    <div className="content-block" />
-                </div>
-            )
-        });
-
-        serList.push({
-            name: "GDEX",
-            identifier: "GDEX",
-            template: (
-                <div>
-                    <GdexGateway account={account} provider={"gdex"} />
                 </div>
             )
         });
@@ -747,6 +523,7 @@ export default connect(
                     AccountStore.getState().passwordAccount,
                 account: AccountStore.getState().currentAccount,
                 viewSettings: SettingsStore.getState().viewSettings,
+                currentLocale: SettingsStore.getState().settings.get("locale"),
                 backedCoins: GatewayStore.getState().backedCoins,
                 openLedgerBackedCoins: GatewayStore.getState().backedCoins.get(
                     "OPEN",

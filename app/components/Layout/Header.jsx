@@ -386,8 +386,20 @@ class Header extends React.Component {
                 </div>
             ) : null;
 
-        let dashboard = (
+        let logoLink = (
             <a
+                style={{padding: "12px 1.75rem"}}
+                className={cnames({active: false})}
+                href="https://rudex.org"
+                target="_blank"
+            >
+                <img style={{margin: 0, height: 40}} src={logo} />
+            </a>
+        );
+
+        /*        let dashboard = (
+            <a
+                style={{flexFlow: "row"}}
                 className={cnames("logo", {
                     active:
                         active === "/" ||
@@ -396,9 +408,20 @@ class Header extends React.Component {
                 })}
                 onClick={this._onNavigate.bind(this, "/")}
             >
-                <img style={{margin: 0, height: 40}} src={logo} />
+                {/!* <img style={{margin: 0, height: 40}} src={logo} />*!/}
+                <Icon
+                    size="1_5x"
+                    style={{
+                        position: "relative",
+                        top: -2,
+                        left: -8
+                    }}
+                    name="dashboard"
+                    title="icons.dashboard"
+                />
+                <span className="column-hide-small">Dashboard</span>
             </a>
-        );
+        );*/
 
         let createAccountLink = myAccountCount === 0 ? true : null;
 
@@ -555,7 +578,9 @@ class Header extends React.Component {
                         ) : null}
 
                         <ul className="menu-bar">
-                            <li>{dashboard}</li>
+                            <li>{logoLink}</li>
+
+                            {/*<li>{dashboard}</li>*/}
 
                             {menuDataStructure.map((menuItem, index) => {
                                 switch (menuItem.inHeaderBehavior) {

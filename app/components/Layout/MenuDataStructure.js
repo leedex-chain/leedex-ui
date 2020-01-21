@@ -68,7 +68,12 @@ class MenuDataStructure {
     static getHeader() {
         const allItems = MenuDataStructure.getAllEntries();
 
-        return [allItems.dashboard, allItems.market, allItems.explorer];
+        return [
+            allItems.dashboard,
+            allItems.account,
+            allItems.market,
+            allItems.explorer
+        ];
     }
 
     static getDropdownMenu() {
@@ -114,6 +119,7 @@ class MenuDataStructure {
             allItems.follow,
             allItems.divider,
             allItems.dashboard,
+            allItems.account,
             allItems.market,
             allItems.explorer,
             allItems.divider,
@@ -184,9 +190,26 @@ class MenuDataStructure {
                     "/whitelist",
                     "/permissions"
                 ],
-                target: `/account/${state.currentAccount}`,
+                target: "/",
                 icon: "dashboard",
                 text: "header.dashboard",
+                inHeaderBehavior: MenuItemType.WhenAccount,
+                inDropdownBehavior: MenuItemType.WhenAccount
+            }),
+            account: state => ({
+                includePattern: ["/account", "account/", "/account/"],
+                excludePattern: [
+                    "/assets",
+                    "/voting",
+                    "/signedmessages",
+                    "/member-stats",
+                    "/vesting",
+                    "/whitelist",
+                    "/permissions"
+                ],
+                target: `/account/${state.currentAccount}`,
+                icon: "user",
+                text: "header.account",
                 inHeaderBehavior: MenuItemType.WhenAccount,
                 inDropdownBehavior: MenuItemType.WhenAccount
             }),
