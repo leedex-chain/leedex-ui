@@ -105,8 +105,50 @@ class SettingsStore {
      * @private
      */
     _getDefaultSetting() {
+        const supportedLocales = [
+            "en",
+            "zh",
+            "fr",
+            "ko",
+            "de",
+            "es",
+            "it",
+            "tr",
+            "ru",
+            "ja"
+        ];
+
+        const fallbackLocales = {
+            uk: "ru",
+            be: "ru",
+            uz: "ru",
+            kz: "ru"
+        };
+
+        let defaultLocale = "en";
+        let userLanguage = navigator.language || navigator.userLanguage;
+
+        //console.log("userLanguage-1: " + defaultLocale);
+
+        for (let i = 0; i < supportedLocales.length; i++) {
+            if (userLanguage.startsWith(supportedLocales[i])) {
+                defaultLocale = supportedLocales[i];
+                break;
+            }
+        }
+
+        let fallbackKeys = Object.keys(fallbackLocales);
+        for (let i = 0; i < fallbackKeys.length; i++) {
+            if (userLanguage.startsWith(fallbackKeys[i])) {
+                defaultLocale = fallbackLocales[fallbackKeys[i]];
+                break;
+            }
+        }
+
+        //console.log("userLanguage-2: " + defaultLocale);
+
         return {
-            locale: "en",
+            locale: defaultLocale,
             apiServer: settingsAPIs.DEFAULT_WS_NODE,
             filteredApiServers: [],
             filteredServiceProviders: ["all"],

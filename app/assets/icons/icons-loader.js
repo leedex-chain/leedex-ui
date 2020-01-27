@@ -62,6 +62,7 @@ let icons = [
     "info-circle-o",
     "zoom",
     "people",
+    "robot",
     "fire",
     "question-in-circle",
     "attention",

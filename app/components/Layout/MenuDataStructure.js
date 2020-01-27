@@ -72,7 +72,8 @@ class MenuDataStructure {
             allItems.dashboard,
             allItems.account,
             allItems.market,
-            allItems.explorer
+            allItems.explorer,
+            allItems.bots
         ];
     }
 
@@ -121,7 +122,10 @@ class MenuDataStructure {
             allItems.dashboard,
             allItems.account,
             allItems.market,
+            allItems.bots,
             allItems.explorer,
+            allItems.news,
+            allItems.help,
             allItems.divider,
             allItems.transfer,
             allItems.deposit,
@@ -142,7 +146,6 @@ class MenuDataStructure {
             allItems.settings,
             allItems.settings_mobile,
             allItems.accounts,
-            // allItems.news,
             allItems.borrow,
             allItems.barter,
             allItems.direct_debit,
@@ -180,15 +183,24 @@ class MenuDataStructure {
                 inDropdownBehavior: MenuItemType.Always
             }),
             dashboard: state => ({
-                includePattern: ["/account", "account/", "/account/"],
+                //includePattern: ["/account", "account/", "/account/"],
+                includePattern: ["/"],
                 excludePattern: [
+                    "/account",
+                    "account/",
+                    "/account/",
                     "/assets",
+                    "/bots",
+                    "/news",
+                    "/help",
+                    "/market",
                     "/voting",
                     "/signedmessages",
                     "/member-stats",
                     "/vesting",
                     "/whitelist",
-                    "/permissions"
+                    "/permissions",
+                    "/prediction"
                 ],
                 target: "/",
                 icon: "dashboard",
@@ -196,6 +208,7 @@ class MenuDataStructure {
                 inHeaderBehavior: MenuItemType.WhenAccount,
                 inDropdownBehavior: MenuItemType.WhenAccount
             }),
+
             account: state => ({
                 includePattern: ["/account", "account/", "/account/"],
                 excludePattern: [
@@ -212,6 +225,24 @@ class MenuDataStructure {
                 text: "header.account",
                 inHeaderBehavior: MenuItemType.WhenAccount,
                 inDropdownBehavior: MenuItemType.WhenAccount
+            }),
+            bots: state => ({
+                includePattern: ["/bots"],
+                excludePattern: [
+                    //"/account", "account/", "/account/",
+                    "/assets",
+                    "/voting",
+                    "/signedmessages",
+                    "/member-stats",
+                    "/vesting",
+                    "/whitelist",
+                    "/permissions"
+                ],
+                target: "/bots",
+                icon: "robot",
+                text: "header.bots",
+                inHeaderBehavior: MenuItemType.Always,
+                inDropdownBehavior: MenuItemType.WhenNotInHeader
             }),
             follow: state => ({
                 target: state.clickHandlers.followUnfollow,
@@ -368,6 +399,17 @@ class MenuDataStructure {
                 inHeaderBehavior: MenuItemType.Dynamic,
                 inDropdownBehavior: MenuItemType.Always
             }),
+            help: state => ({
+                includePattern: "/help",
+                icon: {
+                    name: "question-circle",
+                    title: "icons.question_circle"
+                },
+                target: "/help/index",
+                text: "header.help",
+                inHeaderBehavior: MenuItemType.Dynamic,
+                inDropdownBehavior: MenuItemType.Always
+            }),
             account_voting: state => ({
                 includePattern: "/voting",
                 target: `/account/${state.currentAccount}/voting`,
@@ -449,16 +491,6 @@ class MenuDataStructure {
                 text: "explorer.accounts.title",
                 inHeaderBehavior: MenuItemType.Never,
                 inDropdownBehavior: MenuItemType.WhenAccount
-            }),
-            help: state => ({
-                includePattern: "/help",
-                icon: {
-                    name: "question-circle",
-                    title: "icons.question_circle"
-                },
-                text: "header.help",
-                inHeaderBehavior: MenuItemType.Dynamic,
-                inDropdownBehavior: MenuItemType.Never
             }),
             borrow: state => ({
                 includePattern: "/borrow",

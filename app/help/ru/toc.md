@@ -1,4 +1,4 @@
-#### Содержание
+#### Помощь
 
 - [BitShares](introduction/bitshares.md)
 - [Кошелек](introduction/wallets.md)
@@ -6,13 +6,14 @@
 - [Блокчейн](introduction/blockchain.md)
 - [Голосование](voting.md)
 - [Аккаунты](accounts/general.md)
+- [Предложенные транзакции](accounts/proposed.md)
 - [Разрешения](accounts/permissions.md)
-- [Подписки](accounts/membership.md)
+- [Членство](accounts/membership.md)
 - [Привязанные к рынку активы](assets/mpa.md) 
     - bitUSD
     - bitEUR
     - bitGOLD
-- [Эмитированные пользователем активы](assets/uia.md)
+- [Выпущенные пользователем активы](assets/uia.md)
 - [Приватизированные BitAssets](assets/privbitassets.md)
 - [Децентрализованная биржа](dex/introduction.md)
 - [Торговля](dex/trading.md)

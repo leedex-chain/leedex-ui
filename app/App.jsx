@@ -46,6 +46,12 @@ const Explorer = Loadable({
     loading: LoadingIndicator
 });
 
+const Bots = Loadable({
+    loader: () =>
+        import(/* webpackChunkName: "bots" */ "./components/Bots/Bots"),
+    loading: LoadingIndicator
+});
+
 const PredictionMarketsPage = Loadable({
     loader: () =>
         import(/* webpackChunkName: "pm" */ "./components/PredictionMarkets/PMAssetsContainer"),
@@ -453,6 +459,7 @@ class App extends React.Component {
                                     exact
                                     component={DashboardPage}
                                 />
+                                <Route path="/bots" exact component={Bots} />
                                 <Route
                                     path="/account/:account_name"
                                     component={AccountPage}

@@ -1315,12 +1315,14 @@
         "account_notify": "The active account is now %(account)s",
         "account_value": "Account value",
         "accounts_manage": "Manage Accounts",
+        "bots": "Bots",
+        "bots_beta": "Bots (beta)",
         "advanced": "Advanced",
         "collateral_ratio": "Collateral ratio",
         "create_account": "Create Account",
         "create_asset": "Create Asset",
         "current": "Current Account",
-        "dashboard": "Account",
+        "dashboard": "Dashboard",
         "deposit-withdraw": "Deposit/Withdraw",
         "deposit_legacy": "or Legacy Deposit",
         "exchange": "Exchange",
@@ -1357,6 +1359,7 @@
     "icons": {
         "adjust": "Adjust margin position",
         "assets": "Assets",
+        "bots": "Bots",
         "checkmark_circle": {
             "approved": "Approved",
             "operation_succeed": "Operation succeed",
@@ -1384,7 +1387,7 @@
             "operation_failed": "Operation failed",
             "remove": "Remove"
         },
-        "dashboard": "Account",
+        "dashboard": "Dashboard",
         "debug-report": "Report your error log console, or create a screenshot",
         "deposit": {
             "deposit": "Deposit",
@@ -2910,6 +2913,49 @@
         "wallet_types": "wallet types",
         "wif_associated_accounts": "Associated Account(s): ",
         "wif_import_error": "Please enter a valid WIF",
-        "wif_length_error": "Incorrect input length"
+        "wif_length_error": "Incorrect input length",
+        "bots": {
+            "asset_selector": {
+                "wait": "Please wait...",
+                "placeholder": "Your asset"
+            },
+            "common": {
+                "select_strategy": "Select strategy:",
+                "create": "Create",
+                "bot_state": "Bot state:",
+                "start": "Start",
+                "stop": "Stop",
+                "delete": "Delete",
+                "update": "Update",
+                "select_bot": "Please, select bot",
+                "name": "Name",
+                "base": "Base",
+                "quote": "Quote",
+                "asset": "Asset",
+                "balance": "Balance",
+                "amount": "Amount in order",
+                "balance_percent": "balance %",
+                "balance_value": "value",
+                "spread": "Spread, %"
+            },
+            "spread_trade": {
+                "balance_percent": "balance %",
+                "balance_value": "value",
+                "spread": "Spread, %",
+                "default_price": "Default Price",
+                "get_price_from_market": "Get price from market"
+            },
+            "trailing_stop": {
+                "sell_asset": "Sell asset",
+                "get_asset": "Get asset",
+                "amount": "Amount",
+                "min_amount": "Min amount",
+                "stoploss": "Stoploss",
+                "trailing_percent": "Trailing Percent, %"
+            },
+            "percent_up": {
+                "distance": "Distance, %"
+            }
+        }
     }
 }

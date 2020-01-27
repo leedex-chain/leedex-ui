@@ -1315,6 +1315,8 @@
         "account_notify": "В настоящее время активен аккаунт %(account)s",
         "account_value": "Стоимость аккаунта",
         "accounts_manage": "Управление аккаунтами",
+        "bots": "Боты",
+        "bots_beta": "Боты (бета)",
         "advanced": "Расширенный",
         "collateral_ratio": "Коэффициент обеспечения",
         "create_account": "Создать аккаунт",
@@ -1357,6 +1359,7 @@
     "icons": {
         "adjust": "Настроить маржинальную позицию",
         "assets": "Активы",
+        "bots": "Боты",
         "checkmark_circle": {
             "approved": "Подтверждено",
             "operation_succeed": "Операция выполнена успешно",
@@ -2911,5 +2914,48 @@
         "wif_associated_accounts": "Связанный аккаунт(ы):",
         "wif_import_error": "Пожалуйста, введите действительный WIF",
         "wif_length_error": "Неверная длина введённого WIF"
+    },
+    "bots": {
+        "asset_selector": {
+            "wait": "Пожалуйста подождите...",
+            "placeholder": "Ваш актив"
+        },
+        "common": {
+            "select_strategy": "Выбор стратегии:",
+            "create": "Создать",
+            "bot_state": "Состояние бота:",
+            "start": "Старт",
+            "stop": "Стоп",
+            "delete": "Удалить",
+            "update": "Обновить",
+            "select_bot": "Пожалуйста, выберите бота",
+            "name": "Имя",
+            "base": "Базовый актив",
+            "quote": "Назначенный актив",
+            "asset": "Актив",
+            "balance": "Баланс",
+            "amount": "Количество в ордере",
+            "balance_percent": "% от баланса",
+            "balance_value": "значение",
+            "spread": "Спред, %"
+        },
+        "spread_trade": {
+            "balance_percent": "% от баланса",
+            "balance_value": "значение",
+            "spread": "Спред, %",
+            "default_price": "Цена по умолчанию",
+            "get_price_from_market": "Взять рыночную цену"
+        },
+        "trailing_stop": {
+            "sell_asset": "Продаваемый актив",
+            "get_asset": "Приобретаемый актив",
+            "amount": "Количество",
+            "min_amount": "Минимальное количество",
+            "stoploss": "Стоп-лосс",
+            "trailing_percent": "Треллинг-стоп, %"
+        },
+        "percent_up": {
+            "distance": "Distance, %"
+        }
     }
 }

@@ -179,23 +179,6 @@ export const settingsAPIs = {
             contact: "telegram:Sahkan_bitshares"
         },
         {
-            url: "wss://kc-us-dex.xeldal.com/ws", // check
-            region: "Northern America",
-            country: "U.S.A.",
-            location: "Kansas City",
-            operator: "Witness: xeldal",
-            contact: "telegram:xeldal"
-        },
-        {
-            url: "wss://api-ru.bts.blckchnd.com",
-            region: "Eastern Europe",
-            country: "Russia",
-            location: "Moscow",
-            operator: "Witness: blckchnd",
-            contact:
-                "email:admin@blckchnd.com;telegram:ruslansalikhov;github:blckchnd"
-        },
-        {
             url: "wss://blockzms.xyz/ws",
             region: "Northern America",
             country: "U.S.A.",
@@ -309,14 +292,6 @@ export const settingsAPIs = {
             location: "Beijing",
             operator: "Witness: witness.hiblockchain",
             contact: "telegram:vianull;wechat:strugglingl"
-        },
-        {
-            url: "wss://bts-seoul.clockwork.gr",
-            region: "Southeastern Asia",
-            country: "Korea",
-            location: "Seoul",
-            operator: "Witness: clockwork",
-            contact: "telegram:clockworkgr"
         },
         {
             url: "wss://api.61bts.com",
