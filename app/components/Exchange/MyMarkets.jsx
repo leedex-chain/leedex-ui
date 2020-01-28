@@ -1089,22 +1089,22 @@ class MyMarkets extends React.Component {
                     {!myMarketTab && !this.state.inputValue
                         ? null
                         : preferredBases.map((base, index) => {
-                              if (!base) return null;
-                              return (
-                                  <li
-                                      key={base}
-                                      onClick={this.toggleActiveMarketTab.bind(
-                                          this,
-                                          index
-                                      )}
-                                      className={cnames("mymarkets-tab", {
-                                          active: activeMarketTab === index
-                                      })}
-                                  >
-                                      {base}
-                                  </li>
-                              );
-                          })}
+                            if (!base) return null;
+                            return (
+                                <li
+                                    key={base}
+                                    onClick={this.toggleActiveMarketTab.bind(
+                                        this,
+                                        index
+                                    )}
+                                    className={cnames("mymarkets-tab", {
+                                        active: activeMarketTab === index
+                                    })}
+                                >
+                                    {base.replace("RUDEX.", "")}
+                                </li>
+                            );
+                        })}
                     {myMarketTab && hasOthers ? (
                         <li
                             key={"others"}

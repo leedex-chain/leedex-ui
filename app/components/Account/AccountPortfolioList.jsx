@@ -571,7 +571,7 @@ class AccountPortfolioList extends React.Component {
                                     ref={item.get("symbol").toLowerCase()}
                                     className="column-hide-small"
                                     //onError={this._onError.bind(this, item.get("symbol").toLowerCase())}
-                                    style={{maxWidth: 25, marginRight: 10}}
+                                    style={{maxWidth: 35, marginRight: 10}}
                                     //src={`${__BASE_URL__}asset-symbols/${item.get("symbol").toLowerCase()}.png`}
                                     src={`${__BASE_URL__}asset-symbols/${getImageName(
                                         item.get("symbol")

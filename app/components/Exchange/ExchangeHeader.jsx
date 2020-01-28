@@ -2,6 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import Icon from "../Icon/Icon";
 import AssetName from "../Utility/AssetName";
+import AssetImage from "../Utility/AssetImage";
 import MarketsActions from "actions/MarketsActions";
 import SettingsActions from "actions/SettingsActions";
 import PriceStatWithLabel from "./PriceStatWithLabel";
@@ -216,6 +217,13 @@ export default class ExchangeHeader extends React.Component {
                 <div className="grid-block overflow-visible">
                     <div className="grid-block shrink">
                         <div style={{padding: "10px"}}>
+                            <AssetImage
+                                replaceNoneToBts={false}
+                                maxWidth={50}
+                                name={quoteAsset.get("symbol")}
+                            />
+                        </div>
+                        <div style={{padding: "10px"}}>
                             {!hasPrediction ? (
                                 <div
                                     style={{
@@ -230,6 +238,7 @@ export default class ExchangeHeader extends React.Component {
                                         onClick={this.props.showPriceAlertModal}
                                         type={"bell"}
                                         className={`exchange--price-alert--show-modal ${PriceAlertBellClassName}`}
+                                        style={{paddingRight: "10px"}}
                                         data-intro={translator.translate(
                                             "walkthrough.price_alerts"
                                         )}

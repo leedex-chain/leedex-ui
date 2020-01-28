@@ -2,7 +2,7 @@ import React from "react";
 import "react-select/dist/react-select.css";
 import Apis from "lib/bots/apis";
 import Assets from "lib/bots/assets";
-import AssetImage from "./AssetImage";
+import AssetImage from "../../Utility/AssetImage";
 import AsyncSelect from "react-select/lib/Async";
 import {debounce} from "lodash-es";
 import {getMyMarketsQuotes, getAssetHideNamespaces} from "branding";

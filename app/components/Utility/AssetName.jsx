@@ -101,19 +101,19 @@ class AssetName extends React.Component {
                 optional =
                     realPrefix || includeBitAssetDescription
                         ? counterpart.translate(
-                              "gateway.assets." +
+                        "gateway.assets." +
                                   (hasBitPrefix
                                       ? "bit"
                                       : realPrefix
-                                            .replace(".", "")
-                                            .toLowerCase()),
-                              {
-                                  asset: name,
-                                  backed: includeBitAssetDescription
-                                      ? desc.main
-                                      : replacedName
-                              }
-                          )
+                                          .replace(".", "")
+                                          .toLowerCase()),
+                        {
+                            asset: name,
+                            backed: includeBitAssetDescription
+                                ? desc.main
+                                : replacedName
+                        }
+                        )
                         : "";
             } catch (e) {}
             if (isBitAsset && name === "CNY") {

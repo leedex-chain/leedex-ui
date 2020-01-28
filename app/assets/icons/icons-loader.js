@@ -18,6 +18,7 @@ let icons = [
     "cross-circle",
     "dashboard",
     "deposit",
+    "deposit-withdraw",
     "disconnected",
     "direct_debit",
     "dollar-green",

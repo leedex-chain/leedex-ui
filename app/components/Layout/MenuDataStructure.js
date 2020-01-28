@@ -102,7 +102,7 @@ class MenuDataStructure {
         allItems.insight = function(state) {
             let item = oldinsight(state);
             let submenu = [
-                allItems.account_voting,
+                //allItems.account_voting,
                 allItems.account_assets,
                 allItems.account_signedmessages,
                 allItems.account_stats,
@@ -118,21 +118,30 @@ class MenuDataStructure {
             allItems.login,
             allItems.create_account,
             allItems.follow,
+
             allItems.divider,
             allItems.dashboard,
             allItems.account,
             allItems.market,
             allItems.bots,
             allItems.explorer,
-            allItems.news,
-            allItems.help,
+
             allItems.divider,
             allItems.transfer,
-            allItems.deposit,
-            allItems.withdraw,
+            //allItems.deposit,
+            //allItems.withdraw,
+            allItems.deposit_withdraw,
+            allItems.settings,
+
+            allItems.divider,
+            allItems.news,
+            allItems.help,
+
+            allItems.divider,
             allItems.account_voting,
             allItems.spotlight,
             allItems.insight,
+
             allItems.divider,
             // allItems.account_voting,
             // allItems.account_assets,
@@ -143,7 +152,6 @@ class MenuDataStructure {
             // allItems.account_whitelist,
             // allItems.account_permissions,
             // allItems.divider,
-            allItems.settings,
             allItems.settings_mobile,
             allItems.accounts,
             allItems.borrow,
@@ -189,10 +197,15 @@ class MenuDataStructure {
                     "/account",
                     "account/",
                     "/account/",
+                    "/deposit-withdraw",
+                    "/asset",
                     "/assets",
                     "/bots",
                     "/news",
                     "/help",
+                    "/settings",
+                    "/spotlight",
+                    "/explorer",
                     "/market",
                     "/voting",
                     "/signedmessages",
@@ -206,7 +219,7 @@ class MenuDataStructure {
                 icon: "dashboard",
                 text: "header.dashboard",
                 inHeaderBehavior: MenuItemType.WhenAccount,
-                inDropdownBehavior: MenuItemType.WhenAccount
+                inDropdownBehavior: MenuItemType.Never
             }),
 
             account: state => ({
@@ -224,7 +237,7 @@ class MenuDataStructure {
                 icon: "user",
                 text: "header.account",
                 inHeaderBehavior: MenuItemType.WhenAccount,
-                inDropdownBehavior: MenuItemType.WhenAccount
+                inDropdownBehavior: MenuItemType.Never
             }),
             bots: state => ({
                 includePattern: ["/bots"],
@@ -242,7 +255,7 @@ class MenuDataStructure {
                 icon: "robot",
                 text: "header.bots",
                 inHeaderBehavior: MenuItemType.Always,
-                inDropdownBehavior: MenuItemType.WhenNotInHeader
+                inDropdownBehavior: MenuItemType.Never
             }),
             follow: state => ({
                 target: state.clickHandlers.followUnfollow,
@@ -264,7 +277,7 @@ class MenuDataStructure {
                 },
                 text: "header.exchange",
                 inHeaderBehavior: MenuItemType.Always,
-                inDropdownBehavior: MenuItemType.WhenNotInHeader
+                inDropdownBehavior: MenuItemType.Never
             }),
             explorer: state => ({
                 includePattern: "/explorer",
@@ -275,7 +288,7 @@ class MenuDataStructure {
                 },
                 text: "header.explorer",
                 inHeaderBehavior: MenuItemType.Always,
-                inDropdownBehavior: MenuItemType.WhenNotInHeader
+                inDropdownBehavior: MenuItemType.Never
             }),
             transfer: state => ({
                 target: state.clickHandlers.showSend,
@@ -312,13 +325,14 @@ class MenuDataStructure {
             }),
             deposit_withdraw: state => ({
                 includePattern: "deposit-withdraw",
+                target: "/deposit-withdraw",
                 icon: {
                     name: "deposit-withdraw",
                     title: "icons.deposit.deposit_withdraw"
                 },
                 text: "header.deposit-withdraw",
                 inHeaderBehavior: MenuItemType.Dynamic,
-                inDropdownBehavior: MenuItemType.Never
+                inDropdownBehavior: MenuItemType.Always
             }),
             settings: state => ({
                 includePattern: "/settings",

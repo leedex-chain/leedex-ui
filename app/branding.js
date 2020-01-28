@@ -208,9 +208,12 @@ export function getAssetNamespaces() {
         return [];
     }
     return [
-        "RUDEX."
-        //"GDEX.",
-        //"SPARKDEX.",
+        "RUDEX.",
+        "GDEX.",
+        "SPARKDEX.",
+        //"OPEN.",
+        "BRIDGE.",
+        "XBTSX.",
     ];
 }
 
@@ -220,7 +223,7 @@ export function getAssetNamespaces() {
  */
 export function getAssetHideNamespaces() {
     // e..g "OPEN.", "bit"
-    return [];
+    return ["RUDEX."];
 }
 
 /**
@@ -229,7 +232,7 @@ export function getAssetHideNamespaces() {
  * @returns {boolean}
  */
 export function allowedGateway(gateway) {
-    const allowedGateways = ["RUDEX"];
+    const allowedGateways = ["RUDEX", "GDEX", "SPARKDEX"];
     if (!gateway) {
         // answers the question: are any allowed?
         return allowedGateways.length > 0;

@@ -150,9 +150,9 @@ class Create extends React.Component {
                         <label style={{textAlign: "center"}}>
                             <Translate content="bots.common.base" />
                         </label>
-                        <label className="left-label">
+                        {/*                        <label className="left-label">
                             <Translate content="bots.common.asset" />
-                        </label>
+                        </label>*/}
                         <AssetSelector
                             name="baseAsset"
                             value={this.state.baseAsset}
@@ -239,9 +239,9 @@ class Create extends React.Component {
                         <label style={{textAlign: "center"}}>
                             <Translate content="bots.common.quote" />
                         </label>
-                        <label className="left-label">
+                        {/*                        <label className="left-label">
                             <Translate content="bots.common.asset" />
-                        </label>
+                        </label>*/}
                         <AssetSelector
                             name="quoteAsset"
                             value={this.state.quoteAsset}

@@ -2,6 +2,7 @@ import React from "react";
 import FormattedAsset from "../Utility/FormattedAsset";
 import AssetWrapper from "../Utility/AssetWrapper";
 import AccountName from "../Utility/AccountName";
+import AssetImage from "../Utility/AssetImage";
 import utils from "common/utils";
 import Icon from "../Icon/Icon";
 import MarketsActions from "actions/MarketsActions";
@@ -166,6 +167,11 @@ class MarketRow extends React.Component {
                                 onClick={this._onClick.bind(this, marketID)}
                                 key={column.index}
                             >
+                                <AssetImage
+                                    replaceNoneToBts={false}
+                                    maxWidth={20}
+                                    name={quote.get("symbol")}
+                                />
                                 {this.props.name}
                             </td>
                         );
@@ -179,24 +185,27 @@ class MarketRow extends React.Component {
                                   (stats.close.quote.amount &&
                                       stats.close.base.amount)
                                     ? utils.get_asset_price(
-                                          stats.close.quote.amount,
-                                          quote,
-                                          stats.close.base.amount,
-                                          base,
-                                          true
-                                      )
+                                    stats.close.quote.amount,
+                                    quote,
+                                    stats.close.base.amount,
+                                    base,
+                                    true
+                                )
                                     : utils.get_asset_price(
-                                          price.quote.amount,
-                                          quote,
-                                          price.base.amount,
-                                          base,
-                                          true
-                                      );
+                                    price.quote.amount,
+                                    quote,
+                                    price.base.amount,
+                                    base,
+                                    true
+                                );
 
                         let highPrecisionAssets = [
                             "BTC",
                             "OPEN.BTC",
-                            "TRADE.BTC",
+                            "RUDEX.BTC",
+                            "GDEX.BTC",
+                            "SPARKDEX.BTC",
+                            "XBTSX.BTC",
                             "GOLD",
                             "SILVER"
                         ];

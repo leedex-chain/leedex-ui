@@ -374,9 +374,9 @@ class AccountOverview extends React.Component {
                                             onClick={
                                                 shownAssets != "active"
                                                     ? this._changeShownAssets.bind(
-                                                          this,
-                                                          "active"
-                                                      )
+                                                    this,
+                                                    "active"
+                                                    )
                                                     : () => {}
                                             }
                                         >
@@ -395,9 +395,9 @@ class AccountOverview extends React.Component {
                                                 onClick={
                                                     shownAssets != "hidden"
                                                         ? this._changeShownAssets.bind(
-                                                              this,
-                                                              "hidden"
-                                                          )
+                                                        this,
+                                                        "hidden"
+                                                        )
                                                         : () => {}
                                                 }
                                             >
@@ -412,9 +412,9 @@ class AccountOverview extends React.Component {
                                             onClick={
                                                 shownAssets != "visual"
                                                     ? this._changeShownAssets.bind(
-                                                          this,
-                                                          "visual"
-                                                      )
+                                                    this,
+                                                    "visual"
+                                                    )
                                                     : () => {}
                                             }
                                         >
@@ -510,146 +510,147 @@ class AccountOverview extends React.Component {
 
                             {account.get("proposals") &&
                                 account.get("proposals").size && (
-                                    <Tab
-                                        title="explorer.proposals.title"
-                                        subText={String(
-                                            account.get("proposals")
-                                                ? account.get("proposals").size
-                                                : 0
-                                        )}
-                                    >
-                                        {this.props.settings.get(
-                                            "showProposedTx"
-                                        ) && (
-                                            <div
-                                                onClick={this._toggleHideProposal.bind(
-                                                    this
+                                <Tab
+                                    title="explorer.proposals.title"
+                                    subText={String(
+                                        account.get("proposals")
+                                            ? account.get("proposals").size
+                                            : 0
+                                    )}
+                                >
+                                    {this.props.settings.get(
+                                        "showProposedTx"
+                                    ) && (
+                                        <div
+                                            onClick={this._toggleHideProposal.bind(
+                                                this
+                                            )}
+                                            style={{cursor: "pointer"}}
+                                        >
+                                            <Tooltip
+                                                title={counterpart.translate(
+                                                    "tooltip.propose_unhide"
                                                 )}
-                                                style={{cursor: "pointer"}}
+                                                placement="bottom"
                                             >
-                                                <Tooltip
-                                                    title={counterpart.translate(
-                                                        "tooltip.propose_unhide"
+                                                <Switch
+                                                    style={{margin: 16}}
+                                                    checked={
+                                                        this.state
+                                                            .hideFishingProposals
+                                                    }
+                                                    onChange={this._toggleHideProposal.bind(
+                                                        this
                                                     )}
-                                                    placement="bottom"
-                                                >
+                                                />
+                                                <Translate content="account.deactivate_suspicious_proposals"/>
+                                            </Tooltip>
+                                        </div>
+                                    )}
+                                    {this.props.settings.get(
+                                        "showProposedTx"
+                                    ) && (
+                                        <Proposals
+                                            className="dashboard-table"
+                                            account={account}
+                                            hideFishingProposals={
+                                                this.state
+                                                    .hideFishingProposals
+                                            }
+                                        />
+                                    )}
+                                    {!this.props.settings.get(
+                                        "showProposedTx"
+                                    ) && (
+                                        <div className="padding">
+                                            <div>
+                                                <Translate content="account.proposed_transactions.advanced_feature"/>
+                                                    :
+                                            </div>
+                                            <br/>
+                                            <br/>
+                                            <div>
+                                                <Translate content="account.proposed_transactions.question1"/>
+                                                <Switch
+                                                    style={{margin: 16}}
+                                                    checked={
+                                                        this.state.question1
+                                                    }
+                                                    onChange={this._toggleQ1.bind(
+                                                        this
+                                                    )}
+                                                    checkedChildren={"Yes"}
+                                                    unCheckedChildren={"No"}
+                                                />
+                                            </div>
+                                            {this.state.question1 && (
+                                                <div>
+                                                    <Translate content="account.proposed_transactions.question2"/>
                                                     <Switch
                                                         style={{margin: 16}}
                                                         checked={
                                                             this.state
-                                                                .hideFishingProposals
+                                                                .question2
                                                         }
-                                                        onChange={this._toggleHideProposal.bind(
+                                                        onChange={this._toggleQ2.bind(
                                                             this
                                                         )}
+                                                        checkedChildren={
+                                                            "Yes"
+                                                        }
+                                                        unCheckedChildren={
+                                                            "No"
+                                                        }
                                                     />
-                                                    <Translate content="account.deactivate_suspicious_proposals" />
-                                                </Tooltip>
-                                            </div>
-                                        )}
-                                        {this.props.settings.get(
-                                            "showProposedTx"
-                                        ) && (
-                                            <Proposals
-                                                className="dashboard-table"
-                                                account={account}
-                                                hideFishingProposals={
-                                                    this.state
-                                                        .hideFishingProposals
-                                                }
-                                            />
-                                        )}
-                                        {!this.props.settings.get(
-                                            "showProposedTx"
-                                        ) && (
-                                            <div className="padding">
-                                                <div>
-                                                    <Translate content="account.proposed_transactions.advanced_feature" />
-                                                    :
                                                 </div>
-                                                <br />
-                                                <br />
+                                            )}
+                                            {this.state.question2 && (
                                                 <div>
-                                                    <Translate content="account.proposed_transactions.question1" />
+                                                    <Translate content="account.proposed_transactions.question3"/>
                                                     <Switch
                                                         style={{margin: 16}}
                                                         checked={
-                                                            this.state.question1
+                                                            this.state
+                                                                .question3
                                                         }
-                                                        onChange={this._toggleQ1.bind(
+                                                        onChange={this._toggleQ3.bind(
                                                             this
                                                         )}
-                                                        checkedChildren={"Yes"}
-                                                        unCheckedChildren={"No"}
+                                                        checkedChildren={
+                                                            "Yes"
+                                                        }
+                                                        unCheckedChildren={
+                                                            "No"
+                                                        }
                                                     />
                                                 </div>
-                                                {this.state.question1 && (
-                                                    <div>
-                                                        <Translate content="account.proposed_transactions.question2" />
-                                                        <Switch
-                                                            style={{margin: 16}}
-                                                            checked={
-                                                                this.state
-                                                                    .question2
-                                                            }
-                                                            onChange={this._toggleQ2.bind(
-                                                                this
-                                                            )}
-                                                            checkedChildren={
-                                                                "Yes"
-                                                            }
-                                                            unCheckedChildren={
-                                                                "No"
-                                                            }
-                                                        />
-                                                    </div>
-                                                )}
-                                                {this.state.question2 && (
-                                                    <div>
-                                                        <Translate content="account.proposed_transactions.question3" />
-                                                        <Switch
-                                                            style={{margin: 16}}
-                                                            checked={
-                                                                this.state
-                                                                    .question3
-                                                            }
-                                                            onChange={this._toggleQ3.bind(
-                                                                this
-                                                            )}
-                                                            checkedChildren={
-                                                                "Yes"
-                                                            }
-                                                            unCheckedChildren={
-                                                                "No"
-                                                            }
-                                                        />
-                                                    </div>
-                                                )}
-                                                <br />
-                                                {this.state.question3 && (
-                                                    <div
+                                            )}
+                                            <br/>
+                                            {this.state.question3 && (
+                                                <div
+                                                    style={{
+                                                        marginTop: 16,
+                                                        marginBottom: 16
+                                                    }}
+                                                >
+                                                    <Translate content="account.proposed_transactions.answered_no"/>
+                                                    <Button
                                                         style={{
-                                                            marginTop: 16,
-                                                            marginBottom: 16
+                                                            marginLeft: 16
                                                         }}
+                                                        onClick={this._showProposals.bind(
+                                                            this
+                                                        )}
                                                     >
-                                                        <Translate content="account.proposed_transactions.answered_no" />
-                                                        <Button
-                                                            style={{
-                                                                marginLeft: 16
-                                                            }}
-                                                            onClick={this._showProposals.bind(
-                                                                this
-                                                            )}
-                                                        >
-                                                            <Translate content="account.proposed_transactions.show_me_proposals" />
-                                                        </Button>
-                                                    </div>
-                                                )}
-                                            </div>
-                                        )}
-                                    </Tab>
-                                )}
+                                                        <Translate
+                                                            content="account.proposed_transactions.show_me_proposals"/>
+                                                    </Button>
+                                                </div>
+                                            )}
+                                        </div>
+                                    )}
+                                </Tab>
+                            )}
                         </Tabs>
                     </div>
                 </div>

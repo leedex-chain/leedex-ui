@@ -287,6 +287,56 @@ class AccountDepositWithdraw extends React.Component {
             )
         });
 
+        serList.push({
+            name: "GDEX",
+            identifier: "GDEX",
+            template: (
+                <div>
+                    <GdexGateway account={account} provider={"gdex"}/>
+                </div>
+            )
+        });
+
+        serList.push({
+            name: "BitSpark (SPARKDEX.X)",
+            identifier: "SPARKDEX",
+            template: (
+                <div className="content-block">
+                    <div
+                        className="service-selector"
+                        style={{marginBottom: "2rem"}}
+                    >
+                        <ul className="button-group segmented no-margin">
+                            <li
+                                onClick={this.toggleBitSparkService.bind(
+                                    this,
+                                    "gateway"
+                                )}
+                                className={
+                                    bitsparkService === "gateway"
+                                        ? "is-active"
+                                        : ""
+                                }
+                            >
+                                <a>
+                                    <Translate content="gateway.gateway"/>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {bitsparkService === "gateway" &&
+                    bitsparkGatewayCoins.length ? (
+                        <BitsparkGateway
+                            account={account}
+                            coins={bitsparkGatewayCoins}
+                            provider="bitspark"
+                        />
+                    ) : null}
+                </div>
+            )
+        });
+
         return serList;
     }
 
@@ -364,7 +414,7 @@ class AccountDepositWithdraw extends React.Component {
                     className={this.props.contained ? "" : "grid-content"}
                     style={{paddingTop: "2rem"}}
                 >
-                    <div className="grid-block vertical medium-horizontal no-margin no-padding">
+                    {/*<div className="grid-block vertical medium-horizontal no-margin no-padding">
                         <div style={{paddingBottom: "1rem"}}>
                             <DepositModal
                                 ref="deposit_modal"
@@ -411,7 +461,7 @@ class AccountDepositWithdraw extends React.Component {
                                 ]}
                             />
                         </div>
-                    </div>
+                    </div>*/}
                     <Translate content="gateway.title" component="h2" />
                     <div className="grid-block vertical medium-horizontal no-margin no-padding">
                         <div className="medium-6 show-for-medium">

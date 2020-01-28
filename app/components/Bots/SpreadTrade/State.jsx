@@ -92,9 +92,9 @@ class State extends React.Component {
                         <label style={{textAlign: "center"}}>
                             <Translate content="bots.common.base" />
                         </label>
-                        <label className="left-label">
+                        {/*                        <label className="left-label">
                             <Translate content="bots.common.asset" />
-                        </label>
+                        </label>*/}
                         <Select
                             style={{marginBottom: 30}}
                             name="baseAsset"
@@ -195,9 +195,9 @@ class State extends React.Component {
                         <label style={{textAlign: "center"}}>
                             <Translate content="bots.common.quote" />
                         </label>
-                        <label className="left-label">
+                        {/*                        <label className="left-label">
                             <Translate content="bots.common.asset" />
-                        </label>
+                        </label>*/}
                         <Select
                             style={{marginBottom: 30}}
                             name="quoteAsset"

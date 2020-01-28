@@ -397,32 +397,6 @@ class Header extends React.Component {
             </a>
         );
 
-        /*        let dashboard = (
-            <a
-                style={{flexFlow: "row"}}
-                className={cnames("logo", {
-                    active:
-                        active === "/" ||
-                        (active.indexOf("dashboard") !== -1 &&
-                            active.indexOf("account") === -1)
-                })}
-                onClick={this._onNavigate.bind(this, "/")}
-            >
-                {/!* <img style={{margin: 0, height: 40}} src={logo} />*!/}
-                <Icon
-                    size="1_5x"
-                    style={{
-                        position: "relative",
-                        top: -2,
-                        left: -8
-                    }}
-                    name="dashboard"
-                    title="icons.dashboard"
-                />
-                <span className="column-hide-small">Dashboard</span>
-            </a>
-        );*/
-
         let createAccountLink = myAccountCount === 0 ? true : null;
 
         // let lock_unlock = ((!!this.props.current_wallet) || passwordLogin) ? (
@@ -580,8 +554,6 @@ class Header extends React.Component {
                         <ul className="menu-bar">
                             <li>{logoLink}</li>
 
-                            {/*<li>{dashboard}</li>*/}
-
                             {menuDataStructure.map((menuItem, index) => {
                                 switch (menuItem.inHeaderBehavior) {
                                     case MenuItemType.Always:
@@ -591,9 +563,9 @@ class Header extends React.Component {
                                             menuItem.target
                                         )
                                             ? this._onNavigate.bind(
-                                                  this,
-                                                  menuItem.target
-                                              )
+                                                this,
+                                                menuItem.target
+                                            )
                                             : menuItem.target;
                                         return (
                                             <HeaderMenuItem
