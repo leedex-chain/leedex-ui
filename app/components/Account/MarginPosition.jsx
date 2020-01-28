@@ -51,10 +51,10 @@ class MarginPosition extends React.Component {
                 "cp_modal_" +
                 (has_order
                     ? this.props.object.getIn([
-                        "call_price",
-                        "quote",
-                        "asset_id"
-                    ])
+                          "call_price",
+                          "quote",
+                          "asset_id"
+                      ])
                     : this.props.debtAsset.get("id")),
             hasOrder: has_order
         };
@@ -304,9 +304,9 @@ class MarginPosition extends React.Component {
                         {isPrediction
                             ? "1:1"
                             : utils.format_number(
-                                this._getCollateralRatio(),
-                                2
-                            )}
+                                  this._getCollateralRatio(),
+                                  2
+                              )}
                     </td>
                 ) : (
                     <td />

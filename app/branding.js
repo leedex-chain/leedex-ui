@@ -213,7 +213,7 @@ export function getAssetNamespaces() {
         "SPARKDEX.",
         //"OPEN.",
         "BRIDGE.",
-        "XBTSX.",
+        "XBTSX."
     ];
 }
 

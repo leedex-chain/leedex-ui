@@ -292,7 +292,7 @@ class AccountDepositWithdraw extends React.Component {
             identifier: "GDEX",
             template: (
                 <div>
-                    <GdexGateway account={account} provider={"gdex"}/>
+                    <GdexGateway account={account} provider={"gdex"} />
                 </div>
             )
         });
@@ -319,7 +319,7 @@ class AccountDepositWithdraw extends React.Component {
                                 }
                             >
                                 <a>
-                                    <Translate content="gateway.gateway"/>
+                                    <Translate content="gateway.gateway" />
                                 </a>
                             </li>
                         </ul>
