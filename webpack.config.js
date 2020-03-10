@@ -343,6 +343,7 @@ module.exports = function(env) {
                     test: /\.png$/,
                     exclude: [
                         path.resolve(root_dir, "app/assets/asset-symbols"),
+                        path.resolve(root_dir, "app/assets/coins-logo"),
                         path.resolve(
                             root_dir,
                             "app/assets/language-dropdown/img"

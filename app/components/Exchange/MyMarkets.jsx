@@ -354,7 +354,7 @@ class MyMarkets extends React.Component {
             nextState.activeTab === "find-market" &&
             !nextProps.searchAssets.size
         ) {
-            this._lookupAssets("OPEN.", true);
+            this._lookupAssets("RUDEX.", true);
         }
 
         if (this.state.activeTab !== nextState.activeTab) {
@@ -419,7 +419,7 @@ class MyMarkets extends React.Component {
         this._setMinWidth();
 
         if (this.state.activeTab === "find-market") {
-            this._lookupAssets("OPEN.", true);
+            this._lookupAssets("RUDEX.", true);
         }
 
         if (this.state.activeTab !== this.props.activeTab) {
@@ -1089,22 +1089,22 @@ class MyMarkets extends React.Component {
                     {!myMarketTab && !this.state.inputValue
                         ? null
                         : preferredBases.map((base, index) => {
-                            if (!base) return null;
-                            return (
-                                <li
-                                    key={base}
-                                    onClick={this.toggleActiveMarketTab.bind(
-                                        this,
-                                        index
-                                    )}
-                                    className={cnames("mymarkets-tab", {
-                                        active: activeMarketTab === index
-                                    })}
-                                >
-                                    {base.replace("RUDEX.", "")}
-                                </li>
-                            );
-                        })}
+                              if (!base) return null;
+                              return (
+                                  <li
+                                      key={base}
+                                      onClick={this.toggleActiveMarketTab.bind(
+                                          this,
+                                          index
+                                      )}
+                                      className={cnames("mymarkets-tab", {
+                                          active: activeMarketTab === index
+                                      })}
+                                  >
+                                      {base.replace("RUDEX.", "")}
+                                  </li>
+                              );
+                          })}
                     {myMarketTab && hasOthers ? (
                         <li
                             key={"others"}

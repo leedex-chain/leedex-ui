@@ -70,7 +70,7 @@ class IntlStore {
     getDefaultLocale() {
         let supportedLocales = [
             "en",
-            "zh",
+            "cn",
             "fr",
             "ko",
             "de",

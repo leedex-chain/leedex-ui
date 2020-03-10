@@ -17,8 +17,12 @@
 - [Приватизированные BitAssets](assets/privbitassets.md)
 - [Децентрализованная биржа](dex/introduction.md)
 - [Торговля](dex/trading.md)
+- [Боты](bots/introduction.md)
+    - [SpreadTrade ](bots/spread.md)
+    - [TrailingStop](bots/trailing.md)
+    - [PercentUP ](bots/percent-up.md)
 - [Короткая продажа BitAssets](dex/shorting.md)
-- Шлюзы 
+- [Шлюзы](gateways/introduction.md)
     - [OpenLedger](gateways/openledger.md)
     - [Rudex](gateways/rudex.md)
     - [CryptoBridge](gateways/cryptobridge.md)

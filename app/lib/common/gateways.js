@@ -5,10 +5,10 @@
 
 import {
     rudexAPIs,
-    bitsparkAPIs,
+    //bitsparkAPIs,
     //openledgerAPIs,
     //cryptoBridgeAPIs,
-    gdex2APIs,
+    gdex2APIs
     //xbtsxAPIs,
     //citadelAPIs
 } from "api/apiConfig";
@@ -107,19 +107,6 @@ export const availableGateways = {
         landing: "https://rudex.org/",
         wallet: "https://market.rudex.org/"
     },
-    SPARKDEX: {
-        id: "SPARKDEX",
-        name: "BitSpark",
-        baseAPI: bitsparkAPIs,
-        isEnabled: _isEnabled("SPARKDEX"),
-        selected: false,
-        options: {
-            enabled: false,
-            selected: false
-        },
-        landing: "https://www.bitspark.io/for-traders",
-        wallet: "https://dex.bitspark.io/"
-    },
     GDEX: {
         id: "GDEX",
         name: "GDEX",
@@ -130,7 +117,7 @@ export const availableGateways = {
             selected: false
         },
         wallet: "https://www.gdex.io/"
-    },
+    }
 };
 
 export const availableBridges = {

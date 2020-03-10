@@ -174,12 +174,12 @@ class TotalValue extends MarketStatsCheck {
                 let eqValue =
                     fromAsset !== toAsset
                         ? this._convertValue(
-                        balance.amount,
-                        fromAsset,
-                        toAsset,
-                        allMarketStats,
-                        coreAsset
-                        )
+                              balance.amount,
+                              fromAsset,
+                              toAsset,
+                              allMarketStats,
+                              coreAsset
+                          )
                         : balance.amount;
                 totalValue += eqValue;
                 assetValues = this._assetValues(

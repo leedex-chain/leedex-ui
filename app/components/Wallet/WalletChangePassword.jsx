@@ -152,9 +152,7 @@ class WalletPassword extends Component {
             return (
                 <Form onSubmit={this.onPassword.bind(this)}>
                     <FormItem
-                        label={counterpart.translate(
-                            "wallet.existing_password"
-                        )}
+                        label={counterpart.translate("wallet.current_pass")}
                     >
                         <section>
                             <Input
@@ -168,7 +166,11 @@ class WalletPassword extends Component {
                                 value={this.state.password}
                             />
                         </section>
-                        <Button type="primary">
+                        <Button
+                            type="primary"
+                            onClick={this.onPassword.bind(this)}
+                            style={{marginTop: 10}}
+                        >
                             <Translate content="wallet.submit" />
                         </Button>
                     </FormItem>

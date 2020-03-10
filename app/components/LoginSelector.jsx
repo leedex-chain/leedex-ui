@@ -108,7 +108,7 @@ class LoginSelector extends React.Component {
                             className="table-cell"
                             style={{display: "inline", paddingRight: "10px"}}
                         >
-                            <FlagImage width="20" height="20" flag={locale} />
+                            <FlagImage width="24" height="24" flag={locale} />
                         </div>
                         {counterpart.translate("languages." + locale)}
                     </Select.Option>

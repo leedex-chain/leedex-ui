@@ -24,6 +24,7 @@ import {ChainStore} from "bitsharesjs";
 import WithdrawModal from "../Modal/WithdrawModalNew";
 import {List} from "immutable";
 import DropDownMenu from "./HeaderDropdown";
+import LanguageDropdown from "./LanguageDropdown";
 import {withRouter} from "react-router-dom";
 import {Notification} from "bitshares-ui-style-guide";
 import AccountBrowsingMode from "../Account/AccountBrowsingMode";
@@ -34,11 +35,18 @@ import MenuItemType from "./MenuItemType";
 import MenuDataStructure from "./MenuDataStructure";
 
 import {getDefaultMarket, getLogo} from "branding";
+
 var logo = getLogo();
 
-// const FlagImage = ({flag, width = 20, height = 20}) => {
-//     return <img height={height} width={width} src={`${__BASE_URL__}language-dropdown/${flag.toUpperCase()}.png`} />;
-// };
+const FlagImage = ({flag, width = 24, height = 24}) => {
+    return (
+        <img
+            height={height}
+            width={width}
+            src={`${__BASE_URL__}language-dropdown/${flag.toUpperCase()}.png`}
+        />
+    );
+};
 
 class Header extends React.Component {
     constructor(props) {
@@ -47,6 +55,7 @@ class Header extends React.Component {
             active: props.location.pathname,
             accountsListDropdownActive: false,
             dropdownActive: false,
+            LanguageDropdownActive: false,
             isDepositModalVisible: false,
             hasDepositModalBeenShown: false,
             isWithdrawModalVisible: false,
@@ -59,8 +68,10 @@ class Header extends React.Component {
             this
         );
         this._toggleDropdownMenu = this._toggleDropdownMenu.bind(this);
+        this._toggleLanguageMenu = this._toggleLanguageMenu.bind(this);
         this._closeDropdown = this._closeDropdown.bind(this);
         this._closeMenuDropdown = this._closeMenuDropdown.bind(this);
+        this._closeLanguageDropdown = this._closeLanguageDropdown.bind(this);
         this._closeAccountsListDropdown = this._closeAccountsListDropdown.bind(
             this
         );
@@ -155,6 +166,8 @@ class Header extends React.Component {
             nextState.active !== this.state.active ||
             nextState.hiddenAssets !== this.props.hiddenAssets ||
             nextState.dropdownActive !== this.state.dropdownActive ||
+            nextState.LanguageDropdownActive !==
+                this.state.LanguageDropdownActive ||
             nextState.accountsListDropdownActive !==
                 this.state.accountsListDropdownActive ||
             nextProps.height !== this.props.height ||
@@ -237,6 +250,14 @@ class Header extends React.Component {
         }
     }
 
+    _closeLanguageDropdown() {
+        if (this.state.LanguageDropdownActive) {
+            this.setState({
+                LanguageDropdownActive: false
+            });
+        }
+    }
+
     _closeDropdown() {
         this._closeMenuDropdown();
         this._closeAccountsListDropdown();
@@ -296,6 +317,13 @@ class Header extends React.Component {
         this._closeAccountNotifications();
     }
 
+    _toggleLanguageMenu() {
+        this.setState({
+            LanguageDropdownActive: !this.state.LanguageDropdownActive
+        });
+        this._closeDropdown();
+    }
+
     _closeAccountNotifications() {
         this._accountNotificationActiveKeys.map(key => Notification.close(key));
         this._accountNotificationActiveKeys = [];
@@ -328,6 +356,8 @@ class Header extends React.Component {
         if (!insideMenuDropdown) {
             this._closeMenuDropdown();
         }
+
+        this._closeLanguageDropdown();
     }
 
     render() {
@@ -563,9 +593,9 @@ class Header extends React.Component {
                                             menuItem.target
                                         )
                                             ? this._onNavigate.bind(
-                                                this,
-                                                menuItem.target
-                                            )
+                                                  this,
+                                                  menuItem.target
+                                              )
                                             : menuItem.target;
                                         return (
                                             <HeaderMenuItem
@@ -677,6 +707,27 @@ class Header extends React.Component {
                         </span>
                     )}
                 </div>
+
+                <div className="app-menu">
+                    <div
+                        onClick={this._toggleLanguageMenu}
+                        style={{padding: "1.25rem", border: "none"}}
+                        className={cnames(
+                            "menu-dropdown-wrapper dropdown-wrapper",
+                            {active: this.state.LanguageDropdownActive}
+                        )}
+                    >
+                        {<FlagImage flag={this.props.currentLocale} />}
+                    </div>
+                    <LanguageDropdown
+                        LanguageDropdownActive={
+                            this.state.LanguageDropdownActive
+                        }
+                        maxHeight={maxHeight}
+                        locales={this.props.locales}
+                    />
+                </div>
+
                 <div className="app-menu">
                     <div
                         onClick={this._toggleDropdownMenu}
@@ -686,7 +737,6 @@ class Header extends React.Component {
                         )}
                     >
                         <div className="hamburger">{hamburger}</div>
-
                         <DropDownMenu
                             dropdownActive={this.state.dropdownActive}
                             toggleLock={this._toggleLock.bind(this)}

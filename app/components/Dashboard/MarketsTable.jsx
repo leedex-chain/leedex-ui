@@ -285,7 +285,16 @@ class MarketsTable extends React.Component {
                 ),
                 dataIndex: "hide",
                 render: item => {
-                    return <span style={{whiteSpace: "nowrap"}}>{item}</span>;
+                    return (
+                        <span
+                            style={{
+                                whiteSpace: "nowrap",
+                                cursor: "pointer"
+                            }}
+                        >
+                            {item}
+                        </span>
+                    );
                 }
             }
         ];
@@ -322,6 +331,7 @@ class MarketsTable extends React.Component {
             SettingsActions.removeStarMarket(quote, base);
         }
     }
+
     getTableData(row) {
         let {base, quote, marketStats, isHidden, inverted, basePrecision} = row;
 
@@ -332,6 +342,7 @@ class MarketsTable extends React.Component {
             let imgName = symbol.split(".");
             return imgName.length === 2 ? imgName[1] : imgName[0];
         }
+
         let imgName = getImageName(quote);
 
         let marketID = `${quote}_${base}`;

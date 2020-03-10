@@ -158,6 +158,12 @@ const QuickTrade = Loadable({
     loading: LoadingIndicator
 });
 
+const Listing = Loadable({
+    loader: () =>
+        import(/* webpackChunkName: "listing" */ "./components/Listing/ListingPage"),
+    loading: LoadingIndicator
+});
+
 import LoginSelector from "./components/LoginSelector";
 import Login from "./components/Login/Login";
 import RegistrationSelector from "./components/Registration/RegistrationSelector";
@@ -449,7 +455,7 @@ class App extends React.Component {
                     : "committee-account";
             content = (
                 <div className="grid-frame vertical">
-                    <NewsHeadline />
+                    {/*<NewsHeadline />*/}
                     <Header height={this.state.height} {...others} />
                     <div id="mainContainer" className="grid-block">
                         <div className="grid-block vertical">
@@ -507,6 +513,11 @@ class App extends React.Component {
                                     component={AccountRegistration}
                                 />
                                 <Route path="/news" exact component={News} />
+                                <Route
+                                    path="/listing"
+                                    exact
+                                    component={Listing}
+                                />
                                 <Redirect
                                     path={"/voting"}
                                     to={{

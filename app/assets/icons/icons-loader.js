@@ -36,6 +36,7 @@ let icons = [
     "hourglass",
     "key",
     "list",
+    "listing",
     "locked",
     "minus-circle",
     "news",

@@ -717,4 +717,5 @@ SendModalConnectWrapper = connect(
     }
 );
 
+export {SendModal};
 export default SendModalConnectWrapper;

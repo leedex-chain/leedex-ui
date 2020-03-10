@@ -134,6 +134,7 @@ class MenuDataStructure {
             allItems.settings,
 
             allItems.divider,
+            allItems.listing,
             allItems.news,
             allItems.help,
 
@@ -187,7 +188,7 @@ class MenuDataStructure {
                     title: "icons.user.create_account"
                 },
                 text: "header.create_account",
-                hidden: !!state.passwordLogin,
+                //hidden: !!state.passwordLogin,
                 inDropdownBehavior: MenuItemType.Always
             }),
             dashboard: state => ({
@@ -201,6 +202,7 @@ class MenuDataStructure {
                     "/asset",
                     "/assets",
                     "/bots",
+                    "/listing",
                     "/news",
                     "/help",
                     "/settings",
@@ -218,7 +220,7 @@ class MenuDataStructure {
                 target: "/",
                 icon: "dashboard",
                 text: "header.dashboard",
-                inHeaderBehavior: MenuItemType.WhenAccount,
+                inHeaderBehavior: MenuItemType.Always,
                 inDropdownBehavior: MenuItemType.Never
             }),
 
@@ -244,6 +246,7 @@ class MenuDataStructure {
                 excludePattern: [
                     //"/account", "account/", "/account/",
                     "/assets",
+                    "/help/bots",
                     "/voting",
                     "/signedmessages",
                     "/member-stats",
@@ -254,8 +257,26 @@ class MenuDataStructure {
                 target: "/bots",
                 icon: "robot",
                 text: "header.bots",
-                inHeaderBehavior: MenuItemType.Always,
+                inHeaderBehavior: MenuItemType.WhenAccount,
                 inDropdownBehavior: MenuItemType.Never
+            }),
+            listing: state => ({
+                includePattern: ["/listing"],
+                excludePattern: [
+                    //"/account", "account/", "/account/",
+                    "/assets",
+                    "/voting",
+                    "/signedmessages",
+                    "/member-stats",
+                    "/vesting",
+                    "/whitelist",
+                    "/permissions"
+                ],
+                target: "/listing",
+                icon: "listing",
+                text: "header.listing",
+                inHeaderBehavior: MenuItemType.Dynamic,
+                inDropdownBehavior: MenuItemType.Always
             }),
             follow: state => ({
                 target: state.clickHandlers.followUnfollow,
@@ -287,8 +308,8 @@ class MenuDataStructure {
                     size: "2x"
                 },
                 text: "header.explorer",
-                inHeaderBehavior: MenuItemType.Always,
-                inDropdownBehavior: MenuItemType.Never
+                inHeaderBehavior: MenuItemType.Never,
+                inDropdownBehavior: MenuItemType.Always
             }),
             transfer: state => ({
                 target: state.clickHandlers.showSend,
@@ -332,7 +353,7 @@ class MenuDataStructure {
                 },
                 text: "header.deposit-withdraw",
                 inHeaderBehavior: MenuItemType.Dynamic,
-                inDropdownBehavior: MenuItemType.Always
+                inDropdownBehavior: MenuItemType.WhenAccount
             }),
             settings: state => ({
                 includePattern: "/settings",

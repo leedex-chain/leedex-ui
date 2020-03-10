@@ -2093,7 +2093,21 @@ class Exchange extends React.Component {
             );
         };
 
-        let buyForm = isFrozen ? null : tinyScreen &&
+        let buyForm = isFrozen ? (
+            <div
+                className="error small-12 no-overflow"
+                style={{
+                    margin: "30px 10px 0",
+                    lineHeight: "1.2rem"
+                }}
+            >
+                <Translate
+                    content="exchange.market_frozen"
+                    asset={frozenAsset}
+                    component="p"
+                />
+            </div>
+        ) : tinyScreen &&
         !this.state.mobileKey.includes("buySellTab") ? null : (
             <Tabs
                 animated={false}
@@ -2108,18 +2122,18 @@ class Exchange extends React.Component {
                     verticalOrderForm && !smallScreen
                         ? ""
                         : centerContainerWidth > 1200
-                        ? "medium-6 large-6 xlarge-4"
-                        : centerContainerWidth > 800
-                            ? "medium-6"
-                            : "",
+                            ? "medium-6 large-6 xlarge-4"
+                            : centerContainerWidth > 800
+                                ? "medium-6"
+                                : "",
                     "small-12 exchange-padded middle-content",
                     flipBuySell
                         ? `order-${buySellTop ? 2 : 3} large-order-${
-                            buySellTop ? 2 : 5
-                            } sell-form`
+                              buySellTop ? 2 : 5
+                          } sell-form`
                         : `order-${buySellTop ? 1 : 2} large-order-${
-                            buySellTop ? 1 : 4
-                            } buy-form`
+                              buySellTop ? 1 : 4
+                          } buy-form`
                 )}
             >
                 <Tabs.TabPane
@@ -2274,18 +2288,18 @@ class Exchange extends React.Component {
                     verticalOrderForm && !smallScreen
                         ? ""
                         : centerContainerWidth > 1200
-                        ? "medium-6 large-6 xlarge-4"
-                        : centerContainerWidth > 800
-                            ? "medium-6"
-                            : "",
+                            ? "medium-6 large-6 xlarge-4"
+                            : centerContainerWidth > 800
+                                ? "medium-6"
+                                : "",
                     "small-12 exchange-padded middle-content",
                     flipBuySell
                         ? `order-${buySellTop ? 1 : 2} large-order-${
-                            buySellTop ? 1 : 4
-                            } buy-form`
+                              buySellTop ? 1 : 4
+                          } buy-form`
                         : `order-${buySellTop ? 2 : 3} large-order-${
-                            buySellTop ? 2 : 5
-                            } sell-form`
+                              buySellTop ? 2 : 5
+                          } sell-form`
                 )}
             >
                 <Tabs.TabPane
@@ -2593,10 +2607,10 @@ class Exchange extends React.Component {
                     className={cnames(
                         panelTabs["history"] == 0
                             ? centerContainerWidth > 1200
-                            ? "medium-6 large-6 xlarge-4"
-                            : centerContainerWidth > 800
-                                ? "medium-6"
-                                : ""
+                                ? "medium-6 large-6 xlarge-4"
+                                : centerContainerWidth > 800
+                                    ? "medium-6"
+                                    : ""
                             : "medium-12",
                         "no-padding no-overflow middle-content small-12 order-6"
                     )}
@@ -2625,10 +2639,10 @@ class Exchange extends React.Component {
                     className={cnames(
                         panelTabs["my_history"] == 0
                             ? centerContainerWidth > 1200
-                            ? "medium-6 large-6 xlarge-4"
-                            : centerContainerWidth > 800
-                                ? "medium-6"
-                                : ""
+                                ? "medium-6 large-6 xlarge-4"
+                                : centerContainerWidth > 800
+                                    ? "medium-6"
+                                    : ""
                             : "medium-12",
                         "no-padding no-overflow middle-content small-12",
                         verticalOrderBook || verticalOrderForm
@@ -2661,10 +2675,10 @@ class Exchange extends React.Component {
                     className={cnames(
                         panelTabs["my_orders"] == 0
                             ? centerContainerWidth > 1200
-                            ? "medium-6 large-6 xlarge-4"
-                            : centerContainerWidth > 800
-                                ? "medium-6"
-                                : ""
+                                ? "medium-6 large-6 xlarge-4"
+                                : centerContainerWidth > 800
+                                    ? "medium-6"
+                                    : ""
                             : "medium-12",
                         "no-padding no-overflow middle-content small-12 order-7"
                     )}
@@ -2700,10 +2714,10 @@ class Exchange extends React.Component {
                     className={cnames(
                         panelTabs["open_settlement"] == 0
                             ? centerContainerWidth > 1200
-                            ? "medium-6 large-6 xlarge-4"
-                            : centerContainerWidth > 800
-                                ? "medium-6"
-                                : ""
+                                ? "medium-6 large-6 xlarge-4"
+                                : centerContainerWidth > 800
+                                    ? "medium-6"
+                                    : ""
                             : "medium-12",
                         "no-padding no-overflow middle-content small-12 order-8"
                     )}
@@ -2854,11 +2868,11 @@ class Exchange extends React.Component {
                     title={
                         chartType == "market_depth"
                             ? counterpart.translate(
-                            "exchange.settings.tooltip.show_price_chart"
-                            )
+                                  "exchange.settings.tooltip.show_price_chart"
+                              )
                             : counterpart.translate(
-                            "exchange.settings.tooltip.show_market_depth"
-                            )
+                                  "exchange.settings.tooltip.show_market_depth"
+                              )
                     }
                 >
                     <AntIcon
@@ -3543,8 +3557,8 @@ class Exchange extends React.Component {
                             data-intro={
                                 tinyScreen
                                     ? translator.translate(
-                                    "walkthrough.collapsed_items"
-                                    )
+                                          "walkthrough.collapsed_items"
+                                      )
                                     : null
                             }
                         >

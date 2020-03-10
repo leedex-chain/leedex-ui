@@ -295,30 +295,30 @@ class DashboardList extends React.Component {
                             </td>
                             {isContactsList
                                 ? (isHiddenAccountsList && (
-                                <td
-                                    onClick={this._onAddContact.bind(
-                                        this,
-                                        accountName
-                                    )}
-                                >
-                                    <Icon
-                                        name="plus-circle"
-                                        title="icons.plus_circle.add_contact"
-                                    />
-                                </td>
-                            )) || (
-                                <td
-                                    onClick={this._onRemoveContact.bind(
-                                        this,
-                                        accountName
-                                    )}
-                                >
-                                    <Icon
-                                        name="minus-circle"
-                                        title="icons.minus_circle.remove_contact"
-                                    />
-                                </td>
-                            )
+                                      <td
+                                          onClick={this._onAddContact.bind(
+                                              this,
+                                              accountName
+                                          )}
+                                      >
+                                          <Icon
+                                              name="plus-circle"
+                                              title="icons.plus_circle.add_contact"
+                                          />
+                                      </td>
+                                  )) || (
+                                      <td
+                                          onClick={this._onRemoveContact.bind(
+                                              this,
+                                              accountName
+                                          )}
+                                      >
+                                          <Icon
+                                              name="minus-circle"
+                                              title="icons.minus_circle.remove_contact"
+                                          />
+                                      </td>
+                                  )
                                 : null}
                             <td style={{textAlign: "left"}}>
                                 {account.get("id")}

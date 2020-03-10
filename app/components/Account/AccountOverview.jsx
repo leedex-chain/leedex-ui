@@ -29,16 +29,15 @@ class AccountOverview extends React.Component {
             alwaysShowAssets: [
                 "BTS",
 
-                "USD",
                 "CNY",
+                "USD",
+                "EUR",
+                "RUBLE",
+                "BTC",
                 "GOLD",
                 "SILVER",
-                // "OPEN.BTC",
-                // "OPEN.USDT",
-                // "OPEN.ETH",
-                // "OPEN.MAID",
-                // "OPEN.STEEM",
-                // "OPEN.DASH",
+
+                "DONATE",
 
                 "PPY",
                 "RUDEX.BTC",
@@ -106,7 +105,7 @@ class AccountOverview extends React.Component {
 
     _changeShownAssets(shownAssets = "active") {
         this.setState({
-            shownAssets
+            shownAssets: shownAssets
         });
         SettingsActions.changeViewSetting({
             shownAssets
@@ -320,6 +319,7 @@ class AccountOverview extends React.Component {
                 coreAsset={this.props.core_asset}
                 coreSymbol={this.props.core_asset.get("symbol")}
                 hiddenAssets={hiddenAssets}
+                shownAssets={shownAssets}
                 orders={orders}
                 account={this.props.account}
                 isMyAccount={this.props.isMyAccount}
@@ -341,6 +341,7 @@ class AccountOverview extends React.Component {
                 coreSymbol={this.props.core_asset.get("symbol")}
                 settings={settings}
                 hiddenAssets={hiddenAssets}
+                shownAssets={shownAssets}
                 orders={orders}
                 account={this.props.account}
                 isMyAccount={this.props.isMyAccount}
@@ -367,7 +368,10 @@ class AccountOverview extends React.Component {
                             tabsClass="account-overview no-padding bordered-header content-block"
                         >
                             <Tab
-                                title="account.portfolio"
+                                //title="account.portfolio"
+                                title={
+                                    <Translate content="account.portfolio" />
+                                }
                                 subText={portfolioActiveAssetsBalance}
                             >
                                 <div className="header-selector">
@@ -456,7 +460,10 @@ class AccountOverview extends React.Component {
                             </Tab>
 
                             <Tab
-                                title="account.open_orders"
+                                //title="account.open_orders"
+                                title={
+                                    <Translate content="account.open_orders" />
+                                }
                                 subText={ordersValue}
                             >
                                 <AccountOrders {...this.props}>
@@ -472,7 +479,10 @@ class AccountOverview extends React.Component {
                             </Tab>
 
                             <Tab
-                                title="account.collaterals"
+                                //title="account.collaterals"
+                                title={
+                                    <Translate content="account.collaterals" />
+                                }
                                 subText={
                                     <span
                                         className={
@@ -510,7 +520,8 @@ class AccountOverview extends React.Component {
                             </Tab>
 
                             <Tab
-                                title="account.activity"
+                                //title="account.activity"
+                                title={<Translate content="account.activity" />}
                                 subText={hiddenSubText}
                             >
                                 <RecentTransactions
@@ -529,7 +540,10 @@ class AccountOverview extends React.Component {
                             {account.get("proposals") &&
                                 account.get("proposals").size && (
                                     <Tab
-                                        title="explorer.proposals.title"
+                                        //title="explorer.proposals.title"
+                                        title={
+                                            <Translate content="explorer.proposals.title" />
+                                        }
                                         subText={String(
                                             account.get("proposals")
                                                 ? account.get("proposals").size

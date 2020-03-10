@@ -1,4 +1,5 @@
 import {Apis} from "bitsharesjs-ws";
+
 /** This file centralized customization and branding efforts throughout the whole wallet and is meant to facilitate
  *  the process.
  *
@@ -100,7 +101,7 @@ export function getDefaultMarket() {
     if (_isTestnet()) {
         return "USD_TEST";
     }
-    return "USD_BTS";
+    return "BTS_RUDEX.BTC";
 }
 
 /**
@@ -129,6 +130,7 @@ export function getMyMarketsQuotes() {
             //"BTC",
             "BTS",
             //"CNY",
+            //"USD",
             "EUR",
             //"GOLD",
             //"KRW",
@@ -138,6 +140,7 @@ export function getMyMarketsQuotes() {
         ],
         rudexTokens: [
             "PPY",
+            "DONATE",
             "RUDEX.BTC",
             "RUDEX.ETH",
             "RUDEX.USDT",
@@ -174,15 +177,30 @@ export function getFeaturedMarkets(quotes = []) {
     return [
         ["BTS", "PPY"],
 
+        ["RUBLE", "RUDEX.BTC"],
+        ["RUBLE", "RUDEX.ETH"],
+        ["RUBLE", "RUDEX.EOS"],
+        ["RUBLE", "RUDEX.USDT"],
+
         ["RUDEX.USDT", "RUDEX.BTC"],
         ["RUDEX.USDT", "RUDEX.ETH"],
         ["RUDEX.USDT", "RUDEX.EOS"],
+        ["RUDEX.USDT", "PPY"],
+        //["RUDEX.USDT", "DONATE"],
+        ["RUDEX.USDT", "RUDEX.GOLOS"],
+        ["RUDEX.USDT", "RUDEX.SMOKE"],
+        ["RUDEX.USDT", "RUDEX.WLS"],
+        ["RUDEX.USDT", "RUBLE"],
+
         ["RUDEX.BTC", "RUDEX.ETH"],
         ["RUDEX.BTC", "RUDEX.EOS"],
         ["RUDEX.BTC", "RUDEX.STEEM"],
         ["RUDEX.BTC", "RUDEX.GOLOS"],
         ["RUDEX.BTC", "RUDEX.WLS"],
+        ["RUDEX.BTC", "RUDEX.SMOKE"],
         ["RUDEX.BTC", "PPY"],
+        ["RUDEX.BTC", "DONATE"],
+        ["RUDEX.BTC", "USDT"],
 
         ["BTS", "RUDEX.GOLOS"],
         ["BTS", "RUDEX.STEEM"],
@@ -192,6 +210,7 @@ export function getFeaturedMarkets(quotes = []) {
         ["BTS", "RUDEX.USDT"],
         ["BTS", "RUDEX.WLS"],
         ["BTS", "RUDEX.SMOKE"]
+        //["BTS", "DONATE"]
     ].filter(a => {
         if (!quotes.length) return true;
         return quotes.indexOf(a[0]) !== -1;
@@ -211,9 +230,10 @@ export function getAssetNamespaces() {
         "RUDEX.",
         "GDEX.",
         "SPARKDEX.",
-        //"OPEN.",
+        "OPEN.",
         "BRIDGE.",
-        "XBTSX."
+        "XBTSX.",
+        "DEEX."
     ];
 }
 
@@ -232,7 +252,7 @@ export function getAssetHideNamespaces() {
  * @returns {boolean}
  */
 export function allowedGateway(gateway) {
-    const allowedGateways = ["RUDEX", "GDEX", "SPARKDEX"];
+    const allowedGateways = ["RUDEX", "GDEX"];
     if (!gateway) {
         // answers the question: are any allowed?
         return allowedGateways.length > 0;
@@ -260,6 +280,87 @@ export function getConfigurationAsset() {
     return {
         symbol: assetSymbol,
         explanation:
-            "This asset is used for decentralized configuration of the BitShares UI placed under bitshares.org."
+            "This asset is used for decentralized configuration of the RuDEX UI placed under market.rudex.org."
     };
+}
+
+/**
+ * The featured coins displayed on the Listing page of the UI
+ *
+ * @returns {[{[string]:[string]}]}
+ */
+export function getListingCoins() {
+    return [
+        {
+            name: "Telegram Open Network",
+            ticker: "GRAM",
+            account: "rudex-gram",
+            soon: true,
+            goal: 5000,
+            votes: 0
+        },
+        {
+            name: "Monero",
+            ticker: "XMR",
+            account: "rudex-monero",
+            goal: 5000,
+            votes: 0
+        },
+        {
+            name: "Litecoin",
+            ticker: "LTC",
+            account: "rudex-litecoin",
+            goal: 5000,
+            votes: 0
+        },
+        {
+            name: "Dogecoin",
+            ticker: "DOGE",
+            account: "rudex-dogecoin",
+            goal: 5000,
+            votes: 0
+        },
+        {
+            name: "Dash",
+            ticker: "DASH",
+            account: "rudex-dash",
+            goal: 5000,
+            votes: 0
+        },
+        {
+            name: "Waves",
+            ticker: "WAVES",
+            account: "rudex-waves",
+            goal: 10000,
+            votes: 0
+        },
+        {
+            name: "Telos",
+            ticker: "TLOS",
+            account: "rudex-telos",
+            goal: 5000,
+            votes: 0
+        },
+        {
+            name: "Tron",
+            ticker: "TRX",
+            account: "rudex-tron",
+            goal: 10000,
+            votes: 0
+        },
+        {
+            name: "Minter Network",
+            ticker: "BIP",
+            account: "rudex-bip",
+            goal: 5000,
+            votes: 0
+        },
+        {
+            name: "Neo",
+            ticker: "NEO",
+            account: "rudex-neo",
+            goal: 10000,
+            votes: 0
+        }
+    ];
 }

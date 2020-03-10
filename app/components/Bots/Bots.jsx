@@ -3,7 +3,9 @@ import BotManager from "lib/bots";
 import AccountStore from "stores/AccountStore";
 import {connect} from "alt-react";
 import Translate from "react-translate-component";
-import {Redirect} from "react-router-dom";
+import {Redirect, Link} from "react-router-dom";
+
+import Icon from "../Icon/Icon";
 
 class Bots extends React.Component {
     constructor(props) {
@@ -21,6 +23,10 @@ class Bots extends React.Component {
 
     componentDidMount() {
         let bots = BotManager.getBots(this.props.currentAccount);
+        this._upd(bots);
+    }
+
+    _upd(bots) {
         this.setState({
             bots,
             selectBot: 0,
@@ -106,6 +112,21 @@ class Bots extends React.Component {
                         noValidate
                     >
                         <div className="left-label" style={{marginTop: 30}}>
+                            <span
+                                style={{
+                                    paddingRight: 5,
+                                    position: "relative",
+                                    top: 9
+                                }}
+                            >
+                                <Link to="/help/bots/introduction">
+                                    <Icon
+                                        name="question-circle"
+                                        title="icons.question_circle"
+                                        size="2x"
+                                    />
+                                </Link>
+                            </span>
                             <Translate content="bots.common.select_strategy" />
                         </div>
                         <div className="content-block">

@@ -185,19 +185,19 @@ class MarketRow extends React.Component {
                                   (stats.close.quote.amount &&
                                       stats.close.base.amount)
                                     ? utils.get_asset_price(
-                                    stats.close.quote.amount,
-                                    quote,
-                                    stats.close.base.amount,
-                                    base,
-                                    true
-                                )
+                                          stats.close.quote.amount,
+                                          quote,
+                                          stats.close.base.amount,
+                                          base,
+                                          true
+                                      )
                                     : utils.get_asset_price(
-                                    price.quote.amount,
-                                    quote,
-                                    price.base.amount,
-                                    base,
-                                    true
-                                );
+                                          price.quote.amount,
+                                          quote,
+                                          price.base.amount,
+                                          base,
+                                          true
+                                      );
 
                         let highPrecisionAssets = [
                             "BTC",

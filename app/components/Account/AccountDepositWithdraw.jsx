@@ -6,22 +6,22 @@ import utils from "common/utils";
 import Translate from "react-translate-component";
 import ChainTypes from "../Utility/ChainTypes";
 import BindToChainState from "../Utility/BindToChainState";
-import OpenledgerGateway from "../DepositWithdraw/OpenledgerGateway";
-import OpenLedgerFiatDepositWithdrawal from "../DepositWithdraw/openledger/OpenLedgerFiatDepositWithdrawal";
-import OpenLedgerFiatTransactionHistory from "../DepositWithdraw/openledger/OpenLedgerFiatTransactionHistory";
-import BlockTradesBridgeDepositRequest from "../DepositWithdraw/blocktrades/BlockTradesBridgeDepositRequest";
-import CitadelBridgeDepositRequest from "../DepositWithdraw/citadel/CitadelBridgeDepositRequest";
+//import OpenledgerGateway from "../DepositWithdraw/OpenledgerGateway";
+//import OpenLedgerFiatDepositWithdrawal from "../DepositWithdraw/openledger/OpenLedgerFiatDepositWithdrawal";
+//import OpenLedgerFiatTransactionHistory from "../DepositWithdraw/openledger/OpenLedgerFiatTransactionHistory";
+//import BlockTradesBridgeDepositRequest from "../DepositWithdraw/blocktrades/BlockTradesBridgeDepositRequest";
+//import CitadelBridgeDepositRequest from "../DepositWithdraw/citadel/CitadelBridgeDepositRequest";
 import HelpContent from "../Utility/HelpContent";
 import AccountStore from "stores/AccountStore";
 import SettingsStore from "stores/SettingsStore";
 import SettingsActions from "actions/SettingsActions";
-import {openledgerAPIs} from "api/apiConfig";
+//import {openledgerAPIs} from "api/apiConfig";
 import RuDexGateway from "../DepositWithdraw/rudex/RuDexGateway";
 import GatewayStore from "stores/GatewayStore";
 import AccountImage from "../Account/AccountImage";
-import BitsparkGateway from "../DepositWithdraw/bitspark/BitsparkGateway";
+//import BitsparkGateway from "../DepositWithdraw/bitspark/BitsparkGateway";
 import GdexGateway from "../DepositWithdraw/gdex/GdexGateway";
-import XbtsxGateway from "../DepositWithdraw/xbtsx/XbtsxGateway";
+//import XbtsxGateway from "../DepositWithdraw/xbtsx/XbtsxGateway";
 import PropTypes from "prop-types";
 import DepositModal from "../Modal/DepositModal";
 import WithdrawModal from "../Modal/WithdrawModalNew";
@@ -297,7 +297,7 @@ class AccountDepositWithdraw extends React.Component {
             )
         });
 
-        serList.push({
+        /*        serList.push({
             name: "BitSpark (SPARKDEX.X)",
             identifier: "SPARKDEX",
             template: (
@@ -327,15 +327,15 @@ class AccountDepositWithdraw extends React.Component {
 
                     {bitsparkService === "gateway" &&
                     bitsparkGatewayCoins.length ? (
-                        <BitsparkGateway
-                            account={account}
-                            coins={bitsparkGatewayCoins}
-                            provider="bitspark"
-                        />
-                    ) : null}
+                            <BitsparkGateway
+                                account={account}
+                                coins={bitsparkGatewayCoins}
+                                provider="bitspark"
+                            />
+                        ) : null}
                 </div>
             )
-        });
+        });*/
 
         return serList;
     }

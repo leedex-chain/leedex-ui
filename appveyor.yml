@@ -5,6 +5,7 @@ install:
     # Get the latest stable version of Node.js or io.js
     - ps: Install-Product node $env:nodejs_version
     # install modules
+    - npm install -g npm@6
     - npm ci
 build: off
 platform:
@@ -33,7 +34,7 @@ deploy:
     description:
         "Automated release from Travis CI with added files from AppVeyor build"
     auth_token:
-        secure: uS05GMpB0YT6PxlANXE0RK4+QMcgVIzza/sq8FooNp6Qt0cLcxrtbf8FwslpRg5I
+        secure: FclZCFdQUXRI1M8zSdKMTaKd45ZsQ8J4NhpYmMGOBG6kZ14init5b1WmyRajBuFD
     artifact:
         WindowsApp, html5_history_dist, hash_history_dist, release-checksums-windows
     draft: true
