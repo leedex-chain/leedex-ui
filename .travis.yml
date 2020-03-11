@@ -1,5 +1,5 @@
 language: node_js
-node_js: 10
+node_js: 9
 matrix:
     include:
         - os: linux
@@ -25,9 +25,9 @@ addons:
             - graphicsmagick
             - xz-utils
 install:
+    - npm install -g npm@6
     - npm ci
-script:
-    - "./build.sh"
+script: "./build.sh"
 after_success: "./deploy.sh"
 deploy:
     provider: releases
