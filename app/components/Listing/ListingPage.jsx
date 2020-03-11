@@ -78,7 +78,7 @@ class ListingPage extends React.Component {
                             >
                                 {/* DONATE PROGRESS*/}
                                 <Tab title="listing.donate_progress">
-                                    <label className="horizontal" tabIndex={1}>
+                                    <label className="horizontal" tabIndex={0}>
                                         <div
                                             className="grid-container"
                                             style={{padding: "2rem 8px"}}
@@ -104,7 +104,7 @@ class ListingPage extends React.Component {
                                 <Tab title="listing.add_coin">
                                     <label
                                         className="horizontal"
-                                        tabIndex={2}
+                                        tabIndex={1}
                                     />
 
                                     <div className="grid-container help-content-layout">

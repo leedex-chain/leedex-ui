@@ -206,7 +206,7 @@ class AccountOverview extends React.Component {
                 let balanceObject = ChainStore.getObject(a);
                 if (
                     balanceObject &&
-                    (!balanceObject.get("balance") && !orders[index])
+                    !balanceObject.get("balance") && !orders[index]
                 ) {
                     return false;
                 } else {
@@ -357,7 +357,10 @@ class AccountOverview extends React.Component {
         const hiddenSubText = "\u00a0";
 
         return (
-            <div className="grid-content app-tables no-padding" ref="appTables">
+            <div
+                className="grid-content app-tables portfolio-st no-padding"
+                ref="appTables"
+            >
                 <div className="content-block small-12">
                     <div className="tabs-container generic-bordered-box">
                         <Tabs
