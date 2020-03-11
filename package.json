@@ -90,8 +90,8 @@
   },
   "browsersList": "electron 1.7",
   "build": {
-    "productName": "BitShares",
-    "appId": "org.bitshares.graphene",
+    "productName": "RuDEX",
+    "appId": "org.rudex.market",
     "files": [
       "build/electron",
       "!node_modules"
