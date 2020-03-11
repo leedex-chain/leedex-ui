@@ -6,7 +6,7 @@ install:
     - ps: Install-Product node $env:nodejs_version
     # install modules
     - npm install -g npm@6
-    - npm ci
+    - npm i
 build: off
 platform:
     - x64

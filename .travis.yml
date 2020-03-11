@@ -26,7 +26,7 @@ addons:
             - xz-utils
 install:
     - npm install -g npm@6
-    - npm ci
+    - npm i
 script: "./build.sh"
 after_success: "./deploy.sh"
 deploy:
