@@ -43,6 +43,13 @@ class ListingPage extends React.Component {
     }
 
     render() {
+        let current_locale = SettingsStore.getState().settings.get("locale");
+
+        let agreement_ru =
+            "https://rudex.freshdesk.com/support/solutions/articles/35000138247-cоглашение-об-оказании-услуг-шлюза";
+        let agreement_en =
+            "https://rudex.freshdesk.com/support/solutions/articles/35000138245-gateway-service-agreement";
+
         let RuDEX = <span style={{fontWeight: "bold"}}>RuDEX</span>;
         let DONATE = (
             <Link
@@ -218,15 +225,45 @@ class ListingPage extends React.Component {
                                             <ol>
                                                 <li>
                                                     <Translate content="listing.texts.rules.rule_1" />
+                                                    <Translate
+                                                        href={
+                                                            current_locale ==
+                                                            "ru"
+                                                                ? agreement_ru
+                                                                : agreement_en
+                                                        }
+                                                        content="listing.texts.rules.rule_10"
+                                                        component="a"
+                                                        target="_blank"
+                                                    />
+                                                    <Translate content="listing.texts.rules.rule_11" />
                                                 </li>
                                                 <li>
                                                     <Translate content="listing.texts.rules.rule_2" />
                                                 </li>
                                                 <li>
                                                     <Translate content="listing.texts.rules.rule_3" />
+                                                    <Link
+                                                        style={{
+                                                            margin: 2,
+                                                            fontSize: "1.0rem",
+                                                            paddingRight: 5
+                                                        }}
+                                                        to={"/asset/DONATE"}
+                                                    >
+                                                        <AssetImage
+                                                            maxWidth={25}
+                                                            replaceNoneToBts={
+                                                                false
+                                                            }
+                                                            name={"DONATE"}
+                                                        />
+                                                        DONATE
+                                                    </Link>
+                                                    <Translate content="listing.texts.rules.rule_4" />
                                                 </li>
                                                 <li>
-                                                    <Translate content="listing.texts.rules.rule_4" />
+                                                    <Translate content="listing.texts.rules.rule_5" />
                                                 </li>
                                             </ol>
                                         </div>

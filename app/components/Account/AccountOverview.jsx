@@ -206,7 +206,8 @@ class AccountOverview extends React.Component {
                 let balanceObject = ChainStore.getObject(a);
                 if (
                     balanceObject &&
-                    !balanceObject.get("balance") && !orders[index]
+                    !balanceObject.get("balance") &&
+                    !orders[index]
                 ) {
                     return false;
                 } else {

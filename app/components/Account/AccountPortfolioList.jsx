@@ -388,8 +388,8 @@ class AccountPortfolioList extends React.Component {
                 [action === "bridge_modal"
                     ? "bridgeAsset"
                     : action === "deposit_modal"
-                        ? "depositAsset"
-                        : "withdrawAsset"]: asset,
+                    ? "depositAsset"
+                    : "withdrawAsset"]: asset,
                 fiatModal
             },
             () => {
@@ -1042,7 +1042,7 @@ class AccountPortfolioList extends React.Component {
             const canWithdraw =
                 backedCoin &&
                 backedCoin.withdrawalAllowed &&
-                (hasBalance && balanceObject.get("balance") != 0);
+                hasBalance && balanceObject.get("balance") != 0;
 
             const canBuy = !!this.props.bridgeCoins.get(symbol);
 
@@ -1589,24 +1589,21 @@ class AccountPortfolioList extends React.Component {
     }
 }
 
-AccountPortfolioList = connect(
-    AccountPortfolioList,
-    {
-        listenTo() {
-            return [SettingsStore, GatewayStore, MarketsStore];
-        },
-        getProps() {
-            return {
-                settings: SettingsStore.getState().settings,
-                viewSettings: SettingsStore.getState().viewSettings,
-                backedCoins: GatewayStore.getState().backedCoins,
-                bridgeCoins: GatewayStore.getState().bridgeCoins,
-                gatewayDown: GatewayStore.getState().down,
-                allMarketStats: MarketsStore.getState().allMarketStats
-            };
-        }
+AccountPortfolioList = connect(AccountPortfolioList, {
+    listenTo() {
+        return [SettingsStore, GatewayStore, MarketsStore];
+    },
+    getProps() {
+        return {
+            settings: SettingsStore.getState().settings,
+            viewSettings: SettingsStore.getState().viewSettings,
+            backedCoins: GatewayStore.getState().backedCoins,
+            bridgeCoins: GatewayStore.getState().bridgeCoins,
+            gatewayDown: GatewayStore.getState().down,
+            allMarketStats: MarketsStore.getState().allMarketStats
+        };
     }
-);
+});
 
 AccountPortfolioList = debounceRender(AccountPortfolioList, 50, {
     leading: false
