@@ -93,7 +93,7 @@ class CoinCardListing extends React.Component {
 
                             <div className="listingTable__cell listingTableVotes">
                                 <div className="listingAssetInfoBlock">
-                                    Votes:&nbsp;
+                                    Donates:&nbsp;
                                 </div>
                                 {this.props.coin.votes}
                                 <a
