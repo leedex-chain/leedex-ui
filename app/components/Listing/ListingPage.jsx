@@ -404,6 +404,7 @@ class ListingPage extends React.Component {
             coin.votes_for_percent =
                 coin.votes < coin.goal ? coin.votes : coin.goal;
             coin.status = coin.votes < coin.goal ? "collecting" : "done";
+            coin.soon == true ? (coin.status = "waiting") : coin.soon;
             return <CoinCardListing key={i} rank={i + 1} coin={coin} />;
         });
     };

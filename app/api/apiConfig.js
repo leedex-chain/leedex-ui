@@ -195,6 +195,27 @@ export const settingsAPIs = {
             contact: "telegram:lzmlam;wechat:lzmlam"
         },
         {
+            url: "wss://eu.nodes.bitshares.ws",
+            region: "Western Europe",
+            country: "Germany",
+            operator: "Infrastructure Worker",
+            contact: "email:info@blockchainprojectsbv.com"
+        },
+        {
+            url: "wss://us.nodes.bitshares.ws",
+            region: "Northern America",
+            country: "U.S.A.",
+            operator: "Infrastructure Worker",
+            contact: "email:info@blockchainprojectsbv.com"
+        },
+        {
+            url: "wss://hk.nodes.bitshares.ws",
+            region: "Eastern Asia",
+            country: "Hong Kong",
+            operator: "Infrastructure Worker",
+            contact: "email:info@blockchainprojectsbv.com"
+        },
+        {
             url: "wss://api.bts.mobi/ws",
             region: "Northern America",
             country: "U.S.A.",

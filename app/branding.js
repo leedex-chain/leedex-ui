@@ -361,6 +361,13 @@ export function getListingCoins() {
             account: "rudex-neo",
             goal: 10000,
             votes: 0
+        },
+        {
+            name: "PRIZM",
+            ticker: "PZM",
+            account: "rudex-prizm",
+            goal: 10000,
+            votes: 0
         }
     ];
 }

@@ -2790,6 +2790,13 @@
 .app-menu {
     flex: 0;
 }
+
+@media only screen and (max-width: 768px) {
+    .app-menu.hidez {
+        display: none;
+    }
+}
+
 .truncated {
     flex: 1;
     min-width: 0; /* or some value */

@@ -36,6 +36,8 @@ class CoinCardListing extends React.Component {
             this.props.account.get("name");
         } catch (e) {}
 
+        let {coin} = this.props;
+
         return (
             <div className="listingTable__row">
                 <SendModal
@@ -48,13 +50,9 @@ class CoinCardListing extends React.Component {
                             ? this.props.currentAccount
                             : this.props.account
                     }
-                    to_name={
-                        this.props.coin.account
-                            ? this.props.coin.account
-                            : from_name
-                    }
+                    to_name={coin.account ? coin.account : from_name}
                     asset_id={"1.3.5588"}
-                    ticker={this.props.coin.ticker}
+                    ticker={coin.ticker}
                 />
                 <div className="listingAsset">
                     <div className="listingAssetCard">
@@ -65,13 +63,13 @@ class CoinCardListing extends React.Component {
                             <img
                                 className="align-center"
                                 style={{maxWidth: 40}}
-                                src={`${__BASE_URL__}coins-logo/${this.props.coin.ticker.toLowerCase()}.png`}
+                                src={`${__BASE_URL__}coins-logo/${coin.ticker.toLowerCase()}.png`}
                                 alt=""
                             />
                         </div>
                         <div className="listingTable__cell listingTableAssetName align-left nowrap">
-                            {this.props.coin.name} ({this.props.coin.ticker})
-                            {this.props.coin.soon === true ? (
+                            {coin.name} ({coin.ticker})
+                            {coin.soon === true ? (
                                 <Translate
                                     content="listing.table.coming_soon"
                                     style={{float: "right", color: "gold"}}
@@ -86,51 +84,65 @@ class CoinCardListing extends React.Component {
                         <div className="listingAssetInfoData">
                             <div className="listingTable__cell listingTableGoal">
                                 <div className="listingAssetInfoBlock">
-                                    Goal:&nbsp;{" "}
+                                    <Translate content="listing.table.goal" />
+                                    :&nbsp;{" "}
                                 </div>
-                                {this.props.coin.goal}
+                                {coin.goal}
                             </div>
 
                             <div className="listingTable__cell listingTableVotes">
                                 <div className="listingAssetInfoBlock">
-                                    Donates:&nbsp;
+                                    <Translate content="listing.table.donates" />
+                                    :&nbsp;
                                 </div>
-                                {this.props.coin.votes}
-                                <a
-                                    onClick={this.triggerSend.bind(
-                                        this,
-                                        "1.3.5588",
-                                        this.props.coin
-                                    )}
-                                >
-                                    {
-                                        <Icon
-                                            name="transfer"
-                                            title="icons.transfer"
-                                            className="icon-14px"
-                                        />
-                                    }
-                                    &nbsp; Donate
-                                </a>
+                                {coin.votes}
+                                {coin.soon === true ? (
+                                    <a className="coin-soon">
+                                        {
+                                            <Icon
+                                                name="transfer"
+                                                title="icons.transfer"
+                                                className="icon-14px"
+                                            />
+                                        }
+                                        &nbsp; Donate
+                                    </a>
+                                ) : (
+                                    <a
+                                        onClick={this.triggerSend.bind(
+                                            this,
+                                            "1.3.5588",
+                                            coin
+                                        )}
+                                    >
+                                        {
+                                            <Icon
+                                                name="transfer"
+                                                title="icons.transfer"
+                                                className="icon-14px"
+                                            />
+                                        }
+                                        &nbsp; Donate
+                                    </a>
+                                )}
                             </div>
 
                             <div className="listingTable__cell listingTableStatus">
                                 <div className="listingAssetInfoBlock">
-                                    Status:&nbsp;{" "}
+                                    <Translate content="listing.table.status" />
+                                    :&nbsp;{" "}
                                 </div>
-                                {this.props.coin.status === "collecting" ? (
-                                    <Translate content="listing.table.collecting" />
-                                ) : (
-                                    <Translate content="listing.table.done" />
-                                )}
+                                <Translate
+                                    content={"listing.table." + coin.status}
+                                />
                             </div>
                         </div>
 
                         <div className="listingTable__cell listingTableProgress">
                             {
                                 <DonutChart
-                                    votes={this.props.coin.votes_for_percent}
-                                    goal={this.props.coin.goal}
+                                    votes={coin.votes_for_percent}
+                                    goal={coin.goal}
                                 />
                             }
                         </div>

@@ -708,7 +708,7 @@ class Header extends React.Component {
                     )}
                 </div>
 
-                <div className="app-menu">
+                <div className="app-menu hidez">
                     <div
                         onClick={this._toggleLanguageMenu}
                         style={{padding: "1.25rem", border: "none"}}
