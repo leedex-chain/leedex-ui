@@ -148,7 +148,8 @@ export function getMyMarketsQuotes() {
             "RUDEX.GOLOS",
             "RUDEX.STEEM",
             "RUDEX.WLS",
-            "RUDEX.SMOKE"
+            "RUDEX.SMOKE",
+            "RUDEX.PZM"
 
             //"RUDEX.GRC",
             //"RUDEX.GBG",
@@ -181,6 +182,7 @@ export function getFeaturedMarkets(quotes = []) {
         ["RUBLE", "RUDEX.ETH"],
         ["RUBLE", "RUDEX.EOS"],
         ["RUBLE", "RUDEX.USDT"],
+        ["RUBLE", "RUDEX.PZM"],
 
         ["RUDEX.USDT", "RUDEX.BTC"],
         ["RUDEX.USDT", "RUDEX.ETH"],
@@ -191,6 +193,7 @@ export function getFeaturedMarkets(quotes = []) {
         ["RUDEX.USDT", "RUDEX.SMOKE"],
         ["RUDEX.USDT", "RUDEX.WLS"],
         ["RUDEX.USDT", "RUBLE"],
+        ["RUDEX.USDT", "RUDEX.PZM"],
 
         ["RUDEX.BTC", "RUDEX.ETH"],
         ["RUDEX.BTC", "RUDEX.EOS"],
@@ -201,6 +204,7 @@ export function getFeaturedMarkets(quotes = []) {
         ["RUDEX.BTC", "PPY"],
         ["RUDEX.BTC", "DONATE"],
         ["RUDEX.BTC", "USDT"],
+        ["RUDEX.BTC", "RUDEX.PZM"],
 
         ["BTS", "RUDEX.GOLOS"],
         ["BTS", "RUDEX.STEEM"],
@@ -209,7 +213,8 @@ export function getFeaturedMarkets(quotes = []) {
         ["BTS", "RUDEX.ETH"],
         ["BTS", "RUDEX.USDT"],
         ["BTS", "RUDEX.WLS"],
-        ["BTS", "RUDEX.SMOKE"]
+        ["BTS", "RUDEX.SMOKE"],
+        ["BTS", "RUDEX.PZM"]
         //["BTS", "DONATE"]
     ].filter(a => {
         if (!quotes.length) return true;
@@ -362,6 +367,18 @@ export function getListingCoins() {
             goal: 10000,
             votes: 0
         },
+        {
+            name: "Idena",
+            ticker: "DNA",
+            account: "rudex-idena",
+            goal: 10000,
+            votes: 0
+        }
+    ];
+}
+
+export function getListedCoins() {
+    return [
         {
             name: "PRIZM",
             ticker: "PZM",

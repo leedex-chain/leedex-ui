@@ -1,6 +1,6 @@
 {
   "name": "RuDEX3-light",
-  "version": "3.3.200318",
+  "version": "3.3.200416",
   "description": "Reference UI to showcase all features of the BitShares blockchain.",
   "homepage": "https://github.com/bitshares/bitshares-ui",
   "author": "BitShares UI Worker <ui-dev@bitshares.org>",

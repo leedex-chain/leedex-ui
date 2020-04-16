@@ -5,7 +5,7 @@ import {Apis} from "bitsharesjs-ws";
 import {FetchChain} from "bitsharesjs";
 
 import CoinCardListing from "./CoinCardListing";
-import {getListingCoins} from "../../branding";
+import {getListingCoins, getListedCoins} from "../../branding";
 import {Tabs, Tab} from "../Utility/Tabs";
 import AssetImage from "../Utility/AssetImage";
 import Translate from "react-translate-component";
@@ -18,7 +18,8 @@ class ListingPage extends React.Component {
         super();
         this.state = {
             ListingNotice1Informed: false,
-            coins: []
+            coins: [],
+            updating: true
         };
     }
 
@@ -40,6 +41,15 @@ class ListingPage extends React.Component {
         this.setState({
             ListingNotice1Informed: !this.state.ListingNotice1Informed
         });
+    }
+
+    componentDidMount() {
+        setInterval(() => this._getBalances(), 1000);
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        if (nextState.updating == false) return true;
+        return false;
     }
 
     render() {
@@ -92,8 +102,8 @@ class ListingPage extends React.Component {
                                         >
                                             <div style={{marginBottom: 20}} />
                                             <div className="grid-block small-up-1 medium-up-1 large-up-1 no-overflow">
-                                                {this.state.coins.length ===
-                                                0 ? (
+                                                {this.state.updating ===
+                                                true ? (
                                                     <div
                                                         style={{margin: "10px"}}
                                                     >
@@ -108,16 +118,40 @@ class ListingPage extends React.Component {
                                     <br />
                                 </Tab>
 
+                                {/* LISTED*/}
+                                <Tab title="listing.listed">
+                                    <label className="horizontal" tabIndex={1}>
+                                        <div
+                                            className="grid-container"
+                                            style={{padding: "2rem 8px"}}
+                                        >
+                                            <div style={{marginBottom: 20}} />
+                                            <div className="grid-block small-up-1 medium-up-1 large-up-1 no-overflow">
+                                                {this.state.updating ===
+                                                true ? (
+                                                    <div
+                                                        style={{margin: "10px"}}
+                                                    >
+                                                        <Translate content="listing.loading" />{" "}
+                                                    </div>
+                                                ) : (
+                                                    this.getContent_listed()
+                                                )}
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <br />
+                                </Tab>
+
                                 <Tab title="listing.add_coin">
                                     <label
                                         className="horizontal"
-                                        tabIndex={1}
+                                        tabIndex={2}
                                     />
 
                                     <div className="grid-container help-content-layout">
                                         {/*<div className="grid-block">*/}
                                         <div className="main-content">
-                                            {/*<h2>Листинг токенов на {RuDEX} открыт для всех желающих!</h2>*/}
                                             <h2>
                                                 <Translate content="listing.texts.header" />
                                             </h2>
@@ -317,13 +351,15 @@ class ListingPage extends React.Component {
         );
     }
 
-    componentDidMount() {
-        this._getBalances();
-    }
-
     _getBalances() {
-        const coins = getListingCoins();
-        this.setState({coins: coins});
+        let coins = getListingCoins();
+
+        if (this.state.coins.length !== 0) coins = this.state.coins;
+
+        this.setState({
+            coins: coins,
+            updating: true
+        });
         coins.forEach(coin => {
             FetchChain("getAsset", "DONATE").then(assetInfo => {
                 Apis.instance()
@@ -338,7 +374,14 @@ class ListingPage extends React.Component {
                         x.votes =
                             res[0]["amount"] /
                             Math.pow(10, assetInfo.get("precision"));
-                        this.setState({coins});
+                        this.setState({
+                            coins: coins
+                        });
+                    })
+                    .then(() => {
+                        this.setState({
+                            updating: false
+                        });
                     });
             });
         });
@@ -395,6 +438,37 @@ class ListingPage extends React.Component {
             </div>
         );
     };
+
+    getContent_listed = () => {
+        return (
+            <div className="listingTable">
+                <div className="listingTable__header">
+                    <div className="listingAssetCard">
+                        <div className="listingTable__cell listingTableRank">
+                            <Translate content="listing.table.rank" />
+                        </div>
+                        <div className="listingTable__cell listingTableLogo" />
+                        <div className="listingTable__cell listingTableAssetName align-left">
+                            <Translate content="listing.table.asset_name" />
+                        </div>
+                    </div>
+                    <div className="listingAssetInfo">
+                        <div className="listingAssetInfoData">
+                            <div className="listingTable__cell listingTableVotes">
+                                <Translate content="listing.table.goal" />
+                            </div>
+
+                            <div className="listingTable__cell listingTableStatus">
+                                <Translate content="listing.table.status" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {this.getCoinsList_listed()}
+            </div>
+        );
+    };
+
     getCoinsList = () => {
         let {coins} = this.state;
         let sortedCoins = coins.sort((a, b) => {
@@ -405,6 +479,22 @@ class ListingPage extends React.Component {
                 coin.votes < coin.goal ? coin.votes : coin.goal;
             coin.status = coin.votes < coin.goal ? "collecting" : "done";
             coin.soon == true ? (coin.status = "waiting") : coin.soon;
+
+            return <CoinCardListing key={i} rank={i + 1} coin={coin} />;
+        });
+    };
+
+    getCoinsList_listed = () => {
+        let coins = getListedCoins();
+        let sortedCoins = coins.sort((a, b) => {
+            return b.votes - a.votes;
+        });
+        return sortedCoins.map((coin, i) => {
+            coin.votes_for_percent =
+                coin.votes < coin.goal ? coin.votes : coin.goal;
+            coin.status = "done";
+            coin.listed = true;
+
             return <CoinCardListing key={i} rank={i + 1} coin={coin} />;
         });
     };

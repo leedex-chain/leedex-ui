@@ -15,13 +15,6 @@ class CoinCardListing extends React.Component {
         super(props);
 
         this.props.coin.votes = 0;
-
-        this.state = {
-            key: this.props.key,
-            rank: this.props.rank,
-
-            coin: this.props.coin
-        };
     }
 
     triggerSend(asset) {
@@ -90,42 +83,46 @@ class CoinCardListing extends React.Component {
                                 {coin.goal}
                             </div>
 
-                            <div className="listingTable__cell listingTableVotes">
-                                <div className="listingAssetInfoBlock">
-                                    <Translate content="listing.table.donates" />
-                                    :&nbsp;
+                            {coin.listed ? (
+                                ""
+                            ) : (
+                                <div className="listingTable__cell listingTableVotes">
+                                    <div className="listingAssetInfoBlock">
+                                        <Translate content="listing.table.donates" />
+                                        :&nbsp;
+                                    </div>
+                                    {coin.votes}
+                                    {coin.soon === true ? (
+                                        <a className="coin-soon">
+                                            {
+                                                <Icon
+                                                    name="transfer"
+                                                    title="icons.transfer"
+                                                    className="icon-14px"
+                                                />
+                                            }
+                                            &nbsp; Donate
+                                        </a>
+                                    ) : (
+                                        <a
+                                            onClick={this.triggerSend.bind(
+                                                this,
+                                                "1.3.5588",
+                                                coin
+                                            )}
+                                        >
+                                            {
+                                                <Icon
+                                                    name="transfer"
+                                                    title="icons.transfer"
+                                                    className="icon-14px"
+                                                />
+                                            }
+                                            &nbsp; Donate
+                                        </a>
+                                    )}
                                 </div>
-                                {coin.votes}
-                                {coin.soon === true ? (
-                                    <a className="coin-soon">
-                                        {
-                                            <Icon
-                                                name="transfer"
-                                                title="icons.transfer"
-                                                className="icon-14px"
-                                            />
-                                        }
-                                        &nbsp; Donate
-                                    </a>
-                                ) : (
-                                    <a
-                                        onClick={this.triggerSend.bind(
-                                            this,
-                                            "1.3.5588",
-                                            coin
-                                        )}
-                                    >
-                                        {
-                                            <Icon
-                                                name="transfer"
-                                                title="icons.transfer"
-                                                className="icon-14px"
-                                            />
-                                        }
-                                        &nbsp; Donate
-                                    </a>
-                                )}
-                            </div>
+                            )}
 
                             <div className="listingTable__cell listingTableStatus">
                                 <div className="listingAssetInfoBlock">
@@ -138,14 +135,18 @@ class CoinCardListing extends React.Component {
                             </div>
                         </div>
 
-                        <div className="listingTable__cell listingTableProgress">
-                            {
-                                <DonutChart
-                                    votes={coin.votes_for_percent}
-                                    goal={coin.goal}
-                                />
-                            }
-                        </div>
+                        {coin.listed ? (
+                            ""
+                        ) : (
+                            <div className="listingTable__cell listingTableProgress">
+                                {
+                                    <DonutChart
+                                        votes={coin.votes_for_percent}
+                                        goal={coin.goal}
+                                    />
+                                }
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

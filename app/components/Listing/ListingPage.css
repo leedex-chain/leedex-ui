@@ -212,10 +212,10 @@ body .listing_button .ant-btn[disabled]:hover {
     border-radius: 3px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 468px) {
     .listingTable__cell.listingTableVotes a {
         position: absolute;
-        right: 100px;
+        right: 20px;
     }
 }
 

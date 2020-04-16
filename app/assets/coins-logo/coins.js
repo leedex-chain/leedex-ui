@@ -9,5 +9,6 @@ require("file-loader?name=coins-logo/[name].png!./neo.png");
 require("file-loader?name=coins-logo/[name].png!./ltc.png");
 require("file-loader?name=coins-logo/[name].png!./doge.png");
 require("file-loader?name=coins-logo/[name].png!./dash.png");
+require("file-loader?name=coins-logo/[name].png!./dna.png");
 
 require("file-loader?name=coins-logo/[name].png!./pzm.png");
