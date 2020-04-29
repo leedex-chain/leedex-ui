@@ -215,7 +215,6 @@ export function getFeaturedMarkets(quotes = []) {
         ["BTS", "RUDEX.WLS"],
         ["BTS", "RUDEX.SMOKE"],
         ["BTS", "RUDEX.PZM"]
-        //["BTS", "DONATE"]
     ].filter(a => {
         if (!quotes.length) return true;
         return quotes.indexOf(a[0]) !== -1;
@@ -257,7 +256,7 @@ export function getAssetHideNamespaces() {
  * @returns {boolean}
  */
 export function allowedGateway(gateway) {
-    const allowedGateways = ["RUDEX", "GDEX"];
+    const allowedGateways = ["RUDEX"];
     if (!gateway) {
         // answers the question: are any allowed?
         return allowedGateways.length > 0;

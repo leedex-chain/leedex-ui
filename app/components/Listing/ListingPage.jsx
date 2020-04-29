@@ -396,16 +396,17 @@ class ListingPage extends React.Component {
                         to={"/market/DONATE_RUDEX.BTC"}
                     >
                         <Translate content="listing.get_donate_tokens" />
+
+                        <span style={{margin: 2, fontSize: "1.0rem"}}>
+                            <AssetImage
+                                maxWidth={25}
+                                replaceNoneToBts={false}
+                                name={"DONATE"}
+                            />
+                            DONATE
+                        </span>
+                        <Translate content="listing.token" />
                     </Link>
-                    <span style={{margin: 2, fontSize: "1.0rem"}}>
-                        <AssetImage
-                            maxWidth={25}
-                            replaceNoneToBts={false}
-                            name={"DONATE"}
-                        />
-                        DONATE
-                    </span>
-                    <Translate content="listing.token" />
                 </p>
                 <div className="listingTable__header">
                     <div className="listingAssetCard">
