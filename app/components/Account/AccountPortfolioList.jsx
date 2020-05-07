@@ -388,8 +388,8 @@ class AccountPortfolioList extends React.Component {
                 [action === "bridge_modal"
                     ? "bridgeAsset"
                     : action === "deposit_modal"
-                    ? "depositAsset"
-                    : "withdrawAsset"]: asset,
+                        ? "depositAsset"
+                        : "withdrawAsset"]: asset,
                 fiatModal
             },
             () => {
@@ -531,7 +531,6 @@ class AccountPortfolioList extends React.Component {
         const showAssetPercent = settings.get("showAssetPercent", false);
 
         function getImageName(symbol) {
-            //if (symbol === "OPEN.BTC" || symbol === "GDEX.BTC") return symbol;
             if (symbol.startsWith("RUDEX.")) return symbol;
 
             if (
@@ -946,8 +945,8 @@ class AccountPortfolioList extends React.Component {
                 asset.getIn(["options", "description"])
             );
             symbol = asset.get("symbol");
-            if (symbol.indexOf("OPEN.") !== -1 && !market) market = "USD";
-            let preferredMarket = market ? market : preferredUnit;
+            //let preferredMarket = market ? market : preferredUnit;
+            let preferredMarket = market ? market : "BTS";
 
             if (notCore && preferredMarket === symbol)
                 preferredMarket = coreSymbol;
@@ -955,8 +954,7 @@ class AccountPortfolioList extends React.Component {
             /* Table content */
             directMarketLink = notCore ? (
                 <Link
-                    //to={`/market/${asset.get("symbol")}_${preferredMarket}`}
-                    to={`/market/${asset.get("symbol")}_BTS`}
+                    to={`/market/${asset.get("symbol")}_${preferredMarket}`}
                     onClick={() => MarketsActions.switchMarket()}
                 >
                     <Icon
@@ -1042,7 +1040,8 @@ class AccountPortfolioList extends React.Component {
             const canWithdraw =
                 backedCoin &&
                 backedCoin.withdrawalAllowed &&
-                hasBalance && balanceObject.get("balance") != 0;
+                hasBalance &&
+                balanceObject.get("balance") != 0;
 
             const canBuy = !!this.props.bridgeCoins.get(symbol);
 
@@ -1291,11 +1290,6 @@ class AccountPortfolioList extends React.Component {
                         let {market} = assetUtils.parseDescription(
                             asset.getIn(["options", "description"])
                         );
-                        if (
-                            asset.get("symbol").indexOf("OPEN.") !== -1 &&
-                            !market
-                        )
-                            market = "USD";
                         let preferredMarket = market ? market : coreSymbol;
 
                         let directMarketLink = notCore ? (
@@ -1589,21 +1583,24 @@ class AccountPortfolioList extends React.Component {
     }
 }
 
-AccountPortfolioList = connect(AccountPortfolioList, {
-    listenTo() {
-        return [SettingsStore, GatewayStore, MarketsStore];
-    },
-    getProps() {
-        return {
-            settings: SettingsStore.getState().settings,
-            viewSettings: SettingsStore.getState().viewSettings,
-            backedCoins: GatewayStore.getState().backedCoins,
-            bridgeCoins: GatewayStore.getState().bridgeCoins,
-            gatewayDown: GatewayStore.getState().down,
-            allMarketStats: MarketsStore.getState().allMarketStats
-        };
+AccountPortfolioList = connect(
+    AccountPortfolioList,
+    {
+        listenTo() {
+            return [SettingsStore, GatewayStore, MarketsStore];
+        },
+        getProps() {
+            return {
+                settings: SettingsStore.getState().settings,
+                viewSettings: SettingsStore.getState().viewSettings,
+                backedCoins: GatewayStore.getState().backedCoins,
+                bridgeCoins: GatewayStore.getState().bridgeCoins,
+                gatewayDown: GatewayStore.getState().down,
+                allMarketStats: MarketsStore.getState().allMarketStats
+            };
+        }
     }
-});
+);
 
 AccountPortfolioList = debounceRender(AccountPortfolioList, 50, {
     leading: false

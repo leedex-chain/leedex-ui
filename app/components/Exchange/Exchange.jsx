@@ -300,10 +300,10 @@ class Exchange extends React.Component {
         let ws = props.viewSettings;
         let {ask, bid} = this._initialOrderState(props);
 
-        let chart_height = ws.get("chartHeight", 620);
-        if (chart_height == 620 && window.innerWidth < 640) {
+        let chart_height = ws.get("chartHeight", 500);
+        if (chart_height == 500 && window.innerWidth < 640) {
             // assume user is on default setting, use smaller for mobile
-            chart_height = 425;
+            chart_height = 400;
         }
 
         return {
@@ -1690,8 +1690,8 @@ class Exchange extends React.Component {
         let newHeight = value
             ? value
             : this.state.chartHeight + (increase ? 20 : -20);
-        if (newHeight < 425) {
-            newHeight = 425;
+        if (newHeight < 400) {
+            newHeight = 400;
         }
         if (newHeight > 1000) {
             newHeight = 1000;

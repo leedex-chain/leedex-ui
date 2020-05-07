@@ -1229,6 +1229,9 @@ export const scamAccountsOther = [
     "1.2.1589838",
     "committee-security-update",
     "1.2.1592605",
-    "committee-accounr",
-    "1.2.500266"
+
+    "deepcrypto8",
+    "1.2.1211130",
+    "livecoin.net",
+    "1.2.322811"
 ];
