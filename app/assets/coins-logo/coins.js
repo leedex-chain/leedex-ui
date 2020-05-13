@@ -1,5 +1,4 @@
 require("file-loader?name=coins-logo/[name].png!./NoLogo.png");
-require("file-loader?name=coins-logo/[name].png!./gram.png");
 require("file-loader?name=coins-logo/[name].png!./xmr.png");
 require("file-loader?name=coins-logo/[name].png!./waves.png");
 require("file-loader?name=coins-logo/[name].png!./tlos.png");

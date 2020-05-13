@@ -296,14 +296,6 @@ export function getConfigurationAsset() {
 export function getListingCoins() {
     return [
         {
-            name: "Telegram Open Network",
-            ticker: "GRAM",
-            account: "rudex-gram",
-            soon: true,
-            goal: 5000,
-            votes: 0
-        },
-        {
             name: "Monero",
             ticker: "XMR",
             account: "rudex-monero",
