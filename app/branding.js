@@ -295,6 +295,7 @@ export function getConfigurationAsset() {
  */
 export function getListingCoins() {
     return [
+        //soon: true, (for TON example)
         {
             name: "Monero",
             ticker: "XMR",
