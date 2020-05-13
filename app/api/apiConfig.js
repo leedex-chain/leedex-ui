@@ -120,8 +120,12 @@ export const settingsAPIs = {
             location: {translate: "settings.api_closest"}
         },
         {
-            url: "ws://127.0.0.1:8090",
-            location: "Locally hosted"
+            url: "wss://node.market.rudex.org",
+            region: "Western Europe",
+            country: "Germany",
+            location: "Falkenstein",
+            operator: "Witness: blckchnd",
+            contact: "telegram:blckchnd"
         },
         {
             url: "wss://dex.iobanker.com:9090",
@@ -138,53 +142,6 @@ export const settingsAPIs = {
             country: "Germany",
             operator: "Witness: openledger-dc",
             contact: "telegram:v1pby"
-        },
-        {
-            url: "wss://openledger.hk/ws",
-            region: "Southeastern Asia",
-            country: "Singapore",
-            operator: "Witness: openledger-dc",
-            contact: "telegram:v1pby"
-        },
-        {
-            url: "wss://bit.btsabc.org/ws",
-            region: "Eastern Asia",
-            country: "China",
-            location: "Hong Kong",
-            operator: "Witness: abc123",
-            contact: "QQ:58291;email:58291@qq.com"
-        },
-        {
-            url: "wss://ws.gdex.top",
-            region: "Eastern Asia",
-            country: "China",
-            location: "Shanghai",
-            operator: "Witness: gdex-witness",
-            contact: "telegram:BrianZhang"
-        },
-        {
-            url: "wss://api.weaccount.cn",
-            region: "Eastern Asia",
-            country: "China",
-            location: "Hangzhou",
-            operator: "Witness: btspp-witness",
-            contact: "telegram:btsplusplus"
-        },
-        {
-            url: "wss://dexnode.net/ws",
-            region: "Northern America",
-            country: "U.S.A.",
-            location: "Dallas",
-            operator: "Witness: Sahkan",
-            contact: "telegram:Sahkan_bitshares"
-        },
-        {
-            url: "wss://kc-us-dex.xeldal.com/ws", // check
-            region: "Northern America",
-            country: "U.S.A.",
-            location: "Kansas City",
-            operator: "Witness: xeldal",
-            contact: "telegram:xeldal"
         },
         {
             url: "wss://blockzms.xyz/ws",
@@ -205,13 +162,6 @@ export const settingsAPIs = {
             url: "wss://us.nodes.bitshares.ws",
             region: "Northern America",
             country: "U.S.A.",
-            operator: "Infrastructure Worker",
-            contact: "email:info@blockchainprojectsbv.com"
-        },
-        {
-            url: "wss://hk.nodes.bitshares.ws",
-            region: "Eastern Asia",
-            country: "Hong Kong",
             operator: "Infrastructure Worker",
             contact: "email:info@blockchainprojectsbv.com"
         },
@@ -278,44 +228,12 @@ export const settingsAPIs = {
             contact: "telegram:plus_wave"
         },
         {
-            url: "wss://freedom.bts123.cc:15138/",
-            region: "Eastern Asia",
-            country: "China",
-            location: "Changsha",
-            operator: "Witness: delegate.freedom",
-            contact: "telegram:eggplant"
-        },
-        {
-            url: "wss://bitshares.bts123.cc:15138/",
-            region: "Eastern Asia",
-            country: "China",
-            location: "Hangzhou",
-            operator: "Witness: delegate.freedom",
-            contact: "telegram:eggplant"
-        },
-        {
             url: "wss://api.bts.ai",
             region: "Eastern Asia",
             country: "China",
             location: "Beijing",
             operator: "Witness: witness.hiblockchain",
             contact: "telegram:vianull;wechat:strugglingl"
-        },
-        {
-            url: "wss://bts-seoul.clockwork.gr",
-            region: "Southeastern Asia",
-            country: "Korea",
-            location: "Seoul",
-            operator: "Witness: clockwork",
-            contact: "telegram:clockworkgr"
-        },
-        {
-            url: "wss://api.61bts.com",
-            region: "Eastern Asia",
-            country: "China",
-            location: "Shandong",
-            operator: "Witness: liuye",
-            contact: "email:work@domyself.me"
         },
         {
             url: "wss://btsfullnode.bangzi.info/ws",
@@ -366,14 +284,6 @@ export const settingsAPIs = {
             location: "Paris",
             operator: "Witness: zapata42-witness",
             contact: "telegram:Zapata_42"
-        },
-        {
-            url: "wss://api.gbacenter.org/ws",
-            region: "Northern America",
-            country: "U.S.A.",
-            location: "Fremont, CA",
-            operator: "Witness: gbac-ety001",
-            contact: "email:work@domyself.me"
         }
     ],
     ES_WRAPPER_LIST: [
