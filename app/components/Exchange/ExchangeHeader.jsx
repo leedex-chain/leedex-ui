@@ -13,6 +13,8 @@ import ExchangeHeaderCollateral from "./ExchangeHeaderCollateral";
 import {Icon as AntIcon} from "bitshares-ui-style-guide";
 import {Asset, Price} from "common/MarketClasses";
 
+import {getGroupedMPAsRuDEX} from "../../branding";
+
 export default class ExchangeHeader extends React.Component {
     constructor(props) {
         super();
@@ -151,14 +153,20 @@ export default class ExchangeHeader extends React.Component {
         const quoteId = quoteAsset.get("id");
         const baseId = baseAsset.get("id");
 
-        const lookForBitAsset =
+        let lookForBitAsset =
             quoteId === "1.3.0" ? baseId : baseId === "1.3.0" ? quoteId : null;
+
+        if (getGroupedMPAsRuDEX().rudex.indexOf(quoteAsset.get("id"))) {
+            lookForBitAsset = quoteAsset.get("id");
+        }
+
         const possibleBitAsset = lookForBitAsset
             ? ChainStore.getAsset(lookForBitAsset)
             : null;
         const isBitAsset = possibleBitAsset
             ? !!possibleBitAsset.get("bitasset")
             : false;
+
         let collOrderObject = "";
         let settlePrice = null;
         let settlePriceTitle = "exchange.settle";
