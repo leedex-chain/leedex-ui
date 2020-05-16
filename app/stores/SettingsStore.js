@@ -10,6 +10,7 @@ import {
     getDefaultLogin,
     getMyMarketsBases,
     getMyMarketsQuotes,
+    getFeaturedMarkets,
     getUnits
 } from "branding";
 
@@ -540,7 +541,6 @@ class SettingsStore {
 
     _getDefaultMarkets() {
         let markets = [];
-
         this.preferredBases.forEach(base => {
             addMarkets(markets, base, this.chainMarkets);
         });
@@ -551,10 +551,15 @@ class SettingsStore {
                     return a !== base;
                 })
                 .forEach(market => {
-                    target.push([
-                        `${market}_${base}`,
-                        {quote: market, base: base}
-                    ]);
+                    let FeaturedMarketsBase = getFeaturedMarkets([base]);
+                    let filterMarkets = FeaturedMarketsBase.filter(a => {
+                        return market.indexOf(a[1]) !== -1;
+                    });
+                    if (filterMarkets.length > 0)
+                        target.push([
+                            `${market}_${base}`,
+                            {quote: market, base: base}
+                        ]);
                 });
         }
 

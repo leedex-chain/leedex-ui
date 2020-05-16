@@ -203,56 +203,61 @@ export function getFeaturedMarkets(quotes = []) {
         return [["USD", "TEST"]];
     }
     return [
-        ["BTS", "PPY"],
+        //BTS
+        ["BTS", "EUR"],
+        ["BTS", "RUBLE"],
+        ["BTS", "RUDEX.XBS"], //MPA
 
+        ["BTS", "PPY"],
+        ["BTS", "RUDEX.BTC"],
+        ["BTS", "RUDEX.USDT"],
+        ["BTS", "RUDEX.ETH"],
+        ["BTS", "RUDEX.EOS"],
+        ["BTS", "RUDEX.GOLOS"],
+        ["BTS", "RUDEX.STEEM"],
+        ["BTS", "RUDEX.WLS"],
+        ["BTS", "RUDEX.SMOKE"],
+
+        ["RUBLE", "PPY"],
         ["RUBLE", "RUDEX.BTC"],
+        ["RUBLE", "RUDEX.USDT"],
         ["RUBLE", "RUDEX.ETH"],
         ["RUBLE", "RUDEX.EOS"],
-        ["RUBLE", "RUDEX.USDT"],
-        ["RUBLE", "RUDEX.PZM"],
-        ["RUBLE", "RUDEX.RUB"],
+        ["RUBLE", "RUDEX.GOLOS"],
+        ["RUBLE", "RUDEX.STEEM"],
+        ["RUBLE", "RUDEX.WLS"],
+        ["RUBLE", "RUDEX.SMOKE"],
+        ["RUBLE", "RUDEX.RUB"], //MPA
 
+        //USDT
+        ["RUDEX.USDT", "PPY"],
         ["RUDEX.USDT", "RUDEX.BTC"],
         ["RUDEX.USDT", "RUDEX.ETH"],
         ["RUDEX.USDT", "RUDEX.EOS"],
-        ["RUDEX.USDT", "PPY"],
-        //["RUDEX.USDT", "DONATE"],
         ["RUDEX.USDT", "RUDEX.GOLOS"],
-        ["RUDEX.USDT", "RUDEX.SMOKE"],
+        ["RUDEX.USDT", "RUDEX.STEEM"],
         ["RUDEX.USDT", "RUDEX.WLS"],
-        ["RUDEX.USDT", "RUBLE"],
+        ["RUDEX.USDT", "RUDEX.SMOKE"],
         ["RUDEX.USDT", "RUDEX.PZM"],
+        ["RUDEX.USDT", "RUBLE"],
+        ["RUDEX.USDT", "RUDEX.XBS"], //MPA
+        ["RUDEX.USDT", "RUDEX.XBT"], //MPA
+        ["RUDEX.USDT", "RUDEX.OIL"], //MPA
+        ["RUDEX.USDT", "RUDEX.XAU"], //MPA
+        ["RUDEX.USDT", "RUDEX.RUB"], //MPA
 
-        ["RUDEX.USDT", "RUDEX.XBS"],
-        ["RUDEX.USDT", "RUDEX.XBT"],
-        ["RUDEX.USDT", "RUDEX.OIL"],
-        ["RUDEX.USDT", "RUDEX.XAU"],
-        ["RUDEX.USDT", "RUDEX.RUB"],
-
+        //Bitcoin
+        ["RUDEX.BTC", "PPY"],
+        ["RUDEX.BTC", "RUDEX.USDT"],
         ["RUDEX.BTC", "RUDEX.ETH"],
         ["RUDEX.BTC", "RUDEX.EOS"],
-        ["RUDEX.BTC", "RUDEX.STEEM"],
         ["RUDEX.BTC", "RUDEX.GOLOS"],
+        ["RUDEX.BTC", "RUDEX.STEEM"],
         ["RUDEX.BTC", "RUDEX.WLS"],
         ["RUDEX.BTC", "RUDEX.SMOKE"],
-        ["RUDEX.BTC", "PPY"],
         ["RUDEX.BTC", "DONATE"],
-        ["RUDEX.BTC", "USDT"],
-        ["RUDEX.BTC", "RUDEX.PZM"],
-
-        ["RUDEX.BTC", "RUDEX.XBT"],
-
-        ["BTS", "RUDEX.GOLOS"],
-        ["BTS", "RUDEX.STEEM"],
-        ["BTS", "RUDEX.EOS"],
-        ["BTS", "RUDEX.BTC"],
-        ["BTS", "RUDEX.ETH"],
-        ["BTS", "RUDEX.USDT"],
-        ["BTS", "RUDEX.WLS"],
-        ["BTS", "RUDEX.SMOKE"],
-        ["BTS", "RUDEX.PZM"],
-
-        ["BTS", "RUDEX.XBS"]
+        ["RUDEX.BTC", "RUBLE"],
+        ["RUDEX.BTC", "RUDEX.XBT"] //MPA
     ].filter(a => {
         if (!quotes.length) return true;
         return quotes.indexOf(a[0]) !== -1;
