@@ -336,7 +336,7 @@ class MarketsTable extends React.Component {
         let {base, quote, marketStats, isHidden, inverted, basePrecision} = row;
 
         function getImageName(symbol) {
-            if (symbol === "OPEN.BTC" || symbol === "GDEX.BTC") return symbol;
+            //if (symbol === "OPEN.BTC" || symbol === "GDEX.BTC") return symbol;
             if (symbol.startsWith("RUDEX.")) return symbol;
 
             let imgName = symbol.split(".");

@@ -53,7 +53,14 @@ class AccountOverview extends React.Component {
                 "RUDEX.GRC",
                 "RUDEX.GBG",
                 "RUDEX.SBD",
-                "RUDEX.KRM"
+                "RUDEX.KRM",
+
+                //RuDEX MPA-s
+                "RUDEX.XBS",
+                "RUDEX.XBT",
+                "RUDEX.RUB",
+                "RUDEX.OIL",
+                "RUDEX.XAU"
             ],
             hideFishingProposals: true,
             question1: false,
