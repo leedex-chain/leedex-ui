@@ -219,6 +219,7 @@ export function getFeaturedMarkets(quotes = []) {
         ["BTS", "RUDEX.SMOKE"],
 
         ["RUBLE", "PPY"],
+        ["RUBLE", "BTS"],
         ["RUBLE", "RUDEX.BTC"],
         ["RUBLE", "RUDEX.USDT"],
         ["RUBLE", "RUDEX.ETH"],
@@ -406,6 +407,20 @@ export function getListingCoins() {
             name: "Idena",
             ticker: "DNA",
             account: "rudex-idena",
+            goal: 10000,
+            votes: 0
+        },
+        {
+            name: "Zcash",
+            ticker: "ZEC",
+            account: "rudex-zec",
+            goal: 10000,
+            votes: 0
+        },
+        {
+            name: "Hive",
+            ticker: "HIVE",
+            account: "rudex-hive",
             goal: 10000,
             votes: 0
         }

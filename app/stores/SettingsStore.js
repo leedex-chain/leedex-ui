@@ -552,9 +552,12 @@ class SettingsStore {
                 })
                 .forEach(market => {
                     let FeaturedMarketsBase = getFeaturedMarkets([base]);
-                    let filterMarkets = FeaturedMarketsBase.filter(a => {
-                        return market.indexOf(a[1]) !== -1;
-                    });
+                    let filterMarkets = markets;
+                    if (getMyMarketsBases().indexOf(base) !== -1)
+                        filterMarkets = FeaturedMarketsBase.filter(a => {
+                            return market.indexOf(a[1]) !== -1;
+                        });
+
                     if (filterMarkets.length > 0)
                         target.push([
                             `${market}_${base}`,

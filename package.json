@@ -1,9 +1,9 @@
 {
   "name": "RuDEX3-light",
-  "version": "3.3.200429",
-  "description": "Reference UI to showcase all features of the BitShares blockchain.",
-  "homepage": "https://github.com/bitshares/bitshares-ui",
-  "author": "BitShares UI Worker <ui-dev@bitshares.org>",
+  "version": "3.3.200527",
+  "description": "Advanced wallet interface for the BitShares financial blockchain.",
+  "homepage": "https://github.com/blckchnd/rudex-ui",
+  "author": "RuDEX Team <support@rudex.org>",
   "contributors": [
     "Sigve Kvalsvik <kvalsvik.crypto@gmail.com>",
     "James Calfee",

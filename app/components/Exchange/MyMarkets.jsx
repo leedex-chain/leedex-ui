@@ -750,6 +750,8 @@ class MyMarkets extends React.Component {
                                 m.quote
                             }_${possibleGatewayAssetName}`;
                             if (activeMarkets.has(newID)) return null;
+                            if (possibleGatewayAssetName == "RUDEX.RUBLE")
+                                return null;
                             return {
                                 base: possibleGatewayAssetName,
                                 quote: m.quote
