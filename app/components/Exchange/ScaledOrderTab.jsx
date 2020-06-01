@@ -238,6 +238,7 @@ class ScaledOrderForm extends Component {
 
         const quantity = Number(this._getTotal());
         const action = formValues.action;
+        const amount = Number(formValues.amount);
 
         if (isNaN(quantity)) return null;
 
@@ -256,6 +257,12 @@ class ScaledOrderForm extends Component {
         });
 
         const marketFeePercent = this._getMarketFeePercentage();
+
+        if (action === SCALED_ORDER_ACTION_TYPES.BUY)
+            return Math.min(
+                maxMarketFee.getAmount({real: true}),
+                (amount / 100) * marketFeePercent
+            ).toFixed(maxMarketFee.precision);
 
         return !quantity
             ? 0
