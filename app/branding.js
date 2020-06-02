@@ -218,8 +218,8 @@ export function getFeaturedMarkets(quotes = []) {
         ["BTS", "RUDEX.WLS"],
         ["BTS", "RUDEX.SMOKE"],
 
-        ["RUBLE", "PPY"],
         ["RUBLE", "BTS"],
+        ["RUBLE", "PPY"],
         ["RUBLE", "RUDEX.BTC"],
         ["RUBLE", "RUDEX.USDT"],
         ["RUBLE", "RUDEX.ETH"],
@@ -231,6 +231,7 @@ export function getFeaturedMarkets(quotes = []) {
         ["RUBLE", "RUDEX.RUB"], //MPA
 
         //USDT
+        ["RUDEX.USDT", "BTS"],
         ["RUDEX.USDT", "PPY"],
         ["RUDEX.USDT", "RUDEX.BTC"],
         ["RUDEX.USDT", "RUDEX.ETH"],
@@ -248,6 +249,7 @@ export function getFeaturedMarkets(quotes = []) {
         ["RUDEX.USDT", "RUDEX.RUB"], //MPA
 
         //Bitcoin
+        ["RUDEX.BTC", "BTS"],
         ["RUDEX.BTC", "PPY"],
         ["RUDEX.BTC", "RUDEX.USDT"],
         ["RUDEX.BTC", "RUDEX.ETH"],

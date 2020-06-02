@@ -64,7 +64,10 @@ class MarketsTable extends React.Component {
                         basePrecision: base.get("precision"),
                         isHidden: props.hiddenMarkets.includes(marketName),
                         isFavorite: props.isFavorite,
-                        marketStats: props.allMarketStats.get(marketName, {}),
+                        marketStats: props.allMarketStats.get(
+                            `${market.quote}_${market.base}`,
+                            {}
+                        ),
                         isStarred: this.props.starredMarkets.has(marketName)
                     };
                 })
@@ -393,7 +396,7 @@ class MarketsTable extends React.Component {
                 <div className="column-hide-small" style={{textAlign: "right"}}>
                     {marketStats && marketStats.price
                         ? utils.price_text(
-                              marketStats.price.toReal(true),
+                              marketStats.price.toReal(false),
                               ChainStore.getAsset(quote),
                               ChainStore.getAsset(base)
                           )
@@ -407,9 +410,9 @@ class MarketsTable extends React.Component {
                     ? 0
                     : marketStats.change,
             volume:
-                !marketStats || !marketStats.volumeQuote
+                !marketStats || !marketStats.volumeBase
                     ? 0
-                    : marketStats.volumeQuote,
+                    : marketStats.volumeBase,
             flip:
                 inverted === null || !this.props.isFavorite ? null : (
                     <span className="column-hide-small">
@@ -458,10 +461,10 @@ class MarketsTable extends React.Component {
             .filter(m => {
                 if (!!filter || m.isStarred) return true;
                 if (
-                    this.props.onlyLiquid ||
-                    (m.marketStats && "volumeBase" in m.marketStats)
+                    this.props.onlyLiquid // ||
+                    //(m.marketStats && "volumeBase" in m.marketStats)
                 ) {
-                    return !!m.marketStats.volumeBase || false;
+                    return !!m.marketStats.volumeQuote || false;
                 } else {
                     return true;
                 }
