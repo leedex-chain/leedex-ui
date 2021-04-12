@@ -10,7 +10,7 @@ Basic settings:
 * balance field: balance available to the bot for using in base & quote;
 * amount field: the amount of the asset, that is placed in the orders (absolute numbers if the value is chosen, or percentage of the balance if the balance % is chosen);
 * spread field: spread from the center price for every asset pair;
-* default price: the default price, if this isn’t a bitAsset;
+* default price: the default price, if this isn’t a gpAsset;
 * get a price from the market: sets if to take the price from the market or not;
 After starting the bot subscribes for a new block in the blockchain. Every time the new block is received it checks two orders: to buy and sell.
 
@@ -26,7 +26,7 @@ To that end, it cancels the current order, increments the balance by the amount 
 
 * If the balance field is set to “-”, then the asset balance is considered to be 0, and is not changed.
 
-Price calculation. If the get price from market is set, then the price is taken from the market. If the assets are a pair of a smart asset, and core asset (BTS), then the prices are recalculated against base asset using the price, that was taken from the blockchain. For the smartcoin pairs that don’t use the core asset (BTS), the recalculation happens in two steps: the first one calculates price against BTS, and then to the base asset.
+Price calculation. If the get price from market is set, then the price is taken from the market. If the assets are a pair of a smart asset, and core asset (GPH), then the prices are recalculated against base asset using the price, that was taken from the blockchain. For the smartcoin pairs that don’t use the core asset (GPH), the recalculation happens in two steps: the first one calculates price against GPH, and then to the base asset.
 For the pairs that only have MPA (or only UIA), there is a check if default price is set. If it is empty, then the bot asks binance.com for a feed. For 2nd tier assets (RUDEX.BTC, OPEN.BTC, etc) the prefixes are dropped. USD matches to USDT. For example the query for OPEN.BTC/OPEN.USD is sent as a BTC/USDT pair.
 
 If the pair doesn’t exist on Binance, then the price is set to 0, and no trading happens.

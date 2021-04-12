@@ -1,7 +1,7 @@
 ## Funding update September 1st
 The BitShares UI worker is not funded, and all bounty rewards must be considered paused.
 
-Please [check here](https://github.com/bitshares/bitshares-ui/issues/3044) for more details and updates.
+Please [check here](https://github.com/graphene-blockchain/graphene-ui/issues/3044) for more details and updates.
 
  ------
 
@@ -13,15 +13,15 @@ If you would like to get involved, we have a [Telegram chatroom](https://t.me/Bi
 
 ## Development process
 
-- We encourage everyoe to participate in issue discussion, especially those that has [not yet been qualified as work](https://github.com/bitshares/bitshares-ui/issues?q=is%3Aopen+is%3Aissue) and [the `Need Discussion` issues](https://github.com/bitshares/bitshares-ui/issues?q=is%3Aissue+is%3Aopen+label%3A%22%5B2%5D+Needs+Discussion%22).
+- We encourage everyoe to participate in issue discussion, especially those that has [not yet been qualified as work](https://github.com/graphene-blockchain/graphene-ui/issues?q=is%3Aopen+is%3Aissue) and [the `Need Discussion` issues](https://github.com/graphene-blockchain/graphene-ui/issues?q=is%3Aissue+is%3Aopen+label%3A%22%5B2%5D+Needs+Discussion%22).
 - New issues will be groomed by a project coordinator to set the issue goal and estimated **Quality Hours** of development time.
-- After a clarified goal issues will be assigned to the [Active Developent milestone](https://github.com/bitshares/bitshares-ui/milestone/52).
-- All non-assigned issues can be found on the the [Active Developent milestone](https://github.com/bitshares/bitshares-ui/milestone/52). or [by filtering the issues list](https://github.com/bitshares/bitshares-ui/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22Active+Development%22+no%3Aassignee).
+- After a clarified goal issues will be assigned to the [Active Developent milestone](https://github.com/graphene-blockchain/graphene-ui/milestone/52).
+- All non-assigned issues can be found on the the [Active Developent milestone](https://github.com/graphene-blockchain/graphene-ui/milestone/52). or [by filtering the issues list](https://github.com/graphene-blockchain/graphene-ui/issues?q=is%3Aopen+is%3Aissue+milestone%3A%22Active+Development%22+no%3Aassignee).
 - Assigned issues will be assigned to a milestone, which will indicate the deadline for the issues.
 - Milestones are numbered YYMMDD and indicates the expected delivery.
 - Bugs are always worked before enhancements
 - Developers should work each issue according to a numbered branch corresponding to the issue `git checkout -b 123`
-- We pay **bounties** for issues that have been estimated. An estimated issue is prefixed with a number in brackets like this: `[2] An nasty bug`. In this example, the bug is valued at two **Quality Hours** ($125 per hour). If you fix this issue according to these guidelines and your PR is accepted, this will earn you $250 worth of bitCNY. You must have a Bitshares wallet and a Bitshares account to receive payment.
+- We pay **bounties** for issues that have been estimated. An estimated issue is prefixed with a number in brackets like this: `[2] An nasty bug`. In this example, the bug is valued at two **Quality Hours** ($125 per hour). If you fix this issue according to these guidelines and your PR is accepted, this will earn you $250 worth of gpCNY. You must have a Bitshares wallet and a Bitshares account to receive payment.
 - Non-code contributions such as translations, documentation work and others may be compensated at a lower hourly rate. This will be clearly stated in the relevant issue.
 
 **IMPORTANT NOTES FOR NEW DEVELOPERS**
@@ -36,7 +36,7 @@ If you would like to get involved, we have a [Telegram chatroom](https://t.me/Bi
 ## Coding style guideline
 
 ### Guidelines on UI Related Tasks
-Please review our Wiki on [Guidelines for Issues with UI related work](https://github.com/bitshares/bitshares-ui/wiki/Guidelines-for-Issues-with-UI-related-work)
+Please review our Wiki on [Guidelines for Issues with UI related work](https://github.com/graphene-blockchain/graphene-ui/wiki/Guidelines-for-Issues-with-UI-related-work)
 
 ### General Guidelines
 Our style guideline is based on 'Airbnb JavaScript Style Guide' (https://github.com/airbnb/javascript), with few exceptions:

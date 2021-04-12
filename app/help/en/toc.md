@@ -1,6 +1,6 @@
 #### Help
 
- * [BitShares](introduction/bitshares.md)
+ * [Graphene](introduction/bitshares.md)
  * [Wallet](introduction/wallets.md)
  * [Backups](introduction/backups.md)
  * [Blockchain](introduction/blockchain.md)
@@ -10,22 +10,17 @@
  * [Permissions](accounts/permissions.md)
  * [Memberships](accounts/membership.md)
  * [Market Pegged Assets](assets/mpa.md)
-    * bitUSD
-    * bitEUR
+    * gpUSD
+    * gpEUR
     * bitGOLD
  * [User Issued Assets](assets/uia.md)
- * [Privatized BitAssets](assets/privbitassets.md)
+ * [Privatized gpAssets](assets/privbitassets.md)
  * [Decentralized Exchange](dex/introduction.md)
  * [Trading](dex/trading.md)
  * [Bots](bots/introduction.md)
      - [SpreadTrade ](bots/spread.md)
      - [TrailingStop](bots/trailing.md)
      - [PercentUP ](bots/percent-up.md)
- * [Short Selling BitAssets](dex/shorting.md)
+ * [Short Selling gpAssets](dex/shorting.md)
  * [Gateways](gateways/introduction.md)
-    * [Citadel](gateways/citadel.md)
-    * [OpenLedger](gateways/openledger.md)
     * [Rudex](gateways/rudex.md)
-    * [CryptoBridge](gateways/cryptobridge.md)
-	* [Xbts](gateways/xbtsx.md)
-	* [SparkDEX](gateways/spark.md)

@@ -404,7 +404,7 @@ class SpreadTrade {
     }
 
     async getSmartFeed() {
-        let bts = await Assets["bts"];
+        let bts = await Assets["gph"];
         await this.base.update();
         let rate = this.base.options.core_exchange_rate;
         let [base, quote] =

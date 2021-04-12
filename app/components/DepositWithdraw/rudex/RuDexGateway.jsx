@@ -28,7 +28,7 @@ class RuDexGateway extends React.Component {
 
     _getActiveCoin(props, state) {
         let cachedCoin = props.viewSettings.get("activeCoin_rudex", null);
-        let firstTimeCoin = "PPY";
+        let firstTimeCoin = "RUDEX.USDT";
         let activeCoin = cachedCoin ? cachedCoin : firstTimeCoin;
 
         if (state.action === "withdraw") {
@@ -131,7 +131,7 @@ class RuDexGateway extends React.Component {
                         <div>
                             <AssetImage
                                 replaceNoneToBts={false}
-                                maxWidth={20}
+                                maxWidth={30}
                                 name={prefix + name}
                             />
                             {option.replace("RUDEX.", "")}

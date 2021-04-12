@@ -1,4 +1,4 @@
-Özelleştirilmiş BitAktifler (Privatized BitAssets)
+Özelleştirilmiş BitAktifler (Privatized gpAssets)
 ====================
 
 Özelleştirilmiş BitAktifler  piyasa-sabitli-aktif çıkarmak isteyen fakat 

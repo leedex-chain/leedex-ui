@@ -16,21 +16,7 @@ class AccountVotingProxy extends React.Component {
     };
 
     static defaultProps = {
-        knownProxies: List([
-            "xeroc",
-            "baozi",
-            "bitcrab",
-            "laomao",
-            "bitshares-munich-wallet",
-            "abit",
-            "dahu",
-            "bts1988",
-            "harvey",
-            "fav",
-            "jonnybitcoin",
-            "bitsharesblocks",
-            "customminer"
-        ]),
+        knownProxies: List([]),
         existingProxy: "1.2.5", // proxy-to-self
         autosubscribe: false
     };
@@ -209,9 +195,8 @@ class AccountVotingProxy extends React.Component {
                     <div>
                         <p>
                             <Translate content="account.votes.proxy_current" />:
-                            &nbsp;<Link
-                                to={`account/${existingProxy.get("name")}`}
-                            >
+                            &nbsp;
+                            <Link to={`account/${existingProxy.get("name")}`}>
                                 {existingProxy.get("name")}
                             </Link>
                         </p>

@@ -385,7 +385,7 @@ class Asset extends React.Component {
                         className="button market-button"
                         to={`/market/${asset.symbol}_${preferredMarket}`}
                     >
-                        <Translate content="exchange.market"/>
+                        <Translate content="exchange.market" />
                     </Link>
                 </h2>
                 <HelpContent
@@ -516,8 +516,8 @@ class Asset extends React.Component {
                                 "account.user_issued_assets.reward_percent_tooltip"
                             )}
                         >
-                            <Translate content="explorer.asset.summary.market_fee_referral_reward_percent"/>{" "}
-                            <Icon type="question-circle" theme="filled"/>
+                            <Translate content="explorer.asset.summary.market_fee_referral_reward_percent" />{" "}
+                            <Icon type="question-circle" theme="filled" />
                         </Tooltip>
                     </td>
                     <td> {options.extensions.reward_percent / 100.0} %</td>
@@ -871,8 +871,8 @@ class Asset extends React.Component {
                                 <td>
                                     {settlement_fund_collateral_ratio
                                         ? settlement_fund_collateral_ratio.toFixed(
-                                            6
-                                        )
+                                              6
+                                          )
                                         : "-"}
                                 </td>
                             </tr>
@@ -1012,14 +1012,14 @@ class Asset extends React.Component {
                                     {currentSettled == 0
                                         ? 100
                                         : Math.round(
-                                            100 -
+                                              100 -
                                                   (currentSettled /
                                                       (currentSupply *
                                                           (maxSettlementVolume /
                                                               10000))) *
                                                       100,
-                                            2
-                                        )}
+                                              2
+                                          )}
                                     %
                                 </td>
                             </tr>
@@ -1294,49 +1294,49 @@ class Asset extends React.Component {
                 <br />
                 {!!options.blacklist_authorities &&
                     !!options.blacklist_authorities.length && (
-                    <React.Fragment>
-                        <Translate content="explorer.asset.permissions.blacklist_authorities"/>
+                        <React.Fragment>
+                            <Translate content="explorer.asset.permissions.blacklist_authorities" />
                             : &nbsp;
-                        {this.renderAuthorityList(
-                            options.blacklist_authorities
-                        )}
-                    </React.Fragment>
-                )}
+                            {this.renderAuthorityList(
+                                options.blacklist_authorities
+                            )}
+                        </React.Fragment>
+                    )}
                 {!!options.blacklist_markets &&
                     !!options.blacklist_markets.length && (
-                    <React.Fragment>
-                        <br/>
-                        <Translate content="explorer.asset.permissions.blacklist_markets"/>
+                        <React.Fragment>
+                            <br />
+                            <Translate content="explorer.asset.permissions.blacklist_markets" />
                             : &nbsp;
-                        {this.renderMarketList(
-                            asset,
-                            options.blacklist_markets
-                        )}
-                    </React.Fragment>
-                )}
+                            {this.renderMarketList(
+                                asset,
+                                options.blacklist_markets
+                            )}
+                        </React.Fragment>
+                    )}
                 {!!options.whitelist_authorities &&
                     !!options.whitelist_authorities.length && (
-                    <React.Fragment>
-                        <br/>
-                        <Translate content="explorer.asset.permissions.whitelist_authorities"/>
+                        <React.Fragment>
+                            <br />
+                            <Translate content="explorer.asset.permissions.whitelist_authorities" />
                             : &nbsp;
-                        {this.renderAuthorityList(
-                            options.whitelist_authorities
-                        )}
-                    </React.Fragment>
-                )}
+                            {this.renderAuthorityList(
+                                options.whitelist_authorities
+                            )}
+                        </React.Fragment>
+                    )}
                 {!!options.whitelist_markets &&
                     !!options.whitelist_markets.length && (
-                    <React.Fragment>
-                        <br/>
-                        <Translate content="explorer.asset.permissions.whitelist_markets"/>
+                        <React.Fragment>
+                            <br />
+                            <Translate content="explorer.asset.permissions.whitelist_markets" />
                             : &nbsp;
-                        {this.renderMarketList(
-                            asset,
-                            options.whitelist_markets
-                        )}
-                    </React.Fragment>
-                )}
+                            {this.renderMarketList(
+                                asset,
+                                options.whitelist_markets
+                            )}
+                        </React.Fragment>
+                    )}
             </div>
         ) : null;
 
@@ -2153,8 +2153,8 @@ class Asset extends React.Component {
 
                                             {this.state.showCollateralBidInInfo
                                                 ? this.renderCollateralBid(
-                                                    asset
-                                                )
+                                                      asset
+                                                  )
                                                 : null}
                                         </Collapse>
                                     </div>
@@ -2222,10 +2222,10 @@ class AssetContainer extends React.Component {
         }
         let backingAsset = this.props.asset.has("bitasset")
             ? this.props.asset.getIn([
-                "bitasset",
-                "options",
-                "short_backing_asset"
-            ])
+                  "bitasset",
+                  "options",
+                  "short_backing_asset"
+              ])
             : "1.3.0";
         return (
             <Asset

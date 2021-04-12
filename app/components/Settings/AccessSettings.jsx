@@ -11,6 +11,7 @@ import LoadingButton from "../Utility/LoadingButton";
 import {Switch, Button} from "bitshares-ui-style-guide";
 import NodeSelector from "../Utility/NodeSelector";
 import counterpart from "counterpart";
+
 const autoSelectionUrl = "wss://fake.automatic-selection.com";
 
 function isTestNet(url) {

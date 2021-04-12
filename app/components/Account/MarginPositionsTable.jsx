@@ -225,7 +225,7 @@ ListGenerator = AssetWrapper(ListGenerator, {
     propNames: ["bitAssets"],
     defaultProps: {
         bitAssets: [
-            //BitAssets
+            //gpAssets
             "1.3.103",
             "1.3.120",
             "1.3.121",

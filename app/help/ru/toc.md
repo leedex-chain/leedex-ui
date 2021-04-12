@@ -1,6 +1,6 @@
-#### Помощь
+#### Содержание
 
-- [BitShares](introduction/bitshares.md)
+- [Graphene](introduction/bitshares.md)
 - [Кошелек](introduction/wallets.md)
 - [Резервные копии](introduction/backups.md)
 - [Блокчейн](introduction/blockchain.md)
@@ -10,21 +10,17 @@
 - [Разрешения](accounts/permissions.md)
 - [Членство](accounts/membership.md)
 - [Привязанные к рынку активы](assets/mpa.md) 
-    - bitUSD
-    - bitEUR
+    - gpUSD
+    - gpEUR
     - bitGOLD
-- [Выпущенные пользователем активы](assets/uia.md)
-- [Приватизированные BitAssets](assets/privbitassets.md)
+- [Эмитированные пользователем активы](assets/uia.md)
+- [Приватизированные gpAssets](assets/privbitassets.md)
 - [Децентрализованная биржа](dex/introduction.md)
 - [Торговля](dex/trading.md)
 - [Боты](bots/introduction.md)
     - [SpreadTrade ](bots/spread.md)
     - [TrailingStop](bots/trailing.md)
     - [PercentUP ](bots/percent-up.md)
-- [Короткая продажа BitAssets](dex/shorting.md)
+- [Короткая продажа gpAssets](dex/shorting.md)
 - [Шлюзы](gateways/introduction.md)
-    - [OpenLedger](gateways/openledger.md)
     - [Rudex](gateways/rudex.md)
-    - [CryptoBridge](gateways/cryptobridge.md)
-	- [XBTSX](gateways/xbtsx.md)
-	- [SparkDEX](gateways/spark.md)

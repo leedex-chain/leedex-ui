@@ -2,7 +2,7 @@
 
  * [Introducción](index.md)
  * [Glosario](glossary.md)
- * [BitShares](introduction/bitshares.md)
+ * [Graphene](introduction/bitshares.md)
  * [Billetera](introduction/wallets.md)
  * [Backups](introduction/backups.md)
  * [Blockchain](introduction/blockchain.md)
@@ -13,7 +13,7 @@
  * [Membresías](accounts/membership.md)
  * [Market Pegged Assets](assets/mpa.md) (BitUSD, BitEUR, BitGOLD, Bit\*,...)
  * [Activos Emitidos por Usuarios](assets/uia.md)
- * [BitAssets Privados](assets/privbitassets.md)
+ * [gpAssets Privados](assets/privbitassets.md)
  * [Exchange Descentralizado](dex/introduction.md)
  * [Trading](dex/trading.md)
- * [Short Selling BitAssets](dex/shorting.md)
+ * [Short Selling gpAssets](dex/shorting.md)

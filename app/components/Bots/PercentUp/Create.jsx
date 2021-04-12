@@ -9,8 +9,8 @@ import Translate from "react-translate-component";
 class Create extends React.Component {
     state = {
         name: "",
-        base: "BTS",
-        quote: "RUDEX.EOS",
+        base: "GPH",
+        quote: "USD",
         amount: 100,
         percentAmount: false,
         balance: "",

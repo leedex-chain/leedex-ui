@@ -413,7 +413,7 @@ class AccountPortfolioList extends React.Component {
     }
 
     _renderBuy = (symbol, canBuy, assetName, emptyCell, balance) => {
-        if (symbol === "BTS" && balance <= 1000000) {
+        if (symbol === "GPH" && balance <= 1000000) {
             // Precision of 5, 1 = 10^5
             return (
                 <span>
@@ -534,16 +534,16 @@ class AccountPortfolioList extends React.Component {
             if (symbol.startsWith("RUDEX.")) return symbol;
 
             if (
-                symbol == "PPY" ||
                 symbol == "DONATE" ||
-                symbol == "BTS" ||
-                symbol == "CNY" ||
+                symbol == "GPH" ||
                 symbol == "USD" ||
                 symbol == "EUR" ||
-                symbol == "RUBLE" ||
+                symbol == "CNY" ||
+                symbol == "RUB" ||
                 symbol == "BTC" ||
                 symbol == "GOLD" ||
-                symbol == "SILVER"
+                symbol == "SILVER" ||
+                symbol == "OIL"
             )
                 return symbol;
 
@@ -927,7 +927,7 @@ class AccountPortfolioList extends React.Component {
 
         let balances = [];
         const emptyCell = "-";
-        balanceList.forEach(balance => {
+        (balanceList || []).forEach(balance => {
             let balanceObject = ChainStore.getObject(balance);
             if (!balanceObject) return;
             let asset_type = balanceObject.get("asset_type");
@@ -946,7 +946,7 @@ class AccountPortfolioList extends React.Component {
             );
             symbol = asset.get("symbol");
             //let preferredMarket = market ? market : preferredUnit;
-            let preferredMarket = market ? market : "BTS";
+            let preferredMarket = market ? market : "GPH";
 
             if (notCore && preferredMarket === symbol)
                 preferredMarket = coreSymbol;
@@ -1014,7 +1014,7 @@ class AccountPortfolioList extends React.Component {
             // Collateral
             let collateralBalances = [];
 
-            this.props.callOrders.forEach(order => {
+            (this.props.callOrders || []).forEach(order => {
                 let collateralObject = ChainStore.getObject(order);
                 if (
                     collateralObject.getIn([
@@ -1035,7 +1035,7 @@ class AccountPortfolioList extends React.Component {
             );
             const canDeposit =
                 (backedCoin && backedCoin.depositAllowed) ||
-                asset.get("symbol") == "BTS";
+                asset.get("symbol") == "GPH";
 
             const canWithdraw =
                 backedCoin &&
@@ -1280,7 +1280,7 @@ class AccountPortfolioList extends React.Component {
                                 .find(
                                     a => a.backingCoin === thisAssetName[1]
                                 ) ||
-                            asset.get("symbol") == "BTS";
+                            asset.get("symbol") == "GPH";
 
                         const canBuy = !!this.props.bridgeCoins.get(
                             asset.get("symbol")
@@ -1495,9 +1495,9 @@ class AccountPortfolioList extends React.Component {
                 atLeastOneHas.buy = true;
             }
             if (!!_item.deposit && _item.deposit !== "-") {
-                if (_item.key == "BTS" && GatewayStore.anyAllowed()) {
+                if (_item.key == "GPH" && GatewayStore.anyAllowed()) {
                     atLeastOneHas.depositOnlyBTS =
-                        _item.key == "BTS" && !atLeastOneHas.deposit;
+                        _item.key == "GPH" && !atLeastOneHas.deposit;
                     atLeastOneHas.deposit = true;
                 }
             }

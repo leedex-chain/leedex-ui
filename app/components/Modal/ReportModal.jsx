@@ -102,30 +102,19 @@ class ReportModal extends React.Component {
                         <br />
                         &nbsp;&nbsp;
                         <a
-                            href="https://github.com/bitshares/bitshares-ui/issues"
+                            href="https://github.com/graphene-blockchain/graphene-ui"
                             target="_blank"
                             rel="noopener noreferrer"
                             style={{textAlign: "center", width: "100%"}}
                             className="external-link"
                         >
-                            https://github.com/bitshares/bitshares-ui/issues
+                            https://github.com/graphene-blockchain/graphene-ui
                         </a>
                         <br />
                         <Translate content="modal.report.explanatory_text_3" />
                         <br />
                         <br />
                         <Translate content="modal.report.explanatory_text_4" />
-                        <br />
-                        &nbsp;&nbsp;
-                        <a
-                            href="https://hackthedex.io"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{textAlign: "center", width: "100%"}}
-                            className="external-link"
-                        >
-                            https://hackthedex.io
-                        </a>
                     </p>
                 );
             }

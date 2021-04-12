@@ -148,12 +148,12 @@ class PercentUp {
                 }
             } else {
                 let forQuoteFee =
-                        this.quote.symbol === "BTS"
+                        this.quote.symbol === "GPH"
                             ? (isNaN(order.fee) ? orderFee : order.fee) +
                               orderFee
                             : 0,
                     forBaseFee =
-                        this.base.symbol === "BTS"
+                        this.base.symbol === "GPH"
                             ? (isNaN(order.fee) ? orderFee : order.fee) +
                               orderFee
                             : 0,

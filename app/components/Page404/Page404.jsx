@@ -31,7 +31,7 @@ class Page404 extends React.Component {
             <div className="page-404">
                 <div className="page-404-container">
                     <div className="page-404-logo">
-                        <img src={logo} alt="Logo" />
+                        {/*<img src={logo} alt="Logo" />*/}
                     </div>
                     <div className="page-404-title">
                         <Translate content="page404.page_not_found_title" />
@@ -54,13 +54,16 @@ class Page404 extends React.Component {
     }
 }
 
-export default (Page404 = connect(Page404, {
-    listenTo() {
-        return [SettingsStore];
-    },
-    getProps() {
-        return {
-            theme: SettingsStore.getState().settings.get("themes")
-        };
+export default (Page404 = connect(
+    Page404,
+    {
+        listenTo() {
+            return [SettingsStore];
+        },
+        getProps() {
+            return {
+                theme: SettingsStore.getState().settings.get("themes")
+            };
+        }
     }
-}));
+));

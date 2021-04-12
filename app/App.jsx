@@ -474,10 +474,10 @@ class App extends React.Component {
                                     path="/accounts"
                                     component={DashboardAccountsOnly}
                                 />
-                                <Route
+                                {/*                                <Route
                                     path="/market/:marketID"
                                     component={Exchange}
-                                />
+                                />*/}
                                 <Route
                                     path="/settings/:tab"
                                     component={Settings}
@@ -517,7 +517,7 @@ class App extends React.Component {
                                     path="/listing"
                                     exact
                                     component={Listing}
-                                />
+                                />{" "}
                                 <Redirect
                                     path={"/voting"}
                                     to={{
@@ -545,18 +545,15 @@ class App extends React.Component {
                                     component={Block}
                                 />
                                 <Route path="/borrow" component={Borrow} />
-
                                 <Route path="/barter" component={Barter} />
                                 <Route
                                     path="/direct-debit"
                                     component={DirectDebit}
                                 />
-
                                 <Route
                                     path="/spotlight"
                                     component={ShowcaseGrid}
                                 />
-
                                 {/* Wallet backup/restore routes */}
                                 <Route
                                     path="/wallet"
@@ -570,12 +567,10 @@ class App extends React.Component {
                                     path="/existing-account"
                                     component={ExistingAccount}
                                 />
-
                                 <Route
                                     path="/create-worker"
                                     component={CreateWorker}
                                 />
-
                                 {/* Help routes */}
                                 <Route exact path="/help" component={Help} />
                                 <Route

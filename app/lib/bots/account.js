@@ -6,7 +6,7 @@ import WalletUnlockActions from "actions/WalletUnlockActions";
 import {TransactionBuilder} from "bitsharesjs";
 
 class Account {
-    constructor(name, feeSymbol = "BTS") {
+    constructor(name, feeSymbol = "GPH") {
         this.promise = Promise.all([
             Apis.db.get_account_by_name(name),
             Assets[feeSymbol]

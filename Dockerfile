@@ -9,9 +9,9 @@ RUN apt-get update \
 RUN npm install -g cross-env
 
 # We copy the code from the docker-compose-yml
-# RUN git clone https://github.com/bitshares/bitshares-ui.git /bitshares-ui
-CMD mkdir /bitshares-ui
-WORKDIR /bitshares-ui
+# RUN git clone https://github.com/graphene-blockchain/graphene-ui.git /graphene-ui
+CMD mkdir /graphene-ui
+WORKDIR /graphene-ui
 
 ADD package.json .
 RUN cross-env npm install --env.prod

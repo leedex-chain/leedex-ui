@@ -90,13 +90,14 @@ export const availableGateways = {
         id: "RUDEX",
         name: "RuDEX",
         baseAPI: rudexAPIs,
-        isEnabled: _isEnabled("RUDEX"),
+        //isEnabled: _isEnabled("RUDEX"),
+        isEnabled: () => false,
         isSimple: true,
         selected: false,
         simpleAssetGateway: true,
         fixedMemo: {
             prepend_default: "dex:",
-            prepend_btsid: "btsid-",
+            prepend_btsid: "gpid",
             append: ""
         },
         addressValidatorMethod: "POST",

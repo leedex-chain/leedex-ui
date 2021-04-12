@@ -8,8 +8,8 @@ Please make sure the following is done:
 
 - Pull request is onto develop
 - If you haven't already, have a look at
-  - https://github.com/bitshares/bitshares-ui/blob/develop/CODE_OF_CONDUCT.md
-  - https://github.com/bitshares/bitshares-ui/blob/develop/CONTRIBUTING.md
+  - https://github.com/graphene-blockchain/graphene-ui/blob/develop/CODE_OF_CONDUCT.md
+  - https://github.com/graphene-blockchain/graphene-ui/blob/develop/CONTRIBUTING.md
 
 <h2>Code Preparation</h2>
 

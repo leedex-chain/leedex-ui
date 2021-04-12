@@ -68,19 +68,18 @@ export default class ExchangeHeader extends React.Component {
 
     _checkPotencialScamMarket(quote, base) {
         let coins = [
-            "BTS",
+            "GPH",
 
-            "BTC",
-            "CNY",
             "USD",
             "EUR",
-            "RUBLE",
-            "KRW",
-            "GBP",
+            "CNY",
+            "RUB",
+
+            "BTC",
             "GOLD",
             "SILVER",
+            "OIL",
 
-            "PPY",
             "DONATE"
         ];
 

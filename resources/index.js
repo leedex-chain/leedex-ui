@@ -11,7 +11,7 @@
     require("./electron_context_menu")({
         prepend: (params, browserWindow) => [
             {
-                label: "RuDEX"
+                label: "Graphene"
             }
         ]
     });

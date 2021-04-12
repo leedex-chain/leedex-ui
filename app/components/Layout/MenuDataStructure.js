@@ -71,9 +71,9 @@ class MenuDataStructure {
         return [
             allItems.dashboard,
             allItems.account,
-            allItems.market,
-            allItems.explorer,
-            allItems.bots
+            //allItems.market,
+            allItems.explorer
+            //allItems.bots
         ];
     }
 
@@ -122,20 +122,20 @@ class MenuDataStructure {
             allItems.divider,
             allItems.dashboard,
             allItems.account,
-            allItems.market,
-            allItems.bots,
+            //allItems.market,
+            //allItems.bots,
             allItems.explorer,
 
             allItems.divider,
             allItems.transfer,
             //allItems.deposit,
             //allItems.withdraw,
-            allItems.deposit_withdraw,
+            //allItems.deposit_withdraw,
             allItems.settings,
 
             allItems.divider,
-            allItems.listing,
-            allItems.news,
+            //allItems.listing,
+            //allItems.news,
             allItems.help,
 
             allItems.divider,
@@ -241,7 +241,7 @@ class MenuDataStructure {
                 inHeaderBehavior: MenuItemType.WhenAccount,
                 inDropdownBehavior: MenuItemType.Never
             }),
-            bots: state => ({
+            /*            bots: state => ({
                 includePattern: ["/bots"],
                 excludePattern: [
                     //"/account", "account/", "/account/",
@@ -259,8 +259,8 @@ class MenuDataStructure {
                 text: "header.bots",
                 inHeaderBehavior: MenuItemType.WhenAccount,
                 inDropdownBehavior: MenuItemType.Never
-            }),
-            listing: state => ({
+            }),*/
+            /*            listing: state => ({
                 includePattern: ["/listing"],
                 excludePattern: [
                     //"/account", "account/", "/account/",
@@ -277,7 +277,7 @@ class MenuDataStructure {
                 text: "header.listing",
                 inHeaderBehavior: MenuItemType.Dynamic,
                 inDropdownBehavior: MenuItemType.Always
-            }),
+            }),*/
             follow: state => ({
                 target: state.clickHandlers.followUnfollow,
                 icon: {
@@ -289,7 +289,7 @@ class MenuDataStructure {
                 text: state.isContact ? "account.unfollow" : "account.follow",
                 inDropdownBehavior: MenuItemType.WhenNotMyAccount
             }),
-            market: state => ({
+            /*            market: state => ({
                 includePattern: "/market/",
                 target: state.tradeUrl,
                 icon: {
@@ -299,7 +299,7 @@ class MenuDataStructure {
                 text: "header.exchange",
                 inHeaderBehavior: MenuItemType.Always,
                 inDropdownBehavior: MenuItemType.Never
-            }),
+            }),*/
             explorer: state => ({
                 includePattern: "/explorer",
                 target: "/explorer/blocks",
@@ -308,7 +308,7 @@ class MenuDataStructure {
                     size: "2x"
                 },
                 text: "header.explorer",
-                inHeaderBehavior: MenuItemType.Never,
+                inHeaderBehavior: MenuItemType.Always,
                 inDropdownBehavior: MenuItemType.Always
             }),
             transfer: state => ({
@@ -344,7 +344,7 @@ class MenuDataStructure {
                 disabled: !state.enableDepositWithdraw,
                 inDropdownBehavior: MenuItemType.WhenAccount
             }),
-            deposit_withdraw: state => ({
+            /*            deposit_withdraw: state => ({
                 includePattern: "deposit-withdraw",
                 target: "/deposit-withdraw",
                 icon: {
@@ -354,7 +354,7 @@ class MenuDataStructure {
                 text: "header.deposit-withdraw",
                 inHeaderBehavior: MenuItemType.Dynamic,
                 inDropdownBehavior: MenuItemType.WhenAccount
-            }),
+            }),*/
             settings: state => ({
                 includePattern: "/settings",
                 target: "/settings",
@@ -426,14 +426,14 @@ class MenuDataStructure {
                 target: "/settings/reset",
                 text: "settings.reset"
             }),
-            news: state => ({
+            /*            news: state => ({
                 includePattern: "/news",
                 target: "/news",
                 icon: "news",
                 text: "news.news",
                 inHeaderBehavior: MenuItemType.Dynamic,
                 inDropdownBehavior: MenuItemType.Always
-            }),
+            }),*/
             help: state => ({
                 includePattern: "/help",
                 icon: {

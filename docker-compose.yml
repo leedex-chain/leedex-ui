@@ -1,12 +1,12 @@
 version: "2"
 volumes:
- wallet_build: {}
+    wallet_build: {}
 
 services:
- web-wallet:
-  build: .
-  ports:
-   - "8080:80"
-  volumes:
-   - wallet_build:/bitshares-ui/build/dist
-   - .:/bitshares-ui
+    web-wallet:
+        build: .
+        ports:
+            - "8080:80"
+        volumes:
+            - wallet_build:/graphene-ui/build/dist
+            - .:/graphene-ui

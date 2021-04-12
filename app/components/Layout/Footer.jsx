@@ -493,7 +493,7 @@ class Footer extends React.Component {
                                     />
                                     {__GIT_BRANCH__ === "staging" ? (
                                         <a
-                                            href={`https://github.com/bitshares/bitshares-ui/commit/${version.trim()}`}
+                                            href={`https://github.com/graphene-blockchain/graphene-ui/commit/${version.trim()}`}
                                             className="version external-link"
                                             target="_blank"
                                             rel="noopener noreferrer"
@@ -519,7 +519,7 @@ class Footer extends React.Component {
                                     />
                                 )}
                             </div>
-                            <Link
+                            {/* <Link
                                 style={{
                                     flexFlow: "row",
                                     padding: "0 0.5rem",
@@ -531,8 +531,8 @@ class Footer extends React.Component {
                                 to={"/listing"}
                             >
                                 <Translate content="footer.listing" />
-                            </Link>
-                            <a
+                            </Link>*/}
+                            {/*                            <a
                                 style={{
                                     padding: "0 0.5rem",
                                     borderRight:
@@ -559,7 +559,7 @@ class Footer extends React.Component {
                                 rel="noopener noreferrer"
                             >
                                 <Translate content="footer.support" />
-                            </a>
+                            </a>*/}
                         </div>
                         {!!routerTransitioner &&
                             routerTransitioner.isBackgroundPingingInProgress() && (
@@ -584,6 +584,59 @@ class Footer extends React.Component {
                                     &nbsp; &nbsp;
                                 </div>
                             )}
+
+                        <div
+                            className=""
+                            style={{
+                                justifyContent: "flex-end"
+                            }}
+                        >
+                            <div
+                                style={{
+                                    display: "flex"
+                                }}
+                            >
+                                {/*                                <a
+                                    style={{
+                                        padding: "0 0.5rem",
+                                        borderLeft:
+                                            "1px solid rgba(128, 128, 128, 0.45)",
+                                        lineHeight: "2rem",
+                                        fontSize: "1em"
+                                    }}
+                                    href="https://play.google.com/store/apps/details?id=org.rudex.app"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img
+                                        style={{
+                                            height: "22px"
+                                        }}
+                                        src={`${__BASE_URL__}images/google-play.png`}
+                                    />
+                                </a>*/}
+                                {/*                                <a
+                                    style={{
+                                        padding: "0 0.5rem",
+                                        borderLeft:
+                                            "1px solid rgba(128, 128, 128, 0.45)",
+                                        lineHeight: "2rem",
+                                        fontSize: "1em"
+                                    }}
+                                    href="https://coinmarketcap.com/exchanges/rudex/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img
+                                        style={{
+                                            height: "22px"
+                                        }}
+                                        src={`${__BASE_URL__}images/coinmarketcap.png`}
+                                    />
+                                </a>*/}
+                            </div>
+                        </div>
+
                         {synced ? null : (
                             <div className="grid-block shrink txtlabel cancel">
                                 <Translate content="footer.nosync" />
@@ -658,11 +711,12 @@ class Footer extends React.Component {
                                         }}
                                     >
                                         <div className="footer-status">
-                                            {connected && activeNode.testNet && (
-                                                <span className="testnet">
-                                                    <Translate content="settings.testnet_nodes" />{" "}
-                                                </span>
-                                            )}
+                                            {connected &&
+                                                activeNode.testNet && (
+                                                    <span className="testnet">
+                                                        <Translate content="settings.testnet_nodes" />{" "}
+                                                    </span>
+                                                )}
                                             {!connected ? (
                                                 <span className="warning">
                                                     <Translate content="footer.disconnected" />
@@ -682,10 +736,10 @@ class Footer extends React.Component {
                                                 {!connected
                                                     ? "-"
                                                     : !activeNode.ping
-                                                    ? "-"
-                                                    : parseInt(
-                                                          activeNode.ping
-                                                      ) + "ms"}
+                                                        ? "-"
+                                                        : parseInt(
+                                                              activeNode.ping
+                                                          ) + "ms"}
                                                 &nbsp;/&nbsp;
                                                 <span className="footer-block-title">
                                                     <Translate content="footer.block" />

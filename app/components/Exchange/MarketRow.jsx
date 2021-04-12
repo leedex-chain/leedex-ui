@@ -31,11 +31,18 @@ class MarketRow extends React.Component {
 
     componentDidMount() {
         this.statsChecked = new Date();
-        this.statsInterval = MarketsActions.getMarketStatsInterval(
-            35 * 1000,
-            this.props.base,
-            this.props.quote
-        );
+        if (
+            this.props.base.get &&
+            this.props.base.get("id") &&
+            this.props.quote.get &&
+            this.props.quote.get("id")
+        ) {
+            this.statsInterval = MarketsActions.getMarketStatsInterval(
+                35 * 1000,
+                this.props.base,
+                this.props.quote
+            );
+        }
     }
 
     componentWillUnmount() {
@@ -201,12 +208,7 @@ class MarketRow extends React.Component {
 
                         let highPrecisionAssets = [
                             "BTC",
-                            "OPEN.BTC",
                             "RUDEX.BTC",
-                            "RUDEX.XBT",
-                            "GDEX.BTC",
-                            "SPARKDEX.BTC",
-                            "XBTSX.BTC",
                             "GOLD",
                             "SILVER"
                         ];
