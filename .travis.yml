@@ -8,12 +8,12 @@ matrix:
           osx_image: xcode8.3
 env:
     global:
-        - GITHUB_REPO: blckchnd/rudex-ui
-        - ORGANIZATION_REPO: blckchnd/rudex.org
-        - WALLET_REPO: blckchnd/market.rudex.org
+        - GITHUB_REPO: graphene-blockchain/graphene-ui
+        - ORGANIZATION_REPO: graphene-blockchain/gph.ai
+        - WALLET_REPO: graphene-blockchain/wallet.gph.ai
         - CXX=g++-4.8
         - secure:
-              QEIqqSio+7rPwcPI9jXpykKRVNEt12dzUKo50CVIGwJpF9BkGtTADc51dseFft1ZYPI+zsGd0E9PmQlCGjDj9Dz3fY8J8D4YWtN8T9HJtVH86nCJNWfAI7kNmuF2eam4UqRIg+1Wnm2BWdvzMt1Fkt5wvaQ+xNF7eKvTYACcXlJgVkK+BEyEL5xPlecxEJ536F8I1UziTXNwY5bciwwxLDuqrhnkQkBAs5SGtiyjWJ1WHwcCx8kDCRh2LP/OlegLmfx3Xag/4tGt+2eyVnvNoFYT+/P7CRN9GO9o0ZgBwYVy39K4qdrR+XWP7Dt6hkB5CqDpOno/kdGDwcZRw8KHIq5BI7qQvAWN7Q4LigRsjAAu1OAwY9xKH/3CeSWILr/pT/m6BpuiuFvunjxIARmQXk2ThEA6oPKj7YZgKOdag18o7/Kn+2eLOeR14UVHqt7aBH8wVAFULWRFzyWF2S6+l7+UGWsCyvG+swSymh3OlQXNEGTKZ42n5YgW9q+EymVUDHZmPsUJunMrbBWaai6VEUnnMJu3KbXLJ/F0AaTJe7R0J9U1wiON3T6a9NYE6eKSr0xIE2DGsFIm5vrpXop5JqavD2uFm9Dpysa/AU41ma8dauavV65x6dN7ZLeymidUdjnGjFPZzLqLuUC6BwYXxC2YTF8jADyKYcEZB/eQIHo=
+              NYt+/r5/JYV7lTVF1Oz2nqh99sCnA+QBauQPFZsLcMJKKpqFj5BJIZ1XjjRbhJ8G9rhYcxr9P042bNT365qf+L9wPJzGpv5LEsQAeThmnH+V4V8Jv3Ey0faAtWHekJ7vgvf/+G9+oLWkusCSjfmQHAcJzdHaohpsObL0NIuF8XQX+OB8idkYDL+PxFQOF7B2hb9e7ogdHQZ4m8+MzcKSe6T+/CRoLWdM9eTCbQpm2xOrrPz37HPQfThJlvpktZj3b2EH1tz1y88vZYZG44R6UD56RXhXFViloJhQGPU0iX0GAdo1ETwMUHB99j81CSImzt+eCRMW43WBg9r456Tc5dLzvTaQavgZ3OW3Tv617FqNVZREa/KAbTCUGml6jYEmApCBh5evNAWDffwuhOZQwJ0MkdWuZo5nCc8d7hDGkJC3f7jEj14vQCUxLGwkfIwjM2m45nbhTxLY6syGNtIEsn0aD2CxYwzYyGKOPLcDWsxBASNyG5+UWb/a0LhZZuhUn+nBfqU07itlO7cVFANTiMuh9Ob+XluKZKVp7tQaKDT95qtF4iW/u+ZAel5hdxNDl79UtQbZGtlx5OD1fgrgNzqgR6LHWRzq5Y364os7ZnqnSjqjuGStue27TiBV+2Woap3qKpvRCKgpX0JigfHSGvr1hvR1Ajh188ckHEnOiFc=
 addons:
     apt:
         sources:
@@ -31,8 +31,8 @@ script:
 #after_success: "./deploy.sh"
 deploy:
     provider: releases
-    tag_name: $TRAVIS_TAG
-    name: $TRAVIS_TAG
+    tag_name: "$TRAVIS_TAG"
+    name: "$TRAVIS_TAG"
     body: Automated release from Travis CI with added files from AppVeyor build
     api_key:
         secure:
@@ -44,5 +44,5 @@ deploy:
     skip_cleanup: true
     draft: true
     on:
-        repo: blckchnd/rudex-ui
+        repo: graphene-blockchain/graphene-ui
         tags: true
