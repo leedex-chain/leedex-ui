@@ -46,13 +46,6 @@ npm start
 Once the compilation is done the GUI will be available in your browser at: `localhost:8080` or `127.0.0.1:8080`. Hot Reloading is enabled so the browser will live update as you edit the source files.
 
 
-## Testnet
-By default bitshares-ui connects to the live Graphene network, but it's very easy to switch it to the testnet run by Xeroc. To do so, open the UI in a browser, go to Settings, then under Access, select the *Public Testnet Server* in the dropdown menu. You should also change the faucet if you need to create an account, the testnet faucet address is https://testnet.bitshares.eu.
-
-The UI will reload and connect to the testnet, where you can use the faucet to create an account and receive an initial sum of test BTS.
-
-![image](https://cloud.githubusercontent.com/assets/6890015/22055747/f8e15e68-dd5c-11e6-84cd-692749b578d8.png)
-
 ## Production
 If you'd like to host your own wallet somewhere, you should create a production build and host it using NGINX or Apache. In order to create a prod bundle, simply run the following command:
 
@@ -108,19 +101,15 @@ There are three branches that forms the current release process.
 All PRs should be pushed to the `develop` branch. At the end of each milestone this branch is pushed to `staging`.
 New commits are automatically deployed to this branch and published for review.
 
-Available for browsing on https://develop.bitshares.org/
-
 ### Staging (Current Release Candidate)
 At the end of each milestone, `develop` branch is pushed to staging and forms the Release Candidate. The date of the RC forms the name, ie. 190214-RC*.
 
 Application breaking issues and bugs should be submitted to the issue tracker and PRs should be pushed to `staging`.
 
-Available for browsing on https://staging.gph.ai/
 
 ### Master (stable)
 When all issues to the current RC are fixed, `staging` branch is released to the stable `master` branch.
 
-Available for browsing on https://wallet.gph.ai/, which is the official reference wallet for Graphene.
 
 
 
