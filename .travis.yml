@@ -31,12 +31,12 @@ script:
 #after_success: "./deploy.sh"
 deploy:
     provider: releases
-    tag_name: "$TRAVIS_TAG"
-    name: "$TRAVIS_TAG"
+    tag_name: $TRAVIS_TAG
+    name: $TRAVIS_TAG
     body: Automated release from Travis CI with added files from AppVeyor build
     api_key:
         secure:
-            WJXIYvyVn5VigQ6gsa8n+PjtDS/E+F9pQouzvJ8NAhUWVgDtEzLGm0jDRg9gsh/zmeB14eiyCrkNYH45FYiTMWDz+8ydzJXeBoWkpwduFWPb1sifRrEuPVUIJ2mDK5UBW4eobQHNda9taUxTBL/VdgZC9KLFuzhwzcFkdkLcBuLZYrmvgziEmJNkQ4/eHc6+n/Hug+dTDIenKcSbw8RH2AZNnGqQOCqEpl8LNMUhl6RczGXC8uu49EMPOON8Km+nlh4frkImbXuXMyudPl3iwTMiZE6xPex5IHS3vbaEbKfJTprNLFnyZyOZnhUCDNatNsRTlrQLMoQgEMYStb9huI/xVdJ6hKZgdVNjiu2ZCYUyxmy2WxBuGc0GBXrojJX4x4U7/+cXohk3DNBMLDcRPQAqWAtre/arIAJLJDi+hVFOmsi03KoWt5F7wduPQe8liaQtLDTa490tdIpJqyUgEKFSEciazkhjd9ggiob2lj+kCfWNe4kPzUogJ+MoenxctIk4aQE/FumnoyjkgOd3bEGMik3B41X6UpRDWqOtkvDRfPw9Pqd9EzjfRiaS7VsjO/ehYflOAdBvpy/PmvYIjdFl/Ij2h3tny74ze4ywVk2xLfN+CQtESHvwVAC1nvcyMvmUj5Wk7eBBnwJeYYGDUhPrB74HMzAFhBgPhq8MfTs=
+            fFDBhIKpj7XIYFdfmxhPS8sZEEwk3EsWnzC2NFqCZgK3/OgRd8KZ2+SMG9j8AEsPTMsHhXzbHVnnQEw6zcnVm6IZ5vQKwTj5P5ls6CeNzsBmnpE/tx0KHKoSzwq2K5EU7qmbTbLfd7dICwl/AsxMQm9OUG6Oeb4UZTH4gIMRP2bJFiFPm8qw5tW71a1OjAnt0eSqI3PXflNZPgQg56VuAMkK0qsq86vkyu2YxygyzbEheHPQz4QbBDgKC6DTsLpNdsrfuT46V0IxG/WIG7a94y1wws+3JFH+Wwh8lS7g6FLOA3V5wAhG2Ye7b5it7WHoMBZm2goaJwGvNWKPopbCnP74B8zWCs8kyuBRuKBs3xFjip0O8fZ0VKMMSfdu11fI95PR+GFU/FNJeKpElYm/e9E/GmkNVfwnyIKJ0RYR9dTQme5013exMvkbNA9+adPRBYWitzJaXXWZcyaYH+6jyM0X8khfVFPDjHk6EvDfGtC2Lh9IiI5QIWhnKGMR19fU+C5ebq0ARJv6sY1Z5mwbBfvTmeHlqceTmkRo4iW75T+o0I8E8tRk1jQLew1CEdmgKf4pcgGaQ8KCSbSfSCMV7vf+gwYyib0NnIBok1J2u0EqzvECy/VEkfmtdgDrd2CIK7Q57F7TTMMsEhXODHq/aOva7Y+r82f6SpxMpjmJSe8=
     file_glob: true
     file:
         - build/binaries/Graphene*

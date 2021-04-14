@@ -1,6 +1,5 @@
 Graphene-UI
 ============
-[中文版](README_zh.md)
 
 This is a light wallet that connects to a Graphene API provided by the *witness_node* executable.
 
