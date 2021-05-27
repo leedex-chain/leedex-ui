@@ -29,36 +29,36 @@ class AccountOverview extends React.Component {
             alwaysShowAssets: [
                 "GPH",
 
-                "USD",
-                "EUR",
-                "CNY",
-                "RUB",
-
-                "BTC",
-                "GOLD",
-                "SILVER",
-                "OIL"
-
                 /*
-                "DONATE"
+                 "USD",
+                 "EUR",
+                 "CNY",
+                 "RUB",
+                 "BTC",
+                 "GOLD",
+                 "SILVER",
+                 "OIL",
+                */
+
+                "DONATE",
 
                 "RUDEX.BTC",
                 "RUDEX.ETH",
                 "RUDEX.USDT",
                 "RUDEX.EOS",
+                "RUDEX.PZM",
                 "RUDEX.GOLOS",
                 "RUDEX.STEEM",
                 "RUDEX.WLS",
                 "RUDEX.SMOKE",
-                "RUDEX.PZM",
                 "RUDEX.NBS",
-                "RUDEX.PPY"
+                "RUDEX.PPY",
                 "RUDEX.XMR",
+                "RUDEX.BTS"
 
-                "RUDEX.TRX",
-                "RUDEX.BTS",
-
-"*/
+                /*
+                "RUDEX.TRX"
+                */
             ],
             hideFishingProposals: true,
             question1: false,

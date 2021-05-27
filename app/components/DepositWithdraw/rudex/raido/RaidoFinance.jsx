@@ -325,7 +325,7 @@ class RaidoFinance extends React.Component {
 
 RaidoFinance.defaultProps = {
     coins: [
-        {
+        /*        {
             name: "BTC",
             description: "Bitcoin - BTC",
             backingCoin: "BTC",
@@ -356,7 +356,7 @@ RaidoFinance.defaultProps = {
                 type: "blocks",
                 value: 30
             }
-        }
+        }*/
         /* {
              name: "USDT",
              description: "Tether - USDT (on Ethereum)",

@@ -1,8 +1,8 @@
 {
-  "name": "Graphene-light",
-  "version": "3.3.210414",
+  "name": "RuDEX3-light",
+  "version": "3.3.210527",
   "description": "Advanced wallet interface for the Graphene financial blockchain.",
-  "homepage": "https://github.com/graphene-blockchain/graphene-ui",
+  "homepage": "https://github.com/blckchnd/rudex-ui",
   "author": "RuDEX Team <support@rudex.org>",
   "contributors": [
     "Sigve Kvalsvik <kvalsvik.crypto@gmail.com>",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/graphene-blockchain/graphene-ui"
+    "url": "git://github.com/blckchnd/rudex-ui"
   },
   "main": "build/electron/index.js",
   "scripts": {
@@ -90,8 +90,8 @@
   },
   "browsersList": "electron 1.7",
   "build": {
-    "productName": "Graphene",
-    "appId": "ai.gph",
+    "productName": "RuDEX",
+    "appId": "org.rudex.market",
     "files": [
       "build/electron",
       "!node_modules"

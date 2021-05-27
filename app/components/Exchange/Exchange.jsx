@@ -3363,7 +3363,7 @@ class Exchange extends React.Component {
                             </div>
                             {myMarkets}
                         </div>
-                        {/*{Trollbox}*/}
+                        {Trollbox}
                     </div>
                 </div>
             );

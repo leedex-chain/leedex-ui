@@ -383,7 +383,7 @@ class Header extends React.Component {
             !!a &&
             Apis.instance() &&
             Apis.instance().chain_id &&
-            Apis.instance().chain_id.substr(0, 8) === "14953393";
+            Apis.instance().chain_id.substr(0, 8) === "7fcf452d";
 
         if (starredAccounts.size) {
             for (let i = tradingAccounts.length - 1; i >= 0; i--) {
@@ -420,8 +420,7 @@ class Header extends React.Component {
             <a
                 style={{padding: "12px 1.75rem"}}
                 className={cnames({active: false})}
-                /*href="https://rudex.org"*/
-                href="https://gph.ai"
+                href="https://rudex.org"
                 target="_blank"
             >
                 <img style={{margin: 0, height: 40}} src={logo} />

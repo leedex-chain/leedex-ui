@@ -474,10 +474,10 @@ class App extends React.Component {
                                     path="/accounts"
                                     component={DashboardAccountsOnly}
                                 />
-                                {/*                                <Route
+                                <Route
                                     path="/market/:marketID"
                                     component={Exchange}
-                                />*/}
+                                />
                                 <Route
                                     path="/settings/:tab"
                                     component={Settings}

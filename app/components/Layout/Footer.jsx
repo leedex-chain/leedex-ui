@@ -83,8 +83,7 @@ class Footer extends React.Component {
     componentDidMount() {
         this.checkNewVersionAvailable.call(this);
 
-        this.downloadLink =
-            "https://github.com/graphene-blockchain/graphene-ui/releases";
+        this.downloadLink = "https://github.com/blckchnd/rudex-ui/releases";
 
         let ensure = this._ensureConnectivity.bind(this);
         ifvisible.on("wakeup", function() {
@@ -113,7 +112,7 @@ class Footer extends React.Component {
     checkNewVersionAvailable() {
         if (__ELECTRON__) {
             fetch(
-                "https://api.github.com/repos/graphene-blockchain/graphene-ui/releases/latest"
+                "https://api.github.com/repos/blckchnd/rudex-ui/releases/latest"
             )
                 .then(res => {
                     return res.json();
@@ -494,7 +493,7 @@ class Footer extends React.Component {
                                     />
                                     {__GIT_BRANCH__ === "staging" ? (
                                         <a
-                                            href={`https://github.com/graphene-blockchain/graphene-ui/commit/${version.trim()}`}
+                                            href={`https://github.com/blckchnd/rudex-ui/commit/${version.trim()}`}
                                             className="version external-link"
                                             target="_blank"
                                             rel="noopener noreferrer"
@@ -520,7 +519,7 @@ class Footer extends React.Component {
                                     />
                                 )}
                             </div>
-                            {/* <Link
+                            <Link
                                 style={{
                                     flexFlow: "row",
                                     padding: "0 0.5rem",
@@ -532,8 +531,8 @@ class Footer extends React.Component {
                                 to={"/listing"}
                             >
                                 <Translate content="footer.listing" />
-                            </Link>*/}
-                            {/*                            <a
+                            </Link>
+                            <a
                                 style={{
                                     padding: "0 0.5rem",
                                     borderRight:
@@ -560,7 +559,7 @@ class Footer extends React.Component {
                                 rel="noopener noreferrer"
                             >
                                 <Translate content="footer.support" />
-                            </a>*/}
+                            </a>
                         </div>
                         {!!routerTransitioner &&
                             routerTransitioner.isBackgroundPingingInProgress() && (
@@ -597,7 +596,7 @@ class Footer extends React.Component {
                                     display: "flex"
                                 }}
                             >
-                                {/*                                <a
+                                <a
                                     style={{
                                         padding: "0 0.5rem",
                                         borderLeft:
@@ -615,8 +614,8 @@ class Footer extends React.Component {
                                         }}
                                         src={`${__BASE_URL__}images/google-play.png`}
                                     />
-                                </a>*/}
-                                {/*                                <a
+                                </a>
+                                <a
                                     style={{
                                         padding: "0 0.5rem",
                                         borderLeft:
@@ -634,7 +633,7 @@ class Footer extends React.Component {
                                         }}
                                         src={`${__BASE_URL__}images/coinmarketcap.png`}
                                     />
-                                </a>*/}
+                                </a>
                             </div>
                         </div>
 
