@@ -54,11 +54,8 @@ class AccountOverview extends React.Component {
                 "RUDEX.NBS",
                 "RUDEX.PPY",
                 "RUDEX.XMR",
-                "RUDEX.BTS"
-
-                /*
+                "RUDEX.BTS",
                 "RUDEX.TRX"
-                */
             ],
             hideFishingProposals: true,
             question1: false,

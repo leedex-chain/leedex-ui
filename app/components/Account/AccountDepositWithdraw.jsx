@@ -325,9 +325,9 @@ class AccountDepositWithdraw extends React.Component {
                             </div>
 
                             <hr />
-                            {/*                            {RudexNotice1Informed_BuyCrypto ? (
+                            {RudexNotice1Informed_BuyCrypto ? (
                                 <RaidoFinance account={account} />
-                            ) : null}*/}
+                            ) : null}
                         </div>
                     ) : null}
                 </div>

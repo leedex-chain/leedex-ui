@@ -154,11 +154,8 @@ export function getMyMarketsQuotes() {
             "RUDEX.NBS",
             "RUDEX.PPY",
             "RUDEX.XMR",
-            "RUDEX.BTS"
-
-            /*
-            "RUDEX.TRX",
-            */
+            "RUDEX.BTS",
+            "RUDEX.TRX"
 
             //RuDEX MPA-s
             /*
@@ -243,13 +240,13 @@ export function getFeaturedMarkets(quotes = []) {
         ["GPH", "RUDEX.USDT"],
         ["GPH", "RUDEX.ETH"],
         ["GPH", "RUDEX.XMR"],
-        //["GPH", "RUDEX.TRX"],
         ["GPH", "RUDEX.EOS"],
         ["GPH", "RUDEX.GOLOS"],
         ["GPH", "RUDEX.STEEM"],
         ["GPH", "RUDEX.WLS"],
         ["GPH", "RUDEX.SMOKE"],
         ["GPH", "RUDEX.BTS"],
+        ["GPH", "RUDEX.TRX"],
 
         /*["RUBLE", "GPH"],
         ["RUBLE", "RUDEX.PPY"],
@@ -276,7 +273,7 @@ export function getFeaturedMarkets(quotes = []) {
         ["RUDEX.USDT", "RUDEX.PZM"],
         ["RUDEX.USDT", "RUDEX.XMR"],
         ["RUDEX.USDT", "RUDEX.BTS"],
-        //["RUDEX.USDT", "RUDEX.TRX"],
+        ["RUDEX.USDT", "RUDEX.TRX"],
         //["RUDEX.USDT", "RUBLE"],
 
         /*        ["RUDEX.USDT", "RUDEX.XBS"], //MPA
@@ -286,25 +283,27 @@ export function getFeaturedMarkets(quotes = []) {
         ["RUDEX.USDT", "RUDEX.RUB"], //MPA*/
 
         //Bitcoin
+        ["RUDEX.BTC", "DONATE"],
+
         ["RUDEX.BTC", "GPH"],
         ["RUDEX.BTC", "RUDEX.PPY"],
         ["RUDEX.BTC", "RUDEX.NBS"],
         ["RUDEX.BTC", "RUDEX.ETH"],
         ["RUDEX.BTC", "RUDEX.XMR"],
-        //["RUDEX.BTC", "RUDEX.TRX"],
         ["RUDEX.BTC", "RUDEX.EOS"],
         ["RUDEX.BTC", "RUDEX.GOLOS"],
         ["RUDEX.BTC", "RUDEX.STEEM"],
         ["RUDEX.BTC", "RUDEX.WLS"],
         ["RUDEX.BTC", "RUDEX.SMOKE"],
         ["RUDEX.BTC", "RUDEX.BTS"],
+        ["RUDEX.BTC", "RUDEX.TRX"],
 
-        ["RUDEX.BTC", "DONATE"],
         //["RUDEX.BTC", "RUDEX.LOTTERY"],
         //["RUDEX.BTC", "RUBLE"],
         //["RUDEX.BTC", "RUDEX.XBT"] //MPA
 
         //Bitshares
+        ["RUDEX.BTS", "GPH"],
         ["RUDEX.BTS", "RUDEX.PPY"],
         ["RUDEX.BTS", "RUDEX.NBS"],
         ["RUDEX.BTS", "RUDEX.BTC"],
@@ -315,8 +314,8 @@ export function getFeaturedMarkets(quotes = []) {
         ["RUDEX.BTS", "RUDEX.GOLOS"],
         ["RUDEX.BTS", "RUDEX.STEEM"],
         ["RUDEX.BTS", "RUDEX.WLS"],
-        ["RUDEX.BTS", "RUDEX.SMOKE"] //USDT
-        //["RUDEX.BTS", "RUDEX.TRX"],
+        ["RUDEX.BTS", "RUDEX.SMOKE"],
+        ["RUDEX.BTS", "RUDEX.TRX"]
     ].filter(a => {
         if (!quotes.length) return true;
         return quotes.indexOf(a[0]) !== -1;

@@ -66,6 +66,14 @@ export const settingsAPIs = {
             location: "Falkenstein",
             operator: "Witness: blckchnd",
             contact: "telegram:blckchnd"
+        },
+        {
+            url: "wss://node.hk.graphene.fans",
+            region: "Eastern Asia",
+            country: "China",
+            location: "Hong-Kong",
+            operator: "Witness: traders-witness",
+            contact: "telegram:minter_traders"
         }
     ],
     ES_WRAPPER_LIST: [],
