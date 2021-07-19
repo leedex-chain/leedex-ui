@@ -40,5 +40,20 @@ export const scamAccountsOther = [
     "1.2.3175",
 
     "rudex-gateway",
-    "1.2.2636"
+    "1.2.2636",
+
+    "binance-bitshares-gvbdb84k6h",
+    "1.2.3262",
+
+    "gdex-wallet",
+    "1.2.3260",
+
+    "rudex-bts-chein",
+    "1.2.3278",
+
+    "graphene-wallet",
+    "1.2.3272",
+
+    "graphene-delegate",
+    "1.2.3283"
 ];
