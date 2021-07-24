@@ -28,6 +28,7 @@ class AccountOverview extends React.Component {
             shownAssets: props.viewSettings.get("shownAssets", "active"),
             alwaysShowAssets: [
                 "GPH",
+                "USD",
 
                 /*
                  "USD",

@@ -127,9 +127,11 @@ export function getMyMarketsQuotes() {
     }
     let tokens = {
         nativeTokens: [
-            "GPH"
+            "GPH",
 
-            /* "USD",
+            "USD"
+
+            /* ,
             "EUR",
             "CNY",
             "RUB",
