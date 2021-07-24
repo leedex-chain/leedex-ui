@@ -172,7 +172,7 @@ class ListingPage extends React.Component {
                                                         fontSize: "1.0rem"
                                                     }}
                                                     to={
-                                                        "/market/DONATE_RUDEX.BTC"
+                                                        "/market/DONATE_RUDEX.USDT"
                                                     }
                                                 >
                                                     <Translate content="listing.texts.text3.get" />
@@ -393,7 +393,7 @@ class ListingPage extends React.Component {
                 <p>
                     <Link
                         style={{margin: 2, fontSize: "1.0rem"}}
-                        to={"/market/DONATE_RUDEX.BTC"}
+                        to={"/market/DONATE_RUDEX.USDT"}
                     >
                         <Translate content="listing.get_donate_tokens" />
 
