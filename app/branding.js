@@ -127,9 +127,9 @@ export function getMyMarketsQuotes() {
     }
     let tokens = {
         nativeTokens: [
-            "GPH",
+            "GPH"
 
-            "USD"
+            //"USD"
 
             /* ,
             "EUR",
@@ -374,13 +374,13 @@ export function getConfigurationAsset() {
     if (_isTestnet()) {
         assetSymbol = "NOTIFICATIONS";
     } else {
-        assetSymbol = "TEST";
+        assetSymbol = "RUDEX";
     }
     // explanation will be parsed out of the asset description (via split)
     return {
         symbol: assetSymbol,
         explanation:
-            "This asset is used for decentralized configuration of the RuDEX UI placed under market.rudex.org."
+            "This asset is used for decentralized configuration of the RuDEX UI placed under https://market.rudex.org/."
     };
 }
 
@@ -420,13 +420,13 @@ export function getListingCoins() {
             goal: 5000,
             votes: 0
         },
-        {
+        /*        {
             name: "Waves",
             ticker: "WAVES",
             account: "rudex-waves",
             goal: 10000,
             votes: 0
-        },
+        },*/
         {
             name: "Telos",
             ticker: "TLOS",
@@ -448,13 +448,13 @@ export function getListingCoins() {
             goal: 5000,
             votes: 0
         },
-        {
+        /*        {
             name: "Neo",
             ticker: "NEO",
             account: "rudex-neo",
             goal: 10000,
             votes: 0
-        },
+        },*/
         {
             name: "Idena",
             ticker: "DNA",
@@ -475,14 +475,14 @@ export function getListingCoins() {
             account: "rudex-hive",
             goal: 10000,
             votes: 0
-        },
-        {
+        }
+        /*        {
             name: "Revain",
             ticker: "REV",
             account: "rudex-revain",
             goal: 10000,
             votes: 0
-        }
+        }*/
     ];
 }
 

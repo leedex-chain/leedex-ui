@@ -50,7 +50,7 @@ class DashboardPage extends React.Component {
                                     <Tab title="dashboard.starred_markets">
                                         <StarredMarkets />
                                     </Tab>
-                                    {preferredBases.map(q => {
+                                    {preferredBases.map(imgName => {
                                         let title = (
                                             <span>
                                                 <img
@@ -59,24 +59,33 @@ class DashboardPage extends React.Component {
                                                         maxWidth: 30,
                                                         marginRight: 5
                                                     }}
-                                                    src={`${__BASE_URL__}asset-symbols/${q
-                                                        .replace(
-                                                            /^BTC/,
-                                                            "OPEN.BTC"
-                                                        )
-                                                        .toLowerCase()}.png`}
+                                                    src={
+                                                        imgName.indexOf(
+                                                            "RUDEX"
+                                                        ) !== -1 ||
+                                                        imgName.indexOf(
+                                                            "GPH"
+                                                        ) !== -1
+                                                            ? `${__BASE_URL__}asset-symbols/${imgName
+                                                                  .replace(
+                                                                      /^BTC/,
+                                                                      "OPEN.BTC"
+                                                                  )
+                                                                  .toLowerCase()}.png`
+                                                            : "asset-symbols/unknown.png"
+                                                    }
                                                 />
                                                 &nbsp;
-                                                {q.replace("RUDEX.", "")}
+                                                {imgName.replace("RUDEX.", "")}
                                             </span>
                                         );
 
                                         return (
-                                            <Tab key={q} title={title}>
+                                            <Tab key={imgName} title={title}>
                                                 <FeaturedMarkets
-                                                    quotes={[q].concat(
+                                                    quotes={[imgName].concat(
                                                         getPossibleGatewayPrefixes(
-                                                            [q]
+                                                            [imgName]
                                                         )
                                                     )}
                                                 />

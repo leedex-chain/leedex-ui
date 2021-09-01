@@ -4,17 +4,17 @@ function createNotifcationString() {
         notifications: [
             {
                 type: "warning",
-                begin_date: "16.05.2019",
-                end_date: "31.12.2019",
+                begin_date: "15.08.2021",
+                end_date: "31.12.2025",
                 content:
                     "Please be aware of scam attempts using Proposed Transactions in your Dashboard. Never approve a proposal if you are not expecting one!"
             },
             {
-                type: "info",
-                begin_date: "02.07.2019",
-                end_date: "09.07.2019",
+                type: "critical",
+                begin_date: "15.08.2021",
+                end_date: "31.12.2025",
                 content:
-                    "2nd Global Graphene Blockchain Developer Conference is happening on 6th-7th July 2019 in Shanghai. Get more information here http://gbacenter.org/event/index_en.html/!"
+                    "WARNING: Users of the Graphene blockchain, DO NOT ACCEPT suspicious offers to trade tokens on private markets or tokens that are not listed in Withdrawals section of the Wallet UI or in default market pairs."
             }
         ],
         blacklists: {

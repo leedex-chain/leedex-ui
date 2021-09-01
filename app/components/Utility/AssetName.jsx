@@ -258,7 +258,7 @@ export default class AssetNameWrapper extends React.Component {
                     }
                 >
                     &nbsp;
-                    <Icon style={{color: "white"}} type="warning" />
+                    <Icon type="warning" />
                 </Tooltip>
             );
         }
@@ -287,7 +287,7 @@ export default class AssetNameWrapper extends React.Component {
                         }
                     >
                         &nbsp;
-                        <Icon style={{color: "white"}} type="warning" />
+                        <Icon type="warning" />
                     </Tooltip>
                 );
             }
