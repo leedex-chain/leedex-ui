@@ -147,7 +147,7 @@ class Borrow extends Component {
                                     marginBottom: "1rem"
                                 }}
                                 assets={[
-                                    "1.3.1"
+                                    "1.3.27" // gpUSD
                                     /*                                    "1.3.120",
                                     "1.3.121",
                                     "1.3.1325",

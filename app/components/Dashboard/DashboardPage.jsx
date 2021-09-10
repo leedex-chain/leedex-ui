@@ -65,6 +65,9 @@ class DashboardPage extends React.Component {
                                                         ) !== -1 ||
                                                         imgName.indexOf(
                                                             "GPH"
+                                                        ) !== -1 ||
+                                                        imgName.indexOf(
+                                                            "USD"
                                                         ) !== -1
                                                             ? `${__BASE_URL__}asset-symbols/${imgName
                                                                   .replace(

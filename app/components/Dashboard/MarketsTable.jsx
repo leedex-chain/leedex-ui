@@ -342,6 +342,22 @@ class MarketsTable extends React.Component {
             //if (symbol === "OPEN.BTC" || symbol === "GDEX.BTC") return symbol;
             if (symbol.startsWith("RUDEX.")) return symbol;
 
+            if (
+                symbol == "DONATE" ||
+                symbol == "GPH" ||
+                symbol == "USD"
+
+                /* ||
+        symbol == "EUR" ||
+        symbol == "CNY" ||
+        symbol == "RUB" ||
+        symbol == "BTC" ||
+        symbol == "GOLD" ||
+        symbol == "SILVER" ||
+        symbol == "OIL"*/
+            )
+                return symbol;
+
             let imgName = symbol.split(".");
             return imgName.length === 2 ? imgName[1] : imgName[0];
         }
