@@ -113,7 +113,7 @@ export function getMyMarketsBases() {
     if (_isTestnet()) {
         return ["TEST"];
     }
-    return ["GPH", "RUDEX.BTC", "RUDEX.USDT", "RUDEX.BTS"];
+    return ["GPH", "RUDEX.USDT", "RUDEX.BTS", "RUDEX.BTC", "USD"];
 }
 
 /**
@@ -144,19 +144,21 @@ export function getMyMarketsQuotes() {
             "DONATE",
 
             "RUDEX.BTC",
+            "RUDEX.LTC",
             "RUDEX.ETH",
             "RUDEX.USDT",
             "RUDEX.EOS",
             "RUDEX.PZM",
             "RUDEX.GOLOS",
             "RUDEX.STEEM",
-            "RUDEX.WLS",
-            "RUDEX.SMOKE",
             "RUDEX.NBS",
-            "RUDEX.PPY",
             "RUDEX.XMR",
             "RUDEX.BTS",
-            "RUDEX.TRX"
+            "RUDEX.TRX",
+
+            "RUDEX.PPY",
+            "RUDEX.SMOKE",
+            "RUDEX.WLS"
 
             //RuDEX MPA-s
             /*
@@ -237,49 +239,46 @@ export function getFeaturedMarkets(quotes = []) {
         ["RUB", "SILVER"],
         ["RUB", "OIL"]*/
 
-        ["GPH", "RUDEX.PPY"],
         ["GPH", "RUDEX.NBS"],
         ["GPH", "RUDEX.BTC"],
+        ["GPH", "RUDEX.LTC"],
         ["GPH", "RUDEX.USDT"],
         ["GPH", "RUDEX.ETH"],
         ["GPH", "RUDEX.XMR"],
         ["GPH", "RUDEX.EOS"],
         ["GPH", "RUDEX.GOLOS"],
         ["GPH", "RUDEX.STEEM"],
-        ["GPH", "RUDEX.WLS"],
-        //["GPH", "RUDEX.SMOKE"], delisted
         ["GPH", "RUDEX.BTS"],
         ["GPH", "RUDEX.TRX"],
 
         /*["RUBLE", "GPH"],
-        ["RUBLE", "RUDEX.PPY"],
         ["RUBLE", "RUDEX.BTC"],
         ["RUBLE", "RUDEX.USDT"],
         ["RUBLE", "RUDEX.ETH"],
         ["RUBLE", "RUDEX.EOS"],
         ["RUBLE", "RUDEX.GOLOS"],
         ["RUBLE", "RUDEX.STEEM"],
-        ["RUBLE", "RUDEX.WLS"],
-        ["RUBLE", "RUDEX.SMOKE"], delisted
         ["RUBLE", "RUDEX.RUB"], */
 
         ["RUDEX.USDT", "GPH"],
         ["RUDEX.USDT", "USD"],
 
         ["RUDEX.USDT", "DONATE"],
-        ["RUDEX.USDT", "RUDEX.PPY"],
         ["RUDEX.USDT", "RUDEX.NBS"],
         ["RUDEX.USDT", "RUDEX.BTC"],
+        ["RUDEX.USDT", "RUDEX.LTC"],
         ["RUDEX.USDT", "RUDEX.ETH"],
         ["RUDEX.USDT", "RUDEX.EOS"],
         ["RUDEX.USDT", "RUDEX.GOLOS"],
         ["RUDEX.USDT", "RUDEX.STEEM"],
-        ["RUDEX.USDT", "RUDEX.WLS"],
-        //["RUDEX.USDT", "RUDEX.SMOKE"], delisted
         ["RUDEX.USDT", "RUDEX.PZM"],
         ["RUDEX.USDT", "RUDEX.XMR"],
         ["RUDEX.USDT", "RUDEX.BTS"],
         ["RUDEX.USDT", "RUDEX.TRX"],
+
+        ["RUDEX.USDT", "RUDEX.PPY"],
+        ["RUDEX.USDT", "RUDEX.SMOKE"],
+        ["RUDEX.USDT", "RUDEX.WLS"],
         //["RUDEX.USDT", "RUBLE"],
 
         /*        ["RUDEX.USDT", "RUDEX.XBS"], //MPA
@@ -292,17 +291,18 @@ export function getFeaturedMarkets(quotes = []) {
         //["RUDEX.BTC", "DONATE"],
 
         ["RUDEX.BTC", "GPH"],
-        ["RUDEX.BTC", "RUDEX.PPY"],
-        //["RUDEX.BTC", "RUDEX.NBS"],
+        ["RUDEX.BTC", "RUDEX.LTC"],
         ["RUDEX.BTC", "RUDEX.ETH"],
         ["RUDEX.BTC", "RUDEX.XMR"],
         ["RUDEX.BTC", "RUDEX.EOS"],
         ["RUDEX.BTC", "RUDEX.GOLOS"],
         ["RUDEX.BTC", "RUDEX.STEEM"],
-        //["RUDEX.BTC", "RUDEX.WLS"],
-        //["RUDEX.BTC", "RUDEX.SMOKE"], delisted
         ["RUDEX.BTC", "RUDEX.BTS"],
         ["RUDEX.BTC", "RUDEX.TRX"],
+
+        ["RUDEX.BTC", "RUDEX.PPY"],
+        ["RUDEX.BTC", "RUDEX.SMOKE"],
+        ["RUDEX.BTC", "RUDEX.WLS"],
 
         //["RUDEX.BTC", "RUDEX.LOTTERY"],
         //["RUDEX.BTC", "RUBLE"],
@@ -310,18 +310,25 @@ export function getFeaturedMarkets(quotes = []) {
 
         //Bitshares
         ["RUDEX.BTS", "GPH"],
-        ["RUDEX.BTS", "RUDEX.PPY"],
         ["RUDEX.BTS", "RUDEX.NBS"],
         ["RUDEX.BTS", "RUDEX.BTC"],
+        ["RUDEX.BTS", "RUDEX.LTC"],
         ["RUDEX.BTS", "RUDEX.USDT"],
         ["RUDEX.BTS", "RUDEX.ETH"],
         ["RUDEX.BTS", "RUDEX.XMR"],
         ["RUDEX.BTS", "RUDEX.EOS"],
         ["RUDEX.BTS", "RUDEX.GOLOS"],
         ["RUDEX.BTS", "RUDEX.STEEM"],
+        ["RUDEX.BTS", "RUDEX.TRX"],
+
+        ["RUDEX.BTS", "RUDEX.PPY"],
+        ["RUDEX.BTS", "RUDEX.SMOKE"],
         ["RUDEX.BTS", "RUDEX.WLS"],
-        //["RUDEX.BTS", "RUDEX.SMOKE"], delisted
-        ["RUDEX.BTS", "RUDEX.TRX"]
+
+        //gpUSD
+        ["USD", "RUDEX.USDT"],
+        ["USD", "GPH"],
+        ["USD", "RUDEX.PZM"]
     ].filter(a => {
         if (!quotes.length) return true;
         return quotes.indexOf(a[0]) !== -1;
@@ -430,13 +437,13 @@ export function getListingCoins() {
             goal: 3000,
             votes: 0
         },
-        {
+        /*        {
             name: "Litecoin",
             ticker: "LTC",
             account: "rudex-litecoin",
             goal: 2000,
             votes: 0
-        },
+        },*/
         {
             name: "Minter Network",
             ticker: "BIP",
@@ -455,14 +462,21 @@ export function getListingCoins() {
             name: "Telos",
             ticker: "TLOS",
             account: "rudex-telos",
-            goal: 2000,
+            goal: 3000,
             votes: 0
         },
-        {
+        /*        {
             name: "Dash",
             ticker: "DASH",
             account: "rudex-dash",
             goal: 2000,
+            votes: 0
+        },*/
+        {
+            name: "Ark",
+            ticker: "ARK",
+            account: "rudex-ark",
+            goal: 3000,
             votes: 0
         }
 
