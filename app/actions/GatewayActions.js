@@ -1,7 +1,6 @@
 import alt from "alt-instance";
 import {
     fetchCoins,
-    fetchTradingPairs,
     fetchCoinsSimple,
     getBackedCoins,
     getActiveWallets
@@ -19,7 +18,7 @@ const onGatewayTimeout = (dispatch, gateway) => {
 
 class GatewayActions {
     fetchCoins({
-        backer = "OPEN",
+        backer = "RUDEX",
         url = undefined,
         urlBridge = undefined,
         urlWallets = undefined
@@ -31,18 +30,13 @@ class GatewayActions {
                     onGatewayTimeout.bind(null, dispatch, backer),
                     GATEWAY_TIMEOUT
                 );
-                Promise.all([
-                    fetchCoins(url),
-                    fetchTradingPairs(urlBridge),
-                    getActiveWallets(urlWallets)
-                ])
+                Promise.all([fetchCoins(url), getActiveWallets(urlWallets)])
                     .then(result => {
                         clearTimeout(fetchCoinsTimeout);
                         delete inProgress["fetchCoins_" + backer];
-                        let [coins, tradingPairs, wallets] = result;
+                        let [coins, wallets] = result;
                         let backedCoins = getBackedCoins({
                             allCoins: coins,
-                            tradingPairs: tradingPairs,
                             backer: backer
                         }).filter(a => !!a.walletType);
                         backedCoins.forEach(a => {
@@ -94,49 +88,6 @@ class GatewayActions {
                         dispatch({
                             coins: [],
                             backer
-                        });
-                    });
-            };
-        } else {
-            return {};
-        }
-    }
-
-    fetchPairs() {
-        if (!inProgress["fetchTradingPairs"]) {
-            inProgress["fetchTradingPairs"] = true;
-            return dispatch => {
-                let fetchCoinsTimeout = setTimeout(
-                    onGatewayTimeout.bind(null, dispatch, "TRADE"),
-                    GATEWAY_TIMEOUT
-                );
-                Promise.all([
-                    fetchCoins(
-                        blockTradesAPIs.BASE + blockTradesAPIs.COINS_LIST
-                    ),
-                    fetchTradingPairs(
-                        blockTradesAPIs.BASE + blockTradesAPIs.TRADING_PAIRS
-                    ),
-                    getActiveWallets(
-                        blockTradesAPIs.BASE + blockTradesAPIs.ACTIVE_WALLETS
-                    )
-                ])
-                    .then(result => {
-                        clearTimeout(fetchCoinsTimeout);
-                        delete inProgress["fetchTradingPairs"];
-                        let [coins, bridgeCoins, wallets] = result;
-                        dispatch({
-                            coins,
-                            bridgeCoins,
-                            wallets
-                        });
-                    })
-                    .catch(() => {
-                        delete inProgress["fetchTradingPairs"];
-                        dispatch({
-                            coins: [],
-                            bridgeCoins: [],
-                            wallets: []
                         });
                     });
             };

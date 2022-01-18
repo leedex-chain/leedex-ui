@@ -14,5 +14,8 @@ require("file-loader?name=coins-logo/[name].png!./hive.png");
 require("file-loader?name=coins-logo/[name].png!./rev.png");
 require("file-loader?name=coins-logo/[name].png!./adm.png");
 require("file-loader?name=coins-logo/[name].png!./ark.png");
+require("file-loader?name=coins-logo/[name].png!./cri.png");
+require("file-loader?name=coins-logo/[name].png!./gwn.png");
+require("file-loader?name=coins-logo/[name].png!./rat.png");
 
 require("file-loader?name=coins-logo/[name].png!./pzm.png");

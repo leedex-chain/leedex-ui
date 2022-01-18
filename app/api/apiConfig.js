@@ -1,26 +1,5 @@
 import {getFaucet, getTestFaucet} from "../branding";
 
-export const openledgerAPIs = {
-    BASE: "https://ol-api1.openledger.info/api/v0/ol/support",
-    COINS_LIST: "/coins",
-    ACTIVE_WALLETS: "/active-wallets",
-    TRADING_PAIRS: "/trading-pairs",
-    DEPOSIT_LIMIT: "/deposit-limits",
-    ESTIMATE_OUTPUT: "/estimate-output-amount",
-    ESTIMATE_INPUT: "/estimate-input-amount",
-    RPC_URL: "https://openledger.info/api/"
-};
-
-export const blockTradesAPIs = {
-    BASE: "https://api.blocktrades.us/v2",
-    COINS_LIST: "/coins",
-    ACTIVE_WALLETS: "/active-wallets",
-    TRADING_PAIRS: "/trading-pairs",
-    DEPOSIT_LIMIT: "/deposit-limits",
-    ESTIMATE_OUTPUT: "/estimate-output-amount",
-    ESTIMATE_INPUT: "/estimate-input-amount"
-};
-
 export const rudexAPIs = {
     BASE: "https://gateway.rudex.org/api/rudex_new",
     COINS_LIST: "/coins",

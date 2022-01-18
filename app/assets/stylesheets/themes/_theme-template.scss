@@ -2880,3 +2880,13 @@ div.customizable-column--selector--dropdown {
     border: 1px solid red;
     padding: 5px;
 }
+
+@media only all and (max-width: 900px) {
+    .footer[class*="grid-block"]:not(.ng-hide) {
+        display: none !important;
+    }
+}
+
+.footer {
+    height: 40px;
+}

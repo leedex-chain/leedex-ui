@@ -3,7 +3,7 @@ import Translate from "react-translate-component";
 import utils from "common/utils";
 import {requestDepositAddress} from "common/gatewayMethods";
 import {ChainStore} from "bitsharesjs";
-import BlockTradesDepositAddressCache from "common/BlockTradesDepositAddressCache";
+import RuDexDepositAddressCache from "common/RuDexDepositAddressCache";
 import CopyButton from "../Utility/CopyButton";
 import Icon from "../Icon/Icon";
 import LoadingIndicator from "../LoadingIndicator";
@@ -27,7 +27,7 @@ class DepositModalContent extends DecimalChecker {
 
         this.state = this._intitalState();
 
-        this.deposit_address_cache = new BlockTradesDepositAddressCache();
+        this.deposit_address_cache = new RuDexDepositAddressCache();
         this.addDepositAddress = this.addDepositAddress.bind(this);
     }
 
@@ -311,10 +311,12 @@ class DepositModalContent extends DecimalChecker {
         }
         //let maxDeposit = backingAsset.maxAmount ? backingAsset.maxAmount : null;
 
+        let addressForQR = depositAddress.address;
+
         const QR = isAddressValid ? (
             <CryptoLinkFormatter
                 size={140}
-                address={usingGateway ? depositAddress.address : account}
+                address={usingGateway ? addressForQR : account}
                 asset={selectedAsset}
             />
         ) : (
@@ -389,6 +391,14 @@ class DepositModalContent extends DecimalChecker {
                                 minDeposit={minDeposit || 0}
                                 coin={selectedAsset}
                             />
+
+                            <div className="grid-block container-row">
+                                <Translate
+                                    content="gateway.deposit_to"
+                                    asset={backingAsset.description}
+                                />
+                                :
+                            </div>
 
                             <div className="grid-block container-row">
                                 <div style={{paddingRight: "1rem"}}>

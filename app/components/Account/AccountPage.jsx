@@ -11,6 +11,8 @@ import {List, Set} from "immutable";
 import Page404 from "../Page404/Page404";
 import {Route, Switch, Redirect} from "react-router-dom";
 
+import {updateGatewayBackers} from "common/gatewayUtils";
+
 /* Nested routes */
 import AccountAssets from "./AccountAssets";
 import {AccountAssetCreate} from "./AccountAssetCreate";
@@ -39,6 +41,9 @@ class AccountPage extends React.Component {
             );
             // Fetch possible fee assets here to avoid async issues later (will resolve assets)
             accountUtils.getPossibleFees(this.props.account, "transfer");
+
+            // Fetch gateways
+            updateGatewayBackers();
         }
     }
 

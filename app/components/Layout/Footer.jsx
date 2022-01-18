@@ -605,6 +605,7 @@ class Footer extends React.Component {
                                         fontSize: "1em"
                                     }}
                                     href="https://play.google.com/store/apps/details?id=org.rudex.app"
+                                    title="GooglePlay"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
@@ -624,6 +625,7 @@ class Footer extends React.Component {
                                         fontSize: "1em"
                                     }}
                                     href="https://coinmarketcap.com/exchanges/rudex/"
+                                    title="CoinMarketCap"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
@@ -632,6 +634,66 @@ class Footer extends React.Component {
                                             height: "22px"
                                         }}
                                         src={`${__BASE_URL__}images/coinmarketcap.png`}
+                                    />
+                                </a>
+                                <a
+                                    style={{
+                                        padding: "0 0.5rem",
+                                        borderLeft:
+                                            "1px solid rgba(128, 128, 128, 0.45)",
+                                        lineHeight: "2rem",
+                                        fontSize: "1em"
+                                    }}
+                                    href="https://coinranking.com/exchange/5fQfsBW-7W+rudex"
+                                    title="CoinRanking"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img
+                                        style={{
+                                            height: "22px"
+                                        }}
+                                        src={`${__BASE_URL__}images/coinranking.png`}
+                                    />
+                                </a>
+                                <a
+                                    style={{
+                                        padding: "0 0.5rem",
+                                        borderLeft:
+                                            "1px solid rgba(128, 128, 128, 0.45)",
+                                        lineHeight: "2rem",
+                                        fontSize: "1em"
+                                    }}
+                                    href="https://coinpaprika.com/exchanges/rudex/"
+                                    title="CoinPaprika"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img
+                                        style={{
+                                            height: "22px"
+                                        }}
+                                        src={`${__BASE_URL__}images/coinpaprika.png`}
+                                    />
+                                </a>
+                                <a
+                                    style={{
+                                        padding: "0 0.5rem",
+                                        borderLeft:
+                                            "1px solid rgba(128, 128, 128, 0.45)",
+                                        lineHeight: "2rem",
+                                        fontSize: "1em"
+                                    }}
+                                    href="https://coin360.com/exchange/rudex"
+                                    title="Coin360"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img
+                                        style={{
+                                            height: "22px"
+                                        }}
+                                        src={`${__BASE_URL__}images/coin.png`}
                                     />
                                 </a>
                             </div>

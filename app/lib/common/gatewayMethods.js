@@ -1,10 +1,7 @@
 import ls from "./localStorage";
-import {blockTradesAPIs, openledgerAPIs} from "api/apiConfig";
+import {rudexAPIs} from "api/apiConfig";
 import {availableGateways} from "common/gateways";
-const blockTradesStorage = new ls("");
-let oidcStorage = new ls(
-    "oidc.user:https://blocktrades.us/:10ecf048-b982-467b-9965-0b0926330869"
-);
+const RuDEXStorage = new ls("");
 
 let fetchInProgess = {};
 let fetchCache = {};
@@ -17,9 +14,7 @@ function setCacheClearTimer(key) {
     }, fetchCacheTTL);
 }
 
-export function fetchCoins(
-    url = openledgerAPIs.BASE + openledgerAPIs.COINS_LIST
-) {
+export function fetchCoins(url = rudexAPIs.BASE + rudexAPIs.COINS_LIST) {
     const key = "fetchCoins_" + url;
     let currentPromise = fetchInProgess[key];
     if (fetchCache[key]) {
@@ -49,9 +44,7 @@ export function fetchCoins(
     });
 }
 
-export function fetchCoinsSimple(
-    url = openledgerAPIs.BASE + openledgerAPIs.COINS_LIST
-) {
+export function fetchCoinsSimple(url = rudexAPIs.BASE + rudexAPIs.COINS_LIST) {
     return fetch(url)
         .then(reply =>
             reply.json().then(result => {
@@ -64,135 +57,8 @@ export function fetchCoinsSimple(
         });
 }
 
-export function fetchTradingPairs(
-    url = blockTradesAPIs.BASE + blockTradesAPIs.TRADING_PAIRS
-) {
-    const key = "fetchTradingPairs_" + url;
-    let currentPromise = fetchInProgess[key];
-    if (fetchCache[key]) {
-        return Promise.resolve(fetchCache[key]);
-    } else if (!currentPromise) {
-        fetchInProgess[key] = currentPromise = fetch(url, {
-            method: "get",
-            headers: new Headers({Accept: "application/json"})
-        })
-            .then(reply =>
-                reply.json().then(result => {
-                    return result;
-                })
-            )
-            .catch(err => {
-                console.log(`fetchTradingPairs error from ${url}: ${err}`);
-                throw err;
-            });
-    }
-    return new Promise((res, rej) => {
-        currentPromise
-            .then(result => {
-                fetchCache[key] = result;
-                res(result);
-                delete fetchInProgess[key];
-                if (!clearIntervals[key]) setCacheClearTimer(key);
-            })
-            .catch(rej);
-    });
-}
-
-export function getDepositLimit(
-    inputCoin,
-    outputCoin,
-    url = blockTradesAPIs.BASE + blockTradesAPIs.DEPOSIT_LIMIT
-) {
-    return fetch(
-        url +
-            "?inputCoinType=" +
-            encodeURIComponent(inputCoin) +
-            "&outputCoinType=" +
-            encodeURIComponent(outputCoin),
-        {method: "get", headers: new Headers({Accept: "application/json"})}
-    )
-        .then(reply =>
-            reply.json().then(result => {
-                return result;
-            })
-        )
-        .catch(err => {
-            console.log(
-                "error fetching deposit limit of",
-                inputCoin,
-                outputCoin,
-                err
-            );
-        });
-}
-
-export function estimateOutput(
-    inputAmount,
-    inputCoin,
-    outputCoin,
-    url = blockTradesAPIs.BASE + blockTradesAPIs.ESTIMATE_OUTPUT
-) {
-    return fetch(
-        url +
-            "?inputAmount=" +
-            encodeURIComponent(inputAmount) +
-            "&inputCoinType=" +
-            encodeURIComponent(inputCoin) +
-            "&outputCoinType=" +
-            encodeURIComponent(outputCoin),
-        {method: "get", headers: new Headers({Accept: "application/json"})}
-    )
-        .then(reply =>
-            reply.json().then(result => {
-                return result;
-            })
-        )
-        .catch(err => {
-            console.log(
-                "error fetching deposit limit of",
-                inputCoin,
-                outputCoin,
-                err
-            );
-        });
-}
-
-export function estimateInput(
-    outputAmount,
-    inputCoin,
-    outputCoin,
-    url = blockTradesAPIs.BASE + blockTradesAPIs.ESTIMATE_INPUT
-) {
-    return fetch(
-        url +
-            "?outputAmount=" +
-            encodeURIComponent(outputAmount) +
-            "&inputCoinType=" +
-            encodeURIComponent(inputCoin) +
-            "&outputCoinType=" +
-            encodeURIComponent(outputCoin),
-        {
-            method: "get",
-            headers: new Headers({Accept: "application/json"})
-        }
-    )
-        .then(reply =>
-            reply.json().then(result => {
-                return result;
-            })
-        )
-        .catch(err => {
-            console.log(
-                "error fetching deposit limit of",
-                inputCoin,
-                outputCoin,
-                err
-            );
-        });
-}
-
 export function getActiveWallets(
-    url = openledgerAPIs.BASE + openledgerAPIs.ACTIVE_WALLETS
+    url = rudexAPIs.BASE + rudexAPIs.ACTIVE_WALLETS
 ) {
     const key = "getActiveWallets_" + url;
     let currentPromise = fetchInProgess[key];
@@ -207,11 +73,7 @@ export function getActiveWallets(
                 })
             )
             .catch(err => {
-                console.log(
-                    "error fetching blocktrades active wallets",
-                    err,
-                    url
-                );
+                console.log("error fetching rudex active wallets", err, url);
             });
     }
 
@@ -233,7 +95,7 @@ export function getDepositAddress({coin, account, stateCallback}) {
 
     let body_string = JSON.stringify(body);
 
-    fetch(openledgerAPIs.BASE + "/simple-api/get-last-address", {
+    fetch(rudexAPIs.BASE + "/simple-api/initiate-trade", {
         method: "POST",
         headers: new Headers({
             Accept: "application/json",
@@ -276,7 +138,7 @@ export function requestDepositAddress({
     inputCoinType,
     outputCoinType,
     outputAddress,
-    url = openledgerAPIs.BASE,
+    url = rudexAPIs.BASE,
     stateCallback,
     selectedGateway
 }) {
@@ -336,53 +198,7 @@ export function requestDepositAddress({
         });
 }
 
-export function getMappingData(inputCoinType, outputCoinType, outputAddress) {
-    let body = JSON.stringify({
-        inputCoinType,
-        outputCoinType,
-        outputAddress: {
-            address: outputAddress
-        }
-    });
-    let mapping = inputCoinType + outputCoinType + outputAddress;
-    if (blockTradesStorage.has(`history_mapping_${mapping}`)) {
-        return Promise.resolve(
-            blockTradesStorage.get(`history_mapping_${mapping}`)
-        );
-    } else {
-        return new Promise((resolve, reject) => {
-            let headers = {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${oidcStorage.get("")["access_token"]}`
-            };
-            fetch(`${blockTradesAPIs.BASE}/mappings`, {
-                method: "post",
-                headers: headers,
-                body: body
-            })
-                .then(reply => {
-                    reply.json().then(result => {
-                        if (result["inputAddress"]) {
-                            blockTradesStorage.set(
-                                `history_mapping_${mapping}`,
-                                result["inputAddress"]
-                            );
-                            resolve(result && result["inputAddress"]);
-                        } else {
-                            reject();
-                        }
-                    });
-                })
-                .catch(error => {
-                    console.log("Error: ", error);
-                    reject();
-                });
-        });
-    }
-}
-
-export function getBackedCoins({allCoins, tradingPairs, backer}) {
+export function getBackedCoins({allCoins, backer}) {
     let gatewayStatus = availableGateways[backer];
     let coins_by_type = {};
 
@@ -398,13 +214,6 @@ export function getBackedCoins({allCoins, tradingPairs, backer}) {
     );
 
     let allowed_outputs_by_input = {};
-    tradingPairs.forEach(pair => {
-        if (!allowed_outputs_by_input[pair.inputCoinType])
-            allowed_outputs_by_input[pair.inputCoinType] = {};
-        allowed_outputs_by_input[pair.inputCoinType][
-            pair.outputCoinType
-        ] = true;
-    });
 
     let backedCoins = [];
     allCoins.forEach(inputCoin => {
@@ -448,7 +257,7 @@ export function getBackedCoins({allCoins, tradingPairs, backer}) {
 }
 
 export function validateAddress({
-    url = blockTradesAPIs.BASE,
+    url = rudexAPIs.BASE,
     walletType,
     newAddress,
     output_coin_type = null,
@@ -492,73 +301,24 @@ export function validateAddress({
     }
 }
 
-let _conversionCache = {};
-export function getConversionJson(inputs, userAccessToken = null) {
-    const {input_coin_type, output_coin_type, url, account_name} = inputs;
-    if (!input_coin_type || !output_coin_type) return Promise.reject();
-    const body = JSON.stringify({
-        inputCoinType: input_coin_type,
-        outputCoinType: output_coin_type,
-        outputAddress: account_name,
-        inputMemo:
-            "blocktrades conversion: " +
-            input_coin_type +
-            "to" +
-            output_coin_type
-    });
-
-    const _cacheString =
-        url + input_coin_type + output_coin_type + account_name;
-    return new Promise((resolve, reject) => {
-        if (_conversionCache[_cacheString])
-            return resolve(_conversionCache[_cacheString]);
-        let headers = {
-            Accept: "application/json",
-            "Content-Type": "application/json"
-        };
-        if (userAccessToken) {
-            headers = {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${userAccessToken}`
-            };
-        }
-        fetch(url + "/simple-api/initiate-trade", {
-            method: "post",
-            headers,
-            body: body
-        })
-            .then(reply => {
-                reply
-                    .json()
-                    .then(json => {
-                        _conversionCache[_cacheString] = json;
-                        resolve(json);
-                    }, reject)
-                    .catch(reject);
-            })
-            .catch(reject);
-    });
-}
-
 function hasWithdrawalAddress(wallet) {
-    return blockTradesStorage.has(`history_address_${wallet}`);
+    return RuDEXStorage.has(`history_address_${wallet}`);
 }
 
 function setWithdrawalAddresses({wallet, addresses}) {
-    blockTradesStorage.set(`history_address_${wallet}`, addresses);
+    RuDEXStorage.set(`history_address_${wallet}`, addresses);
 }
 
 function getWithdrawalAddresses(wallet) {
-    return blockTradesStorage.get(`history_address_${wallet}`, []);
+    return RuDEXStorage.get(`history_address_${wallet}`, []);
 }
 
 function setLastWithdrawalAddress({wallet, address}) {
-    blockTradesStorage.set(`history_address_last_${wallet}`, address);
+    RuDEXStorage.set(`history_address_last_${wallet}`, address);
 }
 
 function getLastWithdrawalAddress(wallet) {
-    return blockTradesStorage.get(`history_address_last_${wallet}`, "");
+    return RuDEXStorage.get(`history_address_last_${wallet}`, "");
 }
 
 export const WithdrawAddresses = {

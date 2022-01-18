@@ -231,7 +231,7 @@ class RaidoFinance extends React.Component {
                         <div style={{marginBottom: 15}}>
                             <RaidoDepositRequest
                                 key={`${coin.symbol}`}
-                                gateway={coin.gatewayWallet}
+                                gateway={"rudex"}
                                 issuer_account={coin.issuer}
                                 account={account}
                                 deposit_asset={coin.backingCoin.toUpperCase()}

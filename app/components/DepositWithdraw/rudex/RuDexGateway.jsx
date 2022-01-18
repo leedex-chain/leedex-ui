@@ -109,9 +109,10 @@ class RuDexGateway extends React.Component {
             if (!a || !a.symbol) {
                 return false;
             } else {
-                return action === "deposit"
+                return true;
+                /*return action === "deposit"
                     ? a.depositAllowed
-                    : a.withdrawalAllowed;
+                    : a.withdrawalAllowed;*/
             }
         });
 
@@ -231,7 +232,7 @@ class RuDexGateway extends React.Component {
                         <div style={{marginBottom: 15}}>
                             <RuDexGatewayDepositRequest
                                 key={`${coin.symbol}`}
-                                gateway={coin.gatewayWallet}
+                                gateway={"rudex"}
                                 issuer_account={coin.issuer}
                                 account={account}
                                 deposit_asset={coin.backingCoin.toUpperCase()}
@@ -239,6 +240,8 @@ class RuDexGateway extends React.Component {
                                 deposit_coin_type={coin.backingCoin.toLowerCase()}
                                 deposit_account={coin.gatewayWallet}
                                 deposit_wallet_type={coin.walletType}
+                                depositAllowed={coin.depositAllowed}
+                                withdrawalAllowed={coin.withdrawalAllowed}
                                 description={coin.description}
                                 receive_asset={coin.symbol}
                                 receive_coin_type={coin.symbol.toLowerCase()}

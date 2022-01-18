@@ -26,6 +26,10 @@ class CryptoLinkFormatter extends React.Component {
         super(params);
 
         this.assetTemplates = {
+            GPH: {
+                template: "{address}",
+                params: []
+            },
             BTS: {
                 template: "{address}",
                 params: []
@@ -79,6 +83,27 @@ class CryptoLinkFormatter extends React.Component {
                         bind: "amount"
                     },
                     {
+                        bind: "message"
+                    }
+                ]
+            },
+            TRX: {
+                template: "{address}",
+                params: []
+            },
+            USDT: {
+                template: "{address}",
+                params: []
+            },
+            XMR: {
+                template: "monero:{address}",
+                params: [
+                    {
+                        // &amount=<amount>
+                        bind: "amount"
+                    },
+                    {
+                        // &message=<message>
                         bind: "message"
                     }
                 ]

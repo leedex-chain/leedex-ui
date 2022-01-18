@@ -21,7 +21,7 @@ import {checkBalance} from "common/trxHelper";
 import {connect} from "alt-react";
 import SettingsStore from "stores/SettingsStore";
 import {DecimalChecker} from "../Utility/DecimalChecker";
-import {openledgerAPIs} from "api/apiConfig";
+import {rudexAPIs} from "api/apiConfig";
 import {getWalletName} from "branding";
 import {Modal, Tooltip} from "bitshares-ui-style-guide";
 import {ChainStore} from "bitsharesjs";
@@ -289,7 +289,7 @@ class DepositWithdrawContent extends DecimalChecker {
 
     _validateAddress(address, props = this.props) {
         validateAddress({
-            url: openledgerAPIs.BASE,
+            url: rudexAPIs.BASE,
             walletType: props.walletType,
             newAddress: address
         })

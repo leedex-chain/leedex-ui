@@ -113,7 +113,7 @@ export function getMyMarketsBases() {
     if (_isTestnet()) {
         return ["TEST"];
     }
-    return ["GPH", "RUDEX.USDT", "RUDEX.BTS", "RUDEX.BTC", "USD"];
+    return ["GPH", "USD", "RUDEX.BTC", "RUDEX.USDT", "RUDEX.BTS", "RUDEX.NBS"];
 }
 
 /**
@@ -154,11 +154,11 @@ export function getMyMarketsQuotes() {
             "RUDEX.NBS",
             "RUDEX.XMR",
             "RUDEX.BTS",
-            "RUDEX.TRX",
+            "RUDEX.TRX"
 
-            "RUDEX.PPY",
-            "RUDEX.SMOKE",
-            "RUDEX.WLS"
+            //"RUDEX.PPY",
+            //"RUDEX.SMOKE",
+            //"RUDEX.WLS"
 
             //RuDEX MPA-s
             /*
@@ -276,9 +276,9 @@ export function getFeaturedMarkets(quotes = []) {
         ["RUDEX.USDT", "RUDEX.BTS"],
         ["RUDEX.USDT", "RUDEX.TRX"],
 
-        ["RUDEX.USDT", "RUDEX.PPY"],
-        ["RUDEX.USDT", "RUDEX.SMOKE"],
-        ["RUDEX.USDT", "RUDEX.WLS"],
+        //["RUDEX.USDT", "RUDEX.PPY"],
+        //["RUDEX.USDT", "RUDEX.SMOKE"],
+        //["RUDEX.USDT", "RUDEX.WLS"],
         //["RUDEX.USDT", "RUBLE"],
 
         /*        ["RUDEX.USDT", "RUDEX.XBS"], //MPA
@@ -300,9 +300,9 @@ export function getFeaturedMarkets(quotes = []) {
         ["RUDEX.BTC", "RUDEX.BTS"],
         ["RUDEX.BTC", "RUDEX.TRX"],
 
-        ["RUDEX.BTC", "RUDEX.PPY"],
-        ["RUDEX.BTC", "RUDEX.SMOKE"],
-        ["RUDEX.BTC", "RUDEX.WLS"],
+        //["RUDEX.BTC", "RUDEX.PPY"],
+        //["RUDEX.BTC", "RUDEX.SMOKE"],
+        //["RUDEX.BTC", "RUDEX.WLS"],
 
         //["RUDEX.BTC", "RUDEX.LOTTERY"],
         //["RUDEX.BTC", "RUBLE"],
@@ -321,9 +321,16 @@ export function getFeaturedMarkets(quotes = []) {
         ["RUDEX.BTS", "RUDEX.STEEM"],
         ["RUDEX.BTS", "RUDEX.TRX"],
 
-        ["RUDEX.BTS", "RUDEX.PPY"],
-        ["RUDEX.BTS", "RUDEX.SMOKE"],
-        ["RUDEX.BTS", "RUDEX.WLS"],
+        //["RUDEX.BTS", "RUDEX.PPY"],
+        //["RUDEX.BTS", "RUDEX.SMOKE"],
+        //["RUDEX.BTS", "RUDEX.WLS"],
+
+        //NewBitshares
+        ["RUDEX.NBS", "RUDEX.GPH"],
+        ["RUDEX.NBS", "RUDEX.USDT"],
+        ["RUDEX.NBS", "RUDEX.EOS"],
+        ["RUDEX.NBS", "RUDEX.BTS"],
+        ["RUDEX.NBS", "RUDEX.TRX"],
 
         //gpUSD
         ["USD", "RUDEX.USDT"],
@@ -477,6 +484,27 @@ export function getListingCoins() {
             ticker: "ARK",
             account: "rudex-ark",
             goal: 3000,
+            votes: 0
+        },
+        {
+            name: "Crypto International",
+            ticker: "CRI",
+            account: "rudex-cri",
+            goal: 10000,
+            votes: 0
+        },
+        {
+            name: "Gowin",
+            ticker: "GWN",
+            account: "rudex-gwn",
+            goal: 10000,
+            votes: 0
+        },
+        {
+            name: "Ratcoin",
+            ticker: "RAT",
+            account: "rudex-ratcoin",
+            goal: 10000,
             votes: 0
         }
 

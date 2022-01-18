@@ -38,18 +38,8 @@ class AccountDepositWithdraw extends React.Component {
     constructor(props) {
         super();
         this.state = {
-            olService: props.viewSettings.get("olService", "gateway"),
             rudexService: props.viewSettings.get("rudexService", "gateway"),
-            bitsparkService: props.viewSettings.get(
-                "bitsparkService",
-                "gateway"
-            ),
-            xbtsxService: props.viewSettings.get("xbtsxService", "gateway"),
-            btService: props.viewSettings.get("btService", "bridge"),
-            citadelService: props.viewSettings.get("citadelService", "bridge"),
-            metaService: props.viewSettings.get("metaService", "bridge"),
             activeService: props.viewSettings.get("activeService", 0),
-
             RudexNotice1Informed: false,
             RudexNotice1Informed_BuyCrypto: false
         };
@@ -71,13 +61,7 @@ class AccountDepositWithdraw extends React.Component {
                 nextProps.citadelBackedCoins,
                 this.props.citadelBackedCoins
             ) ||
-            nextState.olService !== this.state.olService ||
             nextState.rudexService !== this.state.rudexService ||
-            nextState.bitsparkService !== this.state.bitsparkService ||
-            nextState.xbtsxService !== this.state.xbtsxService ||
-            nextState.btService !== this.state.btService ||
-            nextState.citadelService !== this.state.citadelService ||
-            nextState.metaService !== this.state.metaService ||
             nextState.activeService !== this.state.activeService ||
             nextState.RudexNotice1Informed !==
                 this.state.RudexNotice1Informed ||
@@ -121,55 +105,6 @@ class AccountDepositWithdraw extends React.Component {
 
         SettingsActions.changeViewSetting({
             rudexService: service
-        });
-    }
-
-    toggleXbtsxService(service) {
-        this.setState({
-            xbtsxService: service
-        });
-
-        SettingsActions.changeViewSetting({
-            xbtsxService: service
-        });
-    }
-
-    toggleBitSparkService(service) {
-        this.setState({
-            bitsparkService: service
-        });
-
-        SettingsActions.changeViewSetting({
-            bitsparkService: service
-        });
-    }
-
-    toggleBTService(service) {
-        this.setState({
-            btService: service
-        });
-
-        SettingsActions.changeViewSetting({
-            btService: service
-        });
-    }
-
-    toggleCitadelService(service) {
-        this.setState({
-            citadelService: service
-        });
-        SettingsActions.changeViewSetting({
-            citadelService: service
-        });
-    }
-
-    toggleMetaService(service) {
-        this.setState({
-            metaService: service
-        });
-
-        SettingsActions.changeViewSetting({
-            metaService: service
         });
     }
 

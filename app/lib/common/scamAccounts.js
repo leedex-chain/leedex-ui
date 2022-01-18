@@ -55,5 +55,8 @@ export const scamAccountsOther = [
     "1.2.3272",
 
     "graphene-delegate",
-    "1.2.3283"
+    "1.2.3283",
+
+    "committee-graphene",
+    "1.2.3716"
 ];

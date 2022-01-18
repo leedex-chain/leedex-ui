@@ -407,151 +407,169 @@ class RuDexGatewayDepositRequest extends React.Component {
                             </table>
                         </div>
                     </div>
-                    <div className="small-12 medium-7">
-                        <Translate
-                            component="h4"
-                            content="gateway.deposit_inst"
-                        />
-                        <label className="left-label">
+                    {this.props.depositAllowed == true ? (
+                        <div className="small-12 medium-7">
                             <Translate
-                                content="gateway.deposit_to"
-                                asset={this.props.description}
+                                component="h4"
+                                content="gateway.deposit_inst"
                             />
-                            :
-                        </label>
-                        <label className="left-label">
-                            <b>
+                            <label className="left-label">
                                 <Translate
-                                    content="gateway.rudex.min_amount"
-                                    minAmount={utils.format_number(
-                                        this.props.min_amount /
-                                            utils.get_asset_precision(
-                                                this.props.asset_precision
-                                            ),
-                                        this.props.asset_precision,
-                                        false
-                                    )}
-                                    symbol={this.props.deposit_coin_type}
+                                    content="gateway.deposit_to"
+                                    asset={this.props.description}
                                 />
-                            </b>
-                        </label>
-                        <label className="left-label">
-                            <b>
-                                <Translate
-                                    content="gateway.rudex.min_amount_warn"
-                                    minAmount={utils.format_number(
-                                        this.props.min_amount /
-                                            utils.get_asset_precision(
-                                                this.props.asset_precision
-                                            ),
-                                        this.props.asset_precision,
-                                        false
-                                    )}
-                                    symbol={this.props.deposit_coin_type}
-                                />
-                            </b>
-                        </label>
-                        {depositConfirmation ? (
-                            <span>
-                                (<i>{depositConfirmation}</i>)
-                            </span>
-                        ) : null}
-                        <div style={{padding: "10px 0", fontSize: "1.1rem"}}>
-                            <table className="table">
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            ADDRESS:{" "}
-                                            <b>
-                                                <DisableCopyText
-                                                    replaceCopyText={counterpart.translate(
-                                                        "gateway.use_copy_button"
-                                                    )}
-                                                >
-                                                    {deposit_address_fragment}
-                                                </DisableCopyText>
-                                            </b>
-                                        </td>
-                                        <td>
-                                            <div
-                                                className="button"
-                                                onClick={this.onShowQrcode.bind(
-                                                    this,
-                                                    clipboardText
-                                                )}
-                                            >
-                                                <Translate content="modal.qrcode.label" />
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    {deposit_memo ? (
+                                :
+                            </label>
+                            <label className="left-label">
+                                <b>
+                                    <Translate
+                                        content="gateway.rudex.min_amount"
+                                        minAmount={utils.format_number(
+                                            this.props.min_amount /
+                                                utils.get_asset_precision(
+                                                    this.props.asset_precision
+                                                ),
+                                            this.props.asset_precision,
+                                            false
+                                        )}
+                                        symbol={this.props.deposit_coin_type}
+                                    />
+                                </b>
+                            </label>
+                            <label className="left-label">
+                                <b>
+                                    <Translate
+                                        content="gateway.rudex.min_amount_warn"
+                                        minAmount={utils.format_number(
+                                            this.props.min_amount /
+                                                utils.get_asset_precision(
+                                                    this.props.asset_precision
+                                                ),
+                                            this.props.asset_precision,
+                                            false
+                                        )}
+                                        symbol={this.props.deposit_coin_type}
+                                    />
+                                </b>
+                            </label>
+                            {depositConfirmation ? (
+                                <span>
+                                    (<i>{depositConfirmation}</i>)
+                                </span>
+                            ) : null}
+                            <div
+                                style={{padding: "10px 0", fontSize: "1.1rem"}}
+                            >
+                                <table className="table">
+                                    <tbody>
                                         <tr>
                                             <td>
-                                                <DisableCopyText
-                                                    replaceCopyText={counterpart.translate(
-                                                        "gateway.use_copy_button"
-                                                    )}
-                                                >
-                                                    MEMO: <b>{deposit_memo}</b>
-                                                </DisableCopyText>
+                                                ADDRESS:{" "}
+                                                <b>
+                                                    <DisableCopyText
+                                                        replaceCopyText={counterpart.translate(
+                                                            "gateway.use_copy_button"
+                                                        )}
+                                                    >
+                                                        {
+                                                            deposit_address_fragment
+                                                        }
+                                                    </DisableCopyText>
+                                                </b>
                                             </td>
                                             <td>
                                                 <div
                                                     className="button"
                                                     onClick={this.onShowQrcode.bind(
                                                         this,
-                                                        memoText
+                                                        clipboardText
                                                     )}
                                                 >
                                                     <Translate content="modal.qrcode.label" />
                                                 </div>
                                             </td>
                                         </tr>
-                                    ) : null}
-                                </tbody>
-                                <Modal
-                                    footer={[
-                                        <Button
-                                            key="close"
-                                            type="primary"
-                                            onClick={this.hideQrModal}
-                                        >
-                                            {counterpart.translate(
-                                                "modal.close"
-                                            )}
-                                        </Button>
-                                    ]}
-                                    visible={this.state.isQrModalVisible}
-                                    onCancel={this.hideQrModal}
+                                        {deposit_memo ? (
+                                            <tr>
+                                                <td>
+                                                    <DisableCopyText
+                                                        replaceCopyText={counterpart.translate(
+                                                            "gateway.use_copy_button"
+                                                        )}
+                                                    >
+                                                        MEMO:{" "}
+                                                        <b>{deposit_memo}</b>
+                                                    </DisableCopyText>
+                                                </td>
+                                                <td>
+                                                    <div
+                                                        className="button"
+                                                        onClick={this.onShowQrcode.bind(
+                                                            this,
+                                                            memoText
+                                                        )}
+                                                    >
+                                                        <Translate content="modal.qrcode.label" />
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        ) : null}
+                                    </tbody>
+                                    <Modal
+                                        footer={[
+                                            <Button
+                                                key="close"
+                                                type="primary"
+                                                onClick={this.hideQrModal}
+                                            >
+                                                {counterpart.translate(
+                                                    "modal.close"
+                                                )}
+                                            </Button>
+                                        ]}
+                                        visible={this.state.isQrModalVisible}
+                                        onCancel={this.hideQrModal}
+                                    >
+                                        <DepositQrCodeModal text={qrcode} />
+                                    </Modal>
+                                </table>
+                                <div
+                                    className="button-group"
+                                    style={{paddingTop: 10}}
                                 >
-                                    <DepositQrCodeModal text={qrcode} />
-                                </Modal>
-                            </table>
-                            <div
-                                className="button-group"
-                                style={{paddingTop: 10}}
-                            >
-                                {deposit_address_fragment ? (
-                                    <CopyToClipboard
-                                        text={clipboardText}
-                                        onCopy={() => this._notify("address")}
-                                    >
-                                        <div className="button">
-                                            Copy address
-                                        </div>
-                                    </CopyToClipboard>
-                                ) : null}
-                                {memoText ? (
-                                    <CopyToClipboard
-                                        text={memoText}
-                                        onCopy={() => this._notify("memo")}
-                                    >
-                                        <div className="button">Copy memo</div>
-                                    </CopyToClipboard>
-                                ) : null}
+                                    {deposit_address_fragment ? (
+                                        <CopyToClipboard
+                                            text={clipboardText}
+                                            onCopy={() =>
+                                                this._notify("address")
+                                            }
+                                        >
+                                            <div className="button">
+                                                Copy address
+                                            </div>
+                                        </CopyToClipboard>
+                                    ) : null}
+                                    {memoText ? (
+                                        <CopyToClipboard
+                                            text={memoText}
+                                            onCopy={() => this._notify("memo")}
+                                        >
+                                            <div className="button">
+                                                Copy memo
+                                            </div>
+                                        </CopyToClipboard>
+                                    ) : null}
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    ) : (
+                        <div className="small-12 medium-7">
+                            <Translate
+                                component="h4"
+                                content="gateway.rudex.under_construction"
+                            />
+                        </div>
+                    )}
                 </div>
             );
         } else {
@@ -648,28 +666,41 @@ class RuDexGatewayDepositRequest extends React.Component {
 
                         {/*<p>When you withdraw {this.props.receive_asset.get("symbol")}, you will receive {this.props.deposit_asset} at a 1:1 ratio (minus fees).</p>*/}
                     </div>
-                    <div className="small-12 medium-7">
-                        <Translate
-                            component="h4"
-                            content="gateway.withdraw_inst"
-                        />
-                        <label className="left-label">
+                    {this.props.withdrawalAllowed == true ? (
+                        <div className="small-12 medium-7">
                             <Translate
-                                content="gateway.withdraw_to"
-                                asset={this.props.description}
+                                component="h4"
+                                content="gateway.withdraw_inst"
                             />
-                            :
-                        </label>
-                        <div className="button-group" style={{paddingTop: 20}}>
-                            <button
-                                className="button success"
-                                style={{fontSize: "1.3rem"}}
-                                onClick={this.onWithdraw.bind(this)}
+                            <label className="left-label">
+                                <Translate
+                                    content="gateway.withdraw_to"
+                                    asset={this.props.description}
+                                />
+                                :
+                            </label>
+                            <div
+                                className="button-group"
+                                style={{paddingTop: 20}}
                             >
-                                <Translate content="gateway.withdraw_now" />{" "}
-                            </button>
+                                <button
+                                    className="button success"
+                                    style={{fontSize: "1.3rem"}}
+                                    onClick={this.onWithdraw.bind(this)}
+                                >
+                                    <Translate content="gateway.withdraw_now" />{" "}
+                                </button>
+                            </div>
                         </div>
-                    </div>
+                    ) : (
+                        <div className="small-12 medium-7">
+                            <Translate
+                                component="h4"
+                                content="gateway.rudex.under_construction"
+                            />
+                        </div>
+                    )}
+                    ;
                     <Modal
                         onCancel={this.hideModal}
                         title={counterpart.translate("gateway.withdraw_coin", {

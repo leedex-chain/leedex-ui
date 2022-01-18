@@ -55,6 +55,7 @@ class AccountOverview extends React.Component {
                 "RUDEX.BTS",
                 "RUDEX.TRX",
 
+                //Delisted
                 "RUDEX.PPY",
                 "RUDEX.SMOKE",
                 "RUDEX.WLS"

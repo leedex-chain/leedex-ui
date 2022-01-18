@@ -11,7 +11,8 @@ let api;
 const query = {
     select_authors: ["rudex"],
     tag: "rudex",
-    limit: 20
+    limit: 20,
+    filter_tag_masks: ["fm-"]
 };
 
 const alignRight = {textAlign: "right"};

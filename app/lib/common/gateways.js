@@ -3,15 +3,7 @@
  * General API Settings are stored in api/apiConfig and should be imported here
  */
 
-import {
-    rudexAPIs
-    //bitsparkAPIs,
-    //openledgerAPIs,
-    //cryptoBridgeAPIs,
-    //gdex2APIs
-    //xbtsxAPIs,
-    //citadelAPIs
-} from "api/apiConfig";
+import {rudexAPIs} from "api/apiConfig";
 import {allowedGateway} from "branding";
 import {isGatewayTemporarilyDisabled} from "../chain/onChainConfig";
 import SettingsStore from "stores/SettingsStore";

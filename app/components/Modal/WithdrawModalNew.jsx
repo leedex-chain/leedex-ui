@@ -822,6 +822,8 @@ class WithdrawModalNew extends React.Component {
 
         let minWithdraw = null;
         let maxWithdraw = null;
+        let coinDescription = backingAsset.description || selectedAsset;
+
         if (backingAsset && backingAsset.minAmount) {
             minWithdraw = !!backingAsset.precision
                 ? utils.format_number(
@@ -1094,6 +1096,23 @@ class WithdrawModalNew extends React.Component {
                                     <Translate
                                         component="span"
                                         content="modal.withdraw.address"
+                                        amount={utils.format_number(
+                                            ((this.state.quantity -
+                                                this.state.gateFee) *
+                                                Math.pow(
+                                                    10,
+                                                    this.state
+                                                        .withdrawalCurrencyPrecision
+                                                )) /
+                                                utils.get_asset_precision(
+                                                    this.state
+                                                        .withdrawalCurrencyPrecision
+                                                ),
+                                            this.state
+                                                .withdrawalCurrencyPrecision,
+                                            false
+                                        )}
+                                        asset={coinDescription}
                                     />
                                 </label>
                                 {addressError ? (

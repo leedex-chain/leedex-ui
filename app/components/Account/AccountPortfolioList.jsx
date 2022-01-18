@@ -29,7 +29,7 @@ import SendModal from "../Modal/SendModal";
 import SettingsActions from "actions/SettingsActions";
 import SettleModal from "../Modal/SettleModal";
 import DepositModal from "../Modal/DepositModal";
-import SimpleDepositBlocktradesBridge from "../Dashboard/SimpleDepositBlocktradesBridge";
+//import SimpleDepositBlocktradesBridge from "../Dashboard/SimpleDepositBlocktradesBridge";
 import WithdrawModal from "../Modal/WithdrawModalNew";
 import ZfApi from "react-foundation-apps/src/utils/foundation-api";
 import ReserveAssetModal from "../Modal/ReserveAssetModal";
@@ -1550,7 +1550,7 @@ class AccountPortfolioList extends React.Component {
                     )}
 
                     {/* Bridge modal */}
-                    {(this.state.isBridgeModalVisible ||
+                    {/*                    {(this.state.isBridgeModalVisible ||
                         this.state.isBridgeModalVisibleBefore) && (
                         <SimpleDepositBlocktradesBridge
                             visible={this.state.isBridgeModalVisible}
@@ -1564,7 +1564,7 @@ class AccountPortfolioList extends React.Component {
                             bridges={currentBridges}
                             isDown={this.props.gatewayDown.get("TRADE")}
                         />
-                    )}
+                    )}*/}
 
                     {/* Burn Modal */}
                     {(this.state.isBurnModalVisible ||

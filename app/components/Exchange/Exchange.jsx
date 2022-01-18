@@ -39,7 +39,7 @@ import BorrowModal from "../Modal/BorrowModal";
 import AccountNotifications from "../Notifier/NotifierContainer";
 import TranslateWithLinks from "../Utility/TranslateWithLinks";
 import SimpleDepositWithdraw from "../Dashboard/SimpleDepositWithdraw";
-import SimpleDepositBlocktradesBridge from "../Dashboard/SimpleDepositBlocktradesBridge";
+//import SimpleDepositBlocktradesBridge from "../Dashboard/SimpleDepositBlocktradesBridge";
 import {Notification} from "bitshares-ui-style-guide";
 import PriceAlert from "./PriceAlert";
 import counterpart from "counterpart";
@@ -3660,7 +3660,7 @@ class Exchange extends React.Component {
                 ) : null}
 
                 {/* Bridge modal */}
-                {this.state.isDepositBridgeModalVisible ||
+                {/*                {this.state.isDepositBridgeModalVisible ||
                 this.state.isDepositBridgeModalLoaded ? (
                     <SimpleDepositBlocktradesBridge
                         visible={this.state.isDepositBridgeModalVisible}
@@ -3689,7 +3689,7 @@ class Exchange extends React.Component {
                             ) || null
                         }
                     />
-                ) : null}
+                ) : null}*/}
 
                 {/* Confirm Modal */}
                 {this.state.isConfirmBuyOrderModalVisible ||
