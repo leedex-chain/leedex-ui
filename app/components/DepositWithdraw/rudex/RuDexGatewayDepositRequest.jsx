@@ -115,7 +115,7 @@ class RuDexGatewayDepositRequest extends React.Component {
         });
     }
 
-    // componentWillMount() {
+    // UNSAFE_componentWillMount() {
     //     let account_name = this.props.account.get("name");
     //     let receive_address = this.deposit_address_cache.getCachedInputAddress(this.props.gateway, account_name, this.props.deposit_coin_type, this.props.receive_coin_type);
     // }

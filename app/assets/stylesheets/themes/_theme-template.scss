@@ -266,8 +266,8 @@
     }
     .settings-input {
         /* !important to overwrite styles for Inputs on User Settings. By default inputs take styles from
-.block-list and it uses on many places. To keep everything OK and do not break something I just do
-overwrite for Inputs on settings and keep default styles for inputs on another places. */
+    .block-list and it uses on many places. To keep everything OK and do not break something I just do
+    overwrite for Inputs on settings and keep default styles for inputs on another places. */
         color: $settings-select-color !important;
         height: 36px !important;
         background-color: $settings-select-bg !important;
@@ -349,7 +349,7 @@ overwrite for Inputs on settings and keep default styles for inputs on another p
     .font-secondary {
         color: $secondary-text-color;
     }
-    svg > path {
+    svg path {
         transition: all 0.3s ease 0s;
     }
     #content-wrapper {
@@ -534,12 +534,12 @@ overwrite for Inputs on settings and keep default styles for inputs on another p
             color: $link-text-color;
         }
     }
-    .icon > svg > path {
+    .icon > svg path {
         fill: $primary-text-color;
     }
     .footer {
         @include color($secondary-text-color, $panel-bg-color);
-        svg > path {
+        svg path {
             fill: $secondary-text-color;
         }
         .logo .version {
@@ -675,12 +675,12 @@ overwrite for Inputs on settings and keep default styles for inputs on another p
     .header a.button.create-account {
         transition: color 0s !important;
         color: $button-bg-color !important;
-        > span > svg > path {
+        > span > svg path {
             fill: $button-bg-color;
         }
         &:hover {
             color: lighten($button-bg-color, 10%) !important;
-            > span > svg > path {
+            > span > svg path {
                 fill: lighten($button-bg-color, 10%);
             }
         }
@@ -772,7 +772,7 @@ overwrite for Inputs on settings and keep default styles for inputs on another p
             }
         }
     }
-    .header-container span.icon.lock-unlock > svg > path {
+    .header-container span.icon.lock-unlock > svg path {
         fill: $button-bg-color;
     }
     .header-dropdown-sub-link.enabled {
@@ -812,13 +812,13 @@ overwrite for Inputs on settings and keep default styles for inputs on another p
                 @include RobotoMedium;
             }
         }
-        svg > path {
+        svg path {
             fill: #fff;
         }
         // svg:hover > path { fill: $primary-text-color; }
     }
     .settings-cog {
-        svg > path {
+        svg path {
             fill: $secondary-text-color;
         }
     }
@@ -1351,13 +1351,13 @@ overwrite for Inputs on settings and keep default styles for inputs on another p
     }
     .icon.success {
         padding-right: 0.5rem;
-        > svg > path {
+        > svg path {
             fill: $success-color;
         }
     }
     .icon.error {
         padding-right: 0.5rem;
-        > svg > path {
+        > svg path {
             fill: $warning-color;
         }
     }
@@ -1525,7 +1525,7 @@ overwrite for Inputs on settings and keep default styles for inputs on another p
         li {
             > a {
                 color: $account-dimmed;
-                .icon > svg > path {
+                .icon > svg path {
                     fill: $account-dimmed;
                 }
             }
@@ -1533,7 +1533,7 @@ overwrite for Inputs on settings and keep default styles for inputs on another p
             > a.active {
                 background-color: $bg-color !important;
                 color: $primary-text-color;
-                .icon > svg > path {
+                .icon > svg path {
                     fill: $primary-text-color;
                 }
             }
@@ -1793,13 +1793,13 @@ overwrite for Inputs on settings and keep default styles for inputs on another p
         }
     }
     .api-node {
-        .icon.shuffle svg > path {
+        .icon.shuffle svg path {
             fill: $button-bg-color !important;
         }
-        .icon.link svg > path {
+        .icon.link svg path {
             fill: $positive-color !important;
         }
-        .icon.minus-circle svg > path {
+        .icon.minus-circle svg path {
             fill: $negative-color !important;
         }
         &:nth-child(odd) {
@@ -2055,7 +2055,7 @@ overwrite for Inputs on settings and keep default styles for inputs on another p
                     }
                 }
 
-                .icon.locked > svg > path {
+                .icon.locked > svg path {
                     fill: $button-bg-color;
                 }
             }
@@ -2081,13 +2081,13 @@ overwrite for Inputs on settings and keep default styles for inputs on another p
                 background-color: $account-cells;
                 color: $account-primarytext;
                 border-color: $account-border;
-                .icon > svg > path {
+                .icon > svg path {
                     fill: $account-primarytext;
                 }
-                .icon.locked > svg > path {
+                .icon.locked > svg path {
                     fill: $button-bg-color;
                 }
-                .icon.unlocked > svg > path {
+                .icon.unlocked > svg path {
                     fill: $button-bg-color;
                 }
             }
@@ -2106,7 +2106,7 @@ overwrite for Inputs on settings and keep default styles for inputs on another p
                     > a {
                         color: grey;
                     }
-                    svg > path {
+                    svg path {
                         fill: grey;
                     }
                 }
@@ -2138,19 +2138,19 @@ overwrite for Inputs on settings and keep default styles for inputs on another p
     .api-status {
         .low {
             color: $bid-color;
-            > svg > path {
+            > svg path {
                 fill: $bid-color;
             }
         }
         .medium {
             color: $call-color;
-            > svg > path {
+            > svg path {
                 fill: $call-color;
             }
         }
         .high {
             color: $ask-color;
-            > svg > path {
+            > svg path {
                 fill: $ask-color;
             }
         }
@@ -2269,7 +2269,6 @@ overwrite for Inputs on settings and keep default styles for inputs on another p
                             }
                         }
                     }
-                    cursor: pointer;
                 }
             }
         }
@@ -2301,7 +2300,7 @@ overwrite for Inputs on settings and keep default styles for inputs on another p
     .order-5 .flip-arrow {
         display: none;
     }
-    .order-book-button-h svg > path {
+    .order-book-button-h svg path {
         fill: #fff;
         &:hover {
             fill: $bs-blue;
@@ -2315,77 +2314,11 @@ overwrite for Inputs on settings and keep default styles for inputs on another p
         .order-book-button-v {
             display: inline-block;
             margin-left: 5px;
-            svg > path {
+            svg path {
                 fill: #fff;
                 &:hover {
                     fill: $bs-blue;
                     cursor: pointer;
-                }
-            }
-        }
-    }
-    .calendarContainer {
-        // restyle of react-datepicker2
-        box-shadow: none;
-        background-color: $panel-bg-color;
-        border: 0;
-        color: $light-text-color;
-        button svg {
-            fill: $light-text-color;
-        }
-        .dayWrapper button:hover {
-            color: $light-text-color;
-            background-color: $button-bg-color;
-        }
-        .dayWrapper button[disabled] {
-            background-color: darken($panel-bg-color, 5%);
-            color: darken(#aaa, 20%);
-        }
-        .monthsList {
-            button {
-                border: 0;
-                background-color: $panel-bg-color;
-                &:hover {
-                    background-color: $input-background;
-                }
-            }
-        }
-        .time-table {
-            line-height: 38px;
-        }
-        input.rc-time-picker-input {
-            background: $input-background;
-            color: $light-text-color;
-            &:hover {
-                border-color: $input-background;
-                background-color: $input-background;
-                color: $light-text-color;
-            }
-            cursor: pointer;
-        }
-        .heading {
-            .title {
-                line-height: 28px;
-                border-color: $panel-bg-color;
-            }
-            > button {
-                line-height: 30px;
-                border-color: $panel-bg-color;
-                &:hover {
-                    border-color: $panel-bg-color;
-                    background-color: $input-background;
-                }
-                &.prev,
-                &.next {
-                    line-height: 28px;
-                }
-                &.prev {
-                    float: left;
-                    transform: rotate(-180deg);
-                }
-                &.next {
-                    float: right;
-                    transform: rotate(-180deg);
                 }
             }
         }
@@ -2658,7 +2591,7 @@ overwrite for Inputs on settings and keep default styles for inputs on another p
         }
     }
     .icon-fill {
-        svg > path {
+        svg path {
             fill: $light-text-color;
             &:hover {
                 fill: $bs-blue;
@@ -2677,16 +2610,13 @@ overwrite for Inputs on settings and keep default styles for inputs on another p
         }
     }
 }
-
 .rc-time-picker-panel {
     z-index: 9999 !important;
 }
-
 .midnightTheme .gate_fee .amount-selector {
     width: 100%;
     display: inline-block;
 }
-
 .midnightTheme .gate_fee .right-selector {
     text-align: right;
     width: 26%;
@@ -2694,23 +2624,19 @@ overwrite for Inputs on settings and keep default styles for inputs on another p
     color: #adadad;
     text-transform: uppercase;
 }
-
 .midnightTheme .gate_fee .right-selector .right-selector-input {
     text-align: right;
     width: 100%;
 }
-
 .clear-text,
 .search-wrapper {
     position: relative;
 }
-
 .market-filter-input,
 .clear-text,
 .search-wrapper {
     position: relative;
 }
-
 .clear-text {
     top: 10px;
     right: -30px;
@@ -2721,7 +2647,6 @@ overwrite for Inputs on settings and keep default styles for inputs on another p
     outline: 0;
     cursor: pointer;
 }
-
 .clear-text:after {
     content: "X";
     display: block;
@@ -2742,11 +2667,9 @@ overwrite for Inputs on settings and keep default styles for inputs on another p
     font-size: 12px;
     cursor: pointer;
 }
-
 .market-filter-input:not(:valid) ~ .clear-text {
     display: none;
 }
-
 .header-container {
     display: flex;
     align-items: center;
@@ -2785,7 +2708,6 @@ overwrite for Inputs on settings and keep default styles for inputs on another p
         line-height: normal;
     }
 }
-
 .local-wallet-menu {
     // top: 50px!important;
     .table-cell {
@@ -2798,7 +2720,6 @@ overwrite for Inputs on settings and keep default styles for inputs on another p
         }
     }
 }
-
 .app-menu {
     flex: 0;
 }
@@ -2819,7 +2740,6 @@ overwrite for Inputs on settings and keep default styles for inputs on another p
         text-align: right;
     }
 }
-
 #qr_scanner_modal {
     > section {
         width: 100%;
@@ -2829,7 +2749,6 @@ overwrite for Inputs on settings and keep default styles for inputs on another p
         justify-content: center;
     }
 }
-
 @media screen and (max-width: 640px) {
     .responsive-list > .help-content > ul {
         height: 300px;
@@ -2847,7 +2766,6 @@ overwrite for Inputs on settings and keep default styles for inputs on another p
         }
     }
 }
-
 div.customizable-column--selector {
     position: absolute;
     right: 1rem;
@@ -2859,13 +2777,11 @@ div.customizable-column--selector {
         }
     }
 }
-
 div.customizable-column--selector--dropdown {
     ul.ant-select-dropdown-menu-vertical {
         max-height: 100% !important;
     }
 }
-
 .ant-table-tbody > tr.ant-table-row-selected td {
     background-color: #4f596633 !important;
 }

@@ -97,7 +97,7 @@ class AccountPortfolioList extends React.Component {
         this.toggleSortOrder = this.toggleSortOrder.bind(this);
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         this.refCheckInterval = setInterval(this._checkRefAssignments);
     }
 
@@ -388,8 +388,8 @@ class AccountPortfolioList extends React.Component {
                 [action === "bridge_modal"
                     ? "bridgeAsset"
                     : action === "deposit_modal"
-                        ? "depositAsset"
-                        : "withdrawAsset"]: asset,
+                    ? "depositAsset"
+                    : "withdrawAsset"]: asset,
                 fiatModal
             },
             () => {
@@ -756,9 +756,11 @@ class AccountPortfolioList extends React.Component {
             {
                 className: "column-hide-medium",
                 title: <Translate content="exchange.buy" />,
-                customizable: {
-                    default: false
-                },
+                customizable: atLeastOneHas.buy
+                    ? undefined
+                    : {
+                          default: false
+                      },
                 dataIndex: "buy",
                 align: "center",
                 render: item => {
@@ -782,9 +784,11 @@ class AccountPortfolioList extends React.Component {
                 ) : (
                     <Translate content="modal.deposit.submit" />
                 ),
-                customizable: {
-                    default: false
-                },
+                customizable: atLeastOneHas.deposit
+                    ? undefined
+                    : {
+                          default: false
+                      },
                 dataIndex: "deposit",
                 align: "center",
                 render: item => {
@@ -794,9 +798,11 @@ class AccountPortfolioList extends React.Component {
             {
                 className: "column-hide-medium",
                 title: <Translate content="modal.withdraw.submit" />,
-                customizable: {
-                    default: false
-                },
+                customizable: atLeastOneHas.withdraw
+                    ? undefined
+                    : {
+                          default: false
+                      },
                 dataIndex: "withdraw",
                 align: "center",
                 render: item => {
@@ -1585,24 +1591,21 @@ class AccountPortfolioList extends React.Component {
     }
 }
 
-AccountPortfolioList = connect(
-    AccountPortfolioList,
-    {
-        listenTo() {
-            return [SettingsStore, GatewayStore, MarketsStore];
-        },
-        getProps() {
-            return {
-                settings: SettingsStore.getState().settings,
-                viewSettings: SettingsStore.getState().viewSettings,
-                backedCoins: GatewayStore.getState().backedCoins,
-                bridgeCoins: GatewayStore.getState().bridgeCoins,
-                gatewayDown: GatewayStore.getState().down,
-                allMarketStats: MarketsStore.getState().allMarketStats
-            };
-        }
+AccountPortfolioList = connect(AccountPortfolioList, {
+    listenTo() {
+        return [SettingsStore, GatewayStore, MarketsStore];
+    },
+    getProps() {
+        return {
+            settings: SettingsStore.getState().settings,
+            viewSettings: SettingsStore.getState().viewSettings,
+            backedCoins: GatewayStore.getState().backedCoins,
+            bridgeCoins: GatewayStore.getState().bridgeCoins,
+            gatewayDown: GatewayStore.getState().down,
+            allMarketStats: MarketsStore.getState().allMarketStats
+        };
     }
-);
+});
 
 AccountPortfolioList = debounceRender(AccountPortfolioList, 50, {
     leading: false

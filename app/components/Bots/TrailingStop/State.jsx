@@ -8,7 +8,7 @@ class State extends React.Component {
         validate: []
     };
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         let state = this.props.bot.storage.read();
         state.stoploss = state.minAmount / state.amount;
 

@@ -36,7 +36,7 @@ class AccountVotingProxy extends React.Component {
         this.onProxyAccountChange = this.onProxyAccountChange.bind(this);
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if (!this.state.current_proxy_input) {
             this.setState({
                 current_proxy_input: nextProps.proxyAccount
@@ -54,9 +54,9 @@ class AccountVotingProxy extends React.Component {
     // }
 
     /*
-    * Ensure that state is cleared when new proxy props are passed down
-    */
-    componentWillUpdate(nextProps) {
+     * Ensure that state is cleared when new proxy props are passed down
+     */
+    UNSAFE_componentWillUpdate(nextProps) {
         let newProxy = nextProps.existingProxy.get("name");
         let oldProxy = this.props.existingProxy.get("name");
 
@@ -150,8 +150,8 @@ class AccountVotingProxy extends React.Component {
                 return a.get("name") > b.get("name")
                     ? 1
                     : a.get("name") < b.get("name")
-                        ? -1
-                        : 0;
+                    ? -1
+                    : 0;
             })
             .map(proxy => {
                 return (

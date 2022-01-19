@@ -75,7 +75,7 @@ class AccountOverview extends React.Component {
         });
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         this._checkMarginStatus();
     }
 
@@ -90,7 +90,7 @@ class AccountOverview extends React.Component {
         });
     }
 
-    componentWillReceiveProps(np) {
+    UNSAFE_componentWillReceiveProps(np) {
         if (np.account !== this.props.account) {
             this._checkMarginStatus(np);
         }
@@ -364,10 +364,7 @@ class AccountOverview extends React.Component {
         const hiddenSubText = "\u00a0";
 
         return (
-            <div
-                className="grid-content app-tables portfolio-st no-padding"
-                ref="appTables"
-            >
+            <div className="grid-content app-tables no-padding" ref="appTables">
                 <div className="content-block small-12">
                     <div className="tabs-container generic-bordered-box">
                         <Tabs
@@ -378,10 +375,7 @@ class AccountOverview extends React.Component {
                             tabsClass="account-overview no-padding bordered-header content-block"
                         >
                             <Tab
-                                //title="account.portfolio"
-                                title={
-                                    <Translate content="account.portfolio" />
-                                }
+                                title="account.portfolio"
                                 subText={portfolioActiveAssetsBalance}
                             >
                                 <div className="header-selector">
@@ -470,10 +464,7 @@ class AccountOverview extends React.Component {
                             </Tab>
 
                             <Tab
-                                //title="account.open_orders"
-                                title={
-                                    <Translate content="account.open_orders" />
-                                }
+                                title="account.open_orders"
                                 subText={ordersValue}
                             >
                                 <AccountOrders {...this.props}>
@@ -489,10 +480,7 @@ class AccountOverview extends React.Component {
                             </Tab>
 
                             <Tab
-                                //title="account.collaterals"
-                                title={
-                                    <Translate content="account.collaterals" />
-                                }
+                                title="account.collaterals"
                                 subText={
                                     <span
                                         className={
@@ -530,8 +518,7 @@ class AccountOverview extends React.Component {
                             </Tab>
 
                             <Tab
-                                //title="account.activity"
-                                title={<Translate content="account.activity" />}
+                                title="account.activity"
                                 subText={hiddenSubText}
                             >
                                 <RecentTransactions
@@ -550,10 +537,7 @@ class AccountOverview extends React.Component {
                             {account.get("proposals") &&
                                 account.get("proposals").size && (
                                     <Tab
-                                        //title="explorer.proposals.title"
-                                        title={
-                                            <Translate content="explorer.proposals.title" />
-                                        }
+                                        title="explorer.proposals.title"
                                         subText={String(
                                             account.get("proposals")
                                                 ? account.get("proposals").size

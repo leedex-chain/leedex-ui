@@ -20,11 +20,11 @@ export class AssetLabel extends React.Component {
         return arr.join(".");
     };
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         this.setAssetName(this.props.name);
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if (nextProps.name !== this.props.name)
             this.setAssetName(nextProps.name);
     }

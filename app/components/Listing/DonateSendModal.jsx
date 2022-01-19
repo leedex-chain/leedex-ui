@@ -19,7 +19,7 @@ class DonateSendModal extends SendModal {
         super(props);
     }
 
-    componentWillReceiveProps(np) {
+    UNSAFE_componentWillReceiveProps(np) {
         if (np.to_name !== this.state.to_name) {
             this.setState({
                 to_name: np.to_name ? np.to_name : "",
@@ -215,8 +215,8 @@ class DonateSendModal extends SendModal {
                                         asset_types.length > 0 && asset
                                             ? asset.get("id")
                                             : asset_id
-                                                ? asset_id
-                                                : asset_types[0]
+                                            ? asset_id
+                                            : asset_types[0]
                                     }
                                     //assets={asset_types}
                                     display_balance={balance}
@@ -252,20 +252,17 @@ class DonateSendModalConnectWrapper extends React.Component {
     }
 }
 
-DonateSendModalConnectWrapper = connect(
-    DonateSendModalConnectWrapper,
-    {
-        listenTo() {
-            return [AccountStore];
-        },
-        getProps(props) {
-            return {
-                currentAccount: AccountStore.getState().currentAccount,
-                passwordAccount: AccountStore.getState().passwordAccount,
-                tabIndex: props.tabIndex || 0
-            };
-        }
+DonateSendModalConnectWrapper = connect(DonateSendModalConnectWrapper, {
+    listenTo() {
+        return [AccountStore];
+    },
+    getProps(props) {
+        return {
+            currentAccount: AccountStore.getState().currentAccount,
+            passwordAccount: AccountStore.getState().passwordAccount,
+            tabIndex: props.tabIndex || 0
+        };
     }
-);
+});
 
 export default DonateSendModalConnectWrapper;

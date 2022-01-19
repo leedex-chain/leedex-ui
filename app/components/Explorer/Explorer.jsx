@@ -45,12 +45,12 @@ class Explorer extends React.Component {
                     translate: "explorer.committee_members.title",
                     content: CommitteeMembers
                 },
-                /*                {
+                {
                     name: "markets",
                     link: "/explorer/markets",
                     translate: "markets.title",
                     content: MarketsContainer
-                },*/
+                },
                 {
                     name: "fees",
                     link: "/explorer/fees",

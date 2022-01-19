@@ -4,7 +4,7 @@ import Select from "react-select";
 import Translate from "react-translate-component";
 
 class State extends React.Component {
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         this.setState(
             Object.assign({validate: []}, this.props.bot.storage.read())
         );

@@ -167,7 +167,6 @@ p.order-table-title {
 .backingWarning {
     color: yellow;
 }
-
 .backingError {
     color: red;
 }
@@ -438,7 +437,6 @@ body .portfolio-st .ant-table table thead.ant-table-thead > tr > th {
 .top-header {
     padding-bottom: 0.25rem;
 }
-
 .bottom-header {
     padding-top: 0.25rem;
     > .horizontal-button {
@@ -500,7 +498,6 @@ ul.market-stats {
     display: flex;
     flex-wrap: wrap;
 }
-
 .market-stats .stat {
     text-align: left;
     font-size: 0.75rem;
@@ -760,28 +757,28 @@ table thead tr th.mymarkets-header {
     padding-right: 0.25rem;
 }
 
-.blue-icon > svg > path {
+.blue-icon > svg path {
     fill: #2196f3 !important;
 }
 
-.gold-star > svg > path {
+.gold-star > svg path {
     fill: #cc9f00 !important;
 }
 
-.grey-star > svg > path,
-.grey-shuffle > svg > path {
+.grey-star > svg path,
+.grey-shuffle > svg path {
     fill: #878787 !important;
 }
 
-.gold-star:hover > svg > path {
+.gold-star:hover > svg path {
     fill: lighten(#cc9f00, 10%) !important;
 }
 
-.shuffle:hover > svg > path {
+.shuffle:hover > svg path {
     fill: lighten(#878787, 20%) !important;
 }
 
-.grey-star:hover > svg > path {
+.grey-star:hover > svg path {
     fill: #cc9f00 !important;
 }
 
@@ -790,37 +787,31 @@ table thead tr th.mymarkets-header {
         display: none !important;
     }
 }
-
 @media (max-width: 570px) {
     .hide-order-1 {
         display: none !important;
     }
 }
-
 @media (max-width: 720px) {
     .hide-order-2 {
         display: none !important;
     }
 }
-
 @media (max-width: 880px) {
     .hide-order-3 {
         display: none !important;
     }
 }
-
 @media (max-width: 1020px) {
     .hide-order-4 {
         display: none !important;
     }
 }
-
 @media (max-width: 1180px) {
     .hide-order-5 {
         display: none !important;
     }
 }
-
 @media (max-width: 1340px) {
     .hide-order-6 {
         display: none !important;

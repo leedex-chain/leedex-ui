@@ -7,10 +7,10 @@
 // nodejs, npm, and: npm install
 
 /*
-* ./bloom.dat is from bitshares/graphene/programs/genesis_util/create_bloom_filter.py
-* The bloom filter was created with a genesis containing BTS prefixed keys.  Create
-* or dowload this file first.
-*/
+ * ./bloom.dat is from bitshares/graphene/programs/genesis_util/create_bloom_filter.py
+ * The bloom filter was created with a genesis containing BTS prefixed keys.  Create
+ * or dowload this file first.
+ */
 
 // Automatic usage: name your wallet file wallet.json and run "npm start".
 // Output is called "filtered_wallet.json"

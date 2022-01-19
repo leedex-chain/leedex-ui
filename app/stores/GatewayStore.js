@@ -5,7 +5,7 @@ import ls from "common/localStorage";
 import {allowedGateway} from "../branding";
 
 const STORAGE_KEY = "__graphene__";
-let ss = new ls(STORAGE_KEY);
+let ss = ls(STORAGE_KEY);
 
 class GatewayStore {
     static isAllowed(backer) {

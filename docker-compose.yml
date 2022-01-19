@@ -8,5 +8,5 @@ services:
         ports:
             - "8080:80"
         volumes:
-            - wallet_build:/graphene-ui/build/dist
-            - .:/graphene-ui
+            - wallet_build:/rudex-ui/build/dist
+            - .:/rudex-ui

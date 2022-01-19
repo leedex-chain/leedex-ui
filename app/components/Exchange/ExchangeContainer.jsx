@@ -167,7 +167,7 @@ class ExchangeSubscriber extends React.Component {
         this._subToMarket = this._subToMarket.bind(this);
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         if (this.props.quoteAsset === null || this.props.baseAsset === null) {
             return;
         }
@@ -222,7 +222,7 @@ class ExchangeSubscriber extends React.Component {
         );
     }
 
-    componentWillReceiveProps(nextProps) {
+    UNSAFE_componentWillReceiveProps(nextProps) {
         if (nextProps.quoteAsset === null || nextProps.baseAsset === null) {
             return;
         }

@@ -1,7 +1,7 @@
 import ls from "./localStorage";
 import {rudexAPIs} from "api/apiConfig";
 import {availableGateways} from "common/gateways";
-const RuDEXStorage = new ls("");
+const RuDEXStorage = ls("");
 
 let fetchInProgess = {};
 let fetchCache = {};

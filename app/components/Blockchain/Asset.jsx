@@ -80,7 +80,7 @@ class Asset extends React.Component {
         };
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         this._getMarginCollateral();
     }
 
@@ -520,7 +520,7 @@ class Asset extends React.Component {
                             <Icon type="question-circle" theme="filled" />
                         </Tooltip>
                     </td>
-                    <td> {options.extensions.reward_percent / 100.0} %</td>
+                    <td> {options.extensions.reward_percent / 100.0} % </td>
                 </tr>
             ) : null;
 
@@ -1529,8 +1529,8 @@ class Asset extends React.Component {
                                     median_offset > 0
                                         ? "txtlabel success"
                                         : median_offset < 0
-                                            ? "txtlabel warning"
-                                            : "txtlabel"
+                                        ? "txtlabel warning"
+                                        : "txtlabel"
                                 }
                             >
                                 {median_offset}%
@@ -2192,21 +2192,18 @@ class Asset extends React.Component {
     }
 }
 
-Asset = connect(
-    Asset,
-    {
-        listenTo() {
-            return [AccountStore];
-        },
-        getProps() {
-            return {
-                currentAccount:
-                    AccountStore.getState().currentAccount ||
-                    AccountStore.getState().passwordAccount
-            };
-        }
+Asset = connect(Asset, {
+    listenTo() {
+        return [AccountStore];
+    },
+    getProps() {
+        return {
+            currentAccount:
+                AccountStore.getState().currentAccount ||
+                AccountStore.getState().passwordAccount
+        };
     }
-);
+});
 
 Asset = AssetWrapper(Asset, {
     propNames: ["backingAsset", "coreAsset"]
