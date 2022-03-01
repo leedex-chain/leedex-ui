@@ -98,6 +98,7 @@ class RuDexGatewayDepositRequest extends React.Component {
 
     _getDepositObject() {
         return {
+            walletType: this.props.deposit_wallet_type,
             inputCoinType: this.props.deposit_coin_type,
             outputCoinType: this.props.receive_coin_type,
             outputAddress: this.props.account.get("name"),

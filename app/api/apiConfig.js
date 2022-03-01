@@ -6,6 +6,12 @@ export const rudexAPIs = {
     NEW_DEPOSIT_ADDRESS: "/simple-api/initiate-trade"
 };
 
+export const bep20rudexAPIs = {
+    BASE: "https://gateway.rudex.org/api/rudex_new_bep20",
+    COINS_LIST: "/coins",
+    NEW_DEPOSIT_ADDRESS: "/simple-api/initiate-trade"
+};
+
 export const nodeRegions = [
     // region of the node follows roughly https://en.wikipedia.org/wiki/Subregion#/media/File:United_Nations_geographical_subregions.png
     "Northern Europe",

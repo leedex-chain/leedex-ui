@@ -154,7 +154,10 @@ export function getMyMarketsQuotes() {
             "RUDEX.NBS",
             "RUDEX.XMR",
             "RUDEX.BTS",
-            "RUDEX.TRX"
+            "RUDEX.TRX",
+
+            "RUDEX.DEC",
+            "RUDEX.SPS"
 
             //"RUDEX.PPY",
             //"RUDEX.SMOKE",
@@ -276,6 +279,9 @@ export function getFeaturedMarkets(quotes = []) {
         ["RUDEX.USDT", "RUDEX.BTS"],
         ["RUDEX.USDT", "RUDEX.TRX"],
 
+        ["RUDEX.USDT", "RUDEX.DEC"],
+        ["RUDEX.USDT", "RUDEX.SPS"],
+
         //["RUDEX.USDT", "RUDEX.PPY"],
         //["RUDEX.USDT", "RUDEX.SMOKE"],
         //["RUDEX.USDT", "RUDEX.WLS"],
@@ -369,7 +375,7 @@ export function getAssetHideNamespaces() {
  * @returns {boolean}
  */
 export function allowedGateway(gateway) {
-    const allowedGateways = ["RUDEX"];
+    const allowedGateways = ["RUDEX", "RUDEX_BEP20"];
     if (!gateway) {
         // answers the question: are any allowed?
         return allowedGateways.length > 0;
@@ -409,16 +415,10 @@ export function getConfigurationAsset() {
 export function getListingCoins() {
     return [
         //soon: true, (for TON example)
-        /*        {
-            name: "Monero",
-            ticker: "XMR",
-            account: "rudex-monero",
-            goal: 5000,
-            votes: 0
-        },*/
         {
             name: "Idena",
             ticker: "DNA",
+            page: "https://www.idena.io",
             account: "rudex-idena",
             goal: 10000,
             votes: 0
@@ -426,6 +426,7 @@ export function getListingCoins() {
         {
             name: "Zcash",
             ticker: "ZEC",
+            page: "https://z.cash/",
             account: "rudex-zec",
             goal: 2000,
             votes: 0
@@ -433,6 +434,7 @@ export function getListingCoins() {
         {
             name: "ADAMANT Messenger",
             ticker: "ADM",
+            page: "https://adamant.im",
             account: "rudex-adamant",
             goal: 8000,
             votes: 0
@@ -440,20 +442,15 @@ export function getListingCoins() {
         {
             name: "Hive",
             ticker: "HIVE",
+            page: "https://hive.io",
             account: "rudex-hive",
             goal: 3000,
             votes: 0
         },
-        /*        {
-            name: "Litecoin",
-            ticker: "LTC",
-            account: "rudex-litecoin",
-            goal: 2000,
-            votes: 0
-        },*/
         {
             name: "Minter Network",
             ticker: "BIP",
+            page: "https://minter.org",
             account: "rudex-bip",
             goal: 7000,
             votes: 0
@@ -461,6 +458,7 @@ export function getListingCoins() {
         {
             name: "Dogecoin",
             ticker: "DOGE",
+            page: "https://dogecoin.com",
             account: "rudex-dogecoin",
             goal: 2000,
             votes: 0
@@ -468,26 +466,22 @@ export function getListingCoins() {
         {
             name: "Telos",
             ticker: "TLOS",
+            page: "https://www.telos.net",
             account: "rudex-telos",
             goal: 3000,
             votes: 0
         },
-        /*        {
-            name: "Dash",
-            ticker: "DASH",
-            account: "rudex-dash",
-            goal: 2000,
-            votes: 0
-        },*/
         {
             name: "Ark",
             ticker: "ARK",
+            page: "https://ark.io",
             account: "rudex-ark",
             goal: 3000,
             votes: 0
         },
         {
             name: "Crypto International",
+            page: "https://cri.network",
             ticker: "CRI",
             account: "rudex-cri",
             goal: 10000,
@@ -496,6 +490,7 @@ export function getListingCoins() {
         {
             name: "Gowin",
             ticker: "GWN",
+            page: "http://www.gwncoin.com",
             account: "rudex-gwn",
             goal: 10000,
             votes: 0
@@ -503,33 +498,70 @@ export function getListingCoins() {
         {
             name: "Ratcoin",
             ticker: "RAT",
+            page: "https://ratcoin.network",
             account: "rudex-ratcoin",
+            goal: 10000,
+            votes: 0
+        },
+        {
+            name: "WorldTTT",
+            ticker: "TTT",
+            page: "https://worldttt.com",
+            account: "rudex-ttt",
             goal: 10000,
             votes: 0
         }
 
         //Disabled
-        /*{
-            name: "Waves",
-            ticker: "WAVES",
-            account: "rudex-waves",
-            goal: 10000,
-            votes: 0
-        },
-        {
-            name: "Neo",
-            ticker: "NEO",
-            account: "rudex-neo",
-            goal: 10000,
-            votes: 0
-        },
-        {
-            name: "Revain",
-            ticker: "REV",
-            account: "rudex-revain",
-            goal: 10000,
-            votes: 0
-        }*/
+        /*        {
+                    name: "Dash",
+                    ticker: "DASH",
+                    page: "https://www.dash.org",
+                    account: "rudex-dash",
+                    goal: 2000,
+                    votes: 0
+                },
+                {
+                    name: "Waves",
+                    ticker: "WAVES",
+                    page: "https://waves.exchange",
+                    account: "rudex-waves",
+                    goal: 10000,
+                    votes: 0
+                },
+                {
+                    name: "Neo",
+                    ticker: "NEO",
+                    page: "https://neo.org",
+                    account: "rudex-neo",
+                    goal: 10000,
+                    votes: 0
+                },
+                {
+                    name: "Revain",
+                    ticker: "REV",
+                    page: "http://revain.org",
+                    account: "rudex-revain",
+                    goal: 10000,
+                    votes: 0
+                },*/
+
+        //Already Listed
+        /*        {
+                    name: "Litecoin",
+                    ticker: "LTC",
+                    page: "https://litecoin.org",
+                    account: "rudex-litecoin",
+                    goal: 2000,
+                    votes: 0
+                },
+                {
+                    name: "Monero",
+                    ticker: "XMR",
+                    account: "rudex-monero",
+                    goal: 5000,
+                    votes: 0
+                },*/
     ];
 }
 

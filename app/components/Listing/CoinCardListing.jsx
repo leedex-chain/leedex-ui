@@ -9,6 +9,7 @@ import {connect} from "alt-react";
 import AccountStore from "../../stores/AccountStore";
 import Translate from "react-translate-component";
 import {Asset} from "../../lib/common/MarketClasses";
+import {Link} from "react-router-dom";
 
 class CoinCardListing extends React.Component {
     constructor(props) {
@@ -70,6 +71,14 @@ class CoinCardListing extends React.Component {
                             ) : (
                                 ""
                             )}
+                        </div>
+                        <div className="listingTable__cell listingTableLogo">
+                            <Translate
+                                href={coin.page}
+                                content="listing.goto"
+                                component="a"
+                                target="_blank"
+                            />
                         </div>
                     </div>
 
@@ -154,21 +163,18 @@ class CoinCardListing extends React.Component {
     }
 }
 
-CoinCardListing = connect(
-    CoinCardListing,
-    {
-        listenTo() {
-            return [SettingsStore, AccountStore];
-        },
-        getProps() {
-            return {
-                settings: SettingsStore.getState().settings,
-                currentAccount:
-                    AccountStore.getState().currentAccount ||
-                    AccountStore.getState().passwordAccount
-            };
-        }
+CoinCardListing = connect(CoinCardListing, {
+    listenTo() {
+        return [SettingsStore, AccountStore];
+    },
+    getProps() {
+        return {
+            settings: SettingsStore.getState().settings,
+            currentAccount:
+                AccountStore.getState().currentAccount ||
+                AccountStore.getState().passwordAccount
+        };
     }
-);
+});
 
 export default CoinCardListing;

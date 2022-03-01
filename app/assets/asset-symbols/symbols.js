@@ -30,6 +30,9 @@ require("file-loader?name=asset-symbols/[name].png!./rudex.xmr.png");
 require("file-loader?name=asset-symbols/[name].png!./rudex.bts.png");
 require("file-loader?name=asset-symbols/[name].png!./rudex.trx.png");
 
+require("file-loader?name=asset-symbols/[name].png!./rudex.dec.png");
+require("file-loader?name=asset-symbols/[name].png!./rudex.sps.png");
+
 //Delisted
 require("file-loader?name=asset-symbols/[name].png!./rudex.ppy.png");
 require("file-loader?name=asset-symbols/[name].png!./rudex.smoke.png");

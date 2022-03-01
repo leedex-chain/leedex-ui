@@ -3,7 +3,7 @@
  * General API Settings are stored in api/apiConfig and should be imported here
  */
 
-import {rudexAPIs} from "api/apiConfig";
+import {rudexAPIs, bep20rudexAPIs} from "api/apiConfig";
 import {allowedGateway} from "branding";
 import {isGatewayTemporarilyDisabled} from "../chain/onChainConfig";
 import SettingsStore from "stores/SettingsStore";
@@ -80,9 +80,30 @@ const _isEnabled = gatewayKey => {
 export const availableGateways = {
     RUDEX: {
         id: "RUDEX",
-        name: "RuDEX",
+        name: "COINS (Native Chains)",
         baseAPI: rudexAPIs,
         isEnabled: _isEnabled("RUDEX"),
+        isSimple: true,
+        selected: false,
+        simpleAssetGateway: true,
+        fixedMemo: {
+            prepend_default: "dex:",
+            prepend_btsid: "gphid",
+            append: ""
+        },
+        addressValidatorMethod: "POST",
+        options: {
+            enabled: false,
+            selected: false
+        },
+        landing: "https://rudex.org/",
+        wallet: "https://market.rudex.org/"
+    },
+    RUDEX_BEP20: {
+        id: "RUDEX_BEP20",
+        name: "Binance Smart Chain (BEP-20 tokens)",
+        baseAPI: bep20rudexAPIs,
+        isEnabled: _isEnabled("RUDEX_BEP20"),
         isSimple: true,
         selected: false,
         simpleAssetGateway: true,

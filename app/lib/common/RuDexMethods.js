@@ -1,5 +1,5 @@
 import ls from "./localStorage";
-import {rudexAPIs} from "api/apiConfig";
+import {rudexAPIs, bep20rudexAPIs} from "api/apiConfig";
 const rudexStorage = ls("");
 
 export function fetchCoinList(url = rudexAPIs.BASE + rudexAPIs.COINS_LIST) {
@@ -15,13 +15,16 @@ export function fetchCoinList(url = rudexAPIs.BASE + rudexAPIs.COINS_LIST) {
 }
 
 export function requestDepositAddress({
+    walletType,
     inputCoinType,
     outputCoinType,
     outputAddress,
-    url = rudexAPIs.BASE,
+    //url = rudexAPIs.BASE,
+    url = rudexAPIs,
     stateCallback
 }) {
     let body = {
+        walletType,
         inputCoinType,
         outputCoinType,
         outputAddress
@@ -29,7 +32,14 @@ export function requestDepositAddress({
 
     let body_string = JSON.stringify(body);
 
-    fetch(url + rudexAPIs.NEW_DEPOSIT_ADDRESS, {
+    console.log("walletType: " + walletType);
+
+    if (walletType === "bsc-tokens") {
+        url = bep20rudexAPIs;
+    }
+
+    //fetch(url + rudexAPIs.NEW_DEPOSIT_ADDRESS, {
+    fetch(url.BASE + url.NEW_DEPOSIT_ADDRESS, {
         method: "post",
         headers: new Headers({
             Accept: "application/json",
@@ -68,12 +78,17 @@ export function requestDepositAddress({
 }
 
 export function validateAddress({
-    url = rudexAPIs.BASE,
+    //url = rudexAPIs.BASE,
+    url = rudexAPIs,
     walletType,
     newAddress
 }) {
+    if (walletType === "bsc-tokens") {
+        url = bep20rudexAPIs;
+    }
+
     if (!newAddress) return new Promise(res => res());
-    return fetch(url + "/wallets/" + walletType + "/check-address", {
+    return fetch(url.BASE + "/wallets/" + walletType + "/check-address", {
         method: "post",
         headers: new Headers({
             Accept: "application/json",
