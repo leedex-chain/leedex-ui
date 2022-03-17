@@ -33,6 +33,10 @@ require("file-loader?name=asset-symbols/[name].png!./rudex.trx.png");
 require("file-loader?name=asset-symbols/[name].png!./rudex.dec.png");
 require("file-loader?name=asset-symbols/[name].png!./rudex.sps.png");
 
+require("file-loader?name=asset-symbols/[name].png!./rudex.bnb.png");
+require("file-loader?name=asset-symbols/[name].png!./rudex.busd.png");
+require("file-loader?name=asset-symbols/[name].png!./rudex.btcb.png");
+
 //Delisted
 require("file-loader?name=asset-symbols/[name].png!./rudex.ppy.png");
 require("file-loader?name=asset-symbols/[name].png!./rudex.smoke.png");

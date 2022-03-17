@@ -58,6 +58,10 @@ class AccountOverview extends React.Component {
                 "RUDEX.DEC",
                 "RUDEX.SPS",
 
+                "RUDEX.BNB",
+                "RUDEX.BUSD",
+                "RUDEX.BTCB",
+
                 //Delisted
                 "RUDEX.PPY",
                 "RUDEX.SMOKE",

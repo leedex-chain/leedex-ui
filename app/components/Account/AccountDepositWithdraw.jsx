@@ -246,6 +246,7 @@ class AccountDepositWithdraw extends React.Component {
                                     <RuDexGateway
                                         account={account}
                                         coins={rudexGatewayCoins}
+                                        network={"native"}
                                         gateway={"rudex"}
                                     />
                                 ) : null}
@@ -353,6 +354,7 @@ class AccountDepositWithdraw extends React.Component {
                                     <RuDexGateway
                                         account={account}
                                         coins={rudexGatewayCoinsBEP20}
+                                        network={"bsc-tokens"}
                                         gateway={"rudex"}
                                     />
                                 ) : null}

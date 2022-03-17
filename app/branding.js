@@ -157,7 +157,11 @@ export function getMyMarketsQuotes() {
             "RUDEX.TRX",
 
             "RUDEX.DEC",
-            "RUDEX.SPS"
+            "RUDEX.SPS",
+
+            "RUDEX.BNB",
+            "RUDEX.BUSD",
+            "RUDEX.BTCB"
 
             //"RUDEX.PPY",
             //"RUDEX.SMOKE",
@@ -282,6 +286,10 @@ export function getFeaturedMarkets(quotes = []) {
         ["RUDEX.USDT", "RUDEX.DEC"],
         ["RUDEX.USDT", "RUDEX.SPS"],
 
+        ["RUDEX.USDT", "RUDEX.BNB"],
+        ["RUDEX.USDT", "RUDEX.BUSD"],
+        ["RUDEX.USDT", "RUDEX.BTCB"],
+
         //["RUDEX.USDT", "RUDEX.PPY"],
         //["RUDEX.USDT", "RUDEX.SMOKE"],
         //["RUDEX.USDT", "RUDEX.WLS"],
@@ -305,6 +313,9 @@ export function getFeaturedMarkets(quotes = []) {
         ["RUDEX.BTC", "RUDEX.STEEM"],
         ["RUDEX.BTC", "RUDEX.BTS"],
         ["RUDEX.BTC", "RUDEX.TRX"],
+
+        ["RUDEX.BTC", "RUDEX.BNB"],
+        ["RUDEX.BTC", "RUDEX.BTCB"],
 
         //["RUDEX.BTC", "RUDEX.PPY"],
         //["RUDEX.BTC", "RUDEX.SMOKE"],
@@ -510,6 +521,22 @@ export function getListingCoins() {
             account: "rudex-ttt",
             goal: 10000,
             votes: 0
+        },
+        {
+            name: "Clean the World",
+            ticker: "CTW",
+            page: "https://www.clean-the-world-official.com",
+            account: "rudex-ctw",
+            goal: 5000,
+            votes: 0
+        },
+        {
+            name: "WaterCoin Acua",
+            ticker: "WCA",
+            page: "https://watercoinacua.com",
+            account: "rudex-wca",
+            goal: 5000,
+            votes: 0
         }
 
         //Disabled
@@ -570,6 +597,7 @@ export function getListedCoins() {
         {
             name: "PRIZM",
             ticker: "PZM",
+            page: "https://pzm.space",
             account: "rudex-prizm",
             goal: 10000,
             votes: 0

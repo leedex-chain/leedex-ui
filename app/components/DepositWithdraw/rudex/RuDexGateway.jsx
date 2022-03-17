@@ -18,7 +18,7 @@ import "react-select/dist/react-select.css";
 
 class RuDexGateway extends React.Component {
     constructor(props) {
-        super();
+        super(props);
 
         this.state = {
             activeCoin: this._getActiveCoin(props, {action: "deposit"}),
@@ -27,9 +27,18 @@ class RuDexGateway extends React.Component {
     }
 
     _getActiveCoin(props, state) {
-        let cachedCoin = props.viewSettings.get("activeCoin_rudex", null);
-        let firstTimeCoin = "RUDEX.GOLOS";
-        let activeCoin = cachedCoin ? cachedCoin : firstTimeCoin;
+        let cachedCoin;
+        let firstTimeCoin;
+        let activeCoin;
+
+        cachedCoin = props.viewSettings.get(
+            "activeCoin_rudex_" + props.network,
+            null
+        );
+        //firstTimeCoin = "GOLOS";
+        firstTimeCoin = props.coins[0].name;
+
+        activeCoin = cachedCoin ? cachedCoin : firstTimeCoin;
 
         if (state.action === "withdraw") {
             activeCoin = this._findCoinByName(props, activeCoin).symbol;
@@ -40,6 +49,12 @@ class RuDexGateway extends React.Component {
 
     UNSAFE_componentWillReceiveProps(nextProps) {
         if (nextProps.provider !== this.props.provider) {
+            this.setState({
+                activeCoin: this._getActiveCoin(nextProps, this.state.action)
+            });
+        }
+
+        if (nextProps.network !== this.props.network) {
             this.setState({
                 activeCoin: this._getActiveCoin(nextProps, this.state.action)
             });
@@ -66,7 +81,7 @@ class RuDexGateway extends React.Component {
         if (this.state.action === "withdraw") {
             coinName = this._findCoinBySymbol(this.props, coinName).backingCoin;
         }
-        setting["activeCoin_rudex"] = coinName;
+        setting["activeCoin_rudex_" + this.props.network] = coinName;
         SettingsActions.changeViewSetting(setting);
     }
 
