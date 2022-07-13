@@ -39,6 +39,7 @@ import Translate from "react-translate-component";
 import AssetName from "../Utility/AssetName";
 import TranslateWithLinks from "../Utility/TranslateWithLinks";
 import MarketsActions from "actions/MarketsActions";
+import {getImageName} from "branding";
 
 class AccountPortfolioList extends React.Component {
     constructor(props) {
@@ -529,31 +530,6 @@ class AccountPortfolioList extends React.Component {
         const preferredUnit =
             settings.get("unit") || this.props.core_asset.get("symbol");
         const showAssetPercent = settings.get("showAssetPercent", false);
-
-        function getImageName(symbol) {
-            if (symbol.startsWith("RUDEX.")) return symbol;
-
-            if (
-                symbol == "DONATE" ||
-                symbol == "GPH" ||
-                symbol == "USD"
-
-                /* ||
-            symbol == "EUR" ||
-            symbol == "CNY" ||
-            symbol == "RUB" ||
-            symbol == "BTC" ||
-            symbol == "GOLD" ||
-            symbol == "SILVER" ||
-            symbol == "OIL"*/
-            )
-                return symbol;
-
-            return "unknown";
-
-            //let imgName = symbol.split(".");
-            //return imgName.length === 2 ? imgName[1] : imgName[0];
-        }
 
         let headerItems = [
             {
@@ -1161,7 +1137,7 @@ class AccountPortfolioList extends React.Component {
                     isBitAsset && borrowLink ? (
                         <Tooltip
                             title={counterpart.translate("tooltip.borrow", {
-                                asset: isAssetBitAsset ? "bit" + symbol : symbol
+                                asset: isAssetBitAsset ? "gp" + symbol : symbol
                             })}
                         >
                             {borrowLink}
@@ -1172,7 +1148,7 @@ class AccountPortfolioList extends React.Component {
                                 "tooltip.borrow_disabled",
                                 {
                                     asset: isAssetBitAsset
-                                        ? "bit" + symbol
+                                        ? "gp" + symbol
                                         : symbol
                                 }
                             )}
@@ -1187,11 +1163,9 @@ class AccountPortfolioList extends React.Component {
                         <Tooltip
                             placement="bottom"
                             title={counterpart.translate(settlePriceTitle, {
-                                asset: isAssetBitAsset
-                                    ? "bit" + symbol
-                                    : symbol,
+                                asset: isAssetBitAsset ? "gp" + symbol : symbol,
                                 backingAsset: isBackingBitAsset
-                                    ? "bit" + backingAsset.get("symbol")
+                                    ? "gp" + backingAsset.get("symbol")
                                     : backingAsset.get("symbol"),
                                 settleDelay:
                                     options.force_settlement_delay_sec / 3600

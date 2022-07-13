@@ -2,14 +2,15 @@ import React from "react";
 
 import {DonutChart} from "./DonutChart";
 import SendModal from "./DonateSendModal";
-import {Icon} from "bitshares-ui-style-guide";
+import {Button} from "bitshares-ui-style-guide";
 
 import SettingsStore from "../../stores/SettingsStore";
 import {connect} from "alt-react";
 import AccountStore from "../../stores/AccountStore";
 import Translate from "react-translate-component";
-import {Asset} from "../../lib/common/MarketClasses";
-import {Link} from "react-router-dom";
+import counterpart from "counterpart";
+
+import Icon from "../Icon/Icon";
 
 class CoinCardListing extends React.Component {
     constructor(props) {
@@ -102,33 +103,43 @@ class CoinCardListing extends React.Component {
                                     </div>
                                     {coin.votes}
                                     {coin.soon === true ? (
-                                        <a className="coin-soon">
-                                            {
-                                                <Icon
-                                                    name="transfer"
-                                                    title="icons.transfer"
-                                                    className="icon-14px"
-                                                />
-                                            }
-                                            &nbsp; Donate
-                                        </a>
+                                        <Button
+                                            className={"coin-soon"}
+                                            onClick={this.triggerSend.bind(
+                                                this,
+                                                "1.3.2",
+                                                coin
+                                            )}
+                                            disabled
+                                        >
+                                            <Translate content="listing.donate" />
+                                        </Button>
                                     ) : (
-                                        <a
+                                        <Button
+                                            title={counterpart.translate(
+                                                "listing.modal.header2"
+                                            )}
                                             onClick={this.triggerSend.bind(
                                                 this,
                                                 "1.3.2",
                                                 coin
                                             )}
                                         >
-                                            {
-                                                <Icon
-                                                    name="transfer"
-                                                    title="icons.transfer"
-                                                    className="icon-14px"
-                                                />
-                                            }
-                                            &nbsp; Donate
-                                        </a>
+                                            <Icon
+                                                style={{
+                                                    margin: "-3px 0 0px 0px"
+                                                }}
+                                                name="donate"
+                                                title="listing.modal.header2"
+                                                className="icon-14x"
+                                                onClick={this.triggerSend.bind(
+                                                    this,
+                                                    "1.3.2",
+                                                    coin
+                                                )}
+                                            />
+                                            {/*<Translate content="listing.donate"/>*/}
+                                        </Button>
                                     )}
                                 </div>
                             )}

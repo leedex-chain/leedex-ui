@@ -21,8 +21,10 @@ class RuDexGateway extends React.Component {
         super(props);
 
         this.state = {
-            activeCoin: this._getActiveCoin(props, {action: "deposit"}),
-            action: props.viewSettings.get("rudexAction", "deposit")
+            activeCoin: this._getActiveCoin(props, {
+                action: props.viewSettings.get("rudexAction") || "deposit"
+            }),
+            action: props.viewSettings.get("rudexAction") || "deposit"
         };
     }
 
@@ -50,13 +52,13 @@ class RuDexGateway extends React.Component {
     UNSAFE_componentWillReceiveProps(nextProps) {
         if (nextProps.provider !== this.props.provider) {
             this.setState({
-                activeCoin: this._getActiveCoin(nextProps, this.state.action)
+                activeCoin: this._getActiveCoin(nextProps, this.state)
             });
         }
 
         if (nextProps.network !== this.props.network) {
             this.setState({
-                activeCoin: this._getActiveCoin(nextProps, this.state.action)
+                activeCoin: this._getActiveCoin(nextProps, this.state)
             });
         }
     }

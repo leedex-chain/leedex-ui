@@ -297,7 +297,9 @@ class AssetActions {
                 blacklist_markets: [],
                 description: description,
                 extensions: {
-                    reward_percent: createObject.reward_percent * 100 || 0,
+                    reward_percent: createObject.reward_percent
+                        ? createObject.reward_percent * 100
+                        : undefined,
                     whitelist_market_fee_sharing: []
                 }
             },

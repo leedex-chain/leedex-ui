@@ -171,7 +171,8 @@ class ListGenerator extends React.Component {
                     let bSymbol =
                         (bName.prefix != null ? bName.prefix : "") + bName.name;
 
-                    return aSymbol.localeCompare(bSymbol);
+                    //return aSymbol.localeCompare(bSymbol);// sort
+                    return false; //Disable sort for margin positions default
                 }
             })
             .map(a => {
@@ -226,7 +227,13 @@ ListGenerator = AssetWrapper(ListGenerator, {
     defaultProps: {
         bitAssets: [
             //gpAssets
-            "1.3.27" //gpUSD
+            "1.3.27", // gpUSD
+            "1.3.36", // gpEUR
+            "1.3.37", // gpRUB
+            "1.3.38", // gpCNY
+            "1.3.35", // gpGOLD
+            "1.3.34" // gpSILVER
+
             //RuDEX MPA-s
             /*            "1.3.5747",
             "1.3.5748",

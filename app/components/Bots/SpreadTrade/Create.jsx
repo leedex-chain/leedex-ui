@@ -8,17 +8,23 @@ import Translate from "react-translate-component";
 class Create extends React.Component {
     state = {
         name: "",
+        quoteAsset: "GPH",
         baseAsset: "RUDEX.USDT",
-        quoteAsset: "RUDEX.BTC",
+
+        quoteAmount: 500.0,
         baseAmount: 10,
-        quoteAmount: 0.01,
+
         baseSpread: 10,
         quoteSpread: 10,
+
+        quoteBalance: 5000.0,
         baseBalance: 100,
-        quoteBalance: 0.1,
-        percentBaseAmount: false,
+
         percentQuoteAmount: false,
-        validate: ["name"]
+        percentBaseAmount: false,
+
+        validate: ["name"],
+        fromMarket: false
     };
 
     componentDidMount() {
@@ -147,96 +153,7 @@ class Create extends React.Component {
                 </div>
                 <div className="grid-block horizontal">
                     <div className="content-block" style={{marginLeft: 50}}>
-                        <label style={{textAlign: "center"}}>
-                            <Translate content="bots.common.base" />
-                        </label>
-                        {/*                        <label className="left-label">
-                            <Translate content="bots.common.asset" />
-                        </label>*/}
-                        <AssetSelector
-                            name="baseAsset"
-                            value={this.state.baseAsset}
-                            onChange={this.handleChange}
-                        />
                         <label className="left-label">
-                            <Translate content="bots.common.balance" />
-                        </label>
-                        <input
-                            name="baseBalance"
-                            id="baseBalance"
-                            type="text"
-                            ref="input"
-                            value={this.state.baseBalance}
-                            onChange={this.handleChange}
-                            autoComplete="baseBalance"
-                            style={{
-                                marginBottom: 30,
-                                border: this.state.validate.includes(
-                                    "baseBalance"
-                                )
-                                    ? "1px solid red"
-                                    : "none"
-                            }}
-                        />
-                        <label className="left-label">
-                            <Translate content="bots.common.amount" />
-                        </label>
-                        <div onChange={this.handleChange}>
-                            <input
-                                type="radio"
-                                value={true}
-                                name="percentBaseAmount"
-                            />{" "}
-                            <Translate content="bots.spread_trade.balance_percent" />
-                            <br />
-                            <input
-                                type="radio"
-                                value={false}
-                                name="percentBaseAmount"
-                                defaultChecked
-                            />{" "}
-                            <Translate content="bots.spread_trade.balance_value" />
-                        </div>
-                        <input
-                            name="baseAmount"
-                            id="baseAmount"
-                            type="text"
-                            ref="input"
-                            value={this.state.baseAmount}
-                            onChange={this.handleChange}
-                            autoComplete="baseAmount"
-                            style={{
-                                marginBottom: 30,
-                                border: this.state.validate.includes(
-                                    "baseAmount"
-                                )
-                                    ? "1px solid red"
-                                    : "none"
-                            }}
-                        />
-                        <label className="left-label">
-                            <Translate content="bots.spread_trade.spread" />
-                        </label>
-                        <input
-                            name="baseSpread"
-                            id="baseSpread"
-                            type="text"
-                            ref="input"
-                            value={this.state.baseSpread}
-                            onChange={this.handleChange}
-                            autoComplete="baseSpread"
-                            style={{
-                                marginBottom: 30,
-                                border: this.state.validate.includes(
-                                    "baseSpread"
-                                )
-                                    ? "1px solid red"
-                                    : "none"
-                            }}
-                        />
-                    </div>
-                    <div className="content-block" style={{marginLeft: 50}}>
-                        <label style={{textAlign: "center"}}>
                             <Translate content="bots.common.quote" />
                         </label>
                         {/*                        <label className="left-label">
@@ -318,6 +235,95 @@ class Create extends React.Component {
                                 marginBottom: 30,
                                 border: this.state.validate.includes(
                                     "quoteSpread"
+                                )
+                                    ? "1px solid red"
+                                    : "none"
+                            }}
+                        />
+                    </div>
+                    <div className="content-block" style={{marginLeft: 50}}>
+                        <label className="left-label">
+                            <Translate content="bots.common.base" />
+                        </label>
+                        {/*                        <label className="left-label">
+                            <Translate content="bots.common.asset" />
+                        </label>*/}
+                        <AssetSelector
+                            name="baseAsset"
+                            value={this.state.baseAsset}
+                            onChange={this.handleChange}
+                        />
+                        <label className="left-label">
+                            <Translate content="bots.common.balance" />
+                        </label>
+                        <input
+                            name="baseBalance"
+                            id="baseBalance"
+                            type="text"
+                            ref="input"
+                            value={this.state.baseBalance}
+                            onChange={this.handleChange}
+                            autoComplete="baseBalance"
+                            style={{
+                                marginBottom: 30,
+                                border: this.state.validate.includes(
+                                    "baseBalance"
+                                )
+                                    ? "1px solid red"
+                                    : "none"
+                            }}
+                        />
+                        <label className="left-label">
+                            <Translate content="bots.common.amount" />
+                        </label>
+                        <div onChange={this.handleChange}>
+                            <input
+                                type="radio"
+                                value={true}
+                                name="percentBaseAmount"
+                            />{" "}
+                            <Translate content="bots.spread_trade.balance_percent" />
+                            <br />
+                            <input
+                                type="radio"
+                                value={false}
+                                name="percentBaseAmount"
+                                defaultChecked
+                            />{" "}
+                            <Translate content="bots.spread_trade.balance_value" />
+                        </div>
+                        <input
+                            name="baseAmount"
+                            id="baseAmount"
+                            type="text"
+                            ref="input"
+                            value={this.state.baseAmount}
+                            onChange={this.handleChange}
+                            autoComplete="baseAmount"
+                            style={{
+                                marginBottom: 30,
+                                border: this.state.validate.includes(
+                                    "baseAmount"
+                                )
+                                    ? "1px solid red"
+                                    : "none"
+                            }}
+                        />
+                        <label className="left-label">
+                            <Translate content="bots.spread_trade.spread" />
+                        </label>
+                        <input
+                            name="baseSpread"
+                            id="baseSpread"
+                            type="text"
+                            ref="input"
+                            value={this.state.baseSpread}
+                            onChange={this.handleChange}
+                            autoComplete="baseSpread"
+                            style={{
+                                marginBottom: 30,
+                                border: this.state.validate.includes(
+                                    "baseSpread"
                                 )
                                     ? "1px solid red"
                                     : "none"

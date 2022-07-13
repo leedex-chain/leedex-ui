@@ -7,6 +7,20 @@
     text-transform: none;
 }
 
+.listingTable button .icon > svg,
+.listingTable button span .icon {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.listingTableProgress {
+    line-height: 90px;
+}
+
+.listingTableProgress .inside {
+    margin-top: 10px;
+}
+
 .listingTable__header,
 .listingTable__row {
     display: flex;
@@ -34,10 +48,18 @@
 }
 
 .listingAssetCard {
-    width: 70%;
+    width: 60%;
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.listingAssetInfo {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: -0.8rem;
 }
 
 .listingTableRank {
@@ -50,12 +72,7 @@
 
 .listingTableAssetName {
     width: 75%;
-}
-
-.listingAssetInfo {
-    width: 40%;
-    display: flex;
-    flex-direction: row;
+    padding-left: 1.5rem;
 }
 
 .listingAssetInfoData {
@@ -93,17 +110,37 @@
     text-align: left;
 }
 
-.nowrap {
-    white-space: normal;
-}
-
 .listingAssetInfoBlock {
     display: none;
 }
 
-@media (min-width: 768px) {
-    .nowrap {
-        white-space: nowrap;
+.listingTableLogo a {
+    position: relative;
+    right: 1rem;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 1100px) {
+    .listingAssetCard {
+        width: 55%;
+    }
+
+    .listingAssetInfo {
+        width: 45%;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 900px) {
+    .listingAssetCard {
+        width: 50%;
+    }
+
+    .listingAssetInfo {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
     }
 }
 
@@ -121,6 +158,14 @@
         justify-content: flex-end;
     }
 
+    .listingAssetInfo {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-self: flex-end;
+        justify-content: flex-end;
+    }
+
     .listingAsset {
         flex-direction: column;
     }
@@ -133,18 +178,15 @@
         width: 15%;
     }
 
+    .listingTableLogo a {
+        position: relative;
+        right: -1.5rem;
+    }
+
     .listingTableAssetName {
         width: 75%;
         align-self: center;
         padding: 0 0 0.5rem 1rem;
-    }
-
-    .listingAssetInfo {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-self: flex-end;
-        justify-content: flex-end;
     }
 
     .listingAssetInfoData {
@@ -205,15 +247,15 @@ body .listing_button .ant-btn[disabled]:hover {
     border-color: red !important;
 }
 
-.listingTable__cell.listingTableVotes a {
-    border: 1px solid #00a9e0;
-    display: block;
-    padding: 4px 6px 3px 0px;
-    border-radius: 3px;
+@media only screen and (max-width: 768px) {
+    .listingTable__cell.listingTableVotes button.ant-btn {
+        position: absolute;
+        right: -8%;
+    }
 }
 
 @media only screen and (max-width: 468px) {
-    .listingTable__cell.listingTableVotes a {
+    .listingTable__cell.listingTableVotes button.ant-btn {
         position: absolute;
         right: 20px;
     }
@@ -224,6 +266,21 @@ body .listing_button .ant-btn[disabled]:hover {
     color: grey !important;
 }
 
-.listingTable__cell.listingTableVotes a:hover {
-    border-color: #1652f0;
+.darkTheme .listingTable__cell .icon > svg path {
+    fill: white;
+}
+.lightTheme .listingTable__cell .icon > svg path {
+    fill: white;
+}
+
+.listingTable__cell button.ant-btn {
+    display: block;
+    padding: 5px 20px;
+
+    background-color: #349ff4 !important;
+
+    width: 96px;
+    height: 30px;
+
+    margin-left: 5px;
 }

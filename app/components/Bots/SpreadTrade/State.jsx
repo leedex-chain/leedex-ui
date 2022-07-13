@@ -89,110 +89,7 @@ class State extends React.Component {
                             marginTop: 30
                         }}
                     >
-                        <label style={{textAlign: "center"}}>
-                            <Translate content="bots.common.base" />
-                        </label>
-                        {/*                        <label className="left-label">
-                            <Translate content="bots.common.asset" />
-                        </label>*/}
-                        <Select
-                            style={{marginBottom: 30}}
-                            name="baseAsset"
-                            value={{
-                                value: this.state.base.asset,
-                                label: (
-                                    <AssetLabel name={this.state.base.asset} />
-                                )
-                            }}
-                            clearable={false}
-                            searchable={false}
-                            disabled
-                        />
                         <label className="left-label">
-                            <Translate content="bots.common.balance" />
-                        </label>
-                        <input
-                            name="baseBalance"
-                            type="text"
-                            ref="input"
-                            value={this.state.base.balance}
-                            onChange={this.handleChange}
-                            disabled={this.props.bot.run}
-                            style={{
-                                marginBottom: 30,
-                                border: this.state.validate.includes(
-                                    "baseBalance"
-                                )
-                                    ? "1px solid red"
-                                    : "none"
-                            }}
-                        />
-                        <label className="left-label">
-                            <Translate content="bots.common.amount" />
-                        </label>
-                        <div>
-                            <input
-                                type="radio"
-                                value={true}
-                                name="percentBaseAmount"
-                                checked={this.state.base.percent}
-                                onChange={this.handleChange}
-                            />{" "}
-                            <Translate content="bots.spread_trade.balance_percent" />
-                            <br />
-                            <input
-                                type="radio"
-                                value={false}
-                                name="percentBaseAmount"
-                                checked={!this.state.base.percent}
-                                onChange={this.handleChange}
-                            />{" "}
-                            <Translate content="bots.spread_trade.balance_value" />
-                        </div>
-                        <input
-                            name="baseAmount"
-                            type="text"
-                            ref="input"
-                            value={this.state.base.amount}
-                            onChange={this.handleChange}
-                            disabled={this.props.bot.run}
-                            style={{
-                                marginBottom: 30,
-                                border: this.state.validate.includes(
-                                    "baseAmount"
-                                )
-                                    ? "1px solid red"
-                                    : "none"
-                            }}
-                        />
-                        <label className="left-label">
-                            <Translate content="bots.spread_trade.spread" />
-                        </label>
-                        <input
-                            name="baseSpread"
-                            type="text"
-                            ref="input"
-                            value={this.state.base.spread}
-                            onChange={this.handleChange}
-                            disabled={this.props.bot.run}
-                            style={{
-                                marginBottom: 30,
-                                border: this.state.validate.includes(
-                                    "baseSpread"
-                                )
-                                    ? "1px solid red"
-                                    : "none"
-                            }}
-                        />
-                    </div>
-                    <div
-                        className="content-block"
-                        style={{
-                            marginLeft: 50,
-                            marginTop: 30
-                        }}
-                    >
-                        <label style={{textAlign: "center"}}>
                             <Translate content="bots.common.quote" />
                         </label>
                         {/*                        <label className="left-label">
@@ -282,6 +179,109 @@ class State extends React.Component {
                                 marginBottom: 30,
                                 border: this.state.validate.includes(
                                     "quoteSpread"
+                                )
+                                    ? "1px solid red"
+                                    : "none"
+                            }}
+                        />
+                    </div>
+                    <div
+                        className="content-block"
+                        style={{
+                            marginLeft: 50,
+                            marginTop: 30
+                        }}
+                    >
+                        <label className="left-label">
+                            <Translate content="bots.common.base" />
+                        </label>
+                        {/*                        <label className="left-label">
+                            <Translate content="bots.common.asset" />
+                        </label>*/}
+                        <Select
+                            style={{marginBottom: 30}}
+                            name="baseAsset"
+                            value={{
+                                value: this.state.base.asset,
+                                label: (
+                                    <AssetLabel name={this.state.base.asset} />
+                                )
+                            }}
+                            clearable={false}
+                            searchable={false}
+                            disabled
+                        />
+                        <label className="left-label">
+                            <Translate content="bots.common.balance" />
+                        </label>
+                        <input
+                            name="baseBalance"
+                            type="text"
+                            ref="input"
+                            value={this.state.base.balance}
+                            onChange={this.handleChange}
+                            disabled={this.props.bot.run}
+                            style={{
+                                marginBottom: 30,
+                                border: this.state.validate.includes(
+                                    "baseBalance"
+                                )
+                                    ? "1px solid red"
+                                    : "none"
+                            }}
+                        />
+                        <label className="left-label">
+                            <Translate content="bots.common.amount" />
+                        </label>
+                        <div>
+                            <input
+                                type="radio"
+                                value={true}
+                                name="percentBaseAmount"
+                                checked={this.state.base.percent}
+                                onChange={this.handleChange}
+                            />{" "}
+                            <Translate content="bots.spread_trade.balance_percent" />
+                            <br />
+                            <input
+                                type="radio"
+                                value={false}
+                                name="percentBaseAmount"
+                                checked={!this.state.base.percent}
+                                onChange={this.handleChange}
+                            />{" "}
+                            <Translate content="bots.spread_trade.balance_value" />
+                        </div>
+                        <input
+                            name="baseAmount"
+                            type="text"
+                            ref="input"
+                            value={this.state.base.amount}
+                            onChange={this.handleChange}
+                            disabled={this.props.bot.run}
+                            style={{
+                                marginBottom: 30,
+                                border: this.state.validate.includes(
+                                    "baseAmount"
+                                )
+                                    ? "1px solid red"
+                                    : "none"
+                            }}
+                        />
+                        <label className="left-label">
+                            <Translate content="bots.spread_trade.spread" />
+                        </label>
+                        <input
+                            name="baseSpread"
+                            type="text"
+                            ref="input"
+                            value={this.state.base.spread}
+                            onChange={this.handleChange}
+                            disabled={this.props.bot.run}
+                            style={{
+                                marginBottom: 30,
+                                border: this.state.validate.includes(
+                                    "baseSpread"
                                 )
                                     ? "1px solid red"
                                     : "none"

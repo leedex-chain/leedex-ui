@@ -6,7 +6,7 @@ Graphene 2.0 - это платформа Финансовых Смарт-Кон�
 
 ## Введение
 
-- [Graphene](introduction/bitshares.md)
+- [Graphene](introduction/graphene.md)
 - [Кошелек](introduction/wallets.md)
 - [Резервные копии](introduction/backups.md)
 - [Блокчейн](introduction/blockchain.md)
@@ -22,7 +22,7 @@ Graphene 2.0 - это платформа Финансовых Смарт-Кон�
 
 ## Активы
 
-- [Привязанные к рынку активы](assets/mpa.md) (BitUSD, BitEUR, BitGOLD, Bit\*,...)
+- [Привязанные к рынку активы](assets/mpa.md) (gpUSD, gpEUR, gpCNY, gpRUB, gpGOLD, gp\*,...)
 - [Выпущенные пользователем активы](assets/uia.md)
 - [Приватизированные gpAssets](assets/privbitassets.md)
 

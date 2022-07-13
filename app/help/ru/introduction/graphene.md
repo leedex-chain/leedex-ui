@@ -4,12 +4,12 @@
 
 > Если у Вас возникли проблемы со шлюзом от провайдера, пожалуйста, свяжитесь с ним напрямую. Смотрите список шлюзов в левом меню.
 
-### Чат Bitshares
+### Чат Graphene/RuDEX
 
-Вы можете общаться с другими членами сообщества Bitshares в реальном времени здесь:
+Вы можете общаться с другими членами сообщества Graphene и RuDEX в реальном времени здесь:
 
-- [Telegram](https://t.me/BitSharesDEX_RU)
-- [Discord](https://discord.gg/GsjQfAJ)
+- [Telegram чат RuDEX](https://t.me/BitSharesDEX_RU)
+- [Telegram чат Graphene](https://t.me/graphene_dex)
 
 ### Разработчики
 
@@ -28,6 +28,6 @@ Graphene делает для бизнеса то, что Биткоин сдел
 
 Этот кошелек обеспечивает доступ к большинству функций сети Graphene, включая
 
-- [gpAssets (БитАктивы)](/help/assets/mpa)
+- [gpAssets (gpАктивы)](/help/assets/mpa)
 - [Выпущенные пользователем активы](/help/assets/uia)
 - [Биржу DEX](/help/dex/introduction)

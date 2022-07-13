@@ -1,6 +1,9 @@
 import alt from "alt-instance";
 
 import localeCodes from "assets/locales";
+import counterpart from "counterpart";
+
+var locale_en = require("assets/locales/locale-en.json");
 
 var locales = {};
 if (__ELECTRON__) {
@@ -14,6 +17,16 @@ class IntlActions {
         if (locale === "en") {
             return {locale};
         }
+
+        if (locale !== "ru") {
+            counterpart.registerTranslations(
+                "en",
+                require("counterpart/locales/en")
+            );
+            counterpart.registerTranslations("en", locale_en);
+            counterpart.setFallbackLocale("en");
+        }
+
         if (__ELECTRON__) {
             return {
                 locale: locale,

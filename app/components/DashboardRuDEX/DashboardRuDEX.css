@@ -1,0 +1,43 @@
+.grid-block.dashboardRuDEX {
+    margin: 0;
+}
+
+.grid-block.dashboardRuDEX .block-content-header {
+    text-align: center !important;
+}
+
+.grid-content .dashboardRuDEX .grid-block {
+    margin: 0;
+}
+
+.grid-content .dashboardRuDEX .loading-panel {
+    top: 20%;
+}
+
+.dashboardRuDEX .grid-frame {
+    height: auto;
+    min-height: 500px;
+}
+
+.block-content-header {
+    padding-bottom: 0;
+    margin-bottom: 15px;
+}
+
+.grid-block.dashboardRuDEX .grid-container {
+    padding: 1rem;
+}
+
+.grid-block.dashboardRuDEX {
+    margin-right: 0;
+    overflow-y: auto !important;
+}
+
+.grid-block.dashboardRuDEX .loading-panel {
+    position: fixed !important;
+    top: 40% !important;
+}
+
+.grid-block.dashboardRuDEX .grid-block.fm-outer-container {
+    margin-left: 1rem;
+}

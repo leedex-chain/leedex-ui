@@ -9,7 +9,7 @@ Bu yardım bölümü özet bir genel bakış sağlar ve bu uygulamanın en temel
 kavramlarını tanımlar.
 
 ## Takdim 
- * [Graphene](introduction/bitshares.md)
+ * [Graphene](introduction/graphene.md)
  * [Cüzdan](introduction/wallets.md)
  * [Yedekler](introduction/backups.md)
  * [Blokzinciri](introduction/blockchain.md)
@@ -23,7 +23,7 @@ kavramlarını tanımlar.
  * [Üyelikler](accounts/membership.md)
 
 ## Aktifler
- * [Piyasa Sabitli Varlıklar](assets/mpa.md) (BitUSD, BitEUR, BitGOLD, Bit\*,...)
+ * [Piyasa Sabitli Varlıklar](assets/mpa.md) (gpUSD, gpEUR, gpCNY, gpRUB, gpGOLD, gp\*,...)
  * [Kullanıcı Aktifleri](assets/uia.md)
  * [Özelleştirilmiş Varlıklar](assets/privbitassets.md)
 

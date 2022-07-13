@@ -1,7 +1,7 @@
 # Short Selling gpAssets
 
 In order to increase your exposure to GPH and offer liquidity to gpAssets, such
-as USD, EUR, GOLD, etc., you can go *borrow* this gpAsset from the network and
+as gpUSD, gpEUR, gpRUB, gpCNY, gpSILVER, gpGOLD etc., you can go *borrow* this gpAsset from the network and
 *sell it short*. We will here briefly describe the procedure.
 
 ## Borrowing

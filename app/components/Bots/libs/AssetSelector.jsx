@@ -33,7 +33,7 @@ export class AssetLabel extends React.Component {
         let asset = await Assets[name];
 
         this.setState({
-            name: asset.bitasset_data_id ? `bit${name}` : name
+            name: asset.bitasset_data_id ? `gp${name}` : name
         });
     };
 

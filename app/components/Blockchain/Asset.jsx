@@ -25,7 +25,15 @@ import AssetOwnerUpdate from "./AssetOwnerUpdate";
 import AssetPublishFeed from "./AssetPublishFeed";
 import AssetResolvePrediction from "./AssetResolvePrediction";
 import BidCollateralOperation from "./BidCollateralOperation";
-import {Tooltip, Icon, Table, Tabs, Collapse} from "bitshares-ui-style-guide";
+import {
+    Tooltip,
+    Icon,
+    Table,
+    Tabs,
+    Collapse,
+    Alert
+} from "bitshares-ui-style-guide";
+import GatewayStore from "../../stores/GatewayStore";
 const {Panel} = Collapse;
 
 class AssetFlag extends React.Component {
@@ -373,6 +381,19 @@ class Asset extends React.Component {
         return (
             <div style={{overflow: "visible"}}>
                 <h2>
+                    {asset &&
+                        issuer &&
+                        asset.id != "1.3.0" &&
+                        issuer.get("id") != "1.2.0" && (
+                            <Alert
+                                message={counterpart.translate(
+                                    "explorer.asset.asset_owner_responsible"
+                                )}
+                                type="info"
+                                showIcon
+                                style={{marginTop: "1em"}}
+                            />
+                        )}
                     <AssetImage
                         maxWidth={50}
                         replaceNoneToBts={false}

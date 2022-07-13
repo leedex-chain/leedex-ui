@@ -1,4 +1,29 @@
 let icons = [
+    "menu-power",
+    "menu-create_account",
+    "menu-dashboard",
+    "menu-user", //old
+    "menu-robot",
+    "menu-listing",
+    "menu-volume_ranking",
+    "menu-trade",
+    "menu-server",
+    "menu-transfer",
+    "menu-deposit-withdraw",
+    "menu-cogs",
+    "menu-showcases",
+    "menu-insight",
+    "menu-news",
+    "menu-question-circle",
+    "menu-thumbs-up",
+    "menu-assets",
+    "menu-text-sign",
+    "menu-text",
+    "menu-hourglass",
+    "menu-list",
+    "menu-warning",
+    "menu-folder",
+
     "photo-camera",
     "adjust",
     "alarm",
@@ -23,6 +48,7 @@ let icons = [
     "direct_debit",
     "dollar-green",
     "dollar",
+    "donate",
     "download",
     "excel",
     "eye",
@@ -36,7 +62,6 @@ let icons = [
     "hourglass",
     "key",
     "list",
-    "listing",
     "locked",
     "minus-circle",
     "news",
@@ -77,7 +102,8 @@ let icons = [
     "insight",
     "create_account",
     "swap",
-    "instant-trade"
+    "instant-trade",
+    "qr-scan"
 ];
 
 let iconsMap = {};

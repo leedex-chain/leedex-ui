@@ -15,6 +15,9 @@ export const scamAccountsBittrex = [
 ];
 
 export const scamAccountsOther = [
+    "blckchnb",
+    "1.2.3655",
+
     "deepcrypto8",
     "1.2.2126",
 

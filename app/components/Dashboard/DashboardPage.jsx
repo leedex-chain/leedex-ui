@@ -9,6 +9,8 @@ import SettingsStore from "stores/SettingsStore";
 import {Tabs, Tab} from "../Utility/Tabs";
 import {StarredMarkets, FeaturedMarkets} from "./Markets";
 import {getPossibleGatewayPrefixes} from "common/gateways";
+//import Dashboard from "../DashboardRuDEX/Dashboard";
+import {getMyMarketsQuotes} from "branding";
 
 class DashboardPage extends React.Component {
     render() {
@@ -41,12 +43,15 @@ class DashboardPage extends React.Component {
                         <div className="content-block small-12">
                             <div className="tabs-container generic-bordered-box">
                                 <Tabs
-                                    defaultActiveTab={1}
+                                    defaultActiveTab={0}
                                     segmented={false}
                                     setting="dashboardTab"
                                     className="account-tabs"
                                     tabsClass="account-overview no-padding bordered-header content-block"
                                 >
+                                    {/*                                    <Tab title="dashboard.top_markets">
+                                        <Dashboard {...this.props} />
+                                    </Tab>*/}
                                     <Tab title="dashboard.starred_markets">
                                         <StarredMarkets />
                                     </Tab>
@@ -60,21 +65,10 @@ class DashboardPage extends React.Component {
                                                         marginRight: 5
                                                     }}
                                                     src={
-                                                        imgName.indexOf(
-                                                            "RUDEX"
-                                                        ) !== -1 ||
-                                                        imgName.indexOf(
-                                                            "GPH"
-                                                        ) !== -1 ||
-                                                        imgName.indexOf(
-                                                            "USD"
+                                                        getMyMarketsQuotes().indexOf(
+                                                            imgName
                                                         ) !== -1
-                                                            ? `${__BASE_URL__}asset-symbols/${imgName
-                                                                  .replace(
-                                                                      /^BTC/,
-                                                                      "OPEN.BTC"
-                                                                  )
-                                                                  .toLowerCase()}.png`
+                                                            ? `${__BASE_URL__}asset-symbols/${imgName.toLowerCase()}.png`
                                                             : "asset-symbols/unknown.png"
                                                     }
                                                 />
@@ -105,28 +99,25 @@ class DashboardPage extends React.Component {
     }
 }
 
-export default connect(
-    DashboardPage,
-    {
-        listenTo() {
-            return [AccountStore, SettingsStore];
-        },
-        getProps() {
-            let {
-                myActiveAccounts,
-                myHiddenAccounts,
-                passwordAccount,
-                accountsLoaded,
-                refsLoaded
-            } = AccountStore.getState();
+export default connect(DashboardPage, {
+    listenTo() {
+        return [AccountStore, SettingsStore];
+    },
+    getProps() {
+        let {
+            myActiveAccounts,
+            myHiddenAccounts,
+            passwordAccount,
+            accountsLoaded,
+            refsLoaded
+        } = AccountStore.getState();
 
-            return {
-                myActiveAccounts,
-                myHiddenAccounts,
-                passwordAccount,
-                accountsReady: accountsLoaded && refsLoaded,
-                preferredBases: SettingsStore.getState().preferredBases
-            };
-        }
+        return {
+            myActiveAccounts,
+            myHiddenAccounts,
+            passwordAccount,
+            accountsReady: accountsLoaded && refsLoaded,
+            preferredBases: SettingsStore.getState().preferredBases
+        };
     }
-);
+});

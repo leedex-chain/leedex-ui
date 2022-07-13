@@ -1,15 +1,18 @@
 import Create from "components/Bots/RelativeOrders/Create";
 import State from "components/Bots/RelativeOrders/State";
-import Account from "lib/bots/account";
+import Apis from "lib/bots/apis";
+import Assets from "lib/bots/assets";
+import BigNumber from "bignumber.js";
 
-class RelativeOrders {
+import BotFather from "../BotFather";
+
+BigNumber.config({ERRORS: false});
+
+class RelativeOrders extends BotFather {
     static create = Create;
     state = State;
 
     constructor(account, storage, initData) {
-        this.account = new Account(account);
-        this.storage = storage;
-
         if (initData) {
             storage.init({
                 name: initData.name,
@@ -17,14 +20,11 @@ class RelativeOrders {
             });
         }
 
-        this.name = storage.read().name;
-
-        this.logger = console;
-        this.queueEvents = Promise.resolve();
-        this.run = false;
+        //BotFather
+        super(account, storage, initData);
     }
 
-    async start() {
+    async initStartData() {
         let state = this.storage.read();
 
         this.base = await Assets[state.base.asset];
@@ -39,31 +39,7 @@ class RelativeOrders {
         } else {
             this.getFeed = this.getUIAFeed;
         }
-
-        await WalletUnlockActions.unlock();
-        SettingsActions.changeSetting({
-            setting: "walletLockTimeout",
-            value: 0
-        });
-
-        ChainStore.subscribe(this.queue);
-        this.run = true;
     }
-    async stop() {
-        ChainStore.unsubscribe(this.queue);
-        this.run = false;
-        await this.queueEvents;
-    }
-
-    delete() {
-        this.storage.delete();
-    }
-
-    queue = () => {
-        this.queueEvents = this.queueEvents
-            .then(this.checkOrders)
-            .catch(this.logger.error.bind(this.logger));
-    };
 
     checkOrders = async () => {
         let state = this.storage.read();

@@ -266,8 +266,8 @@
     }
     .settings-input {
         /* !important to overwrite styles for Inputs on User Settings. By default inputs take styles from
-    .block-list and it uses on many places. To keep everything OK and do not break something I just do
-    overwrite for Inputs on settings and keep default styles for inputs on another places. */
+.block-list and it uses on many places. To keep everything OK and do not break something I just do
+overwrite for Inputs on settings and keep default styles for inputs on another places. */
         color: $settings-select-color !important;
         height: 36px !important;
         background-color: $settings-select-bg !important;
@@ -1106,6 +1106,12 @@
             > .typeahead__innerItem__disabled {
                 color: $inactive-text-color;
             }
+        }
+    }
+    ul.account-overview.segmented {
+        > li > a {
+            background: $bg-color !important;
+            border-right: none;
         }
     }
     ul.button-group.segmented {
@@ -2610,13 +2616,16 @@
         }
     }
 }
+
 .rc-time-picker-panel {
     z-index: 9999 !important;
 }
+
 .midnightTheme .gate_fee .amount-selector {
     width: 100%;
     display: inline-block;
 }
+
 .midnightTheme .gate_fee .right-selector {
     text-align: right;
     width: 26%;
@@ -2624,19 +2633,23 @@
     color: #adadad;
     text-transform: uppercase;
 }
+
 .midnightTheme .gate_fee .right-selector .right-selector-input {
     text-align: right;
     width: 100%;
 }
+
 .clear-text,
 .search-wrapper {
     position: relative;
 }
+
 .market-filter-input,
 .clear-text,
 .search-wrapper {
     position: relative;
 }
+
 .clear-text {
     top: 10px;
     right: -30px;
@@ -2647,6 +2660,7 @@
     outline: 0;
     cursor: pointer;
 }
+
 .clear-text:after {
     content: "X";
     display: block;
@@ -2667,9 +2681,11 @@
     font-size: 12px;
     cursor: pointer;
 }
+
 .market-filter-input:not(:valid) ~ .clear-text {
     display: none;
 }
+
 .header-container {
     display: flex;
     align-items: center;
@@ -2708,6 +2724,7 @@
         line-height: normal;
     }
 }
+
 .local-wallet-menu {
     // top: 50px!important;
     .table-cell {
@@ -2720,6 +2737,7 @@
         }
     }
 }
+
 .app-menu {
     flex: 0;
 }
@@ -2740,6 +2758,7 @@
         text-align: right;
     }
 }
+
 #qr_scanner_modal {
     > section {
         width: 100%;
@@ -2749,6 +2768,7 @@
         justify-content: center;
     }
 }
+
 @media screen and (max-width: 640px) {
     .responsive-list > .help-content > ul {
         height: 300px;
@@ -2766,6 +2786,7 @@
         }
     }
 }
+
 div.customizable-column--selector {
     position: absolute;
     right: 1rem;
@@ -2777,11 +2798,13 @@ div.customizable-column--selector {
         }
     }
 }
+
 div.customizable-column--selector--dropdown {
     ul.ant-select-dropdown-menu-vertical {
         max-height: 100% !important;
     }
 }
+
 .ant-table-tbody > tr.ant-table-row-selected td {
     background-color: #4f596633 !important;
 }
@@ -2797,7 +2820,31 @@ div.customizable-column--selector--dropdown {
     padding: 5px;
 }
 
-@media only all and (max-width: 900px) {
+@media only all and (max-width: 1040px) {
+    .footer .footer-support {
+        display: none !important;
+    }
+}
+
+@media only all and (max-width: 920px) {
+    .footer .footer-listing {
+        display: none !important;
+    }
+}
+
+@media only all and (max-width: 840px) {
+    .footer .logo {
+        display: none !important;
+    }
+}
+
+@media only all and (max-width: 770px) {
+    .footer .footer-audit {
+        display: none !important;
+    }
+}
+
+@media only all and (max-width: 680px) {
     .footer[class*="grid-block"]:not(.ng-hide) {
         display: none !important;
     }
@@ -2805,4 +2852,10 @@ div.customizable-column--selector--dropdown {
 
 .footer {
     height: 40px;
+}
+
+@media only all and (min-width: 900px) {
+    .margin-row td:first-child {
+        min-width: 8.5rem;
+    }
 }

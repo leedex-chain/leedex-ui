@@ -732,7 +732,7 @@ class BorrowModalContent extends React.Component {
         if (!isPredictionMarket && isNaN(feed_price)) {
             footer.push(
                 <Button tabIndex={6} onClick={this.props.hideModal}>
-                    {counterpart.translate("accountObj.perm.cancel")}
+                    {counterpart.translate("account.perm.cancel")}
                 </Button>
             );
         } else {

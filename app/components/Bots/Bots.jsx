@@ -83,8 +83,8 @@ class Bots extends React.Component {
         this.setState({botRun: bot.run});
     };
 
-    handleDeleteBot = () => {
-        BotManager.delete(this.state.bots[this.state.selectBot]);
+    handleDeleteBot = async () => {
+        await BotManager.delete(this.state.bots[this.state.selectBot]);
 
         this.setState({
             bots: BotManager.getBots(this.props.currentAccount),
@@ -220,18 +220,15 @@ class Bots extends React.Component {
     }
 }
 
-export default connect(
-    Bots,
-    {
-        listenTo() {
-            return [AccountStore];
-        },
-        getProps() {
-            return {
-                currentAccount:
-                    AccountStore.getState().currentAccount ||
-                    AccountStore.getState().passwordAccount
-            };
-        }
+export default connect(Bots, {
+    listenTo() {
+        return [AccountStore];
+    },
+    getProps() {
+        return {
+            currentAccount:
+                AccountStore.getState().currentAccount ||
+                AccountStore.getState().passwordAccount
+        };
     }
-);
+});

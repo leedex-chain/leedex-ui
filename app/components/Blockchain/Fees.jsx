@@ -72,6 +72,7 @@ class FeeGroup extends React.Component {
             let fee = feeStruct[1];
             let operation_name = ops[opId];
             let feename = trxTypes[operation_name];
+            //let feename = trxTypes[operation_name] + ` (${opId})`;
 
             let feeRateForLTM = network_fee;
             if (opId === 10) {
@@ -131,7 +132,7 @@ class FeeGroup extends React.Component {
                 }
 
                 if (ltm_required.indexOf(opId) < 0) {
-                    if (feeTypes[key] != "Annual Membership") {
+                    if (feeTypes[key] != "Annual Membership222") {
                         rows.push(
                             <tr key={opId.toString() + key}>
                                 {title}

@@ -9,12 +9,13 @@ require("file-loader?name=asset-symbols/[name].png!./usd.png");
 require("file-loader?name=asset-symbols/[name].png!./eur.png");
 require("file-loader?name=asset-symbols/[name].png!./rub.png");
 require("file-loader?name=asset-symbols/[name].png!./cny.png");
-require("file-loader?name=asset-symbols/[name].png!./btc.png");
 require("file-loader?name=asset-symbols/[name].png!./gold.png");
 require("file-loader?name=asset-symbols/[name].png!./silver.png");
+//require("file-loader?name=asset-symbols/[name].png!./btc.png");
 
 // RuDEX assets
 require("file-loader?name=asset-symbols/[name].png!./donate.png");
+require("file-loader?name=asset-symbols/[name].png!./dexbot.png");
 
 require("file-loader?name=asset-symbols/[name].png!./rudex.btc.png");
 require("file-loader?name=asset-symbols/[name].png!./rudex.ltc.png");

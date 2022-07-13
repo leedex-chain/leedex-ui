@@ -265,12 +265,12 @@ class MarginPosition extends React.Component {
         return (
             <tr className="margin-row">
                 <td style={alignLeft}>
-                    <AssetImage
-                        replaceNoneToBts={false}
-                        maxWidth={30}
-                        name={debtAsset.get("symbol")}
-                    />
                     <Link to={`/asset/${debtAsset.get("symbol")}`}>
+                        <AssetImage
+                            replaceNoneToBts={false}
+                            maxWidth={30}
+                            name={debtAsset.get("symbol")}
+                        />
                         <AssetName noTip name={debtAsset.get("symbol")} />
                     </Link>
                 </td>

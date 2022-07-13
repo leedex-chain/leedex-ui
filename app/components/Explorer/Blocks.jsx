@@ -514,7 +514,7 @@ class Blocks extends React.Component {
                                 <div className="block-content-header">
                                     <Translate content="account.recent" />
                                 </div>
-                                <table className="table fixed-height-2rem">
+                                <table className="table fixed-height-1rem">
                                     <thead>
                                         <tr>
                                             <th>
@@ -532,7 +532,7 @@ class Blocks extends React.Component {
                                 }}
                                 ref="operations"
                             >
-                                <table className="table fixed-height-2rem">
+                                <table className="table fixed-height-1rem">
                                     <tbody>{transactions}</tbody>
                                 </table>
                             </div>
@@ -559,7 +559,7 @@ class Blocks extends React.Component {
                                 }}
                                 ref="blocks"
                             >
-                                <table className="table fixed-height-2rem">
+                                <table className="table fixed-height-1rem">
                                     <thead>
                                         <tr>
                                             <th>

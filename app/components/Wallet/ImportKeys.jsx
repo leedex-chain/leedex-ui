@@ -19,8 +19,6 @@ import ImportKeysStore from "stores/ImportKeysStore";
 
 import {Notification} from "bitshares-ui-style-guide";
 
-import GenesisFilter from "chain/GenesisFilter";
-
 import {Button, Input} from "bitshares-ui-style-guide";
 
 require("./ImportKeys.scss");
@@ -169,106 +167,19 @@ class ImportKeys extends Component {
 
         // BTS 1.0 wallets may have a lot of generated but unused keys or spent TITAN addresses making
         // wallets so large it is was not possible to use the JavaScript wallets with them.
-
-        let genesis_filter = new GenesisFilter();
-        if (!genesis_filter.isAvailable()) {
-            update_state({
-                password_checksum,
-                account_keys: unfiltered_account_keys,
-                genesis_filter_finished: true,
-                genesis_filtering: false
-            });
-            return;
-        }
-        this.setState(
-            {genesis_filter_initalizing: true},
-            () =>
-                // setTimeout(()=>
-                genesis_filter.init(() => {
-                    let filter_status = this.state.genesis_filter_status;
-
-                    // FF < version 41 does not support worker threads internals (like blob urls)
-                    // let GenesisFilterWorker = require("worker-loader!workers/GenesisFilterWorker")
-                    // let worker = new GenesisFilterWorker
-                    // worker.postMessage({
-                    //     account_keys: unfiltered_account_keys,
-                    //     bloom_filter: genesis_filter.bloom_filter
-                    // })
-                    // worker.onmessage = event => { try {
-                    //     let { status, account_keys } = event.data
-                    //     // ...
-                    // } catch( e ) { console.error('GenesisFilterWorker', e) }}
-
-                    let account_keys = unfiltered_account_keys;
-                    genesis_filter.filter(account_keys, status => {
-                        //console.log("import filter", status)
-                        if (status.error === "missing_public_keys") {
-                            console.error(
-                                "un-released format, just for testing"
-                            );
-                            update_state({
-                                password_checksum,
-                                account_keys: unfiltered_account_keys,
-                                genesis_filter_finished: true,
-                                genesis_filtering: false
-                            });
-                            return;
-                        }
-                        if (status.success) {
-                            // let { account_keys } = event.data // if using worker thread
-                            update_state({
-                                password_checksum,
-                                account_keys,
-                                genesis_filter_finished: true,
-                                genesis_filtering: false
-                            });
-                            return;
-                        }
-                        if (status.initalizing !== undefined) {
-                            update_state({
-                                genesis_filter_initalizing: status.initalizing,
-                                genesis_filtering: true
-                            });
-                            return;
-                        }
-                        if (status.importing === undefined) {
-                            // programmer error
-                            console.error("unknown status", status);
-                            return;
-                        }
-                        if (!filter_status.length)
-                            // first account
-                            filter_status.push(status);
-                        else {
-                            let last_account_name =
-                                filter_status[filter_status.length - 1]
-                                    .account_name;
-                            if (last_account_name === status.account_name)
-                                // update same account
-                                filter_status[
-                                    filter_status.length - 1
-                                ] = status;
-                            // new account
-                            else filter_status.push(status);
-                        }
-                        update_state({genesis_filter_status: filter_status});
-                    });
-                })
-            //, 100)
-        );
     }
 
     /**
-    BTS 1.0 hosted wallet backup (wallet.bitshares.org) is supported.
+     BTS 1.0 hosted wallet backup (wallet.bitshares.org) is supported.
 
-    BTS 1.0 native wallets should use wallet_export_keys instead of a wallet backup.
+     BTS 1.0 native wallets should use wallet_export_keys instead of a wallet backup.
 
-    Note,  Native wallet backups will be rejected.  The logic below does not
-    capture assigned account names (for unregisted accounts) and does not capture
-    signing keys.  The hosted wallet has only registered accounts and no signing
-    keys.
+     Note,  Native wallet backups will be rejected.  The logic below does not
+     capture assigned account names (for unregisted accounts) and does not capture
+     signing keys.  The hosted wallet has only registered accounts and no signing
+     keys.
 
-    */
+     */
     _parseWalletJson(json_contents) {
         let password_checksum;
         let encrypted_brainkey;
@@ -405,9 +316,7 @@ class ImportKeys extends Component {
         let format_error1_once = true;
         for (let account of this.state.account_keys) {
             if (!account.encrypted_private_keys) {
-                let error = `Account ${
-                    account.account_name
-                } missing encrypted_private_keys`;
+                let error = `Account ${account.account_name} missing encrypted_private_keys`;
                 console.error(error);
                 if (format_error1_once) {
                     Notification.error({
@@ -976,14 +885,6 @@ class ImportKeys extends Component {
                     </div>
                 ) : null}
 
-                {this.state.genesis_filter_initalizing ? (
-                    <div>
-                        <div className="center-content">
-                            <LoadingIndicator type="circle" />
-                        </div>
-                    </div>
-                ) : null}
-
                 {import_ready ? (
                     <div>
                         <div>
@@ -1026,18 +927,15 @@ class ImportKeys extends Component {
     }
 }
 
-ImportKeys = connect(
-    ImportKeys,
-    {
-        listenTo() {
-            return [ImportKeysStore];
-        },
-        getProps() {
-            return {
-                importing: ImportKeysStore.getState().importing
-            };
-        }
+ImportKeys = connect(ImportKeys, {
+    listenTo() {
+        return [ImportKeysStore];
+    },
+    getProps() {
+        return {
+            importing: ImportKeysStore.getState().importing
+        };
     }
-);
+});
 
 export default ImportKeys;

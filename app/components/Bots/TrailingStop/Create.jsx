@@ -8,11 +8,11 @@ import Translate from "react-translate-component";
 class Create extends React.Component {
     state = {
         name: "",
-        sellAsset: "RUDEX.BTC",
+        sellAsset: "GPH",
         getAsset: "RUDEX.USDT",
-        amount: 0.01,
+        amount: 1000,
         minAmount: 1,
-        stoploss: 100,
+        stoploss: 0.01,
         percent: 10,
         validate: ["name"]
     };
@@ -141,8 +141,8 @@ class Create extends React.Component {
                         }}
                     />
                 </div>
-                <div className="grid-block horizontal" style={{marginLeft: 50}}>
-                    <div className="content-block">
+                <div className="grid-block horizontal">
+                    <div className="content-block" style={{marginLeft: 50}}>
                         <label className="left-label">
                             <Translate content="bots.trailing_stop.sell_asset" />
                         </label>

@@ -16,7 +16,7 @@ class AccountVotingProxy extends React.Component {
     };
 
     static defaultProps = {
-        knownProxies: List([]),
+        knownProxies: List(["blckchnd"]),
         existingProxy: "1.2.5", // proxy-to-self
         autosubscribe: false
     };

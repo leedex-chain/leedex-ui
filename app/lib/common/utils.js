@@ -136,8 +136,12 @@ var Utils = {
         let baseID = base.toJS ? base.get("id") : base.id;
         let basePrecision = base.toJS ? base.get("precision") : base.precision;
         let fixedPrecisionAssets = {
-            //"1.3.113": 5, // bitCNY
-            "1.3.27": 5 // gpUSD
+            "1.3.27": 5, // gpUSD
+            "1.3.36": 5, // gpEUR
+            "1.3.37": 5, // gpRUB
+            "1.3.38": 5, // gpCNY
+            "1.3.35": 6, // gpGOLD
+            "1.3.34": 4 // gpSILVER
         };
         if (quoteID === "1.3.0") {
             priceText = this.format_number(price, quotePrecision);

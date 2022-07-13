@@ -1,18 +1,24 @@
 import React from "react";
 import counterpart from "counterpart";
 import * as api_en from "steem-js-api";
-import * as api_ru from "golos-classic-js";
+import * as api_ru from "golos-lib-js";
 import Translate from "react-translate-component";
 import LoadingIndicator from "./LoadingIndicator";
 import utils from "common/utils";
+import SettingsStore from "stores/SettingsStore";
+import {connect} from "alt-react";
+import IntlStore from "../stores/IntlStore";
 
 let api;
 
-const query = {
-    select_authors: ["rudex"],
-    tag: "rudex",
-    limit: 20,
-    filter_tag_masks: ["fm-"]
+let query_func = function(locale) {
+    let query = {
+        select_authors: ["rudex"],
+        tag: "rudex",
+        limit: 20
+    };
+    locale == "ru" ? (query.filter_tag_masks = ["fm-"]) : query;
+    return query;
 };
 
 const alignRight = {textAlign: "right"};
@@ -37,8 +43,6 @@ const SomethingWentWrong = () => (
 
 const ReusableLink = ({data, locale, url, isLink = false}) => (
     <a
-        //href={`https://steemit.com${url}`}
-        //href={`https://golos.id${url}`}
         href={
             locale == "ru"
                 ? `https://golos.id${url}`
@@ -62,10 +66,11 @@ const NewsTable = ({data, width, locale}) => {
             <thead>
                 <tr>
                     <th style={rightCellHeader}>
-                        <Translate
-                            component="span"
-                            content="account.votes.line"
-                        />
+                        #
+                        {/*<Translate
+                        component="span"
+                        content="account.votes.line"
+                    />*/}
                     </th>
                     <th style={leftCellHeader}>
                         <Translate
@@ -86,9 +91,11 @@ const NewsTable = ({data, width, locale}) => {
                     const theAuthor = singleNews.parentAuthor
                         ? singleNews.parentAuthor
                         : singleNews.author;
-                    const formattedDate = counterpart.localize(
+
+                    let formattedDate = counterpart.localize(
                         new Date(singleNews.created)
                     );
+
                     const smartTitle =
                         singleNews.title.length * 6 > width - 450
                             ? `${singleNews.title.slice(
@@ -151,7 +158,7 @@ class News extends React.Component {
             isWrong: false,
             discussions: [],
             width: 1200,
-            currentLocale: Translate.getLocale()
+            currentLocale: this.props.currentLocale
         };
         this.updateDimensions = this.updateDimensions.bind(this);
         this.orderDiscussions = this.orderDiscussions.bind(this);
@@ -172,13 +179,36 @@ class News extends React.Component {
         this.updateDimensions();
         window.addEventListener("resize", this.updateDimensions);
 
-        if (this.state.currentLocale === "ru") {
+        this.processUpdateNews(this.state.currentLocale);
+    }
+
+    processUpdateNews(currentLocale, oldLocale = false) {
+        if (oldLocale !== false && currentLocale !== "ru" && oldLocale !== "ru")
+            return false;
+
+        this.setState({
+            isLoading: true
+        });
+
+        let api = false;
+        if (currentLocale == "ru") {
             api = api_ru.api;
-            api.setWebSocket("wss://api.golos.id/ws");
+            //api.setWebSocket("wss://api.golos.id/ws");//deprecated for new lib
+            api_ru.config.set("websocket", "wss://api.golos.id/ws");
+
+            this.setState({
+                currentLocale: currentLocale
+            });
         } else api = api_en.api;
 
-        api.getDiscussionsByBlog(query)
+        api.getDiscussionsByBlog(query_func(currentLocale))
             .then(discussions => {
+                this.setState({
+                    isLoading: true,
+                    currentLocale: currentLocale,
+                    discussions: discussions
+                });
+
                 this.orderDiscussions(discussions);
             })
             .catch(() => {
@@ -188,6 +218,18 @@ class News extends React.Component {
 
     componentWillUnmount() {
         window.removeEventListener("resize", this.updateDimensions);
+    }
+
+    UNSAFE_componentWillReceiveProps(nextProps, nextState) {
+        if (
+            nextProps.currentLocale !== this.props.currentLocale &&
+            nextState.discussions !== this.state.discussions
+        ) {
+            this.processUpdateNews(
+                nextProps.currentLocale,
+                this.props.currentLocale
+            );
+        }
     }
 
     render() {
@@ -201,27 +243,42 @@ class News extends React.Component {
 
         return (
             <div className="grid-block page-layout">
-                <div className="grid-block vertical">
-                    <div className="account-tabs">
-                        <div className="tab-content">
-                            <div className="grid-block vertical">
-                                {isWrong && <SomethingWentWrong />}
-                                {isLoading ? <LoadingIndicator /> : null}
-                                {!isWrong &&
-                                    !isLoading && (
+                {isLoading ? (
+                    <LoadingIndicator
+                        loadingText={counterpart.translate("footer.loading")}
+                    />
+                ) : (
+                    <div className="grid-block vertical">
+                        <div className="account-tabs">
+                            <div className="tab-content">
+                                <div className="grid-block vertical">
+                                    {isWrong && <SomethingWentWrong />}
+                                    {!isWrong && !isLoading && (
                                         <NewsTable
                                             width={width}
                                             data={discussions}
                                             locale={currentLocale}
                                         />
                                     )}
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                )}
             </div>
         );
     }
 }
+
+News = connect(News, {
+    listenTo() {
+        return [IntlStore];
+    },
+    getProps() {
+        return {
+            currentLocale: IntlStore.getState().currentLocale
+        };
+    }
+});
 
 export default News;

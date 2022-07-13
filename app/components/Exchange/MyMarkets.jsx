@@ -855,7 +855,8 @@ class MyMarkets extends React.Component {
 
         let listStyle = {
             minWidth: this.state.minWidth,
-            minHeight: "6rem"
+            minHeight: "6rem",
+            paddingBottom: "2rem"
         };
         if (listHeight) {
             listStyle.height = listHeight;

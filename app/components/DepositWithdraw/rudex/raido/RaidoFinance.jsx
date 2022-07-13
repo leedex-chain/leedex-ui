@@ -35,13 +35,19 @@ class RaidoFinance extends React.Component {
     }
 
     _getActiveCoin(props, state) {
-        let cachedCoin = props.viewSettings.get("activeCoin_Raido", null);
-        let firstTimeCoin = "BTC";
-        let activeCoin = cachedCoin ? cachedCoin : firstTimeCoin;
+        let cachedCoin;
+        let firstTimeCoin;
+        let activeCoin;
 
-        if (state.action === "withdraw") {
+        cachedCoin = props.viewSettings.get("activeCoin_Raido", "deposit");
+        //let firstTimeCoin = "BTC";
+        firstTimeCoin = props.coins[0];
+
+        activeCoin = cachedCoin ? cachedCoin : firstTimeCoin;
+
+        /*        if (state.action === "withdraw") {
             activeCoin = this._findCoinByName(props, activeCoin).symbol;
-        }
+        }*/
 
         return activeCoin;
     }
@@ -49,7 +55,7 @@ class RaidoFinance extends React.Component {
     UNSAFE_componentWillReceiveProps(nextProps) {
         if (nextProps.provider !== this.props.provider) {
             this.setState({
-                activeCoin: this._getActiveCoin(nextProps, this.state.action)
+                activeCoin: this._getActiveCoin(nextProps, this.state)
             });
         }
     }

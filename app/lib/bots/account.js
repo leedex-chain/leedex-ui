@@ -33,7 +33,7 @@ class Account {
         amount,
         price,
         fill_or_kill = false,
-        expire = "2025-02-02T02:02:02"
+        expire = "2099-01-01T00:00:00"
     ) {
         await this.promise;
 
@@ -74,9 +74,9 @@ class Account {
             extensions: []
         });
 
-        return (await Apis.db.get_objects([
-            tx[0].trx.operation_results[0][1]
-        ]))[0];
+        return (
+            await Apis.db.get_objects([tx[0].trx.operation_results[0][1]])
+        )[0];
     }
 
     async sell(
@@ -85,7 +85,7 @@ class Account {
         amount,
         price,
         fill_or_kill = false,
-        expire = "2025-02-02T02:02:02"
+        expire = "2099-01-01T00:00:00"
     ) {
         await this.promise;
 
@@ -128,9 +128,9 @@ class Account {
             extensions: []
         });
 
-        return (await Apis.db.get_objects([
-            tx[0].trx.operation_results[0][1]
-        ]))[0];
+        return (
+            await Apis.db.get_objects([tx[0].trx.operation_results[0][1]])
+        )[0];
     }
 
     async balances() {

@@ -1,6 +1,6 @@
 #### Содержание
 
-- [Graphene](introduction/bitshares.md)
+- [Graphene](introduction/graphene.md)
 - [Кошелек](introduction/wallets.md)
 - [Резервные копии](introduction/backups.md)
 - [Блокчейн](introduction/blockchain.md)
@@ -10,9 +10,13 @@
 - [Разрешения](accounts/permissions.md)
 - [Членство](accounts/membership.md)
 - [Привязанные к рынку активы](assets/mpa.md) 
-    - gpUSD
-    - gpEUR
-    - bitGOLD
+    * gpUSD
+    * gpEUR
+    * gpRUB
+    * gpCNY
+    * gpGOLD
+    * gpSILVER
+    * ...
 - [Эмитированные пользователем активы](assets/uia.md)
 - [Приватизированные gpAssets](assets/privbitassets.md)
 - [Децентрализованная биржа](dex/introduction.md)

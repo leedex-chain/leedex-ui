@@ -1,21 +1,16 @@
 import Create from "components/Bots/TrailingStop/Create";
 import State from "components/Bots/TrailingStop/State";
-import {ChainStore} from "bitsharesjs";
 import Apis from "lib/bots/apis";
 import Assets from "lib/bots/assets";
 import BigNumber from "bignumber.js";
-import Account from "lib/bots/account";
-import SettingsActions from "actions/SettingsActions";
-import WalletUnlockActions from "actions/WalletUnlockActions";
 
-class TrailingStop {
+import BotFather from "../BotFather";
+
+class TrailingStop extends BotFather {
     static create = Create;
     state = State;
 
     constructor(account, storage, initData) {
-        this.account = new Account(account);
-        this.storage = storage;
-
         if (initData) {
             storage.init({
                 name: initData.name,
@@ -27,43 +22,16 @@ class TrailingStop {
             });
         }
 
-        this.name = storage.read().name;
-
-        this.logger = console;
-        this.queueEvents = Promise.resolve();
-        this.run = false;
+        //BotFather
+        super(account, storage, initData);
     }
 
-    async start() {
+    async initStartData() {
         let state = this.storage.read();
 
         this.sellAsset = await Assets[state.sellAsset];
         this.getAsset = await Assets[state.getAsset];
-
-        await WalletUnlockActions.unlock();
-        SettingsActions.changeSetting({
-            setting: "walletLockTimeout",
-            value: 0
-        });
-
-        ChainStore.subscribe(this.queue);
-        this.run = true;
     }
-    async stop() {
-        ChainStore.unsubscribe(this.queue);
-        this.run = false;
-        await this.queueEvents;
-    }
-
-    delete() {
-        this.storage.delete();
-    }
-
-    queue = () => {
-        this.queueEvents = this.queueEvents
-            .then(this.checkOrders)
-            .catch(this.logger.error.bind(this.logger));
-    };
 
     checkOrders = async () => {
         let state = this.storage.read();
@@ -97,7 +65,7 @@ class TrailingStop {
                 state.amount,
                 stoploss.toNumber()
             );
-            this.stop();
+            await this.stop();
         }
     };
 }

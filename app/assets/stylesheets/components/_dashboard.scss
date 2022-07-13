@@ -63,3 +63,51 @@ div.input-wrapper {
         height: inherit;
     }
 }
+
+@include breakpoint(large) {
+    div.fm-container {
+        > div:first-child {
+            padding-right: 15px;
+        }
+
+        > div:last-child {
+            padding-right: 15px;
+        }
+    }
+}
+
+// DashboardRuDEX
+.dashboardRuDEX div.fm-container {
+    border: 1px solid $border-color;
+    padding: 0.5rem;
+    min-width: 16rem;
+    cursor: default;
+
+    &:hover {
+        background-color: #d8d8d8;
+    }
+
+    .fm-title,
+    .fm-volume,
+    .fm-change {
+        font-size: 0.85rem;
+    }
+
+    .fm-name {
+        font-weight: bold;
+        padding-bottom: 10px;
+    }
+
+    .fm-volume,
+    .fm-change {
+        text-transform: lowercase;
+        font-variant: small-caps;
+        padding-top: 6px;
+    }
+}
+
+.darkTheme .dashboardRuDEX div.fm-container {
+    &:hover {
+        background-color: #525252;
+    }
+}

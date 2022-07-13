@@ -323,7 +323,8 @@ class RuDexWithdrawModal extends React.Component {
     onSubmit() {
         if (
             !this.state.withdraw_address_check_in_progress &&
-            this.state.withdraw_address && this.state.withdraw_address.length &&
+            this.state.withdraw_address &&
+            this.state.withdraw_address.length &&
             this.state.withdraw_amount !== null
         ) {
             if (!this.state.withdraw_address_is_valid) {
@@ -624,7 +625,8 @@ class RuDexWithdrawModal extends React.Component {
 
         if (
             !this.state.withdraw_address_check_in_progress &&
-            this.state.withdraw_address && this.state.withdraw_address.length
+            this.state.withdraw_address &&
+            this.state.withdraw_address.length
         ) {
             if (!this.state.withdraw_address_is_valid) {
                 invalid_address_message = (
@@ -775,7 +777,7 @@ class RuDexWithdrawModal extends React.Component {
                             <b>
                                 <Translate
                                     content="gateway.rudex.min_amount"
-                                    minAmount={utils.format_number(
+                                    minamount={utils.format_number(
                                         this.props.min_amount /
                                             utils.get_asset_precision(
                                                 this.props.asset_precision

@@ -13,6 +13,7 @@ import Icon from "../Icon/Icon";
 import AssetName from "../Utility/AssetName";
 import {Link} from "react-router-dom";
 import {Icon as AntIcon} from "bitshares-ui-style-guide";
+import {getImageName} from "branding";
 
 class MarketsTable extends React.Component {
     constructor() {
@@ -337,30 +338,6 @@ class MarketsTable extends React.Component {
     getTableData(row) {
         let {base, quote, marketStats, isHidden, inverted, basePrecision} = row;
 
-        function getImageName(symbol) {
-            //if (symbol === "OPEN.BTC" || symbol === "GDEX.BTC") return symbol;
-            if (symbol.startsWith("RUDEX.")) return symbol;
-
-            if (
-                symbol == "DONATE" ||
-                symbol == "GPH" ||
-                symbol == "USD"
-
-                /* ||
-        symbol == "EUR" ||
-        symbol == "CNY" ||
-        symbol == "RUB" ||
-        symbol == "BTC" ||
-        symbol == "GOLD" ||
-        symbol == "SILVER" ||
-        symbol == "OIL"*/
-            )
-                return symbol;
-
-            let imgName = symbol.split(".");
-            return imgName.length === 2 ? imgName[1] : imgName[0];
-        }
-
         let imgName = getImageName(quote);
 
         let marketID = `${quote}_${base}`;
@@ -504,11 +481,11 @@ class MarketsTable extends React.Component {
                     let baseSymbol = row.base;
 
                     if (quoteIsBitAsset) {
-                        quoteSymbol = "bit" + quoteSymbol;
+                        quoteSymbol = "gp" + quoteSymbol;
                     }
 
                     if (baseIsBitAsset) {
-                        baseSymbol = "bit" + baseSymbol;
+                        baseSymbol = "gp" + baseSymbol;
                     }
 
                     const filterPair = filter.includes(":");

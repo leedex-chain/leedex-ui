@@ -14,6 +14,7 @@ import {Icon as AntIcon} from "bitshares-ui-style-guide";
 import {Asset, Price} from "common/MarketClasses";
 
 import {getGroupedMPAsRuDEX} from "../../branding";
+import {get_allTokens} from "branding";
 
 export default class ExchangeHeader extends React.Component {
     constructor(props) {
@@ -67,21 +68,9 @@ export default class ExchangeHeader extends React.Component {
     }
 
     _checkPotencialScamMarket(quote, base) {
-        let coins = [
-            "GPH",
-
-            "USD",
-            "EUR",
-            "CNY",
-            "RUB",
-
-            "BTC",
-            "GOLD",
-            "SILVER",
-            "OIL",
-
-            "DONATE"
-        ];
+        let coins = ["DONATE", "DEXBOT"];
+        let nativeTokens = get_allTokens().nativeTokens;
+        coins = coins.concat(nativeTokens);
 
         //1. RUDEX.X <=> RUDEX.X
         if (quote.indexOf("RUDEX.") !== -1 && base.indexOf("RUDEX.") !== -1)

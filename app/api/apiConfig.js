@@ -54,7 +54,7 @@ export const settingsAPIs = {
         },
         {
             url: "wss://gph.lexai.host",
-            region: "Finland",
+            region: "Northern Europe",
             country: "Finland",
             location: "Helsinki",
             operator: "Witness: lex",
@@ -62,7 +62,7 @@ export const settingsAPIs = {
         },
         {
             url: "wss://node.graphenelab.io",
-            region: "Finland",
+            region: "Northern Europe",
             country: "Finland",
             location: "Helsinki",
             operator: "Witness: graphene-lab",
@@ -70,11 +70,18 @@ export const settingsAPIs = {
         },
         {
             url: "wss://gph-api.xchng.finance",
-            region: "Finland",
+            region: "Northern Europe",
             country: "Finland",
             location: "Helsinki",
             operator: "Witness: xchng",
             contact: "telegram:Lososeg"
+        },
+        {
+            url: "wss://fin.marshmallow-cake.icu",
+            region: "Northern Europe",
+            country: "Holland",
+            location: "Amsterdam",
+            operator: "Witness: marshmallow-cake"
         },
         {
             url: "wss://node.hk.graphene.fans",

@@ -1,4 +1,4 @@
-require("file-loader?name=images/[name].png!./google-play.png");
+require("file-loader?name=images/[name].png!./android.png");
 require("file-loader?name=images/[name].png!./coinmarketcap.png");
 require("file-loader?name=images/[name].png!./coinpaprika.png");
 require("file-loader?name=images/[name].png!./coinranking.png");

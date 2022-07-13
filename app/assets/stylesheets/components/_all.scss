@@ -49,5 +49,10 @@
 }
 
 .fixed-height-2rem tr {
-    height: 2.5rem;
+    height: 1rem;
+}
+
+.fixed-height-1rem tr {
+    max-height: 1.4rem;
+    line-height: 1.2rem;
 }

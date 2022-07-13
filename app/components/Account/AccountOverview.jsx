@@ -20,53 +20,14 @@ import AccountPortfolioList from "./AccountPortfolioList";
 import {Input, Icon, Switch, Tooltip, Button} from "bitshares-ui-style-guide";
 import counterpart from "counterpart";
 import SearchInput from "../Utility/SearchInput";
+import {getMyMarketsQuotes} from "branding";
 
 class AccountOverview extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             shownAssets: props.viewSettings.get("shownAssets", "active"),
-            alwaysShowAssets: [
-                "GPH",
-                "USD",
-
-                /*
-                 "EUR",
-                 "CNY",
-                 "RUB",
-                 "BTC",
-                 "GOLD",
-                 "SILVER",
-                 "OIL",
-                */
-
-                "DONATE",
-
-                "RUDEX.BTC",
-                "RUDEX.LTC",
-                "RUDEX.ETH",
-                "RUDEX.USDT",
-                "RUDEX.EOS",
-                "RUDEX.PZM",
-                "RUDEX.GOLOS",
-                "RUDEX.STEEM",
-                "RUDEX.NBS",
-                "RUDEX.XMR",
-                "RUDEX.BTS",
-                "RUDEX.TRX",
-
-                "RUDEX.DEC",
-                "RUDEX.SPS",
-
-                "RUDEX.BNB",
-                "RUDEX.BUSD",
-                "RUDEX.BTCB",
-
-                //Delisted
-                "RUDEX.PPY",
-                "RUDEX.SMOKE",
-                "RUDEX.WLS"
-            ],
+            alwaysShowAssets: getMyMarketsQuotes(true),
             hideFishingProposals: true,
             question1: false,
             question2: false,
@@ -242,7 +203,7 @@ class AccountOverview extends React.Component {
                     assetName = asset.get("symbol").toLowerCase();
                     let {isBitAsset} = utils.replaceName(asset);
                     if (isBitAsset) {
-                        assetName = "bit" + assetName;
+                        assetName = "gp" + assetName;
                     }
                 }
 
@@ -517,7 +478,7 @@ class AccountOverview extends React.Component {
                                                 <td>{marginValue}</td>
                                                 <td className="column-hide-small" />
                                                 <td className="column-hide-small" />
-                                                <td colSpan="4" />
+                                                <td colSpan="5" />
                                             </tr>
                                         </MarginPositionsTable>
                                     </div>

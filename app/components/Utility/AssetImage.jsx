@@ -1,6 +1,7 @@
 import React from "react";
 import AssetWrapper from "../Bots/libs/AssetWrapper";
 import PropTypes from "prop-types";
+import {getImageName} from "branding";
 
 class AssetImage extends React.Component {
     static propTypes = {
@@ -45,13 +46,13 @@ class AssetImage extends React.Component {
     render() {
         let {asset} = this.props;
 
-        function getImageName(asset) {
-            if (asset === null) return null;
+        function getImageWrapper(asset) {
+            if (asset === null) return "unknown";
             let symbol = asset.get("symbol");
-            return symbol;
+            return getImageName(symbol);
         }
 
-        const imgName = getImageName(asset);
+        const imgName = getImageWrapper(asset);
 
         return (
             <img

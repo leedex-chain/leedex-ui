@@ -26,7 +26,8 @@ export const TransactionIDAndExpiry = ({
     openJSONModal
 }) => {
     const endDate = counterpart.localize(new Date(expiration), {
-        format: "short"
+        type: "datetime",
+        format: "default"
     });
     return (
         <b style={style}>
@@ -85,19 +86,18 @@ class Row extends React.Component {
                         </span>
                     )}
                 </span>
-                {!hideExpiration &&
-                    this.props.expiration && (
-                        <TransactionIDAndExpiry
-                            id={id}
-                            expiration={expiration}
-                            style={{
-                                paddingTop: 5,
-                                fontSize: "0.85rem",
-                                paddingBottom: "0.5rem",
-                                display: "block"
-                            }}
-                        />
-                    )}
+                {!hideExpiration && this.props.expiration && (
+                    <TransactionIDAndExpiry
+                        id={id}
+                        expiration={expiration}
+                        style={{
+                            paddingTop: 5,
+                            fontSize: "0.85rem",
+                            paddingBottom: "0.5rem",
+                            display: "block"
+                        }}
+                    />
+                )}
             </div>
         );
     }

@@ -4,14 +4,13 @@
 
 >If you have an issue related to a Gateway provider, please be sure to contact them directly. See Gateways in the left menu.
 
-### Bitshares Chat
-You can chat with other member of the Bitshares community in real time at:
+### Chat Graphene/RuDEX
+You can chat with other member of the Graphene and RuDEX community in real time at:
 
-- [Telegram btstalk](https://t.me/btstalk)
-- [Telegram BitSharesDAC](https://t.me/BitSharesDAC)
-- [Telegram btsWalletHelp](https://t.me/btsWalletHelp)
+- [Telegram](https://t.me/BitSharesDEX_RU)
 
-- [Discord](https://discord.gg/GsjQfAJ)
+- [Telegram chat RuDEX](https://t.me/BitSharesDEX_RU)
+- [Telegram chat Graphene](https://t.me/graphene_dex)
 
 ### Developers
 If you are a software developer, you may contribute via a bounty system at:

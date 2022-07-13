@@ -90,7 +90,7 @@ class State extends React.Component {
                 <div className="grid-block horizontal" style={{marginLeft: 50}}>
                     <div className="content-block">
                         <label className="left-label">
-                            <Translate content="bots.common.base" />
+                            <Translate content="bots.percent_up.sell_asset" />
                         </label>
                         <Select
                             style={{marginBottom: 30}}
@@ -111,6 +111,11 @@ class State extends React.Component {
                                 type="radio"
                                 value={true}
                                 name="percentAmount"
+                                checked={
+                                    this.state.percentAmount == "true"
+                                        ? true
+                                        : false
+                                }
                             />{" "}
                             <Translate content="bots.common.balance_percent" />
                             <br />
@@ -118,7 +123,11 @@ class State extends React.Component {
                                 type="radio"
                                 value={false}
                                 name="percentAmount"
-                                defaultChecked
+                                checked={
+                                    this.state.percentAmount == "false"
+                                        ? true
+                                        : false
+                                }
                             />{" "}
                             <Translate content="bots.common.balance_value" />
                         </div>
@@ -140,7 +149,7 @@ class State extends React.Component {
                     </div>
                     <div className="content-block" style={{marginLeft: 50}}>
                         <label className="left-label">
-                            <Translate content="bots.common.quote" />
+                            <Translate content="bots.percent_up.get_asset" />
                         </label>
                         <Select
                             style={{marginBottom: 30}}

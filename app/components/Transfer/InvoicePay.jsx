@@ -8,7 +8,6 @@ import NotificationActions from "actions/NotificationActions";
 import TransactionConfirmStore from "stores/TransactionConfirmStore";
 import {decompress, compress} from "lzma";
 import bs58 from "common/base58";
-import utils from "common/utils";
 import PrintReceiptButton from "./PrintReceiptButton.jsx";
 import Translate from "react-translate-component";
 import {
@@ -19,6 +18,7 @@ import {
     Tooltip,
     Switch
 } from "bitshares-ui-style-guide";
+import utils from "common/utils";
 import counterpart from "counterpart";
 import {hasLoaded} from "../Utility/BindToCurrentAccount";
 import Operation from "../Blockchain/Operation";

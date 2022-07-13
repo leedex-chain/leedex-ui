@@ -425,7 +425,7 @@ class RuDexGatewayDepositRequest extends React.Component {
                                 <b>
                                     <Translate
                                         content="gateway.rudex.min_amount"
-                                        minAmount={utils.format_number(
+                                        minamount={utils.format_number(
                                             this.props.min_amount /
                                                 utils.get_asset_precision(
                                                     this.props.asset_precision
@@ -441,7 +441,7 @@ class RuDexGatewayDepositRequest extends React.Component {
                                 <b>
                                     <Translate
                                         content="gateway.rudex.min_amount_warn"
-                                        minAmount={utils.format_number(
+                                        minamount={utils.format_number(
                                             this.props.min_amount /
                                                 utils.get_asset_precision(
                                                     this.props.asset_precision

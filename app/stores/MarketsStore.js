@@ -170,7 +170,7 @@ class MarketsStore {
     }
 
     _getBucketSize() {
-        return parseInt(marketStorage.get("bucketSize", 4 * 3600));
+        return parseInt(marketStorage.get("bucketSize", 24 * 3600));
     }
 
     _setBucketSize(size) {
@@ -755,6 +755,14 @@ class MarketsStore {
                 "current_feed",
                 "maximum_short_squeeze_ratio"
             ]);
+            let mcfr = this[
+                this.invertedCalls ? "baseAsset" : "quoteAsset"
+            ].getIn([
+                "bitasset",
+                "options",
+                "extensions",
+                "margin_call_fee_ratio"
+            ]);
 
             this.is_prediction_market = this[
                 this.invertedCalls ? "baseAsset" : "quoteAsset"
@@ -791,6 +799,7 @@ class MarketsStore {
                 priceObject: feedPriceRaw,
                 market_base: this.quoteAsset.get("id"),
                 sqr,
+                mcfr,
                 assets
             });
 

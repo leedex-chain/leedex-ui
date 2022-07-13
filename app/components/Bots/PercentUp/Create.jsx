@@ -9,14 +9,18 @@ import Translate from "react-translate-component";
 class Create extends React.Component {
     state = {
         name: "",
+
         base: "GPH",
         quote: "RUDEX.USDT",
-        amount: 100,
+
+        amount: 1000,
         percentAmount: false,
-        balance: "",
-        spread: 1,
-        distance: "1.5",
-        validate: ["name"]
+
+        balance: "5000",
+        spread: 2,
+        distance: 4,
+        validate: ["name"],
+        fromMarket: false
     };
 
     componentDidMount() {
@@ -122,7 +126,7 @@ class Create extends React.Component {
                 <div className="grid-block horizontal" style={{marginLeft: 50}}>
                     <div className="content-block">
                         <label className="left-label">
-                            <Translate content="bots.common.base" />
+                            <Translate content="bots.percent_up.sell_asset" />
                         </label>
                         <AssetSelector
                             name="base"
@@ -166,7 +170,7 @@ class Create extends React.Component {
                     </div>
                     <div className="content-block" style={{marginLeft: 50}}>
                         <label className="left-label">
-                            <Translate content="bots.common.quote" />
+                            <Translate content="bots.percent_up.get_asset" />
                         </label>
                         <AssetSelector
                             name="quote"

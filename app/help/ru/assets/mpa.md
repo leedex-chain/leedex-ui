@@ -8,8 +8,10 @@
 
 Это подгруппа доступных привязанных к рынку активов:
 
-* BitUSD
-* BitCNY
-* BitEUR
-* BitGOLD
+* gpUSD
+* gpEUR
+* gpRUB
+* gpCNY
+* gpGOLD
+* gpSILVER
 * ...

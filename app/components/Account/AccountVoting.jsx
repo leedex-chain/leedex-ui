@@ -444,7 +444,7 @@ class AccountVoting extends React.Component {
                 proxyAccount.get("id") !== this.state.proxy_account_id)
         ) {
             this.setState({
-                proxy_account_id: "",
+                proxy_account_id: !proxyAccount ? "" : proxyAccount.get("id"),
                 proxy_witnesses: Immutable.Set(),
                 proxy_committee: Immutable.Set(),
                 proxy_workers: Immutable.Set()

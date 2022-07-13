@@ -69,11 +69,12 @@ class MenuDataStructure {
         const allItems = MenuDataStructure.getAllEntries();
 
         return [
-            allItems.dashboard,
+            //allItems.dashboard,
+            allItems.volume_ranking,
             allItems.account,
-            allItems.market,
-            allItems.explorer,
-            allItems.bots
+            allItems.market
+            //allItems.explorer,
+            //allItems.bots
         ];
     }
 
@@ -104,10 +105,11 @@ class MenuDataStructure {
             let submenu = [
                 //allItems.account_voting,
                 allItems.account_assets,
-                allItems.account_signedmessages,
-                allItems.account_stats,
-                allItems.account_vesting,
                 allItems.account_whitelist,
+                allItems.account_stats,
+                //allItems.account_vesting,
+                allItems.account_signedmessages,
+                allItems.accounts,
                 allItems.account_permissions
             ];
             item.submenu = submenu.map(item => item(state));
@@ -120,13 +122,16 @@ class MenuDataStructure {
             allItems.follow,
 
             allItems.divider,
-            allItems.dashboard,
+            //allItems.dashboard,
+            allItems.volume_ranking,
             allItems.account,
             allItems.market,
             allItems.bots,
             allItems.explorer,
-
+            allItems.spotlight,
+            allItems.dashboard,
             allItems.divider,
+
             allItems.transfer,
             //allItems.deposit,
             //allItems.withdraw,
@@ -135,12 +140,15 @@ class MenuDataStructure {
 
             allItems.divider,
             allItems.listing,
+
             allItems.news,
             allItems.help,
 
             allItems.divider,
             allItems.account_voting,
-            allItems.spotlight,
+            allItems.account_vesting,
+            allItems.divider,
+            //allItems.spotlight,
             allItems.insight,
 
             allItems.divider,
@@ -154,7 +162,7 @@ class MenuDataStructure {
             // allItems.account_permissions,
             // allItems.divider,
             allItems.settings_mobile,
-            allItems.accounts,
+            //allItems.accounts,
             allItems.borrow,
             allItems.barter,
             allItems.direct_debit,
@@ -167,7 +175,7 @@ class MenuDataStructure {
         return {
             login: state => ({
                 target: state.clickHandlers.toggleLock,
-                icon: "power",
+                icon: "menu-power",
                 text: state.locked
                     ? "header.lock_short"
                     : "header.unlock_short",
@@ -184,7 +192,7 @@ class MenuDataStructure {
                     ? "/create-account/password"
                     : "/create-account/wallet",
                 icon: {
-                    name: "create_account",
+                    name: "menu-create_account",
                     title: "icons.user.create_account"
                 },
                 text: "header.create_account",
@@ -193,7 +201,8 @@ class MenuDataStructure {
             }),
             dashboard: state => ({
                 //includePattern: ["/account", "account/", "/account/"],
-                includePattern: ["/"],
+                //includePattern: ["/"],
+                includePattern: ["/dashboard"],
                 excludePattern: [
                     "/account",
                     "account/",
@@ -203,40 +212,52 @@ class MenuDataStructure {
                     "/assets",
                     "/bots",
                     "/listing",
+
+                    "/volume-ranking",
+
+                    "/borrow",
+                    "/barter",
+                    "/direct-debit",
+                    "/htlc",
+                    "/invoice",
+                    "/instant-trade",
+
                     "/news",
                     "/help",
                     "/settings",
                     "/spotlight",
                     "/explorer",
                     "/market",
-                    "/voting",
+                    //"/voting",
                     "/signedmessages",
                     "/member-stats",
-                    "/vesting",
+                    //"/vesting",
                     "/whitelist",
                     "/permissions",
                     "/prediction"
                 ],
-                target: "/",
-                icon: "dashboard",
+                target: "/dashboard",
+                icon: "menu-dashboard",
                 text: "header.dashboard",
-                inHeaderBehavior: MenuItemType.Always,
-                inDropdownBehavior: MenuItemType.Never
+                inHeaderBehavior: MenuItemType.Dynamic,
+                inDropdownBehavior: MenuItemType.Always
             }),
 
             account: state => ({
                 includePattern: ["/account", "account/", "/account/"],
                 excludePattern: [
                     "/assets",
-                    "/voting",
-                    "/signedmessages",
-                    "/member-stats",
-                    "/vesting",
                     "/whitelist",
+                    "/voting",
+
+                    "/member-stats",
+                    "/signedmessages",
+                    "/vesting",
+                    "/accounts",
                     "/permissions"
                 ],
                 target: `/account/${state.currentAccount}`,
-                icon: "user",
+                icon: "menu-user",
                 text: "header.account",
                 inHeaderBehavior: MenuItemType.WhenAccount,
                 inDropdownBehavior: MenuItemType.Never
@@ -244,39 +265,92 @@ class MenuDataStructure {
             bots: state => ({
                 includePattern: ["/bots"],
                 excludePattern: [
-                    //"/account", "account/", "/account/",
-                    "/assets",
                     "/help/bots",
-                    "/voting",
-                    "/signedmessages",
-                    "/member-stats",
-                    "/vesting",
+
+                    "/assets",
                     "/whitelist",
+                    //"/voting",
+                    "/member-stats",
+                    "/signedmessages",
+                    //"/vesting",
+                    "/accounts",
                     "/permissions"
                 ],
                 target: "/bots",
-                icon: "robot",
+                icon: "menu-robot",
                 text: "header.bots",
                 inHeaderBehavior: MenuItemType.WhenAccount,
-                inDropdownBehavior: MenuItemType.WhenNotInHeader
+                inDropdownBehavior: MenuItemType.Never
             }),
             listing: state => ({
                 includePattern: ["/listing"],
                 excludePattern: [
-                    //"/account", "account/", "/account/",
                     "/assets",
-                    "/voting",
-                    "/signedmessages",
-                    "/member-stats",
-                    "/vesting",
                     "/whitelist",
+                    //"/voting",
+                    "/member-stats",
+                    "/signedmessages",
+                    //"/vesting",
+                    "/accounts",
                     "/permissions"
                 ],
                 target: "/listing",
-                icon: "listing",
+                icon: "menu-listing",
                 text: "header.listing",
                 inHeaderBehavior: MenuItemType.Dynamic,
                 inDropdownBehavior: MenuItemType.Always
+            }),
+            volume_ranking: state => ({
+                includePattern: ["/"],
+                //includePattern: ["/volume-ranking"],
+                excludePattern: [
+                    "/assets",
+                    "/whitelist",
+                    //"/voting",
+                    "/member-stats",
+                    "/signedmessages",
+
+                    "/accounts",
+                    "/permissions",
+
+                    "/dashboard",
+
+                    "/borrow",
+                    "/barter",
+                    "/direct-debit",
+                    "/htlc",
+                    "/invoice",
+                    "/instant-trade",
+
+                    "/account",
+                    "account/",
+                    "/account/",
+                    "/deposit-withdraw",
+                    "/asset",
+                    "/assets",
+                    "/bots",
+                    "/listing",
+                    "/volume-ranking",
+                    "/news",
+                    "/help",
+                    "/settings",
+                    "/spotlight",
+                    "/explorer",
+                    "/market",
+                    //"/voting",
+                    "/signedmessages",
+                    "/member-stats",
+                    //"/vesting",
+                    "/whitelist",
+                    "/permissions",
+                    "/prediction"
+                ],
+                //target: "/volume-ranking",
+                target: "/",
+                icon: "menu-volume_ranking",
+                text: "header.ranking",
+                inHeaderBehavior: MenuItemType.Always,
+                inDropdownBehavior: MenuItemType.Never
             }),
             follow: state => ({
                 target: state.clickHandlers.followUnfollow,
@@ -293,7 +367,7 @@ class MenuDataStructure {
                 includePattern: "/market/",
                 target: state.tradeUrl,
                 icon: {
-                    name: "trade",
+                    name: "menu-trade",
                     title: "icons.trade.exchange"
                 },
                 text: "header.exchange",
@@ -304,16 +378,16 @@ class MenuDataStructure {
                 includePattern: "/explorer",
                 target: "/explorer/blocks",
                 icon: {
-                    name: "server",
+                    name: "menu-server",
                     size: "2x"
                 },
                 text: "header.explorer",
-                inHeaderBehavior: MenuItemType.Never,
+                inHeaderBehavior: MenuItemType.Dynamic,
                 inDropdownBehavior: MenuItemType.Always
             }),
             transfer: state => ({
                 target: state.clickHandlers.showSend,
-                icon: "transfer",
+                icon: "menu-transfer",
                 text: "header.payments",
                 inDropdownBehavior: MenuItemType.WhenAccount
             }),
@@ -359,7 +433,7 @@ class MenuDataStructure {
                 includePattern: "/settings",
                 target: "/settings",
                 additionalClassName: "desktop-only",
-                icon: "cogs",
+                icon: "menu-cogs",
                 text: "header.settings",
                 inHeaderBehavior: MenuItemType.Dynamic,
                 inDropdownBehavior: MenuItemType.Always
@@ -367,7 +441,7 @@ class MenuDataStructure {
             spotlight: state => ({
                 includePattern: "/spotlight",
                 target: "/spotlight",
-                icon: "showcases",
+                icon: "menu-showcases",
                 text: "header.showcases",
                 inHeaderBehavior: MenuItemType.Dynamic,
                 inDropdownBehavior: MenuItemType.Always
@@ -375,14 +449,14 @@ class MenuDataStructure {
             settings_mobile: state => ({
                 includePattern: "/settings",
                 additionalClassName: "mobile-only",
-                icon: "cogs",
+                icon: "menu-cogs",
                 text: "header.settings",
                 inHeaderBehavior: MenuItemType.Never,
                 inDropdownBehavior: MenuItemType.Always
             }),
             insight: state => ({
                 includePattern: "/account",
-                icon: "insight",
+                icon: "menu-insight",
                 text: "header.advanced",
                 inHeaderBehavior: MenuItemType.Never,
                 inDropdownBehavior: MenuItemType.WhenAccount
@@ -429,7 +503,7 @@ class MenuDataStructure {
             news: state => ({
                 includePattern: "/news",
                 target: "/news",
-                icon: "news",
+                icon: "menu-news",
                 text: "news.news",
                 inHeaderBehavior: MenuItemType.Dynamic,
                 inDropdownBehavior: MenuItemType.Always
@@ -437,7 +511,7 @@ class MenuDataStructure {
             help: state => ({
                 includePattern: "/help",
                 icon: {
-                    name: "question-circle",
+                    name: "menu-question-circle",
                     title: "icons.question_circle"
                 },
                 target: "/help/index",
@@ -449,7 +523,7 @@ class MenuDataStructure {
                 includePattern: "/voting",
                 target: `/account/${state.currentAccount}/voting`,
                 icon: {
-                    name: "thumbs-up",
+                    name: "menu-thumbs-up",
                     title: "icons.thumbs_up"
                 },
                 text: "account.voting",
@@ -460,7 +534,7 @@ class MenuDataStructure {
                 includePattern: "/assets",
                 excludePattern: "explorer",
                 target: `/account/${state.currentAccount}/assets`,
-                icon: "assets",
+                icon: "menu-assets",
                 text: "explorer.assets.title",
                 inHeaderBehavior: MenuItemType.Dynamic,
                 inDropdownBehavior: MenuItemType.WhenAccount
@@ -469,7 +543,7 @@ class MenuDataStructure {
                 includePattern: "/signedmessages",
                 target: `/account/${state.currentAccount}/signedmessages`,
                 icon: {
-                    name: "text",
+                    name: "menu-text-sign",
                     title: "icons.text.signed_messages"
                 },
                 text: "icons.text.signed_messages",
@@ -480,7 +554,7 @@ class MenuDataStructure {
                 includePattern: "/member-stats",
                 target: `/account/${state.currentAccount}/member-stats`,
                 icon: {
-                    name: "text",
+                    name: "menu-text",
                     title: "icons.text.membership_stats"
                 },
                 text: "account.member.stats",
@@ -490,7 +564,7 @@ class MenuDataStructure {
             account_vesting: state => ({
                 includePattern: "/vesting",
                 target: `/account/${state.currentAccount}/vesting`,
-                icon: "hourglass",
+                icon: "menu-hourglass",
                 text: "account.vesting.title",
                 inHeaderBehavior: MenuItemType.Never,
                 inDropdownBehavior: MenuItemType.WhenAccount
@@ -498,7 +572,7 @@ class MenuDataStructure {
             account_vesting_2: state => ({
                 includePattern: "/vesting",
                 target: `/account/${state.currentAccount}/vesting`,
-                icon: "hourglass",
+                icon: "menu-hourglass",
                 text: "account.vesting.title",
                 inHeaderBehavior: MenuItemType.Dynamic,
                 inDropdownBehavior: MenuItemType.Never
@@ -506,7 +580,7 @@ class MenuDataStructure {
             account_whitelist: state => ({
                 includePattern: "/whitelist",
                 target: `/account/${state.currentAccount}/whitelist`,
-                icon: "list",
+                icon: "menu-list",
                 text: "account.whitelist.title",
                 inHeaderBehavior: MenuItemType.Dynamic,
                 inDropdownBehavior: MenuItemType.WhenAccount
@@ -514,7 +588,7 @@ class MenuDataStructure {
             account_permissions: state => ({
                 includePattern: "/permissions",
                 target: `/account/${state.currentAccount}/permissions`,
-                icon: "warning",
+                icon: "menu-warning",
                 text: "account.permissions",
                 inHeaderBehavior: MenuItemType.Dynamic,
                 inDropdownBehavior: MenuItemType.WhenAccount
@@ -522,7 +596,7 @@ class MenuDataStructure {
             accounts: state => ({
                 includePattern: "/accounts",
                 target: "/accounts",
-                icon: "folder",
+                icon: "menu-folder",
                 text: "explorer.accounts.title",
                 inHeaderBehavior: MenuItemType.Never,
                 inDropdownBehavior: MenuItemType.WhenAccount

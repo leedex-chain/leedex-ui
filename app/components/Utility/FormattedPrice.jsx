@@ -190,11 +190,13 @@ class FormattedPrice extends React.Component {
                 : price.base.precision;
             decimals = Math.min(8, decimals);
             formatted_value = (
-                <FormattedNumber
-                    value={value}
-                    minimumFractionDigits={Math.max(2, decimals)}
-                    maximumFractionDigits={Math.max(2, decimals)}
-                />
+                <span className="clickable" onClick={this.onFlip.bind(this)}>
+                    <FormattedNumber
+                        value={value}
+                        minimumFractionDigits={Math.max(2, decimals)}
+                        maximumFractionDigits={Math.max(2, decimals)}
+                    />
+                </span>
             );
 
             if (pulsate) {

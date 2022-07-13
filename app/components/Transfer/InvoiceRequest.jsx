@@ -16,6 +16,7 @@ import {
 } from "bitshares-ui-style-guide";
 import counterpart from "counterpart";
 import CopyButton from "../Utility/CopyButton";
+import {get_allTokens} from "branding";
 
 let id = 1;
 
@@ -28,8 +29,7 @@ class InvoiceRequest extends React.Component {
             recipient_name: null,
             recipient_name_account: null,
             currency: "GPH",
-            //defaultAssets: ["GPH", "USD", "RUB", "CNY"]
-            defaultAssets: ["GPH", "USD"]
+            defaultAssets: get_allTokens().nativeTokens
         };
     }
 

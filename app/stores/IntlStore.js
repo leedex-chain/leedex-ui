@@ -1,19 +1,42 @@
 import alt from "alt-instance";
 import IntlActions from "actions/IntlActions";
 import SettingsActions from "actions/SettingsActions";
+import SettingsStore from "stores/SettingsStore";
 import counterpart from "counterpart";
+
 var locale_en = require("assets/locales/locale-en.json");
+var locale_ru = require("assets/locales/locale-ru.json");
 import ls from "common/localStorage";
+
 let ss = ls("__graphene__");
 
-counterpart.registerTranslations("en", locale_en);
-counterpart.setFallbackLocale("en");
+//counterpart.registerTranslations("en", locale_en);
+//counterpart.setFallbackLocale("en");
+
+let localeFirstLoad = SettingsStore.getState().settings.get("locale");
+console.log("localeFirstLoad: " + localeFirstLoad);
 
 import {addLocaleData} from "react-intl";
 
 import localeCodes from "assets/locales";
 for (let localeCode of localeCodes) {
     addLocaleData(require(`react-intl/locale-data/${localeCode}`));
+}
+
+counterpart.registerTranslations("ru", require("counterpart/locales/ru"));
+counterpart.registerTranslations("en", require("counterpart/locales/en"));
+
+if (localeFirstLoad === "ru") {
+    counterpart.registerTranslations("ru", locale_ru);
+    counterpart.setFallbackLocale("ru");
+} else if (localeFirstLoad === "en") {
+    counterpart.registerTranslations("en", locale_en);
+    counterpart.setFallbackLocale("en");
+} else {
+    counterpart.registerTranslations(
+        localeFirstLoad,
+        IntlActions.switchLocale(localeFirstLoad)
+    );
 }
 
 class IntlStore {
@@ -24,8 +47,12 @@ class IntlStore {
         }
         this.currentLocale = storedSettings.locale;
 
-        this.locales = ["en"];
-        this.localesObject = {en: locale_en};
+        //this.locales = ["en"];
+        this.locales = localeCodes;
+        this.localesObject = {
+            en: locale_en,
+            ru: locale_ru
+        };
 
         this.bindListeners({
             onSwitchLocale: IntlActions.switchLocale,

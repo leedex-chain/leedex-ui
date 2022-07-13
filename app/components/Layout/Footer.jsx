@@ -519,6 +519,21 @@ class Footer extends React.Component {
                                     />
                                 )}
                             </div>
+                            <a
+                                style={{
+                                    padding: "0 0.5rem",
+                                    borderRight:
+                                        "1px solid rgba(128, 128, 128, 0.45)",
+                                    lineHeight: "2rem",
+                                    fontSize: "1em"
+                                }}
+                                className="footer-audit"
+                                href="https://audit.rudex.org"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <Translate content="footer.audit" />
+                            </a>
                             <Link
                                 style={{
                                     flexFlow: "row",
@@ -529,6 +544,7 @@ class Footer extends React.Component {
                                     fontSize: "1em"
                                 }}
                                 to={"/listing"}
+                                className="footer-listing"
                             >
                                 <Translate content="footer.listing" />
                             </Link>
@@ -540,20 +556,7 @@ class Footer extends React.Component {
                                     lineHeight: "2rem",
                                     fontSize: "1em"
                                 }}
-                                href="https://audit.rudex.org"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <Translate content="footer.audit" />
-                            </a>
-                            <a
-                                style={{
-                                    padding: "0 0.5rem",
-                                    borderRight:
-                                        "1px solid rgba(128, 128, 128, 0.45)",
-                                    lineHeight: "2rem",
-                                    fontSize: "1em"
-                                }}
+                                className="footer-support"
                                 href="https://rudex.freshdesk.com"
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -613,7 +616,7 @@ class Footer extends React.Component {
                                         style={{
                                             height: "22px"
                                         }}
-                                        src={`${__BASE_URL__}images/google-play.png`}
+                                        src={`${__BASE_URL__}images/android.png`}
                                     />
                                 </a>
                                 <a
@@ -773,12 +776,11 @@ class Footer extends React.Component {
                                         }}
                                     >
                                         <div className="footer-status">
-                                            {connected &&
-                                                activeNode.testNet && (
-                                                    <span className="testnet">
-                                                        <Translate content="settings.testnet_nodes" />{" "}
-                                                    </span>
-                                                )}
+                                            {connected && activeNode.testNet && (
+                                                <span className="testnet">
+                                                    <Translate content="settings.testnet_nodes" />{" "}
+                                                </span>
+                                            )}
                                             {!connected ? (
                                                 <span className="warning">
                                                     <Translate content="footer.disconnected" />
@@ -798,10 +800,10 @@ class Footer extends React.Component {
                                                 {!connected
                                                     ? "-"
                                                     : !activeNode.ping
-                                                        ? "-"
-                                                        : parseInt(
-                                                              activeNode.ping
-                                                          ) + "ms"}
+                                                    ? "-"
+                                                    : parseInt(
+                                                          activeNode.ping
+                                                      ) + "ms"}
                                                 &nbsp;/&nbsp;
                                                 <span className="footer-block-title">
                                                     <Translate content="footer.block" />

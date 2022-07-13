@@ -1,6 +1,6 @@
 #### Help
 
- * [Graphene](introduction/bitshares.md)
+ * [Graphene](introduction/graphene.md)
  * [Wallet](introduction/wallets.md)
  * [Backups](introduction/backups.md)
  * [Blockchain](introduction/blockchain.md)
@@ -12,7 +12,11 @@
  * [Market Pegged Assets](assets/mpa.md)
     * gpUSD
     * gpEUR
-    * bitGOLD
+    * gpRUB
+    * gpCNY
+    * gpGOLD
+    * gpSILVER
+    * ...
  * [User Issued Assets](assets/uia.md)
  * [Privatized gpAssets](assets/privbitassets.md)
  * [Decentralized Exchange](dex/introduction.md)

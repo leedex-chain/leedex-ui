@@ -23,10 +23,10 @@ export default {
         return bot;
     },
 
-    delete(bot) {
+    async delete(bot) {
         let name = `__bots__${bot.storage.name}`;
 
-        bots[name].delete();
+        await bots[name].delete();
         delete bots[name];
     },
 

@@ -9,7 +9,7 @@ This help section gives a brief overview and describes the most basic concepts
 of this application.
 
 ## Introduction 
- * [Graphene](introduction/bitshares.md)
+ * [Graphene](introduction/graphene.md)
  * [Wallet](introduction/wallets.md)
  * [Backups](introduction/backups.md)
  * [Blockchain](introduction/blockchain.md)
@@ -23,7 +23,7 @@ of this application.
  * [Memberships](accounts/membership.md)
 
 ## Assets
- * [Market Pegged Assets](assets/mpa.md) (BitUSD, BitEUR, BitGOLD, Bit\*,...)
+ * [Market Pegged Assets](assets/mpa.md) (gpUSD, gpEUR, gpCNY, gpRUB, gpGOLD, gp\*,...)
  * [User Issued Assets](assets/uia.md)
  * [Privatized gpAssets](assets/privbitassets.md)
 
