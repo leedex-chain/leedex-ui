@@ -16,6 +16,7 @@ import IntlStore from "../../stores/IntlStore";
 
 import LoadingIndicator from "../LoadingIndicator";
 import {connect} from "alt-react";
+import Icon from "../Icon/Icon";
 
 class ListingPage extends React.Component {
     constructor(props) {
@@ -355,6 +356,16 @@ class ListingPage extends React.Component {
                                             >
                                                 {this.data.donateTokenName}
                                             </span>
+                                            <Button className={"buttonDonate"}>
+                                                <Icon
+                                                    style={{
+                                                        margin: "-3px 0 0px 0px"
+                                                    }}
+                                                    name="donate"
+                                                    title="listing.modal.header2"
+                                                    className="icon-14x"
+                                                />
+                                            </Button>
                                             <Translate content="listing.texts.text4.t4" />
                                         </p>
 
@@ -368,6 +379,35 @@ class ListingPage extends React.Component {
 
                                         <p>
                                             <Translate content="listing.texts.text5.t3" />
+                                        </p>
+
+                                        <p
+                                            style={{
+                                                fontWeight: "bold"
+                                            }}
+                                        >
+                                            <Translate content="listing.texts.terms.t1" />
+                                        </p>
+                                        <p>
+                                            <Translate content="listing.texts.terms.t2" />
+                                        </p>
+                                        <p>
+                                            <Translate content="listing.texts.terms.tu1" />
+                                        </p>
+                                        <p>
+                                            <Translate content="listing.texts.terms.tu2" />
+                                        </p>
+                                        <p>
+                                            <Translate content="listing.texts.terms.tu3" />
+                                        </p>
+                                        <p>
+                                            <Translate content="listing.texts.terms.tu4" />
+                                        </p>
+                                        <p>
+                                            <Translate content="listing.texts.terms.tu5" />
+                                        </p>
+                                        <p>
+                                            <Translate content="listing.texts.terms.t3" />
                                         </p>
 
                                         <h3>

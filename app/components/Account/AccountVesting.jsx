@@ -9,6 +9,7 @@ import {Button} from "bitshares-ui-style-guide";
 import PaginatedList from "components/Utility/PaginatedList";
 import SearchInput from "../Utility/SearchInput";
 import counterpart from "counterpart";
+import {Link} from "react-router-dom";
 
 class AccountVesting extends React.Component {
     constructor(props) {
@@ -355,6 +356,13 @@ class AccountVesting extends React.Component {
             <div className="grid-content vertical">
                 <Translate component="h1" content="account.vesting.title" />
                 <Translate content="account.vesting.explain" component="p" />
+                <Link
+                    to={`/account/${this.props.account.get(
+                        "name"
+                    )}/member-stats`}
+                >
+                    <Translate content="icons.text.membership_stats" />
+                </Link>
                 <div className="header-selector padding">
                     <SearchInput
                         onChange={this.onSearch.bind(this)}

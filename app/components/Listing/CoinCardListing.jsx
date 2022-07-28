@@ -105,14 +105,16 @@ class CoinCardListing extends React.Component {
                                     {coin.soon === true ? (
                                         <Button
                                             className={"coin-soon"}
-                                            onClick={this.triggerSend.bind(
-                                                this,
-                                                "1.3.2",
-                                                coin
-                                            )}
                                             disabled
                                         >
-                                            <Translate content="listing.donate" />
+                                            <Icon
+                                                style={{
+                                                    margin: "-3px 0 0px 0px"
+                                                }}
+                                                name="donate"
+                                                title="listing.modal.header2"
+                                                className="icon-14x"
+                                            />
                                         </Button>
                                     ) : (
                                         <Button
@@ -132,11 +134,6 @@ class CoinCardListing extends React.Component {
                                                 name="donate"
                                                 title="listing.modal.header2"
                                                 className="icon-14x"
-                                                onClick={this.triggerSend.bind(
-                                                    this,
-                                                    "1.3.2",
-                                                    coin
-                                                )}
                                             />
                                             {/*<Translate content="listing.donate"/>*/}
                                         </Button>

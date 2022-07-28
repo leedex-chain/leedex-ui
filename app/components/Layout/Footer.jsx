@@ -619,7 +619,7 @@ class Footer extends React.Component {
                                         src={`${__BASE_URL__}images/android.png`}
                                     />
                                 </a>
-                                <a
+                                {/*<a
                                     style={{
                                         padding: "0 0.5rem",
                                         borderLeft:
@@ -638,8 +638,8 @@ class Footer extends React.Component {
                                         }}
                                         src={`${__BASE_URL__}images/coinmarketcap.png`}
                                     />
-                                </a>
-                                <a
+                                </a>*/}
+                                {/*<a
                                     style={{
                                         padding: "0 0.5rem",
                                         borderLeft:
@@ -658,8 +658,8 @@ class Footer extends React.Component {
                                         }}
                                         src={`${__BASE_URL__}images/coinranking.png`}
                                     />
-                                </a>
-                                <a
+                                </a>*/}
+                                {/*<a
                                     style={{
                                         padding: "0 0.5rem",
                                         borderLeft:
@@ -678,8 +678,8 @@ class Footer extends React.Component {
                                         }}
                                         src={`${__BASE_URL__}images/coinpaprika.png`}
                                     />
-                                </a>
-                                <a
+                                </a>*/}
+                                {/*<a
                                     style={{
                                         padding: "0 0.5rem",
                                         borderLeft:
@@ -698,7 +698,7 @@ class Footer extends React.Component {
                                         }}
                                         src={`${__BASE_URL__}images/coin.png`}
                                     />
-                                </a>
+                                </a>*/}
                             </div>
                         </div>
 

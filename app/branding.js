@@ -466,7 +466,7 @@ export function getListingCoins() {
             ticker: "ZEC",
             page: "https://z.cash/",
             account: "rudex-zec",
-            goal: 2000,
+            goal: 3000,
             votes: 0
         },
         {
@@ -474,7 +474,7 @@ export function getListingCoins() {
             ticker: "ADM",
             page: "https://adamant.im",
             account: "rudex-adamant",
-            goal: 8000,
+            goal: 10000,
             votes: 0
         },
         {
@@ -482,7 +482,7 @@ export function getListingCoins() {
             ticker: "HIVE",
             page: "https://hive.io",
             account: "rudex-hive",
-            goal: 3000,
+            goal: 4000,
             votes: 0
         },
         {
@@ -498,7 +498,7 @@ export function getListingCoins() {
             ticker: "DASH",
             page: "https://www.dash.org",
             account: "rudex-dash",
-            goal: 2000,
+            goal: 3000,
             votes: 0
         },
         {
@@ -506,7 +506,7 @@ export function getListingCoins() {
             ticker: "DOGE",
             page: "https://dogecoin.com",
             account: "rudex-dogecoin",
-            goal: 2000,
+            goal: 3000,
             votes: 0
         },
         {
@@ -514,7 +514,7 @@ export function getListingCoins() {
             ticker: "TLOS",
             page: "https://www.telos.net",
             account: "rudex-telos",
-            goal: 3000,
+            goal: 5000,
             votes: 0
         },
         {
@@ -522,7 +522,7 @@ export function getListingCoins() {
             ticker: "ARK",
             page: "https://ark.io",
             account: "rudex-ark",
-            goal: 3000,
+            goal: 5000,
             votes: 0
         },
         {
@@ -530,7 +530,7 @@ export function getListingCoins() {
             page: "https://cri.network",
             ticker: "CRI",
             account: "rudex-cri",
-            goal: 10000,
+            goal: 5000,
             votes: 0
         },
         {
@@ -594,6 +594,22 @@ export function getListingCoins() {
             ticker: "Donr",
             page: "https://godonr.com/home",
             account: "rudex-donr",
+            goal: 5000,
+            votes: 0
+        },
+        {
+            name: "Basic Attention Token",
+            ticker: "BAT",
+            page: "https://basicattentiontoken.org",
+            account: "rudex-bat",
+            goal: 3000,
+            votes: 0
+        },
+        {
+            name: "JustBam",
+            ticker: "BAM",
+            page: "https://bam.justbam.money",
+            account: "rudex-bam",
             goal: 5000,
             votes: 0
         }
