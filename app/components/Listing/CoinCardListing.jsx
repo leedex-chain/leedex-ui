@@ -48,6 +48,7 @@ class CoinCardListing extends React.Component {
                     to_name={coin.account ? coin.account : from_name}
                     asset_id={"1.3.2"}
                     ticker={coin.ticker}
+                    header={"listing.modal.header2"}
                 />
                 <div className="listingAsset">
                     <div className="listingAssetCard">
@@ -117,10 +118,8 @@ class CoinCardListing extends React.Component {
                                             />
                                         </Button>
                                     ) : (
-                                        <Button
-                                            title={counterpart.translate(
-                                                "listing.modal.header2"
-                                            )}
+                                        <a
+                                            className={".ant-btn buttonDonate"}
                                             onClick={this.triggerSend.bind(
                                                 this,
                                                 "1.3.2",
@@ -135,8 +134,7 @@ class CoinCardListing extends React.Component {
                                                 title="listing.modal.header2"
                                                 className="icon-14x"
                                             />
-                                            {/*<Translate content="listing.donate"/>*/}
-                                        </Button>
+                                        </a>
                                     )}
                                 </div>
                             )}

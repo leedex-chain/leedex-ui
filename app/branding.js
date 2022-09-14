@@ -455,7 +455,7 @@ export function getListingCoins() {
         //soon: true, (for TON example)
         {
             name: "Idena",
-            ticker: "DNA",
+            ticker: "IDNA",
             page: "https://www.idena.io",
             account: "rudex-idena",
             goal: 10000,
@@ -611,6 +611,22 @@ export function getListingCoins() {
             page: "https://bam.justbam.money",
             account: "rudex-bam",
             goal: 5000,
+            votes: 0
+        },
+        {
+            name: "Dalmata Coin",
+            ticker: "DC",
+            page: "https://dalmatacoin.com",
+            account: "rudex-dalmata",
+            goal: 5000,
+            votes: 0
+        },
+        {
+            name: "BlockChainCoinX",
+            ticker: "BCCX",
+            page: "https://blockchaincoin.dev",
+            account: "rudex-bccx",
+            goal: 10000,
             votes: 0
         }
 

@@ -26,6 +26,7 @@ import Icon from "../Icon/Icon";
 import PulseIcon from "../Icon/PulseIcon";
 import utils from "common/utils";
 import SendModal from "../Modal/SendModal";
+import SendModalDEXBOT from "../Listing/DonateSendModal";
 import SettingsActions from "actions/SettingsActions";
 import SettleModal from "../Modal/SettleModal";
 import DepositModal from "../Modal/DepositModal";
@@ -353,6 +354,12 @@ class AccountPortfolioList extends React.Component {
     triggerSend(asset) {
         this.setState({send_asset: asset}, () => {
             if (this.send_modal) this.send_modal.show();
+        });
+    }
+
+    triggerSendDEXBOT(asset) {
+        this.setState({send_asset: asset}, () => {
+            if (this.send_modal_dexbot) this.send_modal_dexbot.show();
         });
     }
 
@@ -1073,6 +1080,23 @@ class AccountPortfolioList extends React.Component {
                     );
             }
 
+            if (asset.get("symbol") == "DEXBOT") {
+                settleLink = (
+                    <a
+                        onClick={this.triggerSendDEXBOT.bind(
+                            this,
+                            asset.get("id")
+                        )}
+                    >
+                        <Icon
+                            name="settle"
+                            title="icons.settle"
+                            className="icon-14px"
+                        />
+                    </a>
+                );
+            }
+
             let preferredAsset = ChainStore.getAsset(preferredUnit);
 
             let marketId = asset.get("symbol") + "_" + preferredUnit;
@@ -1173,9 +1197,17 @@ class AccountPortfolioList extends React.Component {
                         >
                             <div className="inline-block">{settleLink}</div>
                         </Tooltip>
+                    ) : asset.get("symbol") == "DEXBOT" ? (
+                        <Tooltip
+                            placement="bottom"
+                            title={counterpart.translate("dexbot.settle")}
+                        >
+                            <div className="inline-block">{settleLink}</div>
+                        </Tooltip>
                     ) : (
                         emptyCell
                     ),
+                    //emptyCell
                 burn: !isBitAsset ? (
                     <a
                         style={{marginRight: 0}}
@@ -1419,6 +1451,22 @@ class AccountPortfolioList extends React.Component {
         );
     }
 
+    _renderSendModalDEXBOT() {
+        return (
+            <SendModalDEXBOT
+                id="send_modal_dexbot"
+                refCallback={e => {
+                    if (e) this.send_modal_dexbot = e;
+                }}
+                from_name={this.props.account.get("name")}
+                to_name={"dexbot"}
+                asset_id={this.state.send_asset || "1.3.0"}
+                ticker={"DEXBOT"}
+                header={"dexbot.modal.header"}
+            />
+        );
+    }
+
     _renderBorrowModal() {
         if (
             !this.state.borrow ||
@@ -1497,6 +1545,7 @@ class AccountPortfolioList extends React.Component {
                     toggleSortOrder={this.toggleSortOrder}
                 >
                     {this._renderSendModal()}
+                    {this._renderSendModalDEXBOT()}
                     {(this.state.isSettleModalVisible ||
                         this.state.isSettleModalVisibleBefore) &&
                         this._renderSettleModal()}

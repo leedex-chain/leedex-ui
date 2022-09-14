@@ -346,7 +346,7 @@ class ListingPage extends React.Component {
                                             <Translate content="listing.texts.text4.t2" />
                                             {DonateLink()}
                                             <Translate content="listing.texts.text4.t3" />
-                                            <span
+                                            {/*                                           <span
                                                 style={{
                                                     border: "1px solid #00a9e0",
                                                     padding: "4px 3px 3px 4px",
@@ -355,7 +355,7 @@ class ListingPage extends React.Component {
                                                 }}
                                             >
                                                 {this.data.donateTokenName}
-                                            </span>
+                                            </span>*/}
                                             <Button className={"buttonDonate"}>
                                                 <Icon
                                                     style={{

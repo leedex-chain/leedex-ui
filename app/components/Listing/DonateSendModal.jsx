@@ -165,7 +165,7 @@ class DonateSendModal extends SendModal {
                                         ? "listing.modal_header"
                                         : "listing.modal.need_buy_donate"
                                 }*/
-                                content={"listing.modal.header2"}
+                                content={this.props.header}
                                 wallet_name={getWalletName()}
                             />
                             {this.props.ticker}
