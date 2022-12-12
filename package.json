@@ -1,14 +1,11 @@
 {
-  "name": "RuDEX3-light",
-  "version": "3.3.220914",
-  "description": "Advanced wallet interface for the Graphene financial blockchain.",
-  "homepage": "https://github.com/blckchnd/rudex-ui",
-  "author": "RuDEX Team <info@rudex.org>",
+  "name": "LEEDEX-light",
+  "version": "0.1.1",
+  "description": "Advanced wallet interface for the LEEDEX financial blockchain.",
+  "homepage": "https://github.com/leedex-chain/leedex-ui",
+  "author": "maxirmx <maxirmx@gmail.com>",
   "contributors": [
-    "Sigve Kvalsvik <kvalsvik.crypto@gmail.com>",
-    "James Calfee",
-    "Dan Larimer",
-    "Valentine Zavgorodnev <valentine.zavgorodnev@gmail.com>"
+    "maxirmx <maxirmx@gmail.com>"
   ],
   "license": "MIT",
   "engines": {
@@ -17,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/blckchnd/rudex-ui"
+    "url": "git://github.com/leedex-chain/leedex-ui"
   },
   "main": "build/electron/index.js",
   "scripts": {
@@ -89,8 +86,8 @@
   },
   "browsersList": "electron 1.7",
   "build": {
-    "productName": "RuDEX",
-    "appId": "org.rudex.market",
+    "productName": "LEEDEX",
+    "appId": "net.leedex",
     "files": [
       "build/electron",
       "!node_modules"
@@ -134,7 +131,7 @@
         "AppImage",
         "snap"
       ],
-      "synopsis": "RuDEX: Cryptocurrency and Decentralized Exchange"
+      "synopsis": "LEEDEX: Cryptocurrency and Decentralized Exchange"
     },
     "directories": {
       "buildResources": "resources",

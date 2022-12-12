@@ -25,7 +25,7 @@ function _isTestnet() {
  * @returns {string}
  */
 export function getWalletName() {
-    return "RuDEX";
+    return "LEEDEX";
 }
 
 /**
