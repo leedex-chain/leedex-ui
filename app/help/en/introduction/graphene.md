@@ -4,19 +4,16 @@
 
 >If you have an issue related to a Gateway provider, please be sure to contact them directly. See Gateways in the left menu.
 
-### Chat Graphene/RuDEX
-You can chat with other member of the Graphene and RuDEX community in real time at:
+### Chat Graphene
+You can chat with other member of the Graphene community in real time at:
 
-- [Telegram](https://t.me/BitSharesDEX_RU)
-
-- [Telegram chat RuDEX](https://t.me/BitSharesDEX_RU)
 - [Telegram chat Graphene](https://t.me/graphene_dex)
 
 ### Developers
 If you are a software developer, you may contribute via a bounty system at:
 
 - [Github UI](https://github.com/graphene-blockchain/graphene-ui)
-- [Github Core](https://github.com/bitshares/bitshares-core) 
+- [Github Core](https://github.com/bitshares/bitshares-core)
 
 ## Introduction
 Welcome to the worlds fastest decentralized exchange (The DEX).

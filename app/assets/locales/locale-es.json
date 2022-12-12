@@ -1128,7 +1128,7 @@
         "loading": "Cargando...",
         "nosync": "Su nodo activo no está sincronizado",
         "synced": "Sincronizado",
-        "title": "RuDEX",
+        "title": "LEEDEX",
         "unsynced": "Fuera de sincronización",
         "update_available": "ACTUALIZACIÓN DISPONIBLE"
     },
@@ -1248,7 +1248,7 @@
             "coming_soon": "Próximamente",
             "min_amount": "Monto minimo: %(minamount)s %(symbol)s",
             "min_amount_error": "Por favor ingrese número >= mínimo",
-            "support_block": "Para soporte, póngase en contacto con RuDEX en:",
+            "support_block": "Para soporte, póngase en contacto con LEEDEX en:",
             "under_construction": "En Construcción"
         },
         "scan_qr": "Escanear QR",
@@ -1263,7 +1263,7 @@
         "unavailable": "El servicio de puerta de enlace para este activo está actualmente inactivo. Inténtalo de nuevo más tarde.",
         "unavailable_CITADEL": "El puente de Citadel está caído o no responde",
         "unavailable_OPEN": "OpenLedger Gateway está inactivo o no responde",
-        "unavailable_RUDEX": "RuDEX Gateway está inactivo o no responde",
+        "unavailable_RUDEX": "LEEDEX Gateway está inactivo o no responde",
         "unavailable_TRADE": "El puente de Blocktrades está inactivo o no responde",
         "unavailable_bridge": "El servicio de puente para este activo está actualmente inactivo. Inténtalo de nuevo más tarde.",
         "use_copy_button": "POR FAVOR UTILICE EL BOTÓN DE COPIA PARA HACER UNA COPIA DE DIRECCIÓN O MEMO EN ESTA PÁGINA",

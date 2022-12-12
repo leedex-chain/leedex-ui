@@ -605,8 +605,8 @@ class RuDexWithdrawModal extends React.Component {
                 <div
                     className={
                         !storedAddress.length
-                            ? "rudex-disabled-options"
-                            : "rudex-options"
+                            ? "leedex-disabled-options"
+                            : "leedex-options"
                     }
                 >
                     {storedAddress.map(function(name, index) {
