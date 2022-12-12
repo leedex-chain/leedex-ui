@@ -45,7 +45,7 @@ export const settingsAPIs = {
     DEFAULT_WS_NODE: "wss://fake.automatic-selection.com",
     WS_NODE_LIST: [
         {
-            url: "ws://5.187.7.5:8980",
+            url: "wss://node0.leedex.net:8980",
             region: "Western Europe",
             country: "Germany",
             location: "Hessen",
@@ -53,7 +53,7 @@ export const settingsAPIs = {
             contact: "telegram:maxi_rmx"
         },
         {
-            url: "ws://5.187.2.242:8980",
+            url: "wss://node1.leedex.net:8980",
             region: "Western Europe",
             country: "Germany",
             location: "Hessen",
@@ -61,7 +61,7 @@ export const settingsAPIs = {
             contact: "telegram:maxi_rmx"
         },
         {
-            url: "ws://leedex.net:8980",
+            url: "wss://leedex.net:8980",
             region: "Western Europe",
             country: "Germany",
             location: "Hessen",

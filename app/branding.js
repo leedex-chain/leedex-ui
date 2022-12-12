@@ -12,10 +12,11 @@ import {Apis} from "bitsharesjs-ws";
  */
 function _isTestnet() {
     const testnet =
-        "39f5e2ede1f8bc1a3a54a7914414e3779e33193f1f5693510e73cb7a87617447"; // just for the record
+        //        "39f5e2ede1f8bc1a3a54a7914414e3779e33193f1f5693510e73cb7a87617447"; // just for the record
+        " -- no test net --"; // just for the record
     const mainnet =
-        "7fcf452d6bb058949cdc875b13c8908c8f54b0f264c39faf8152b682af0740ee";
-
+        //        "7fcf452d6bb058949cdc875b13c8908c8f54b0f264c39faf8152b682af0740ee";
+        "da4a4872f96da5a9c8cf694c5b8344b5a7a3b24218ad90eba4b148897cf4ed23";
     // treat every other chain as testnet
     return Apis.instance().chain_id !== mainnet;
 }
@@ -64,7 +65,7 @@ export function getTestFaucet() {
  * @returns {*}
  */
 export function getLogo() {
-    return require("assets/logo-ico-blue.png").default;
+    return require("assets/logo-is-coming.png").default;
 }
 
 /**
@@ -92,16 +93,18 @@ export function getDefaultLogin() {
  */
 export function getUnits() {
     if (_isTestnet()) {
-        return ["TEST"];
+        return ["LD_TEST"];
     }
-    return ["GPH", "USD", "RUDEX.BTC", "RUDEX.USDT"];
+    //    return ["GPH", "USD", "RUDEX.BTC", "RUDEX.USDT"];
+    return ["LD"];
 }
 
 export function getDefaultMarket() {
     if (_isTestnet()) {
         return "USD_TEST";
     }
-    return "RUDEX.BTC_RUDEX.USDT";
+    //    return "RUDEX.BTC_RUDEX.USDT";
+    return "USD_TEST";
 }
 
 /**
@@ -111,18 +114,19 @@ export function getDefaultMarket() {
  */
 export function getMyMarketsBases() {
     if (_isTestnet()) {
-        return ["TEST"];
+        return ["LD_TEST"];
     }
-    return [
-        "GPH",
-        "USD",
-        "RUDEX.BTC",
-        "RUDEX.USDT",
-        "RUDEX.BTS",
-        "RUDEX.NBS",
-        "RUDEX.BUSD",
-        "RUDEX.BTCB"
-    ];
+    //    return [
+    //        "GPH",
+    //        "USD",
+    //        "RUDEX.BTC",
+    //        "RUDEX.USDT",
+    //        "RUDEX.BTS",
+    //        "RUDEX.NBS",
+    //        "RUDEX.BUSD",
+    //        "RUDEX.BTCB"
+    //    ];
+    return ["LD"];
 }
 
 /*
@@ -193,16 +197,17 @@ export function getImageName(symbol) {
  */
 export function getMyMarketsQuotes(delisted = false) {
     if (_isTestnet()) {
-        return ["TEST"];
+        return ["LD_TEST"];
     }
-    let tokens = get_allTokens();
-    let allTokens = [];
-    for (let type in tokens) {
-        if (delisted !== true && type == "delistedTokens") continue;
-
-        allTokens = allTokens.concat(tokens[type]);
-    }
-    return allTokens;
+    return ["LD"];
+    //    let tokens = get_allTokens();
+    //    let allTokens = [];
+    //    for (let type in tokens) {
+    //        if (delisted !== true && type == "delistedTokens") continue;
+    //
+    //        allTokens = allTokens.concat(tokens[type]);
+    //    }
+    //    return allTokens;
 }
 
 /**
@@ -212,14 +217,7 @@ export function getMyMarketsQuotes(delisted = false) {
 export function getGroupedMPAsRuDEX() {
     let tokens = {
         listed: [],
-        rudex: [
-            //RuDEX MPA-s
-            /*            "RUDEX.XBS",
-            "RUDEX.XBT",
-            "RUDEX.RUB",
-            "RUDEX.OIL",
-            "RUDEX.XAU"*/
-        ]
+        rudex: []
     };
 
     return tokens;
@@ -232,9 +230,10 @@ export function getGroupedMPAsRuDEX() {
  */
 export function getFeaturedMarkets(quotes = []) {
     if (_isTestnet()) {
-        return [["USD", "TEST"]];
+        return [["USD", "LD_TEST"]];
     }
-    return [
+    return [["USD", "LD"]];
+    /*    return [
         //GPH
         ["GPH", "USD"],
         ["GPH", "EUR"],
@@ -289,13 +288,6 @@ export function getFeaturedMarkets(quotes = []) {
         //["RUDEX.USDT", "RUDEX.SMOKE"],
         //["RUDEX.USDT", "RUDEX.WLS"],
 
-        //RuDEX MPA (old)
-        /*        ["RUDEX.USDT", "RUDEX.XBS"],
-                ["RUDEX.USDT", "RUDEX.XBT"],
-                ["RUDEX.USDT", "RUDEX.OIL"],
-                ["RUDEX.USDT", "RUDEX.XAU"],
-                ["RUDEX.USDT", "RUDEX.RUB"],
-         */
 
         //Bitcoin
         //["RUDEX.BTC", "DONATE"],
@@ -384,6 +376,7 @@ export function getFeaturedMarkets(quotes = []) {
         if (!quotes.length) return true;
         return quotes.indexOf(a[0]) !== -1;
     });
+*/
 }
 
 /**
@@ -395,7 +388,8 @@ export function getAssetNamespaces() {
     if (_isTestnet()) {
         return [];
     }
-    return ["RUDEX."];
+    //    return ["RUDEX."];
+    return [];
 }
 
 /**
@@ -413,7 +407,8 @@ export function getAssetHideNamespaces() {
  * @returns {boolean}
  */
 export function allowedGateway(gateway) {
-    const allowedGateways = ["RUDEX", "RUDEX_BEP20"];
+    //    const allowedGateways = ["RUDEX", "RUDEX_BEP20"];
+    const allowedGateways = [];
     if (!gateway) {
         // answers the question: are any allowed?
         return allowedGateways.length > 0;
@@ -435,13 +430,15 @@ export function getConfigurationAsset() {
     if (_isTestnet()) {
         assetSymbol = "NOTIFICATIONS";
     } else {
-        assetSymbol = "RUDEX";
+        //        assetSymbol = "RUDEX";
+        assetSymbol = "NOTIFICATIONS";
     }
     // explanation will be parsed out of the asset description (via split)
     return {
         symbol: assetSymbol,
         explanation:
-            "This asset is used for decentralized configuration of the RuDEX UI placed under https://market.rudex.org/."
+            //            "This asset is used for decentralized configuration of the RuDEX UI placed under https://market.rudex.org/."
+            "This asset is just a test"
     };
 }
 

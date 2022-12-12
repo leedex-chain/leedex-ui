@@ -248,6 +248,8 @@ module.exports = function(env) {
             clean: true
         },
         devServer: {
+            host: "0.0.0.0",
+            port: 8080,
             hot: true,
             static: {
                 directory: path.join(__dirname, "app/assets/locales"),
