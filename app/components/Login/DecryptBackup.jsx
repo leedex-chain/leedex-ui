@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
 import {connect} from "alt-react";
-import {PrivateKey} from "bitsharesjs/es";
+import {PrivateKey} from "leedexjs/es";
 import WalletManagerStore from "stores/WalletManagerStore";
 import BackupStore from "stores/BackupStore";
 import AccountStore from "stores/AccountStore";
@@ -151,8 +151,8 @@ class DecryptBackup extends Component {
                                     this.state.passwordError
                                         ? "input-warning"
                                         : this.state.backupPassword
-                                            ? "input-success"
-                                            : ""
+                                        ? "input-success"
+                                        : ""
                                 } input create-account-input`}
                                 type={
                                     !this.state.passwordVisible
@@ -217,7 +217,4 @@ const connectObject = {
     }
 };
 
-export default connect(
-    DecryptBackup,
-    connectObject
-);
+export default connect(DecryptBackup, connectObject);

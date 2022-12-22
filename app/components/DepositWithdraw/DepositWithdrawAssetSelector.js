@@ -51,7 +51,7 @@ class DepositWithdrawAssetSelector extends React.Component {
                     return item;
                 })
                 .filter(item => {
-                    if (item.id == "GPH") {
+                    if (item.id == "LD") {
                         return true;
                     }
                     if (include) {
@@ -62,7 +62,7 @@ class DepositWithdrawAssetSelector extends React.Component {
         });
 
         if (!(includeBTS === false)) {
-            assets.push({id: "GPH", label: "GPH", gateway: ""});
+            assets.push({id: "LD", label: "LD", gateway: ""});
         }
 
         this.setState({
@@ -153,16 +153,13 @@ class DepositWithdrawAssetSelector extends React.Component {
 }
 DepositWithdrawAssetSelector = BindToChainState(DepositWithdrawAssetSelector);
 
-export default connect(
-    DepositWithdrawAssetSelector,
-    {
-        listenTo() {
-            return [GatewayStore];
-        },
-        getProps() {
-            return {
-                backedCoins: GatewayStore.getState().backedCoins
-            };
-        }
+export default connect(DepositWithdrawAssetSelector, {
+    listenTo() {
+        return [GatewayStore];
+    },
+    getProps() {
+        return {
+            backedCoins: GatewayStore.getState().backedCoins
+        };
     }
-);
+});

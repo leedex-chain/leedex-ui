@@ -1,6 +1,6 @@
 import {saveAs} from "file-saver";
-import {ChainTypes as grapheneChainTypes, FetchChain} from "bitsharesjs";
-import report from "bitshares-report";
+import {ChainTypes as grapheneChainTypes, FetchChain} from "leedexjs";
+//import report from "bitshares-report";
 const {operations} = grapheneChainTypes;
 const ops = Object.keys(operations);
 
@@ -65,10 +65,10 @@ class AccountHistoryExporter {
 
             if (!res.length || end_next) break;
 
-            await report.resolveBlockTimes(res);
+            // ---TODO---            await report.resolveBlockTimes(res);
 
             /* Before parsing results we need to know the asset info (precision) */
-            await report.resolveAssets(res);
+            // ---TODO---            await report.resolveAssets(res);
 
             res.map(function(record) {
                 const trx_id = record.id;
@@ -114,8 +114,8 @@ class AccountHistoryExporter {
                 parsedData.push([i, recordData[i]]);
             }
         } else {
-            recordData = report.groupEntries(recordData);
-            parsedData = report.parseData(recordData, account, accountName);
+            // ---TODO---            recordData = report.groupEntries(recordData);
+            // ---TODO---            parsedData = report.parseData(recordData, account, accountName);
         }
 
         let blob = this.dataToCSV(parsedData, exportType);

@@ -2,7 +2,7 @@ import React from "react";
 import Translate from "react-translate-component";
 import MarketCard from "./MarketCard";
 import utils from "common/utils";
-import {Apis} from "bitsharesjs-ws";
+import {Apis} from "leedexjs-ws";
 import LoadingIndicator from "../LoadingIndicator";
 import SettingsStore from "stores/SettingsStore";
 import {connect} from "alt-react";
@@ -180,7 +180,7 @@ class Dashboard extends React.Component {
             if (
                 pair[1] === "RUDEX.USDT" ||
                 pair[1] === "RUDEX.BUSD" ||
-                pair[1] === "GPH" ||
+                pair[1] === "LD" ||
                 pair[1] === "USD" ||
                 pair[1] === "EUR" ||
                 pair[1] === "RUB" ||

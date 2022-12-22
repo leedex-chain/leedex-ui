@@ -18,7 +18,7 @@ import {debounce} from "lodash-es";
 import AssetSelector from "../Utility/AssetSelector";
 import counterpart from "counterpart";
 import LoadingIndicator from "../LoadingIndicator";
-import {ChainValidation, ChainStore} from "bitsharesjs";
+import {ChainValidation, ChainStore} from "leedexjs";
 import debounceRender from "react-debounce-render";
 import ZfApi from "react-foundation-apps/src/utils/foundation-api";
 import {getPossibleGatewayPrefixes, gatewayPrefixes} from "common/gateways";
@@ -336,8 +336,8 @@ class MyMarkets extends React.Component {
             lookupBase: null,
             inputValue: "",
             minWidth: "100%",
-            findBaseInput: "GPH",
-            activeFindBase: "GPH"
+            findBaseInput: "LD",
+            activeFindBase: "LD"
         };
 
         this._setMinWidth = this._setMinWidth.bind(this);

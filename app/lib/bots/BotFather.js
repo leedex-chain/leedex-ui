@@ -1,4 +1,4 @@
-import {ChainStore} from "bitsharesjs";
+import {ChainStore} from "leedexjs";
 import Account from "/app/lib/bots/account";
 import SettingsActions from "/app/actions/SettingsActions";
 import WalletUnlockActions from "/app/actions/WalletUnlockActions";

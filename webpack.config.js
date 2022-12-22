@@ -88,7 +88,7 @@ module.exports = function(env) {
             __UI_API__: JSON.stringify(env.apiUrl),
             __TESTNET__: !!env.testnet,
             __DEPRECATED__: !!env.deprecated,
-            DEFAULT_SYMBOL: "GPH",
+            DEFAULT_SYMBOL: "LD",
             __GIT_BRANCH__: JSON.stringify(git.branch()),
             __PERFORMANCE_DEVTOOL__: !!env.perf_dev
         }),
@@ -209,7 +209,7 @@ module.exports = function(env) {
     var alias = {
         sanitize$: "xss",
         moment$: path.resolve(root_dir, "node_modules/moment/moment.js"),
-        bitsharesjs$: path.resolve(root_dir, "node_modules/bitsharesjs/"),
+        leedexjs$: path.resolve(root_dir, "node_modules/leedexjs/"),
         "bitshares-ui-style-guide$": path.resolve(
             root_dir,
             "node_modules/bitshares-ui-style-guide/dist/main.js"

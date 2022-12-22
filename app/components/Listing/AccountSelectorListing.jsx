@@ -11,7 +11,7 @@ import {
     ChainValidation,
     FetchChain,
     FetchChainObjects
-} from "bitsharesjs";
+} from "leedexjs";
 import ChainTypes from "../Utility/ChainTypes";
 import BindToChainState from "../Utility/BindToChainState";
 import counterpart from "counterpart";
@@ -243,10 +243,10 @@ class AccountSelectorListing extends React.Component {
             accountType === "name"
                 ? "#" + accountResult.get("id").substring(4)
                 : accountType === "id"
-                    ? accountResult.get("name")
-                    : accountType == "pubkey" && this.props.allowPubKey
-                        ? "Public Key"
-                        : null;
+                ? accountResult.get("name")
+                : accountType == "pubkey" && this.props.allowPubKey
+                ? "Public Key"
+                : null;
 
         return {
             name: accountName,
@@ -433,14 +433,14 @@ class AccountSelectorListing extends React.Component {
         editableInput = !!lockedState
             ? false
             : this.props.editable != null
-                ? this.props.editable
-                : undefined;
+            ? this.props.editable
+            : undefined;
 
         disabledInput = !!lockedState
             ? true
             : this.props.disabled != null
-                ? this.props.disabled
-                : undefined;
+            ? this.props.disabled
+            : undefined;
 
         // Selected Account
         if (account) {
@@ -626,7 +626,7 @@ class AccountSelectorListing extends React.Component {
 
         let accountImageContainer = this.props
             .hideImage ? null : selectedAccount &&
-        selectedAccount.accountType === "pubkey" ? (
+          selectedAccount.accountType === "pubkey" ? (
             <div className="account-image">
                 <Icon name="key" title="icons.key" size="4x" />
             </div>
@@ -655,7 +655,7 @@ class AccountSelectorListing extends React.Component {
                         className={cnames(
                             "right-label",
                             selectedAccount.isContact ||
-                            selectedAccount.isOwnAccount
+                                selectedAccount.isOwnAccount
                                 ? "positive"
                                 : null,
                             selectedAccount.isKnownScammer ? "negative" : null
@@ -739,19 +739,16 @@ class AccountSelectorListing extends React.Component {
 
 AccountSelectorListing = BindToChainState(AccountSelectorListing);
 
-AccountSelectorListing = connect(
-    AccountSelectorListing,
-    {
-        listenTo() {
-            return [AccountStore];
-        },
-        getProps() {
-            return {
-                myActiveAccounts: AccountStore.getState().myActiveAccounts,
-                contacts: AccountStore.getState().accountContacts
-            };
-        }
+AccountSelectorListing = connect(AccountSelectorListing, {
+    listenTo() {
+        return [AccountStore];
+    },
+    getProps() {
+        return {
+            myActiveAccounts: AccountStore.getState().myActiveAccounts,
+            contacts: AccountStore.getState().accountContacts
+        };
     }
-);
+});
 
 export default AccountSelectorListing;

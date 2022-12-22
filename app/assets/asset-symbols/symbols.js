@@ -4,6 +4,8 @@ require("file-loader?name=asset-symbols/[name].png!./unknown.png");
 // Core asset
 require("file-loader?name=asset-symbols/[name].png!./gph.png");
 
+require("file-loader?name=asset-symbols/[name].png!./ld.png");
+
 // gpAssets
 require("file-loader?name=asset-symbols/[name].png!./usd.png");
 require("file-loader?name=asset-symbols/[name].png!./eur.png");

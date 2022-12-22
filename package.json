@@ -1,6 +1,6 @@
 {
   "name": "LEEDEX-light",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Advanced wallet interface for the LEEDEX financial blockchain.",
   "homepage": "https://github.com/leedex-chain/leedex-ui",
   "author": "maxirmx <maxirmx@gmail.com>",
@@ -145,7 +145,7 @@
     "bignumber.js": "^9.0.1",
     "bitshares-report": "https://github.com/graphene-blockchain/graphene-report.git",
     "bitshares-ui-style-guide": "https://github.com/graphene-blockchain/graphene-ui-style-guide.git",
-    "bitsharesjs": "4.0.0",
+    "leedexjs": "6.1.0",
     "browser-locale": "^1.0.3",
     "classnames": "^2.2.1",
     "constants-browserify": "^1.0.0",

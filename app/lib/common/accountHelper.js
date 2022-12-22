@@ -1,4 +1,4 @@
-import {FetchChain} from "bitsharesjs";
+import {FetchChain} from "leedexjs";
 import {FeedPrice, Asset} from "./MarketClasses";
 import asset_utils from "./asset_utils";
 

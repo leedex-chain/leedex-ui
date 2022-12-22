@@ -1,4 +1,4 @@
-import {Apis} from "bitsharesjs-ws";
+import {Apis} from "leedexjs-ws";
 
 /** This file centralized customization and branding efforts throughout the whole wallet and is meant to facilitate
  *  the process.
@@ -95,7 +95,7 @@ export function getUnits() {
     if (_isTestnet()) {
         return ["LD_TEST"];
     }
-    //    return ["GPH", "USD", "RUDEX.BTC", "RUDEX.USDT"];
+    //    return ["LD", "USD", "RUDEX.BTC", "RUDEX.USDT"];
     return ["LD"];
 }
 
@@ -117,7 +117,7 @@ export function getMyMarketsBases() {
         return ["LD_TEST"];
     }
     //    return [
-    //        "GPH",
+    //        "LD",
     //        "USD",
     //        "RUDEX.BTC",
     //        "RUDEX.USDT",
@@ -134,7 +134,7 @@ All trusted tokens
  */
 export function get_allTokens() {
     return {
-        nativeTokens: ["GPH", "USD", "EUR", "RUB", "CNY", "GOLD", "SILVER"],
+        nativeTokens: ["LD", "USD", "EUR", "RUB", "CNY", "GOLD", "SILVER"],
         rudexTokens: [
             "DONATE",
             "DEXBOT",
@@ -235,26 +235,26 @@ export function getFeaturedMarkets(quotes = []) {
     return [["USD", "LD"]];
     /*    return [
         //GPH
-        ["GPH", "USD"],
-        ["GPH", "EUR"],
-        ["GPH", "RUB"],
-        ["GPH", "CNY"],
-        ["GPH", "GOLD"],
-        ["GPH", "SILVER"],
+        ["LD", "USD"],
+        ["LD", "EUR"],
+        ["LD", "RUB"],
+        ["LD", "CNY"],
+        ["LD", "GOLD"],
+        ["LD", "SILVER"],
 
-        ["GPH", "RUDEX.NBS"],
-        ["GPH", "RUDEX.BTC"],
-        ["GPH", "RUDEX.LTC"],
-        ["GPH", "RUDEX.USDT"],
-        ["GPH", "RUDEX.ETH"],
-        ["GPH", "RUDEX.XMR"],
-        ["GPH", "RUDEX.EOS"],
-        ["GPH", "RUDEX.GOLOS"],
-        ["GPH", "RUDEX.STEEM"],
-        ["GPH", "RUDEX.BTS"],
-        ["GPH", "RUDEX.TRX"],
+        ["LD", "RUDEX.NBS"],
+        ["LD", "RUDEX.BTC"],
+        ["LD", "RUDEX.LTC"],
+        ["LD", "RUDEX.USDT"],
+        ["LD", "RUDEX.ETH"],
+        ["LD", "RUDEX.XMR"],
+        ["LD", "RUDEX.EOS"],
+        ["LD", "RUDEX.GOLOS"],
+        ["LD", "RUDEX.STEEM"],
+        ["LD", "RUDEX.BTS"],
+        ["LD", "RUDEX.TRX"],
 
-        ["RUDEX.USDT", "GPH"],
+        ["RUDEX.USDT", "LD"],
         ["RUDEX.USDT", "USD"],
         ["RUDEX.USDT", "EUR"],
         ["RUDEX.USDT", "RUB"],
@@ -292,7 +292,7 @@ export function getFeaturedMarkets(quotes = []) {
         //Bitcoin
         //["RUDEX.BTC", "DONATE"],
 
-        ["RUDEX.BTC", "GPH"],
+        ["RUDEX.BTC", "LD"],
         ["RUDEX.BTC", "RUDEX.LTC"],
         ["RUDEX.BTC", "RUDEX.ETH"],
         ["RUDEX.BTC", "RUDEX.XMR"],
@@ -314,7 +314,7 @@ export function getFeaturedMarkets(quotes = []) {
         //["RUDEX.BTC", "RUDEX.XBT"] //MPA
 
         //Bitshares
-        ["RUDEX.BTS", "GPH"],
+        ["RUDEX.BTS", "LD"],
         ["RUDEX.BTS", "RUDEX.NBS"],
         ["RUDEX.BTS", "RUDEX.BTC"],
         ["RUDEX.BTS", "RUDEX.LTC"],
@@ -332,7 +332,7 @@ export function getFeaturedMarkets(quotes = []) {
         //["RUDEX.BTS", "RUDEX.WLS"],
 
         //NewBitshares
-        ["RUDEX.NBS", "GPH"],
+        ["RUDEX.NBS", "LD"],
         ["RUDEX.NBS", "RUDEX.USDT"],
         ["RUDEX.NBS", "RUDEX.EOS"],
         ["RUDEX.NBS", "RUDEX.BTS"],
@@ -341,7 +341,7 @@ export function getFeaturedMarkets(quotes = []) {
         ["RUDEX.NBS", "RUDEX.GOLOS"],
 
         //gpUSD
-        ["USD", "GPH"],
+        ["USD", "LD"],
         ["USD", "EUR"],
         ["USD", "RUB"],
         ["USD", "CNY"],
@@ -353,7 +353,7 @@ export function getFeaturedMarkets(quotes = []) {
         ["USD", "RUDEX.BUSD"],
 
         //RUDEX.BUSD
-        ["RUDEX.BUSD", "GPH"],
+        ["RUDEX.BUSD", "LD"],
         ["RUDEX.BUSD", "USD"],
         //["RUDEX.BUSD", "EUR"],
         //["RUDEX.BUSD", "RUB"],

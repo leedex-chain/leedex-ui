@@ -8,7 +8,7 @@ import Translate from "react-translate-component";
 class Create extends React.Component {
     state = {
         name: "",
-        sellAsset: "GPH",
+        sellAsset: "LD",
         getAsset: "RUDEX.USDT",
         amount: 1000,
         minAmount: 1,

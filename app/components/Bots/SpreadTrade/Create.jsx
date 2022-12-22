@@ -8,7 +8,7 @@ import Translate from "react-translate-component";
 class Create extends React.Component {
     state = {
         name: "",
-        quoteAsset: "GPH",
+        quoteAsset: "LD",
         baseAsset: "RUDEX.USDT",
 
         quoteAmount: 500.0,

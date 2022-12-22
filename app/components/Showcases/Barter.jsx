@@ -16,7 +16,7 @@ import AccountSelector from "../Account/AccountSelector";
 import FeeAssetSelector from "components/Utility/FeeAssetSelector";
 import counterpart from "counterpart";
 import AccountStore from "stores/AccountStore";
-import {ChainStore} from "bitsharesjs";
+import {ChainStore} from "leedexjs";
 import AmountSelector from "../Utility/AmountSelector";
 import {Asset} from "common/MarketClasses";
 import utils from "common/utils";
@@ -1278,7 +1278,7 @@ export default class Barter extends Component {
                             fee={
                                 fee(true) + this.state.proposal_fee._real_amount
                             }
-                            asset={"GPH"}
+                            asset={"LD"}
                         />
                     </span>
                 </Tooltip>

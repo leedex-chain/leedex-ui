@@ -6,8 +6,8 @@ import SettingsActions from "actions/SettingsActions";
 import WalletActions from "actions/WalletActions";
 import iDB from "idb-instance";
 import PrivateKeyStore from "./PrivateKeyStore";
-import {ChainStore, ChainValidation, FetchChain} from "bitsharesjs";
-import {Apis} from "bitsharesjs-ws";
+import {ChainStore, ChainValidation, FetchChain} from "leedexjs";
+import {Apis} from "leedexjs-ws";
 import AccountRefsStore from "stores/AccountRefsStore";
 import AddressIndex from "stores/AddressIndex";
 import ls from "common/localStorage";
@@ -497,6 +497,8 @@ class AccountStore extends BaseStore {
         let owner_authority = account.get("owner");
         let active_authority = account.get("active");
 
+        //console.log("--11-----> owner " + owner + " active " + active);
+
         let owner_pubkey_threshold = pubkeyThreshold(owner_authority);
         if (owner_pubkey_threshold == "full") return "full";
         let active_pubkey_threshold = pubkeyThreshold(active_authority);
@@ -567,6 +569,7 @@ class AccountStore extends BaseStore {
 
     isMyAccount(account) {
         let authority = this.getMyAuthorityForAccount(account);
+        console.log("-10-------> authority " + authority);
         if (authority === undefined) return undefined;
         return authority === "partial" || authority === "full";
     }

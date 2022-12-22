@@ -1,4 +1,4 @@
-import {key} from "bitsharesjs";
+import {key} from "leedexjs";
 
 onmessage = function(event) {
     try {
