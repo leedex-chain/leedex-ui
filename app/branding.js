@@ -34,7 +34,7 @@ export function getWalletName() {
  * @returns {string}
  */
 export function getWalletURL() {
-    return "https://market.rudex.org";
+    return "https://leedex.net";
 }
 
 /**
@@ -44,10 +44,10 @@ export function getWalletURL() {
  */
 export function getFaucet() {
     return {
-        url: "https://faucet.gph.ai",
+        url: "https://leedex.net",
         show: true,
         editable: false,
-        referrer: "blckchnd"
+        referrer: "maxirmx"
     };
 }
 
