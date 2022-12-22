@@ -12,7 +12,7 @@ import counterpart from "counterpart";
 
 import {getMyMarketsQuotes, getFeaturedMarkets} from "branding";
 
-import "./DashboardRuDEX.css";
+import "./DashboardLEEDEX.css";
 
 class Dashboard extends React.Component {
     constructor(props) {

@@ -9,7 +9,7 @@ import SettingsStore from "stores/SettingsStore";
 import {Tabs, Tab} from "../Utility/Tabs";
 import {StarredMarkets, FeaturedMarkets} from "./Markets";
 import {getPossibleGatewayPrefixes} from "common/gateways";
-//import Dashboard from "../DashboardRuDEX/Dashboard";
+//import Dashboard from "../DashboardLEEDEX/Dashboard";
 import {getMyMarketsQuotes} from "branding";
 
 class DashboardPage extends React.Component {

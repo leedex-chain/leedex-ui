@@ -206,7 +206,7 @@ const Volume_ranking = Page404;
 //Loadable({
 //    loader: () =>
 //        import(
-//            /* webpackChunkName: "QuickTrade" */ "./components/DashboardRuDEX/Dashboard"
+//            /* webpackChunkName: "QuickTrade" */ "./components/DashboardLEEDEX/Dashboard"
 //        ),
 //    loading: LoadingIndicator
 //});
