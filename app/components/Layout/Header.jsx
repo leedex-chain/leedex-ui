@@ -420,7 +420,7 @@ class Header extends React.Component {
             <a
                 style={{padding: "12px 1.75rem"}}
                 className={cnames({active: false})}
-                href="https://rudex.org"
+                href="https://leedex.net"
                 target="_blank"
             >
                 <img style={{margin: 0, height: 40}} src={logo} />
