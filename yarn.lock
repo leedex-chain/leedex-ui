@@ -7852,10 +7852,10 @@ leedexjs-ws@^6.2.0:
     isomorphic-ws "^4.0.1"
     ws "^8.4.0"
 
-leedexjs@6.1.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/leedexjs/-/leedexjs-6.1.0.tgz#8689b4dee666883b6c40d83baff7e9e3baa90ec2"
-  integrity sha512-KXtUSrW07gUqvOi8olvUkWWI8q1vMvrp7pSk983n3zcVeZLzJV8GGkkETJUzgRCCe5QR7Vcy0m2MorB17VEO1A==
+leedexjs@6.1.1:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/leedexjs/-/leedexjs-6.1.1.tgz#d573bda07d54097c20e3a99620e4ab7b7e776ad1"
+  integrity sha512-FIEwTZZ/4wFXck6BAcDrbVMGF0ELEO5Yp4ltWKk9FrWpM4X/nzBcP9w7+fcY7TGwXlZCMnADOYRrnlv8/ATWFg==
   dependencies:
     bigi "^1.4.2"
     bs58 "^4.0.1"
