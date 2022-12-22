@@ -17,7 +17,7 @@ import LinkToAssetById from "../Utility/LinkToAssetById";
 import BorrowModal from "../Modal/BorrowModal";
 import ReactTooltip from "react-tooltip";
 import {getBackedCoin, getAssetAndGateway} from "common/gatewayUtils";
-import {ChainStore} from "bitsharesjs";
+import {ChainStore} from "leedexjs";
 import {connect} from "alt-react";
 import SettingsStore from "stores/SettingsStore";
 import GatewayStore from "stores/GatewayStore";
@@ -421,7 +421,7 @@ class AccountPortfolioList extends React.Component {
     }
 
     _renderBuy = (symbol, canBuy, assetName, emptyCell, balance) => {
-        if (symbol === "GPH" && balance <= 1000000) {
+        if (symbol === "LD" && balance <= 1000000) {
             // Precision of 5, 1 = 10^5
             return (
                 <span>
@@ -933,7 +933,7 @@ class AccountPortfolioList extends React.Component {
             );
             symbol = asset.get("symbol");
             //let preferredMarket = market ? market : preferredUnit;
-            let preferredMarket = market ? market : "GPH";
+            let preferredMarket = market ? market : "LD";
 
             if (notCore && preferredMarket === symbol)
                 preferredMarket = coreSymbol;
@@ -1022,7 +1022,7 @@ class AccountPortfolioList extends React.Component {
             );
             const canDeposit =
                 (backedCoin && backedCoin.depositAllowed) ||
-                asset.get("symbol") == "GPH";
+                asset.get("symbol") == "LD";
 
             const canWithdraw =
                 backedCoin &&
@@ -1207,7 +1207,7 @@ class AccountPortfolioList extends React.Component {
                     ) : (
                         emptyCell
                     ),
-                    //emptyCell
+                //emptyCell
                 burn: !isBitAsset ? (
                     <a
                         style={{marginRight: 0}}
@@ -1290,7 +1290,7 @@ class AccountPortfolioList extends React.Component {
                                 .find(
                                     a => a.backingCoin === thisAssetName[1]
                                 ) ||
-                            asset.get("symbol") == "GPH";
+                            asset.get("symbol") == "LD";
 
                         const canBuy = !!this.props.bridgeCoins.get(
                             asset.get("symbol")
@@ -1521,9 +1521,9 @@ class AccountPortfolioList extends React.Component {
                 atLeastOneHas.buy = true;
             }
             if (!!_item.deposit && _item.deposit !== "-") {
-                if (_item.key == "GPH" && GatewayStore.anyAllowed()) {
+                if (_item.key == "LD" && GatewayStore.anyAllowed()) {
                     atLeastOneHas.depositOnlyBTS =
-                        _item.key == "GPH" && !atLeastOneHas.deposit;
+                        _item.key == "LD" && !atLeastOneHas.deposit;
                     atLeastOneHas.deposit = true;
                 }
             }

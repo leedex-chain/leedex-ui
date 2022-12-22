@@ -3,7 +3,7 @@ import {SendModal} from "../Modal/SendModal";
 import Translate from "react-translate-component";
 import AccountStore from "../../stores/AccountStore";
 import {connect} from "alt-react";
-import {ChainStore} from "bitsharesjs";
+import {ChainStore} from "leedexjs";
 import AmountSelector from "../Utility/AmountSelectorStyleGuide";
 import AccountSelectorListing from "./AccountSelectorListing";
 import FeeAssetSelector from "../Utility/FeeAssetSelector";

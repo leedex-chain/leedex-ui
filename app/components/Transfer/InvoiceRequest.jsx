@@ -1,5 +1,5 @@
 import React from "react";
-import {ChainStore} from "bitsharesjs";
+import {ChainStore} from "leedexjs";
 import AccountSelector from "../Account/AccountSelector";
 import AssetSelect from "../Utility/AssetSelect";
 import {compress} from "lzma";
@@ -28,7 +28,7 @@ class InvoiceRequest extends React.Component {
             invoiceData: null,
             recipient_name: null,
             recipient_name_account: null,
-            currency: "GPH",
+            currency: "LD",
             defaultAssets: get_allTokens().nativeTokens
         };
     }

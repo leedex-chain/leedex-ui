@@ -39,7 +39,7 @@ import {
 import FeeAssetSelector from "components/Utility/FeeAssetSelector";
 import {checkBalance} from "common/trxHelper";
 import AccountSelector from "components/Account/AccountSelector";
-import {ChainStore} from "bitsharesjs";
+import {ChainStore} from "leedexjs";
 const gatewayBoolCheck = "withdrawalAllowed";
 
 import {getAssetAndGateway, getIntermediateAccount} from "common/gatewayUtils";
@@ -318,7 +318,7 @@ class WithdrawModalNew extends React.Component {
         let isBTS = false;
         if (coreAsset) {
             if (selectedAsset == coreAsset.get("symbol")) isBTS = true;
-        } else if (selectedAsset == "GPH") {
+        } else if (selectedAsset == "LD") {
             isBTS = true;
         }
 
@@ -449,7 +449,7 @@ class WithdrawModalNew extends React.Component {
 
         let stateObj = {};
 
-        if (value == "GPH") {
+        if (value == "LD") {
             stateObj = {isBTS: true};
         }
 

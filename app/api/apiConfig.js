@@ -45,60 +45,37 @@ export const settingsAPIs = {
     DEFAULT_WS_NODE: "wss://fake.automatic-selection.com",
     WS_NODE_LIST: [
         {
-            url: "wss://node.gph.ai",
+            url: "wss://node0.leedex.net:8980",
             region: "Western Europe",
             country: "Germany",
-            location: "Falkenstein",
-            operator: "Witness: blckchnd",
-            contact: "telegram:blckchnd"
+            location: "Hessen",
+            operator: "Witness: maxirmx",
+            contact: "telegram:maxi_rmx"
         },
         {
-            url: "wss://gph.lexai.host",
-            region: "Northern Europe",
-            country: "Finland",
-            location: "Helsinki",
-            operator: "Witness: lex",
-            contact: "telegram:LexAi"
+            url: "wss://node1.leedex.net:8980",
+            region: "Western Europe",
+            country: "Germany",
+            location: "Hessen",
+            operator: "Witness: maxirmx",
+            contact: "telegram:maxi_rmx"
         },
         {
-            url: "wss://node.graphenelab.io",
-            region: "Northern Europe",
-            country: "Finland",
-            location: "Helsinki",
-            operator: "Witness: graphene-lab",
-            contact: "telegram:Denis_GL"
-        },
-        {
-            url: "wss://gph-api.xchng.finance",
-            region: "Northern Europe",
-            country: "Finland",
-            location: "Helsinki",
-            operator: "Witness: xchng",
-            contact: "telegram:Lososeg"
-        },
-        {
-            url: "wss://fin.marshmallow-cake.icu",
-            region: "Northern Europe",
-            country: "Holland",
-            location: "Amsterdam",
-            operator: "Witness: marshmallow-cake"
-        },
-        {
-            url: "wss://node.hk.graphene.fans",
-            region: "Eastern Asia",
-            country: "China",
-            location: "Hong-Kong",
-            operator: "Witness: traders-witness",
-            contact: "telegram:minter_traders"
+            url: "wss://leedex.net:8980",
+            region: "Western Europe",
+            country: "Germany",
+            location: "Hessen",
+            operator: "Witness: maxirmx",
+            contact: "telegram:maxi_rmx"
         }
     ],
     ES_WRAPPER_LIST: [
         {
-            url: "https://es-wrapper.gph.ai",
+            url: "https://leedex.net",
             region: "Western Europe",
             country: "Germany",
-            operator: "Witness: blckchnd",
-            contact: "telegram:blckchnd"
+            operator: "Witness: maxirmx",
+            contact: "telegram:maxi_rmx"
         }
     ],
     DEFAULT_FAUCET: getFaucet().url,

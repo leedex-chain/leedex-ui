@@ -1,0 +1,37 @@
+name: Ubuntu
+
+on: [push, pull_request]
+
+concurrency:
+    group: "${{ github.workflow }}-${{ github.job }}-${{ github.head_ref || github.ref_name }}"
+    cancel-in-progress: true
+
+jobs:
+    build:
+        runs-on: ubuntu-20.04
+        steps:
+            - name: checkout
+              uses: actions/checkout@v3
+
+            - name: Check environment
+              run: |
+                  node -v
+                  npm -v
+                  yarn -v
+
+            - name: Install
+              run: yarn
+
+            - name: Build
+              run: |
+                  npm run package
+                  npm run build
+                  npm run build-hash
+
+            - name: Upload artifacts
+              uses: actions/upload-artifact@v3
+              with:
+                  name: Linux artifacts
+                  path: |
+                      build/binaries/RuDEX*
+                      build/release-checksums-*

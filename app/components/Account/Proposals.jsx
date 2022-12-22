@@ -9,7 +9,7 @@ import ChainTypes from "components/Utility/ChainTypes";
 import utils from "common/utils";
 import ProposalModal, {finalRequiredPerms} from "../Modal/ProposalModal";
 import NestedApprovalState from "../Account/NestedApprovalState";
-import {ChainStore, ChainTypes as grapheneChainTypes} from "bitsharesjs";
+import {ChainStore, ChainTypes as grapheneChainTypes} from "leedexjs";
 import counterpart from "counterpart";
 import permission_utils from "common/permission_utils";
 import LinkToAccountById from "../Utility/LinkToAccountById";
@@ -51,10 +51,10 @@ class Proposals extends Component {
 
     componentDidMount() {
         /*
-        * Account objects don't get updated by underlying proposal changes, but
-        * the ChainStore does, so in order to update this component when a proposal
-        * changes, we need to update it whenever the ChainStore itself updates
-        */
+         * Account objects don't get updated by underlying proposal changes, but
+         * the ChainStore does, so in order to update this component when a proposal
+         * changes, we need to update it whenever the ChainStore itself updates
+         */
         ChainStore.subscribe(this.forceUpdate);
     }
 

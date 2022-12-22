@@ -4,11 +4,10 @@
 
 > Если у Вас возникли проблемы со шлюзом от провайдера, пожалуйста, свяжитесь с ним напрямую. Смотрите список шлюзов в левом меню.
 
-### Чат Graphene/RuDEX
+### Чат Graphene
 
-Вы можете общаться с другими членами сообщества Graphene и RuDEX в реальном времени здесь:
+Вы можете общаться с другими членами сообщества Graphene в реальном времени здесь:
 
-- [Telegram чат RuDEX](https://t.me/BitSharesDEX_RU)
 - [Telegram чат Graphene](https://t.me/graphene_dex)
 
 ### Разработчики
@@ -16,7 +15,7 @@
 Если вы являетесь разработчиком программного обеспечения, то можете поучаствовать в баунти-программе здесь:
 
 - [Github UI](https://github.com/graphene-blockchain/graphene-ui)
-- [Github Core](https://github.com/graphene-blockchain/graphene-core) 
+- [Github Core](https://github.com/graphene-blockchain/graphene-core)
 
 ## Введение
 

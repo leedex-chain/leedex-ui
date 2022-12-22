@@ -1,8 +1,8 @@
 import React from "react";
 import "./ListingPage.css";
 
-import {Apis} from "bitsharesjs-ws";
-import {FetchChain} from "bitsharesjs";
+import {Apis} from "leedexjs-ws";
+import {FetchChain} from "leedexjs";
 import counterpart from "counterpart";
 
 import CoinCardListing from "./CoinCardListing";

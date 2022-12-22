@@ -1241,7 +1241,7 @@
             "coming_soon": "Coming soon",
             "min_amount": "Minimum amount: %(minamount)s %(symbol)s",
             "min_amount_error": "Please enter number >= minimum",
-            "support_block": "For support, please contact RuDEX at:",
+            "support_block": "For support, please contact LEEDEX at:",
             "under_construction": "Under Construction"
         },
         "scan_qr": "Scan QR",
@@ -1256,7 +1256,7 @@
         "unavailable": "The gateway service for this asset is currently down, please try again later",
         "unavailable_CITADEL": "The Citadel Bridge is down or not responding",
         "unavailable_OPEN": "The OpenLedger Gateway is down or not responding",
-        "unavailable_RUDEX": "The RuDEX Gateway is down or not responding",
+        "unavailable_RUDEX": "The LEEDEX Gateway is down or not responding",
         "unavailable_TRADE": "The Blocktrades Bridge is down or not responding",
         "unavailable_bridge": "The bridge service for this asset is currently down, please try again later",
         "use_copy_button": "PLEASE USE COPY BUTTON TO MAKE COPY OF ADDRESS OR MEMO ON THIS PAGE",

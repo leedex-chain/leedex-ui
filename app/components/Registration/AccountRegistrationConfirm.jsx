@@ -7,7 +7,7 @@ import WalletDb from "stores/WalletDb";
 import counterpart from "counterpart";
 import TransactionConfirmStore from "stores/TransactionConfirmStore";
 import Translate from "react-translate-component";
-import {FetchChain} from "bitsharesjs/es";
+import {FetchChain} from "leedexjs/es";
 import WalletUnlockActions from "actions/WalletUnlockActions";
 import Icon from "components/Icon/Icon";
 import {
@@ -173,14 +173,11 @@ class AccountRegistrationConfirm extends React.Component {
     }
 }
 
-export default connect(
-    AccountRegistrationConfirm,
-    {
-        listenTo() {
-            return [AccountStore];
-        },
-        getProps() {
-            return {};
-        }
+export default connect(AccountRegistrationConfirm, {
+    listenTo() {
+        return [AccountStore];
+    },
+    getProps() {
+        return {};
     }
-);
+});

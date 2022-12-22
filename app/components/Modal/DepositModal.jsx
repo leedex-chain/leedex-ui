@@ -2,7 +2,7 @@ import React from "react";
 import Translate from "react-translate-component";
 import utils from "common/utils";
 import {requestDepositAddress} from "common/gatewayMethods";
-import {ChainStore} from "bitsharesjs";
+import {ChainStore} from "leedexjs";
 import RuDexDepositAddressCache from "common/RuDexDepositAddressCache";
 import CopyButton from "../Utility/CopyButton";
 import Icon from "../Icon/Icon";
@@ -124,7 +124,7 @@ class DepositModalContent extends DecimalChecker {
             let assetGateway = backedAsset[0];
             this._getDepositAddress(assetName, assetGateway);
         } else {
-            this.setState({selectedAsset: "GPH"});
+            this.setState({selectedAsset: "LD"});
         }
     }
 
@@ -284,7 +284,7 @@ class DepositModalContent extends DecimalChecker {
         let {account} = this.props;
         let usingGateway = true;
 
-        if (selectedGateway == null && selectedAsset == "GPH") {
+        if (selectedGateway == null && selectedAsset == "LD") {
             usingGateway = false;
             depositAddress = {address: account};
         }

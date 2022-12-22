@@ -3,7 +3,7 @@ import FormattedAsset from "../Utility/FormattedAsset";
 import AccountActions from "actions/AccountActions";
 import AccountSelector from "../Account/AccountSelector";
 import BalanceComponent from "../Utility/BalanceComponent";
-import {ChainStore, FetchChain, FetchChainObjects} from "bitsharesjs/es";
+import {ChainStore, FetchChain, FetchChainObjects} from "leedexjs/es";
 import NotificationActions from "actions/NotificationActions";
 import TransactionConfirmStore from "stores/TransactionConfirmStore";
 import {decompress, compress} from "lzma";
@@ -63,7 +63,7 @@ class InvoicePay extends React.Component {
         let invoice = {
             to: "sschiessl",
             to_label: "Stefan S.",
-            currency: "GPH",
+            currency: "LD",
             memo: "Invoice #1234",
             line_items: [
                 {label: "Something to Buy", quantity: 1, price: "0.1"},

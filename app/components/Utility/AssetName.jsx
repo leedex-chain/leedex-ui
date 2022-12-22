@@ -5,7 +5,7 @@ import AssetWrapper from "./AssetWrapper";
 import counterpart from "counterpart";
 import PropTypes from "prop-types";
 import {Popover} from "bitshares-ui-style-guide";
-import {ChainStore, FetchChainObjects} from "bitsharesjs";
+import {ChainStore, FetchChainObjects} from "leedexjs";
 import GatewayStore from "../../stores/GatewayStore";
 import {getAssetAndGateway} from "../../lib/common/gatewayUtils";
 import {Icon, Tooltip} from "bitshares-ui-style-guide";
@@ -129,8 +129,8 @@ class AssetName extends React.Component {
                 prefix && prefix === "gp"
                     ? prefix
                     : !!prefix
-                        ? prefix.toUpperCase()
-                        : prefix;
+                    ? prefix.toUpperCase()
+                    : prefix;
             let assetDiv = (
                 <div
                     className={
@@ -186,7 +186,7 @@ class AssetName extends React.Component {
                 return assetDiv;
             } else {
                 let desc = null;
-                if (replacedName == "GPH") {
+                if (replacedName == "LD") {
                     desc = {main: counterpart.translate("assets.BTS")};
                 } else {
                     desc = asset_utils.parseDescription(

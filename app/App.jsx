@@ -1,5 +1,5 @@
 import React from "react";
-import {ChainStore} from "bitsharesjs";
+import {ChainStore} from "leedexjs";
 import AccountStore from "stores/AccountStore";
 import NotificationStore from "stores/NotificationStore";
 import {withRouter} from "react-router-dom";
@@ -155,10 +155,10 @@ const CreateWorker = Loadable({
 });
 
 const Barter = Loadable({
-    loader: () =>
-        import(
-            /* webpackChunkName: "settings" */ "./components/Showcases/Barter"
-        ),
+    loader: () => Page404,
+    //        import(
+    //            /* webpackChunkName: "settings" */ "./components/Showcases/Barter"
+    //        ),
     loading: LoadingIndicator
 });
 
@@ -202,13 +202,14 @@ const Listing = Loadable({
     loading: LoadingIndicator
 });
 
-const Volume_ranking = Loadable({
-    loader: () =>
-        import(
-            /* webpackChunkName: "QuickTrade" */ "./components/DashboardRuDEX/Dashboard"
-        ),
-    loading: LoadingIndicator
-});
+const Volume_ranking = Page404;
+//Loadable({
+//    loader: () =>
+//        import(
+//            /* webpackChunkName: "QuickTrade" */ "./components/DashboardLEEDEX/Dashboard"
+//        ),
+//    loading: LoadingIndicator
+//});
 
 import LoginSelector from "./components/LoginSelector";
 import Login from "./components/Login/Login";

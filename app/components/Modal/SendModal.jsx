@@ -1,7 +1,7 @@
 import React from "react";
 import ZfApi from "react-foundation-apps/src/utils/foundation-api";
 import Translate from "react-translate-component";
-import {ChainStore} from "bitsharesjs";
+import {ChainStore} from "leedexjs";
 import AmountSelector from "../Utility/AmountSelectorStyleGuide";
 import FeeAssetSelector from "../Utility/FeeAssetSelector";
 import AccountStore from "stores/AccountStore";
@@ -438,9 +438,15 @@ class SendModal extends React.Component {
             balanceError,
             hidden
         } = this.state;
+        //            console.log("-----------> from_account " + from_account + " from_my_account " + from_my_account + " propose " + propose);
         let from_my_account =
             AccountStore.isMyAccount(from_account) ||
             from_name === this.props.passwordAccount;
+
+        console.log("-1---------> from_account " + from_account);
+        console.log("-2----------> from_my_account " + from_my_account);
+        console.log("-3----------> propose " + propose);
+
         let from_error =
             from_account && !from_my_account && !propose ? true : false;
 
@@ -498,6 +504,8 @@ class SendModal extends React.Component {
             String.prototype.replace.call(amount, /,/g, "")
         );
         const isAmountValid = amountValue && !isNaN(amountValue);
+        //        console.log("-----------> asset" + asset);
+        // console.log("-----------> from_error " + from_error + " propose_incompete " + propose_incomplete);
         const isSubmitNotValid =
             !from_account ||
             !to_account ||

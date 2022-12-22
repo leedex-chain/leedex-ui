@@ -1122,7 +1122,7 @@
         "loading": "Caricamento...",
         "nosync": "La blockchain non è sincronizzata, per favore attendi..",
         "synced": "Sincronizzato",
-        "title": "RuDEX",
+        "title": "LEEDEX",
         "unsynced": "Fuori sincrono",
         "update_available": "AGGIORNAMENTO DISPONIBILE"
     },
@@ -1242,7 +1242,7 @@
             "coming_soon": "Prossimamente",
             "min_amount": "Quantità minima: %(minamount)s %(symbol)s",
             "min_amount_error": "Per favore inserisci un numero >= minimo",
-            "support_block": "Per supporto, contatta RuDEX a:",
+            "support_block": "Per supporto, contatta LEEDEX a:",
             "under_construction": "Under Construction"
         },
         "scan_qr": "Scandisci QR",
@@ -1257,7 +1257,7 @@
         "unavailable": "Il servizio di gateway per questo asset non è al momento disponibile, riprova più tardi",
         "unavailable_CITADEL": "The Citadel Bridge is down or not responding",
         "unavailable_OPEN": "Il Gateway OpenLedger non è disponibile o non risponde",
-        "unavailable_RUDEX": "Il Gateway RuDEX non è disponibile o non risponde",
+        "unavailable_RUDEX": "Il Gateway LEEDEX non è disponibile o non risponde",
         "unavailable_TRADE": "Il Bridge Blocktrades non è disponibile o non risponde",
         "unavailable_bridge": "Il servizio di bridge per questo asset non è al momento disponibile, riprova più tardi",
         "use_copy_button": "PLEASE USE COPY BUTTON TO MAKE COPY OF ADDRESS OR MEMO ON THIS PAGE",

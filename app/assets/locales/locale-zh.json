@@ -1247,7 +1247,7 @@
             "coming_soon": "即将上线",
             "min_amount": "最小金额：%(minamount)s %(symbol)s",
             "min_amount_error": "请输入大于最小金额的数量",
-            "support_block": "请联系 RuDEX 获取客户支持：",
+            "support_block": "请联系 LEEDEX 获取客户支持：",
             "under_construction": "施工中"
         },
         "scan_qr": "扫描二维码，手机支付",
@@ -1262,7 +1262,7 @@
         "unavailable": "此资产的网关服务暂时不可用，请稍后再试",
         "unavailable_CITADEL": "Citadel 桥接服务不可用或无响应",
         "unavailable_OPEN": "OpenLedger 网关不可用或无响应",
-        "unavailable_RUDEX": "RuDEX 网关不可用或无响应",
+        "unavailable_RUDEX": "LEEDEX 网关不可用或无响应",
         "unavailable_TRADE": "Blocktrades 桥接服务不可用或无响应",
         "unavailable_bridge": "此资产的桥接服务暂时不可用，请稍后再试",
         "use_copy_button": "请在此页面使用 复制 按钮来复制地址或者备注MEMO",

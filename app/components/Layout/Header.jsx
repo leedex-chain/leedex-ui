@@ -18,9 +18,9 @@ import WalletManagerStore from "stores/WalletManagerStore";
 import cnames from "classnames";
 import TotalBalanceValue from "../Utility/TotalBalanceValue";
 import ReactTooltip from "react-tooltip";
-import {Apis} from "bitsharesjs-ws";
+import {Apis} from "leedexjs-ws";
 import AccountImage from "../Account/AccountImage";
-import {ChainStore} from "bitsharesjs";
+import {ChainStore} from "leedexjs";
 import WithdrawModal from "../Modal/WithdrawModalNew";
 import {List} from "immutable";
 import DropDownMenu from "./HeaderDropdown";
@@ -420,7 +420,7 @@ class Header extends React.Component {
             <a
                 style={{padding: "12px 1.75rem"}}
                 className={cnames({active: false})}
-                href="https://rudex.org"
+                href="https://leedex.net"
                 target="_blank"
             >
                 <img style={{margin: 0, height: 40}} src={logo} />

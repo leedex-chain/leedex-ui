@@ -1,5 +1,5 @@
-import {Apis} from "bitsharesjs-ws";
-import {ChainStore, FetchChain} from "bitsharesjs";
+import {Apis} from "leedexjs-ws";
+import {ChainStore, FetchChain} from "leedexjs";
 import {
     Tabs,
     Collapse,

@@ -1,4 +1,4 @@
-import {ChainConfig} from "bitsharesjs-ws";
+import {ChainConfig} from "leedexjs-ws";
 
 export function backupName(walletName, date = new Date()) {
     let name = walletName;

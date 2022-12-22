@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
 import cname from "classnames";
-import {hash, key} from "bitsharesjs";
+import {hash, key} from "leedexjs";
 
 var dictionary_set;
 

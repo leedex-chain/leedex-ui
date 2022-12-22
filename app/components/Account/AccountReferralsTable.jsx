@@ -2,7 +2,7 @@ import {connect} from "alt-react";
 import React from "react";
 import {Link} from "react-router-dom";
 import Translate from "react-translate-component";
-import {ChainStore, FetchChain} from "bitsharesjs";
+import {ChainStore, FetchChain} from "leedexjs";
 import ChainTypes from "../Utility/ChainTypes";
 import AccountStore from "stores/AccountStore";
 import BindToChainState from "../Utility/BindToChainState";
@@ -282,19 +282,16 @@ class AccountReferralsTable extends React.Component {
 
 AccountReferralsTable = BindToChainState(AccountReferralsTable);
 
-AccountReferralsTable = connect(
-    AccountReferralsTable,
-    {
-        listenTo() {
-            return [AccountStore];
-        },
-        getProps() {
-            return {
-                myActiveAccounts: AccountStore.getState().myActiveAccounts,
-                myHiddenAccounts: AccountStore.getState().myHiddenAccounts
-            };
-        }
+AccountReferralsTable = connect(AccountReferralsTable, {
+    listenTo() {
+        return [AccountStore];
+    },
+    getProps() {
+        return {
+            myActiveAccounts: AccountStore.getState().myActiveAccounts,
+            myHiddenAccounts: AccountStore.getState().myHiddenAccounts
+        };
     }
-);
+});
 
 export default AccountReferralsTable;

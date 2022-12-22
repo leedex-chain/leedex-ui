@@ -2,7 +2,7 @@ import React from "react";
 import counterpart from "counterpart";
 import {connect} from "alt-react";
 import SettingsStore from "../../stores/SettingsStore";
-import {ChainStore} from "bitsharesjs";
+import {ChainStore} from "leedexjs";
 import {Button} from "bitshares-ui-style-guide";
 import Translate from "react-translate-component";
 import AssetName from "../Utility/AssetName";
@@ -71,16 +71,13 @@ class FeeAssetSettings extends React.Component {
     }
 }
 
-export default connect(
-    FeeAssetSettings,
-    {
-        listenTo() {
-            return [SettingsStore];
-        },
-        getProps(props) {
-            return {
-                fee_asset: SettingsStore.getState().settings.get("fee_asset")
-            };
-        }
+export default connect(FeeAssetSettings, {
+    listenTo() {
+        return [SettingsStore];
+    },
+    getProps(props) {
+        return {
+            fee_asset: SettingsStore.getState().settings.get("fee_asset")
+        };
     }
-);
+});

@@ -1,4 +1,4 @@
-import {Apis} from "bitsharesjs-ws";
+import {Apis} from "leedexjs-ws";
 
 export default {
     db: new Proxy(Apis, {

@@ -5,6 +5,7 @@
 *.map
 *.log
 build
+.vscode/
 app/electron
 app/components/Exchange/exchange.css
 stats*

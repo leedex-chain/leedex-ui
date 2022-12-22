@@ -826,7 +826,7 @@
             "text1": "WARNING: ",
             "text2": "Potentially dangerous trading pair! Among the assets on this market, there are some ",
             "text3": "NOT related ",
-            "text4": " to RUDEX. By trading on this market, you assume responsibility for the potential risks and loss of your funds."
+            "text4": " to LEEDEX. By trading on this market, you assume responsibility for the potential risks and loss of your funds."
         },
         "worth_less_settlement_warning": "The current market price of {market_link} is higher than settle price",
         "your_price": "Your Call Price",
@@ -1273,10 +1273,10 @@
             "min_amount": "Minimum amount: %(minamount)s %(symbol)s",
             "min_amount_warn": "Any deposits less than the minimum will not be credited.",
             "min_amount_error": "Please enter number >= minimum",
-            "support_block": "For support, please contact RuDEX at:",
+            "support_block": "For support, please contact LEEDEX at:",
             "under_construction": "Temporarily unavailable. On maintenance",
-            "rudex_notice1": "Please see the Service Agreement of RuDEX for usage of their gateways",
-            "rudex_notice1_informed": "I have read and agree with RuDEX Service Agreement",
+            "rudex_notice1": "Please see the Service Agreement of LEEDEX for usage of their gateways",
+            "rudex_notice1_informed": "I have read and agree with LEEDEX Service Agreement",
             "rudex_notice_third_party": "Please see Terms of third party service",
             "rudex_notice1_informed_third_party_service": "I have read and agree with third party service terms",
             "buy_crypto": {
@@ -1285,7 +1285,7 @@
                 "choose_deposit": "Please, select a cryptocurrency to buy",
                 "choose_withdraw": "Please, select a cryptocurrency to sell",
                 "deposit_summary": "Additional Information",
-                "title2": "You can purchase crypto (BTC, ETH, USDT) to your RuDEX account using debit or credit card (Visa/MasterCard)* or bank wire (SEPA)",
+                "title2": "You can purchase crypto (BTC, ETH, USDT) to your LEEDEX account using debit or credit card (Visa/MasterCard)* or bank wire (SEPA)",
                 "partner": "*service provided by our partner Raido Finance",
                 "buy": "Buy",
                 "buy_inst": "Instructions",
@@ -1312,7 +1312,7 @@
         "unavailable": "The gateway service for this asset is currently down, please try again later",
         "unavailable_CITADEL": "The Citadel Bridge is down or not responding",
         "unavailable_OPEN": "The OpenLedger Gateway is down or not responding",
-        "unavailable_RUDEX": "The RuDEX Gateway is down or not responding",
+        "unavailable_RUDEX": "The LEEDEX Gateway is down or not responding",
         "unavailable_TRADE": "The Blocktrades Bridge is down or not responding",
         "unavailable_bridge": "The bridge service for this asset is currently down, please try again later",
         "use_copy_button": "PLEASE USE COPY BUTTON TO MAKE COPY OF ADDRESS OR MEMO ON THIS PAGE",
@@ -3043,11 +3043,11 @@
             "done": "Collected"
         },
         "texts": {
-            "header": "List an asset on RuDEX",
-            "text1": "Would you like to list an asset on RuDEX, and integrate with Graphene decentralized trading platform? Use our listing service via public crowdfunding. The listing process is very simple and is described below.",
-            "text2": "To sumbit an asset listing request on RuDEX platform please fill out a simple form (Submit request button). Our team will review your request in accordance with submitted information, and if the project fulfils our listing criteria, it will be added to the public list for public crowdfunding. The main goal for the voluntary crowdfunding is to gather the funds for the launch and maintenance of the gateway, as well as estimation of potentioal interest in an ansset.",
+            "header": "List an asset on LEEDEX",
+            "text1": "Would you like to list an asset on LEEDEX, and integrate with Graphene decentralized trading platform? Use our listing service via public crowdfunding. The listing process is very simple and is described below.",
+            "text2": "To sumbit an asset listing request on LEEDEX platform please fill out a simple form (Submit request button). Our team will review your request in accordance with submitted information, and if the project fulfils our listing criteria, it will be added to the public list for public crowdfunding. The main goal for the voluntary crowdfunding is to gather the funds for the launch and maintenance of the gateway, as well as estimation of potentioal interest in an ansset.",
             "text3": {
-                "t1": "Any RuDEX user can support the listing of their favorite assets via crowdfunding. ",
+                "t1": "Any LEEDEX user can support the listing of their favorite assets via crowdfunding. ",
                 "t2": "To that end please ",
                 "get": "acquire "
             },
@@ -3060,7 +3060,7 @@
             "text5": {
                 "t1": "After the project reaches the set crowdfunding threshold all collected tokens are burned",
                 "t2": "and our teams initiates the listing procedure, that includes gateway creation and set up of the trading pairs for the asset.",
-                "t3": "Please note that the RuDEX team reserves the right to delist assets to protect our own interests and the interests of our customers."
+                "t3": "Please note that the LEEDEX team reserves the right to delist assets to protect our own interests and the interests of our customers."
             },
             "terms": {
                 "t1": "If your token is included in the voting section for subsequent listing, then the target amount of DONATE tokens for its implementation will be formed according to the following rule:",
@@ -3073,13 +3073,13 @@
                 "t3": "For BEP20 / ERC20 / TRC20 tokens the amount is also determined by the list above, however, for those below the top 300, the target amount will be 5000 DONATE."
             },
             "rules": {
-                "header": "Checklist for asset listing on RuDEX:",
+                "header": "Checklist for asset listing on LEEDEX:",
                 "rule_1": "Please check ",
                 "rule_10": "rules",
                 "rule_11": " and submit a listing request.",
                 "rule_2": "Wait for the review results: if everything is in order, then it would be added to the project listing page.",
                 "rule_3": "Use your time to promote your project crowdfunding process via social networks, attract other users. Use",
-                "rule_4": " tokens to reach the crowdfunding goal (a RuDEX account is required for this).",
+                "rule_4": " tokens to reach the crowdfunding goal (a LEEDEX account is required for this).",
                 "rule_5": "Listing process is initiated after the crowdfunding goal is reach, and begins with the gateway launch preparation. Please provide the contacts for technical/marketing team, or any other qualified contact."
             },
             "end": "Good luck with your project and welcome to "

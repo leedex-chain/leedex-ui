@@ -24,7 +24,7 @@ import {DecimalChecker} from "../Utility/DecimalChecker";
 import {rudexAPIs} from "api/apiConfig";
 import {getWalletName} from "branding";
 import {Modal, Tooltip} from "bitshares-ui-style-guide";
-import {ChainStore} from "bitsharesjs";
+import {ChainStore} from "leedexjs";
 import FeeAssetSelector from "components/Utility/FeeAssetSelector";
 
 class DepositWithdrawContent extends DecimalChecker {
