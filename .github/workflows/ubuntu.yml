@@ -1,6 +1,10 @@
 name: Ubuntu
 
-on: [push, pull_request]
+on:
+    push:
+        branches: [main]
+    pull_request:
+    workflow_dispatch:
 
 concurrency:
     group: "${{ github.workflow }}-${{ github.job }}-${{ github.head_ref || github.ref_name }}"
@@ -10,28 +14,25 @@ jobs:
     build:
         runs-on: ubuntu-20.04
         steps:
-            - name: checkout
+            - name: Checkout
               uses: actions/checkout@v3
 
             - name: Check environment
               run: |
-                  node -v
-                  npm -v
-                  yarn -v
+                  echo "Node.js version: $(node -v)"
+                  echo "Npm version: $(npm -v)"
+                  echo "Yarn version: $(yarn -v)"
 
             - name: Install
-              run: yarn
+              run: yarn install --network-concurrency 1 --frozen-lockfile
 
-            - name: Build
-              run: |
-                  npm run package
-                  npm run build
-                  npm run build-hash
+            - name: Package
+              run: npm run package
 
             - name: Upload artifacts
               uses: actions/upload-artifact@v3
               with:
-                  name: Linux artifacts
+                  name: Binaries
                   path: |
-                      build/binaries/RuDEX*
+                      build/binaries/LEEDEX*
                       build/release-checksums-*
