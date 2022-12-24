@@ -1,6 +1,6 @@
 {
-  "name": "LeeDEX Web UI",
-  "version": "0.1.2",
+  "name": "LEEDEX-UI",
+  "version": "0.1.3",
   "description": "Web wallet interface for the LeeDEX financial blockchain.",
   "homepage": "https://github.com/leedex-chain/leedex-ui",
   "author": "maxirmx <maxirmx@gmail.com>",
