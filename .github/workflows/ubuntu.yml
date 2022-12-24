@@ -27,7 +27,7 @@ jobs:
               run: yarn install --network-concurrency 1 --frozen-lockfile
 
             - name: Package
-              run: npm run package
+              run: npm run package-deb
 
             - name: Upload artifacts
               uses: actions/upload-artifact@v3
@@ -35,4 +35,10 @@ jobs:
                   name: Binaries
                   path: |
                       build/binaries/LEEDEX*
-                      build/release-checksums-*
+
+            - name: Upload artifacts
+              uses: actions/upload-artifact@v3
+              with:
+                  name: Site
+                  path: |
+                      build/dist
