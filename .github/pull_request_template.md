@@ -6,10 +6,10 @@ Closes #[Insert issue number]
 <h2>General</h2>
 Please make sure the following is done:
 
-- Pull request is onto develop
+- Pull request is onto main
 - If you haven't already, have a look at
-  - https://github.com/graphene-blockchain/graphene-ui/blob/develop/CODE_OF_CONDUCT.md
-  - https://github.com/graphene-blockchain/graphene-ui/blob/develop/CONTRIBUTING.md
+  - https://github.com/leedex-chain/leedex-ui/blob/main/CODE_OF_CONDUCT.md
+  - https://github.com/leedex-chain/leedex-ui/blob/main/CONTRIBUTING.md
 
 <h2>Code Preparation</h2>
 

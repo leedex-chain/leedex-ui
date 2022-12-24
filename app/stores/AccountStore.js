@@ -569,7 +569,6 @@ class AccountStore extends BaseStore {
 
     isMyAccount(account) {
         let authority = this.getMyAuthorityForAccount(account);
-        console.log("-10-------> authority " + authority);
         if (authority === undefined) return undefined;
         return authority === "partial" || authority === "full";
     }
