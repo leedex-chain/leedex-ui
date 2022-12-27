@@ -23,7 +23,7 @@ EXPOSE 80
 
 ## Copying default configuration
 RUN cp conf/nginx.conf /etc/nginx/nginx.conf
-RUN chmod a+x conf/start.sh
+RUN chmod a+x conf/serve.sh
 
 ## Entry point
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+ENTRYPOINT ["conf/serve.sh"]
