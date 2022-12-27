@@ -24,7 +24,8 @@ jobs:
         tags: latest, latest-${{ github.head_ref || github.ref_name }}
         registry: ghcr.io
         dockerfile: deploy.dockerfile
-        password: ${{ github.token }}
+        username: ${{ secrets.DEPLOY_GHCR_USERNAME }}
+        password: ${{ secrets.DEPLOY_GHCR_TOKEN }}
         enableBuildKit: true
 
   deploy:
