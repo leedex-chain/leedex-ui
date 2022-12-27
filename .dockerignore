@@ -1,0 +1,4 @@
+*.dockerfile
+*.dockerignore
+docker-compose.*
+deploy.sh

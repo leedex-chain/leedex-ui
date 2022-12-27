@@ -1,4 +1,4 @@
-FROM node:6
+FROM node:16
 
 # Install nginx
 RUN apt-get update \
@@ -14,14 +14,16 @@ CMD mkdir /rudex-ui
 WORKDIR /rudex-ui
 
 COPY . .
-RUN cross-env npm install --env.prod
+RUN yarn install --frozen-lockfile
+RUN npm run build
+
+RUN cp -r build/dist/* /var/www/
 
 EXPOSE 80
 
 ## Copying default configuration
-ADD conf/nginx.conf /etc/nginx/nginx.conf
-ADD conf/start.sh /start.sh
-RUN chmod a+x /start.sh
+RUN cp conf/nginx.conf /etc/nginx/nginx.conf
+RUN chmod a+x conf/start.sh
 
 ## Entry point
-ENTRYPOINT ["/start.sh"]
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
