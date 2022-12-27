@@ -46,7 +46,7 @@ jobs:
           git checkout develop
           git pull
           export CR_PAT=${{ secrets.DEPLOY_GHCR_TOKEN }}
-          echo $CR_PAT | docker login ghcr.io --password-stdin
+          echo $CR_PAT | docker login ghcr.io --username ${{ secrets.DEPLOY_GHCR_USERNAME }} --password-stdin
           docker compose -f docker-compose.deploy.yml pull
           docker compose -f docker-compose.deploy.yml up -d
           docker image prune -a
