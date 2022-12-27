@@ -9,13 +9,12 @@ RUN apt-get update \
 RUN npm install -g cross-env
 
 # We copy the code from the docker-compose-yml
-# RUN git clone https://github.com/blckchnd/rudex-ui.git /rudex-ui
-CMD mkdir /rudex-ui
-WORKDIR /rudex-ui
+CMD mkdir /leedex-ui
+WORKDIR /leedex-ui
 
 COPY . .
 RUN yarn install --frozen-lockfile
-RUN npm run build
+RUN yarn run build
 
 RUN cp -r build/dist/* /var/www/
 
