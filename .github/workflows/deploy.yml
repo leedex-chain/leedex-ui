@@ -1,0 +1,52 @@
+name: "Deploy"
+
+on:
+  release:
+    types:
+    - published
+  workflow_dispatch:
+
+concurrency:
+    group: "${{ github.workflow }}-${{ github.job }}-${{ github.head_ref || github.ref_name }}"
+    cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v3
+      name: Check out code
+
+    - uses: mr-smithers-excellent/docker-build-push@v5
+      name: Build & push Docker image
+      with:
+        image: ui
+        tags: latest, latest-${{ github.head_ref || github.ref_name }}
+        registry: ghcr.io
+        dockerfile: deploy.dockerfile
+        username: ${{ secrets.DEPLOY_GHCR_USERNAME }}
+        password: ${{ secrets.DEPLOY_GHCR_TOKEN }}
+        enableBuildKit: true
+
+  deploy:
+    needs: build
+    runs-on: [ubuntu-latest]
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Push to server
+      uses: appleboy/ssh-action@master
+      with:
+        port: ${{ secrets.DEPLOY_SSH_PORT }}
+        host: ${{ secrets.DEPLOY_SSH_HOST }}
+        username: ${{ secrets.DEPLOY_SSH_USER }}
+        key: ${{ secrets.DEPLOY_SSH_PRIV }}
+        script: |
+          cd ${{ secrets.DEPLOY_PATH }}
+          git checkout develop
+          git pull
+          export CR_PAT=${{ secrets.DEPLOY_GHCR_TOKEN }}
+          echo $CR_PAT | docker login ghcr.io --username ${{ secrets.DEPLOY_GHCR_USERNAME }} --password-stdin
+          docker compose -f docker-compose.deploy.yml pull
+          docker compose -f docker-compose.deploy.yml up -d
+          docker image prune -a
