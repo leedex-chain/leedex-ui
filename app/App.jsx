@@ -202,15 +202,14 @@ const Listing = Loadable({
     loading: LoadingIndicator
 });
 
-const Volume_ranking = Page404;
-//Loadable({
-//    loader: () =>
-//        import(
-//            /* webpackChunkName: "QuickTrade" */ "./components/DashboardLEEDEX/Dashboard"
-//        ),
-//    loading: LoadingIndicator
-//});
-
+const Volume_ranking = Loadable({
+    loader: () =>
+        import(
+            /* webpackChunkName: "QuickTrade" */ "./components/DashboardLEEDEX/Dashboard"
+        ),
+    loading: LoadingIndicator
+});
+// = Page404;
 import LoginSelector from "./components/LoginSelector";
 import Login from "./components/Login/Login";
 import RegistrationSelector from "./components/Registration/RegistrationSelector";

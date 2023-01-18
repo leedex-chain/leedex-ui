@@ -60,35 +60,14 @@ class Dashboard extends React.Component {
     }
 
     pingMarkets() {
-        let timeOutID;
-
         let allMarketStats = MarketsStore.getState().allMarketStats;
-
-        if (allMarketStats.size !== 0) {
-            /*            if (allMarketStats.toJSON().hasOwnProperty("GPH_RUDEX.USDT")) {
-                            //console.log("allMarketStats: " + JSON.stringify((allMarketStats.toJSON())["GPH_RUDEX.USDT"]));
-                            //console.log("----------------------------------------------------------------");
-                        }
-
-                        if (allMarketStats.toJSON().hasOwnProperty("RUDEX.USDT_GPH")) {
-                            //console.log("allMarketStats: " + JSON.stringify((allMarketStats.toJSON())["RUDEX.USDT_GPH"]));
-                            //console.log("----------------------------------------------------------------");
-                        }*/
-
-            let data = this.calcVolumeSort();
-            this.setState({
-                featuredMarkets: data,
-                marketStats: allMarketStats,
-                updating: false
-            });
-
-            timeOutID = setTimeout(this.pingMarkets, 20000);
-        } else {
-            timeOutID = setTimeout(this.pingMarkets, 3000);
-        }
+        let data = allMarketStats.size !== 0 ? this.calcVolumeSort() : [];
 
         this.setState({
-            timeOutID: timeOutID
+            featuredMarkets: data,
+            marketStats: allMarketStats,
+            updating: false,
+            timeOutID: setTimeout(this.pingMarkets, 20000)
         });
     }
 
@@ -101,7 +80,8 @@ class Dashboard extends React.Component {
             nextProps.marketStats !== this.props.marketStats ||
             nextState.marketStats !== this.state.marketStats ||
             nextState.volume24_usdt !== this.state.volume24_usdt ||
-            nextState.width !== this.state.width
+            nextState.width !== this.state.width ||
+            nextState.updating !== this.state.updating
         );
     }
 
@@ -289,7 +269,6 @@ class Dashboard extends React.Component {
                     />
                 );
             });
-
         return (
             <div className="grid-block vertical dashboardRuDEX">
                 <div ref="container" className="grid-container">
