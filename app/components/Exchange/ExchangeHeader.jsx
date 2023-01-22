@@ -72,8 +72,8 @@ export default class ExchangeHeader extends React.Component {
         let nativeTokens = get_allTokens().nativeTokens;
         coins = coins.concat(nativeTokens);
 
-        //1. RUDEX.X <=> RUDEX.X
-        if (quote.indexOf("RUDEX.") !== -1 && base.indexOf("RUDEX.") !== -1)
+        //1. LEEDEX.X <=> LEEDEX.X
+        if (quote.indexOf("LEEDEX.") !== -1 && base.indexOf("LEEDEX.") !== -1)
             return false;
 
         //2. coins <=> coins
@@ -82,8 +82,8 @@ export default class ExchangeHeader extends React.Component {
 
         //3. RUDEX.X <=> coins
         if (
-            (quote.indexOf("RUDEX.") !== -1 && coins.indexOf(base) !== -1) ||
-            (base.indexOf("RUDEX.") !== -1 && coins.indexOf(quote) !== -1)
+            (quote.indexOf("LEEDEX.") !== -1 && coins.indexOf(base) !== -1) ||
+            (base.indexOf("LEEDEX.") !== -1 && coins.indexOf(quote) !== -1)
         )
             return false;
 
