@@ -103,8 +103,7 @@ export function getDefaultMarket() {
     if (_isTestnet()) {
         return "USD_TEST";
     }
-    //    return "RUDEX.BTC_RUDEX.USDT";
-    return "USD_TEST";
+    return "LEEDEX.USDT_LD";
 }
 
 /**
