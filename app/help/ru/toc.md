@@ -9,7 +9,7 @@
 - [Предложенные транзакции](accounts/proposed.md)
 - [Разрешения](accounts/permissions.md)
 - [Членство](accounts/membership.md)
-- [Привязанные к рынку активы](assets/mpa.md) 
+- [Привязанные к рынку активы](assets/mpa.md)
     * gpUSD
     * gpEUR
     * gpRUB
@@ -27,4 +27,4 @@
     - [PercentUP ](bots/percent-up.md)
 - [Короткая продажа gpAssets](dex/shorting.md)
 - [Шлюзы](gateways/introduction.md)
-    - [Rudex](gateways/rudex.md)
+    - [Rudex](gateways/leedex.md)

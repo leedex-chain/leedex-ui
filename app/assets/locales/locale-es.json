@@ -1097,7 +1097,7 @@
             "landing": "Landing Page",
             "name": "Name",
             "not_now": "Not now",
-            "table_description": "The table below lists all Gateways and Bridges that are currently integrated with the Graphene UI, this does not reflect any kind of endorsement. It lists the Name (sorted alphabetically), the type (Bridge or Gateway, and if Gateway the asset prefix, e.g. RUDEX.BTC), a link to their landing page with further information and an affiliate link to the Gateways wallet (if exists, usually a branded version of this UI). Please do your own due dilligence.",
+            "table_description": "The table below lists all Gateways and Bridges that are currently integrated with the Graphene UI, this does not reflect any kind of endorsement. It lists the Name (sorted alphabetically), the type (Bridge or Gateway, and if Gateway the asset prefix, e.g. LEEDEX..BTC), a link to their landing page with further information and an affiliate link to the Gateways wallet (if exists, usually a branded version of this UI). Please do your own due dilligence.",
             "title": "Choose your preferred Service Providers",
             "type": "Type",
             "use_none": "Use none",
@@ -1155,7 +1155,7 @@
             "bridge": "El activo %(asset)s es respaldado 1:1 por real %(backed)s y puede ser depositado or retiado usando el servico de porton proporcionado por CryptoBridge.",
             "gdex": "El %(asset)s activo es respaldado 1:1 por real %(backed)s y puede ser depositado or retirado usando el servico de porton proporcionado por GDex.",
             "open": "El %(asset)s activo es respaldado 1:1 por real %(backed)s y puede ser depositado or retirado usando el servico de porton proporcionado por OpenLedger.",
-            "rudex": "El %(asset)s activo es respaldado 1:1 por real %(backed)s y puede ser depositado or retirado usando el servico de porton proporcionado por Rudex.",
+            "leedex": "El %(asset)s activo es respaldado 1:1 por real %(backed)s y puede ser depositado or retirado usando el servico de porton proporcionado por leedex.",
             "trade": "El activo %(asset) està respaldado 1:1 da real %(backed)s y puede ser depositado o retirado utilizando el servicio de puerta de enlace proporcionado por Blocktrades.",
             "win": "",
             "xbtsx": "El activo %(asset) està respaldado 1:1 da real %(backed)s y puede ser depositado o retirado utilizando el servicio de puerta de enlace proporcionado por XBTS."
@@ -1244,7 +1244,7 @@
         "receive_account": "Cuenta que recibe:",
         "recent_deposit": "Depósitos recientes",
         "recent_withdraw": "Retiros recientes",
-        "rudex": {
+        "leedex": {
             "coming_soon": "Próximamente",
             "min_amount": "Monto minimo: %(minamount)s %(symbol)s",
             "min_amount_error": "Por favor ingrese número >= mínimo",
@@ -1263,7 +1263,7 @@
         "unavailable": "El servicio de puerta de enlace para este activo está actualmente inactivo. Inténtalo de nuevo más tarde.",
         "unavailable_CITADEL": "El puente de Citadel está caído o no responde",
         "unavailable_OPEN": "OpenLedger Gateway está inactivo o no responde",
-        "unavailable_RUDEX": "LEEDEX Gateway está inactivo o no responde",
+        "unavailable_LEEDEX": "LEEDEX Gateway está inactivo o no responde",
         "unavailable_TRADE": "El puente de Blocktrades está inactivo o no responde",
         "unavailable_bridge": "El servicio de puente para este activo está actualmente inactivo. Inténtalo de nuevo más tarde.",
         "use_copy_button": "POR FAVOR UTILICE EL BOTÓN DE COPIA PARA HACER UNA COPIA DE DIRECCIÓN O MEMO EN ESTA PÁGINA",

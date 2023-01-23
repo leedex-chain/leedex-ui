@@ -73,7 +73,7 @@ class DashboardPage extends React.Component {
                                                     }
                                                 />
                                                 &nbsp;
-                                                {imgName.replace("RUDEX.", "")}
+                                                {imgName.replace("LEEDEX.", "")}
                                             </span>
                                         );
 

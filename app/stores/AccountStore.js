@@ -497,8 +497,6 @@ class AccountStore extends BaseStore {
         let owner_authority = account.get("owner");
         let active_authority = account.get("active");
 
-        //console.log("--11-----> owner " + owner + " active " + active);
-
         let owner_pubkey_threshold = pubkeyThreshold(owner_authority);
         if (owner_pubkey_threshold == "full") return "full";
         let active_pubkey_threshold = pubkeyThreshold(active_authority);
@@ -511,9 +509,6 @@ class AccountStore extends BaseStore {
 
         let owner_account_threshold, active_account_threshold;
 
-        // if (account.get("name") === "secured-x") {
-        //     debugger;
-        // }
         if (recursion_count < 3) {
             owner_account_threshold = this._accountThreshold(
                 owner_authority,

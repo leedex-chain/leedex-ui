@@ -1097,7 +1097,7 @@
             "landing": "Landing Page",
             "name": "Name",
             "not_now": "Not now",
-            "table_description": "The table below lists all Gateways and Bridges that are currently integrated with the Graphene UI, this does not reflect any kind of endorsement. It lists the Name (sorted alphabetically), the type (Bridge or Gateway, and if Gateway the asset prefix, e.g. RUDEX.BTC), a link to their landing page with further information and an affiliate link to the Gateways wallet (if exists, usually a branded version of this UI). Please do your own due dilligence.",
+            "table_description": "The table below lists all Gateways and Bridges that are currently integrated with the Graphene UI, this does not reflect any kind of endorsement. It lists the Name (sorted alphabetically), the type (Bridge or Gateway, and if Gateway the asset prefix, e.g. LEEDEX..BTC), a link to their landing page with further information and an affiliate link to the Gateways wallet (if exists, usually a branded version of this UI). Please do your own due dilligence.",
             "title": "Choose your preferred Service Providers",
             "type": "Type",
             "use_none": "Use none",
@@ -1155,7 +1155,7 @@
             "bridge": "Die %(asset)s Anlage ist 1:1 durch echte  %(backed)s hinterlegt und kann ein- oder ausgezahlt werden. Der Gateway-Dienst wird durch CryptoBridge bereitgestellt",
             "gdex": "Die %(asset)s Anlage ist 1:1 durch echte  %(backed)s hinterlegt und kann ein- oder ausgezahlt werden. Der Gateway-Dienst wird durch Gdex bereitgestellt",
             "open": "Die %(asset)s Anlage ist 1:1 durch echte  %(backed)s hinterlegt und kann ein- oder ausgezahlt werden. Der Gateway-Dienst wird durch OpenLedger bereitgestellt",
-            "rudex": "Die %(asset)s Anlage ist 1:1 durch echte  %(backed)s hinterlegt und kann ein- oder ausgezahlt werden. Der Gateway-Dienst wird durch Rudex bereitgestellt",
+            "leedex": "Die %(asset)s Anlage ist 1:1 durch echte  %(backed)s hinterlegt und kann ein- oder ausgezahlt werden. Der Gateway-Dienst wird durch leedex bereitgestellt",
             "trade": "Die %(asset)s Anlage ist 1:1 durch echte  %(backed)s hinterlegt und kann ein- oder ausgezahlt werden. Der Gateway-Dienst wird durch Blocktrades bereitgestellt",
             "win": "",
             "xbtsx": "Die %(asset)s Anlage ist 1:1 durch echte  %(backed)s hinterlegt und kann ein- oder ausgezahlt werden. Der Gateway-Dienst wird durch XBTS bereitgestellt"
@@ -1244,7 +1244,7 @@
         "receive_account": "Annahme Konto:",
         "recent_deposit": "Kürzliche Einzahlungen",
         "recent_withdraw": "Kürzliche Auszahlung",
-        "rudex": {
+        "leedex": {
             "coming_soon": "Kommt bald ...",
             "min_amount": "Minimaler Betrag: %(minamount)s %(symbol)s",
             "min_amount_error": "Bitte geben Sie eine Zahl ein >= Minimum!",
@@ -1263,7 +1263,7 @@
         "unavailable": "Die Gatewaydienstleistung für diese Anlage ist gerade außer Betrieb, bitte versuchen Sie es später noch einmal.",
         "unavailable_CITADEL": "The Citadel Bridge is down or not responding",
         "unavailable_OPEN": "Das OpenLedger Gateway ist außer Betrieb oder antwortet nicht.",
-        "unavailable_RUDEX": "Das LEEDEX Gateway ist außer Betrieb oder antwortet nicht.",
+        "unavailable_LEEDEX": "Das LEEDEX Gateway ist außer Betrieb oder antwortet nicht.",
         "unavailable_TRADE": "Das Blocktrades Gateway ist außer Betrieb oder antwortet nicht.",
         "unavailable_bridge": "Die Gatewaydienstleisung für diese Anlage ist im Moment außer Betrieb, bitte versuchen Sie es später noch einmal!",
         "use_copy_button": "BITTE BENUTZEN SIE DEN KOPIER-KNOPF ZUM KOPIEREN VON ADRESSE UND NOTITZ!",

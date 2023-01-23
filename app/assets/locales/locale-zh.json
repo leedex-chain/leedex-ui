@@ -1096,7 +1096,7 @@
             "landing": "登陆页面",
             "name": "名称",
             "not_now": "现在不行",
-            "table_description": "下列清单中的网关与桥接已经集成进Graphene UI，但是这并不代表任何背书。其列出了名称（字母排序），类型（桥接或网关，网关资产带有前缀，例如，RUDEX.BTC），带有更新信息的登录页面及一个到网关钱包的附属链接（如果存在，通常会是一个标志性的UI版本）。请自主审慎选择。",
+            "table_description": "下列清单中的网关与桥接已经集成进Graphene UI，但是这并不代表任何背书。其列出了名称（字母排序），类型（桥接或网关，网关资产带有前缀，例如，LEEDEX..BTC），带有更新信息的登录页面及一个到网关钱包的附属链接（如果存在，通常会是一个标志性的UI版本）。请自主审慎选择。",
             "title": "选择你偏爱的服务提供者",
             "type": "类型",
             "use_none": "不使用",
@@ -1154,7 +1154,7 @@
             "bridge": "资产 %(asset)s 由真实资产 %(backed)s 1:1 储备背书。可以通过 CryptoBridge 提供的网关服务进行充值提现。",
             "gdex": "资产 %(asset)s 由真实资产 %(backed)s 1:1 储备背书。可以通过 GDEX 提供的网关服务进行充值提现。",
             "open": "资产 %(asset)s 由真实资产 %(backed)s 1:1 储备背书。可以通过 Openledger 提供的网关服务进行充值提现。",
-            "rudex": "资产 %(asset)s 由真实资产 %(backed)s 1:1 储备背书。可以通过 Rudex 提供的网关服务进行充值提现。",
+            "leedex": "资产 %(asset)s 由真实资产 %(backed)s 1:1 储备背书。可以通过 leedex 提供的网关服务进行充值提现。",
             "trade": "资产 %(asset)s 由真实资产 %(backed)s 1:1 储备背书。可以通过 Blocktrades 提供的网关服务进行充值提现。",
             "win": "",
             "xbtsx": "%(asset)s资产由真实%(backed)s1:1储备背书，可以通过 XBTS 提供的网关服务进行充值提现。"
@@ -1243,7 +1243,7 @@
         "receive_account": "收款账户：",
         "recent_deposit": "最近充值",
         "recent_withdraw": "最近提现",
-        "rudex": {
+        "leedex": {
             "coming_soon": "即将上线",
             "min_amount": "最小金额：%(minamount)s %(symbol)s",
             "min_amount_error": "请输入大于最小金额的数量",
@@ -1262,7 +1262,7 @@
         "unavailable": "此资产的网关服务暂时不可用，请稍后再试",
         "unavailable_CITADEL": "Citadel 桥接服务不可用或无响应",
         "unavailable_OPEN": "OpenLedger 网关不可用或无响应",
-        "unavailable_RUDEX": "LEEDEX 网关不可用或无响应",
+        "unavailable_LEEDEX": "LEEDEX 网关不可用或无响应",
         "unavailable_TRADE": "Blocktrades 桥接服务不可用或无响应",
         "unavailable_bridge": "此资产的桥接服务暂时不可用，请稍后再试",
         "use_copy_button": "请在此页面使用 复制 按钮来复制地址或者备注MEMO",

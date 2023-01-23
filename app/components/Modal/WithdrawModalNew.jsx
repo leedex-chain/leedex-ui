@@ -152,7 +152,7 @@ class WithdrawModalNew extends React.Component {
         }
     }
 
-    componentWillUpdate(nextProps, nextState) {
+    UNSAFE_componentWillUpdate(nextProps, nextState) {
         const {preferredCurrency, assets} = nextProps;
         const {selectedAsset, quantity, selectedGateway} = nextState;
 

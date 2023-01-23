@@ -145,9 +145,9 @@ class DataFeed {
             callback({
                 exchanges: [
                     {
-                        value: "RUDEX.",
-                        name: "RuDEX",
-                        desc: "RuDEX Gateway"
+                        value: "LEEDEX.",
+                        name: "LEEDEX",
+                        desc: "LEEDEX Gateway"
                     }
                 ],
                 symbols_types: [],

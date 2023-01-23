@@ -1,13 +1,13 @@
 import {getFaucet, getTestFaucet} from "../branding";
 
 export const rudexAPIs = {
-    BASE: "https://gateway.rudex.org/api/rudex_new",
+    BASE: "https://gateway.leedex.net/api/rudex_new",
     COINS_LIST: "/coins",
     NEW_DEPOSIT_ADDRESS: "/simple-api/initiate-trade"
 };
 
 export const bep20rudexAPIs = {
-    BASE: "https://gateway.rudex.org/api/rudex_new_bep20",
+    BASE: "https://gateway.leedex.net/api/rudex_new_bep20",
     COINS_LIST: "/coins",
     NEW_DEPOSIT_ADDRESS: "/simple-api/initiate-trade"
 };

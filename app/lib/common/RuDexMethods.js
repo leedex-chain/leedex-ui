@@ -10,7 +10,7 @@ export function fetchCoinList(url = rudexAPIs.BASE + rudexAPIs.COINS_LIST) {
             })
         )
         .catch(err => {
-            console.log("error fetching rudex list of coins", err, url);
+            console.log("error fetching leedex list of coins", err, url);
         });
 }
 

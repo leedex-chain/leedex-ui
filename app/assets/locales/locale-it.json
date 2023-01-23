@@ -1091,7 +1091,7 @@
             "landing": "Landing Page",
             "name": "Name",
             "not_now": "Not now",
-            "table_description": "The table below lists all Gateways and Bridges that are currently integrated with the Graphene UI, this does not reflect any kind of endorsement. It lists the Name (sorted alphabetically), the type (Bridge or Gateway, and if Gateway the asset prefix, e.g. RUDEX.BTC), a link to their landing page with further information and an affiliate link to the Gateways wallet (if exists, usually a branded version of this UI). Please do your own due dilligence.",
+            "table_description": "The table below lists all Gateways and Bridges that are currently integrated with the Graphene UI, this does not reflect any kind of endorsement. It lists the Name (sorted alphabetically), the type (Bridge or Gateway, and if Gateway the asset prefix, e.g. LEEDEX..BTC), a link to their landing page with further information and an affiliate link to the Gateways wallet (if exists, usually a branded version of this UI). Please do your own due dilligence.",
             "title": "Choose your preferred Service Providers",
             "type": "Type",
             "use_none": "Use none",
@@ -1149,7 +1149,7 @@
             "bridge": "The %(asset)s asset is backed 1:1 by real %(backed)s and can be deposited or withdrawn using the gateway service provided by CryptoBridge.",
             "gdex": "L'asset %(asset)s è garantito 1:1 da %(backed)s reali e può essere depositato o ritirato usando il servizio di gateway fornito da GDex.",
             "open": "L'asset %(asset)s è garantito 1:1 da %(backed)s reali e può essere depositato o ritirato usando il servizio di gateway fornito da OpenLedger.",
-            "rudex": "L'asset %(asset)s è garantito 1:1 da %(backed)s reali e può essere depositato o ritirato usando il servizio di gateway fornito da Rudex.",
+            "leedex": "L'asset %(asset)s è garantito 1:1 da %(backed)s reali e può essere depositato o ritirato usando il servizio di gateway fornito da leedex.",
             "trade": "L'asset %(asset)s è garantito 1:1 da %(backed)s reali e può essere depositato o ritirato usando il servizio di gateway fornito da Blocktrades.",
             "win": "",
             "xbtsx": "L'asset %(asset)s è garantito 1:1 da %(backed)s reali e può essere depositato o ritirato usando il servizio di gateway fornito da XGPH."
@@ -1238,7 +1238,7 @@
         "receive_account": "Account ricevente:",
         "recent_deposit": "Depositi recenti",
         "recent_withdraw": "Prelievi recenti",
-        "rudex": {
+        "leedex": {
             "coming_soon": "Prossimamente",
             "min_amount": "Quantità minima: %(minamount)s %(symbol)s",
             "min_amount_error": "Per favore inserisci un numero >= minimo",
@@ -1257,7 +1257,7 @@
         "unavailable": "Il servizio di gateway per questo asset non è al momento disponibile, riprova più tardi",
         "unavailable_CITADEL": "The Citadel Bridge is down or not responding",
         "unavailable_OPEN": "Il Gateway OpenLedger non è disponibile o non risponde",
-        "unavailable_RUDEX": "Il Gateway LEEDEX non è disponibile o non risponde",
+        "unavailable_LEEDEX": "Il Gateway LEEDEX non è disponibile o non risponde",
         "unavailable_TRADE": "Il Bridge Blocktrades non è disponibile o non risponde",
         "unavailable_bridge": "Il servizio di bridge per questo asset non è al momento disponibile, riprova più tardi",
         "use_copy_button": "PLEASE USE COPY BUTTON TO MAKE COPY OF ADDRESS OR MEMO ON THIS PAGE",

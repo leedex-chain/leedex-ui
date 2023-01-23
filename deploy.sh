@@ -17,10 +17,10 @@ echo TRAVIS_PULL_REQUEST_BRANCH=$TRAVIS_PULL_REQUEST_BRANCH
 
 if [[ "$unamestr" == 'Linux' && -n $TRAVIS_TAG && $TRAVIS_BRANCH =~ [2-9]\.[0-9]\.[0-9]{6}$ ]]
 then
-    ## market.rudex.org subdomain (independent repo)
+    ## market.leedex.net subdomain (independent repo)
     echo "Pushing new wallet subdomain repo"
-    git clone https://github.com:${GITHUB_TOKEN}@github.com/${WALLET_REPO} $TRAVIS_BUILD_DIR/market.rudex.org
-    cd $TRAVIS_BUILD_DIR/market.rudex.org
+    git clone https://github.com:${GITHUB_TOKEN}@github.com/${WALLET_REPO} $TRAVIS_BUILD_DIR/market.leedex.net
+    cd $TRAVIS_BUILD_DIR/market.leedex.net
     git checkout master
     rm -rf ./*
     git checkout ./CNAME

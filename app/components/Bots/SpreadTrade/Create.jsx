@@ -9,7 +9,7 @@ class Create extends React.Component {
     state = {
         name: "",
         quoteAsset: "LD",
-        baseAsset: "RUDEX.USDT",
+        baseAsset: "LEEDEX.USDT",
 
         quoteAmount: 500.0,
         baseAmount: 10,

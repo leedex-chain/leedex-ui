@@ -354,7 +354,7 @@ class MyMarkets extends React.Component {
             nextState.activeTab === "find-market" &&
             !nextProps.searchAssets.size
         ) {
-            this._lookupAssets("RUDEX.", true);
+            this._lookupAssets("LEEDEX.", true);
         }
 
         if (this.state.activeTab !== nextState.activeTab) {
@@ -419,7 +419,7 @@ class MyMarkets extends React.Component {
         this._setMinWidth();
 
         if (this.state.activeTab === "find-market") {
-            this._lookupAssets("RUDEX.", true);
+            this._lookupAssets("LEEDEX.", true);
         }
 
         if (this.state.activeTab !== this.props.activeTab) {
@@ -748,7 +748,7 @@ class MyMarkets extends React.Component {
                             if (m.quote === m.base) return null;
                             let newID = `${m.quote}_${possibleGatewayAssetName}`;
                             if (activeMarkets.has(newID)) return null;
-                            if (possibleGatewayAssetName == "RUDEX.RUBLE")
+                            if (possibleGatewayAssetName == "LEEDEX.RUBLE")
                                 return null;
                             return {
                                 base: possibleGatewayAssetName,
@@ -1102,7 +1102,7 @@ class MyMarkets extends React.Component {
                                           active: activeMarketTab === index
                                       })}
                                   >
-                                      {base.replace("RUDEX.", "")}
+                                      {base.replace("LEEDEX.", "")}
                                   </li>
                               );
                           })}
