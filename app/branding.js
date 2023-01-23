@@ -204,9 +204,9 @@ export function getFeaturedMarkets(quotes = []) {
         //        ["LD", "SILVER"],
         ["LD", "LEEDEX.USDT"],
         ["LD", "LEEDEX.BTC"],
-        //        ["LD", "LEEDEX.ETH"],
-        //        ["LD", "LEEDEX.TRX"],
-        //        ["LD", "LEEDEX.LIME"],
+        ["LD", "LEEDEX.ETH"],
+        ["LD", "LEEDEX.TRX"],
+        ["LD", "LEEDEX.LIME"],
 
         ["LEEDEX.USDT", "LD"],
         //        ["LEEDEX.USDT", "USD"],
@@ -216,10 +216,10 @@ export function getFeaturedMarkets(quotes = []) {
         //        ["LEEDEX.USDT", "GOLD"],
         //        ["LEEDEX.USDT", "SILVER"],
         ["LEEDEX.USDT", "LEEDEX.BTC"],
-        //        ["LEEDEX.USDT", "LEEDEX.ETH"],
-        //        ["LEEDEX.USDT", "LEEDEX.TRX"],
-        //        ["LEEDEX.USDT", "LEEDEX.LIME"],
-        //        ["LEEDEX.USDT", "LEEDEX.BUSD"],
+        ["LEEDEX.USDT", "LEEDEX.ETH"],
+        ["LEEDEX.USDT", "LEEDEX.TRX"],
+        ["LEEDEX.USDT", "LEEDEX.LIME"],
+        ["LEEDEX.USDT", "LEEDEX.BUSD"],
 
         ["LEEDEX.BTC", "LD"],
         ["LEEDEX.BTC", "LEEDEX.USDT"]
