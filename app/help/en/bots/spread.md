@@ -27,7 +27,7 @@ To that end, it cancels the current order, increments the balance by the amount 
 * If the balance field is set to “-”, then the asset balance is considered to be 0, and is not changed.
 
 Price calculation. If the get price from market is set, then the price is taken from the market. If the assets are a pair of a smart asset, and core asset (GPH), then the prices are recalculated against base asset using the price, that was taken from the blockchain. For the smartcoin pairs that don’t use the core asset (GPH), the recalculation happens in two steps: the first one calculates price against GPH, and then to the base asset.
-For the pairs that only have MPA (or only UIA), there is a check if default price is set. If it is empty, then the bot asks binance.com for a feed. For 2nd tier assets (RUDEX.BTC, OPEN.BTC, etc) the prefixes are dropped. USD matches to USDT. For example the query for OPEN.BTC/OPEN.USD is sent as a BTC/USDT pair.
+For the pairs that only have MPA (or only UIA), there is a check if default price is set. If it is empty, then the bot asks binance.com for a feed. For 2nd tier assets (LEEDEX.BTC, OPEN.BTC, etc) the prefixes are dropped. USD matches to USDT. For example the query for OPEN.BTC/OPEN.USD is sent as a BTC/USDT pair.
 
 If the pair doesn’t exist on Binance, then the price is set to 0, and no trading happens.
 
