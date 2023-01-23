@@ -9,7 +9,6 @@ function lookupAssets(value, gatewayAssets = false, getAssetList, setState) {
     if (quote.startsWith("GP") && quote.length >= 6) {
         quote = value.substr(3, quote.length - 1);
     }
-
     getAssetList(quote, 10, gatewayAssets);
 
     setState({lookupQuote: quote});
@@ -29,7 +28,7 @@ function assetFilter(
     let baseSymbol = baseAsset.get("symbol");
     let quoteSymbol = quoteAsset.get("symbol");
 
-    if (searchAssets.size && !!inputValue && inputValue.length > 2) {
+    if (searchAssets.size && !!inputValue && inputValue.length > 1 /* 2 */) {
         searchAssets
             .filter(a => {
                 try {

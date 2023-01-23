@@ -127,8 +127,8 @@ class RaidoFinance extends React.Component {
                         ? coin.backingCoin.toUpperCase()
                         : coin.symbol;
 
-                let name = option.replace("RUDEX.", "");
-                let prefix = name === "PPY" ? "" : "RUDEX.";
+                let name = option.replace("LEEDEX.", "");
+                let prefix = "LEEDEX.";
 
                 return {
                     value: option,
@@ -139,7 +139,7 @@ class RaidoFinance extends React.Component {
                                 maxWidth={20}
                                 name={prefix + name}
                             />
-                            {option.replace("RUDEX.", "")}
+                            {option.replace("LEEDEX.", "")}
                         </div>
                     )
                 };
@@ -335,7 +335,7 @@ RaidoFinance.defaultProps = {
             name: "BTC",
             description: "Bitcoin - BTC",
             backingCoin: "BTC",
-            symbol: "RUDEX.BTC",
+            symbol: "LEEDEX.BTC",
             depositAllowed: true,
             //"withdrawalAllowed": true,
 
@@ -352,7 +352,7 @@ RaidoFinance.defaultProps = {
             name: "ETH",
             description: "Ethereum - ETH",
             backingCoin: "ETH",
-            symbol: "RUDEX.ETH",
+            symbol: "LEEDEX.ETH",
             depositAllowed: true,
             //"withdrawalAllowed": true,
 
@@ -368,7 +368,7 @@ RaidoFinance.defaultProps = {
              name: "USDT",
              description: "Tether - USDT (on Ethereum)",
              backingCoin: "USDT",
-             symbol: "RUDEX.USDT",
+             symbol: "LEEDEX.USDT",
              depositAllowed: true,
              //"withdrawalAllowed": true,
 

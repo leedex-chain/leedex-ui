@@ -140,9 +140,8 @@ class RuDexGateway extends React.Component {
                         ? coin.backingCoin.toUpperCase()
                         : coin.symbol;
 
-                let name = option.replace("RUDEX.", "");
-                //let prefix = name === "PPY" ? "" : "RUDEX.";
-                let prefix = "RUDEX.";
+                let name = option.replace("LEEDEX.", "");
+                let prefix = "LEEDEX.";
 
                 return {
                     value: option,
@@ -153,7 +152,7 @@ class RuDexGateway extends React.Component {
                                 maxWidth={30}
                                 name={prefix + name}
                             />
-                            {option.replace("RUDEX.", "")}
+                            {option.replace("LEEDEX.", "")}
                         </div>
                     )
                 };

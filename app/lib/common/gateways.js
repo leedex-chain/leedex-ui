@@ -78,11 +78,11 @@ const _isEnabled = gatewayKey => {
 };
 
 export const availableGateways = {
-    RUDEX: {
-        id: "RUDEX",
+    LEEDEX: {
+        id: "LEEDEX",
         name: "COINS (Native Chains)",
         baseAPI: rudexAPIs,
-        isEnabled: _isEnabled("RUDEX"),
+        isEnabled: _isEnabled("LEEDEX"),
         isSimple: true,
         selected: false,
         simpleAssetGateway: true,
@@ -96,14 +96,14 @@ export const availableGateways = {
             enabled: false,
             selected: false
         },
-        landing: "https://rudex.org/",
-        wallet: "https://market.rudex.org/"
+        landing: "https://leedex.net/",
+        wallet: "https://market.leedex.net/"
     },
-    RUDEX_BEP20: {
-        id: "RUDEX_BEP20",
+    LEEDEX_BEP20: {
+        id: "LEEDEX_BEP20",
         name: "Binance Smart Chain (BEP-20 tokens)",
         baseAPI: bep20rudexAPIs,
-        isEnabled: _isEnabled("RUDEX_BEP20"),
+        isEnabled: _isEnabled("LEEDEX_BEP20"),
         isSimple: true,
         selected: false,
         simpleAssetGateway: true,
@@ -117,8 +117,8 @@ export const availableGateways = {
             enabled: false,
             selected: false
         },
-        landing: "https://rudex.org/",
-        wallet: "https://market.rudex.org/"
+        landing: "https://leedex.net/",
+        wallet: "https://market.leedex.net/"
     }
 };
 

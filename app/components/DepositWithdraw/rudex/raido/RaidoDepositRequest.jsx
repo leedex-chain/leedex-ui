@@ -443,7 +443,7 @@ class RaidoDepositRequest extends React.Component {
 
         let deposit_address_fragment = null;
 
-        let currentGateway = "RUDEX";
+        let currentGateway = "LEEDEX";
         if (
             !!availableGateways[currentGateway].simpleAssetGateway &&
             this.props.deposit_account

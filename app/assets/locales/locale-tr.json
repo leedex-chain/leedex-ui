@@ -1149,7 +1149,7 @@
             "bridge": "Bu dijital varlık Graphene üzerinde %(backed)s işlemleri yapmanız için CryptoBridge tarafından %%100 %(backed)s rezervi ile desteklenmektedir. İstediğiniz zaman 1:1 oranında %(asset)s-%(backed)s dönüşümü yapabilirsiniz.",
             "gdex": "Bu dijital varlık Graphene üzerinde %(backed)s işlemleri yapmanız için Gdex tarafından %%100 %(backed)s rezervi ile desteklenmektedir. İstediğiniz zaman 1:1 oranında %(asset)s-%(backed)s dönüşümü yapabilirsiniz.",
             "open": "Bu dijital varlık Graphene üzerinde %(backed)s işlemleri yapmanız için OpenLedger tarafından %%100 %(backed)s rezervi ile desteklenmektedir. İstediğiniz zaman 1:1 oranında %(asset)s-%(backed)s dönüşümü yapabilirsiniz.",
-            "rudex": "Bu dijital varlık Graphene üzerinde %(backed)s işlemleri yapmanız için Rudex tarafından %%100 %(backed)s rezervi ile desteklenmektedir. İstediğiniz zaman 1:1 oranında %(asset)s-%(backed)s dönüşümü yapabilirsiniz.",
+            "leedex": "Bu dijital varlık Graphene üzerinde %(backed)s işlemleri yapmanız için leedex tarafından %%100 %(backed)s rezervi ile desteklenmektedir. İstediğiniz zaman 1:1 oranında %(asset)s-%(backed)s dönüşümü yapabilirsiniz.",
             "trade": "Bu dijital varlık Graphene üzerinde %(backed)s işlemleri yapmanız için BlockTrades tarafından %%100 %(backed)s rezervi ile desteklenmektedir. İstediğiniz zaman 1:1 oranında %(asset)s-%(backed)s dönüşümü yapabilirsiniz.",
             "win": "",
             "xbtsx": "Bu dijital varlık Graphene üzerinde %(backed)s işlemleri yapmanız için XBTS tarafından %%100 %(backed)s rezervi ile desteklenmektedir. İstediğiniz zaman 1:1 oranında %(asset)s-%(backed)s dönüşümü yapabilirsiniz."
@@ -1238,7 +1238,7 @@
         "receive_account": "Alacak hesap:",
         "recent_deposit": "Son işlemler",
         "recent_withdraw": "Son işlemler",
-        "rudex": {
+        "leedex": {
             "coming_soon": "Coming soon",
             "min_amount": "Minimum amount: %(minamount)s %(symbol)s",
             "min_amount_error": "Please enter number >= minimum",

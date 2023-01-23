@@ -101,12 +101,12 @@ class Dashboard extends React.Component {
         let marketStats1 = allMarketStats.get(`${quote}_${base}`);
         let volume_usdt = 0;
 
-        if (marketStats1 && quote == "RUDEX.USDT") {
+        if (marketStats1 && quote == "LEEDEX.USDT") {
             volume_usdt = marketStats1.volumeQuote * 1;
         } else {
             try {
                 let marketStats_to_USDT = allMarketStats.get(
-                    `RUDEX.USDT_${quote}`
+                    `LEEDEX.USDT_${quote}`
                 );
 
                 let price;
@@ -127,7 +127,7 @@ class Dashboard extends React.Component {
                     volume_usdt = marketStats1.volumeQuote * price * 1;
                 }
             } catch (e) {
-                //console.log(`log error ${quote} / ${base} : volume_usdt: ${volume_usdt}`);
+                console.log(`getVolume error ${quote} / ${base}`);
             }
         }
 
@@ -144,47 +144,18 @@ class Dashboard extends React.Component {
 
             if (res) {
                 //Not in 2nd place
-                if (pair[0] === "RUDEX.USDT") {
+                if (pair[0] === "LEEDEX.USDT") {
                     return [pair[0], pair[1], 0];
                 }
                 return [pair[1], pair[0], 0];
             } else {
                 //Not in 2nd place
-                if (pair[0] === "RUDEX.USDT") {
+                if (pair[0] === "LEEDEX.USDT") {
                     return [pair[0], pair[1], 0];
                 }
                 return [pair[0], pair[1], 0];
             }
-
-            //Not in 2nd place
-            if (
-                pair[1] === "RUDEX.USDT" ||
-                pair[1] === "RUDEX.BUSD" ||
-                pair[1] === "LD" ||
-                pair[1] === "USD" ||
-                pair[1] === "EUR" ||
-                pair[1] === "RUB" ||
-                pair[1] === "CNY" ||
-                pair[1] === "GOLD" ||
-                pair[1] === "SILVER" ||
-                pair[1] === "RUDEX.BTS" ||
-                pair[1] === "RUDEX.EOS" //||
-            ) {
-                return [pair[1], pair[0], 0];
-            }
-
-            //Not in 1nd place
-            if (
-                pair[0] === "RUDEX.XMR" ||
-                pair[0] === "RUDEX.BTC" ||
-                pair[0] === "RUDEX.BTCB" //||
-            ) {
-                return [pair[1], pair[0], 0];
-            }
-
-            return [pair[0], pair[1], 0];
         });
-
         return sortPairs;
     }
 
@@ -194,7 +165,6 @@ class Dashboard extends React.Component {
         let volume24_usdt = 0;
 
         let all_coins = getMyMarketsQuotes();
-
         for (let i = 0; i < all_coins.length - 1; i++) {
             for (let k = i + 1; k < all_coins.length; k++) {
                 pairs.push([all_coins[i], all_coins[k], 0, 0, 0, 0]);
@@ -207,17 +177,14 @@ class Dashboard extends React.Component {
 
         if (allMarketStats.size == 0) return pairs;
 
-        for (let i = 0; i < pairs.length - 1; i++) {
-            let volume_usdt = 0;
-
-            volume_usdt = this.getVolumeUSDT(
+        for (let i = 0; i < pairs.length; i++) {
+            let volume_usdt = this.getVolumeUSDT(
                 pairs[i][0],
                 pairs[i][1],
                 allMarketStats
             );
 
             let pairStat = allMarketStats.get(`${pairs[i][1]}_${pairs[i][0]}`);
-
             let price = pairStat !== undefined ? pairStat.price : 0;
             let volume = pairStat !== undefined ? pairStat.volumeQuote : 0;
             let change = pairStat !== undefined ? pairStat.change : 0;

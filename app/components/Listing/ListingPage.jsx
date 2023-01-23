@@ -36,7 +36,7 @@ class ListingPage extends React.Component {
                     "https://rudex.freshdesk.com/support/solutions/articles/35000138245-gateway-service-agreement"
             },
             donateTokenName: "DONATE",
-            donateMarket: "DONATE_RUDEX.USDT"
+            donateMarket: "DONATE_LEEDEX.USDT"
         };
     }
 

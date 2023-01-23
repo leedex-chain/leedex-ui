@@ -143,8 +143,8 @@ class MarketRow extends React.Component {
                             change === "0.00"
                                 ? ""
                                 : change > 0
-                                    ? "change-up"
-                                    : "change-down";
+                                ? "change-up"
+                                : "change-down";
 
                         return (
                             <td
@@ -192,26 +192,26 @@ class MarketRow extends React.Component {
                                 ? stats.price.toReal()
                                 : stats &&
                                   stats.close &&
-                                  (stats.close.quote.amount &&
-                                      stats.close.base.amount)
-                                    ? utils.get_asset_price(
-                                          stats.close.quote.amount,
-                                          quote,
-                                          stats.close.base.amount,
-                                          base,
-                                          true
-                                      )
-                                    : utils.get_asset_price(
-                                          price.quote.amount,
-                                          quote,
-                                          price.base.amount,
-                                          base,
-                                          true
-                                      );
+                                  stats.close.quote.amount &&
+                                      stats.close.base.amount
+                                ? utils.get_asset_price(
+                                      stats.close.quote.amount,
+                                      quote,
+                                      stats.close.base.amount,
+                                      base,
+                                      true
+                                  )
+                                : utils.get_asset_price(
+                                      price.quote.amount,
+                                      quote,
+                                      price.base.amount,
+                                      base,
+                                      true
+                                  );
 
                         let highPrecisionAssets = [
                             "BTC",
-                            "RUDEX.BTC",
+                            "LEEDEX.BTC",
                             "GOLD",
                             "SILVER"
                         ];
@@ -234,8 +234,8 @@ class MarketRow extends React.Component {
                                     finalPrice > 1000
                                         ? 0
                                         : finalPrice > 10
-                                            ? 2
-                                            : precision
+                                        ? 2
+                                        : precision
                                 )}
                             </td>
                         );

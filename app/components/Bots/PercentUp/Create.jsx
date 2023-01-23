@@ -11,7 +11,7 @@ class Create extends React.Component {
         name: "",
 
         base: "LD",
-        quote: "RUDEX.USDT",
+        quote: "LEEDEX.USDT",
 
         amount: 1000,
         percentAmount: false,

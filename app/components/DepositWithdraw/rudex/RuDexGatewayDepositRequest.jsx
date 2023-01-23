@@ -236,7 +236,7 @@ class RuDexGatewayDepositRequest extends React.Component {
         let clipboardText = "";
         let memoText;
         let withdraw_memo_prefix;
-        let currentGateway = "RUDEX";
+        let currentGateway = "LEEDEX";
         if (
             !!availableGateways[currentGateway].simpleAssetGateway &&
             this.props.deposit_account

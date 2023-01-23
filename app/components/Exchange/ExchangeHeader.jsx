@@ -80,7 +80,7 @@ export default class ExchangeHeader extends React.Component {
         if (coins.indexOf(quote) !== -1 && coins.indexOf(base) !== -1)
             return false;
 
-        //3. RUDEX.X <=> coins
+        //3. LEEDEX.X <=> coins
         if (
             (quote.indexOf("LEEDEX.") !== -1 && coins.indexOf(base) !== -1) ||
             (base.indexOf("LEEDEX.") !== -1 && coins.indexOf(quote) !== -1)

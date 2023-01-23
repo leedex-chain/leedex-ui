@@ -1155,7 +1155,7 @@
             "bridge": "El activo %(asset)s es respaldado 1:1 por real %(backed)s y puede ser depositado or retiado usando el servico de porton proporcionado por CryptoBridge.",
             "gdex": "El %(asset)s activo es respaldado 1:1 por real %(backed)s y puede ser depositado or retirado usando el servico de porton proporcionado por GDex.",
             "open": "El %(asset)s activo es respaldado 1:1 por real %(backed)s y puede ser depositado or retirado usando el servico de porton proporcionado por OpenLedger.",
-            "rudex": "El %(asset)s activo es respaldado 1:1 por real %(backed)s y puede ser depositado or retirado usando el servico de porton proporcionado por Rudex.",
+            "leedex": "El %(asset)s activo es respaldado 1:1 por real %(backed)s y puede ser depositado or retirado usando el servico de porton proporcionado por leedex.",
             "trade": "El activo %(asset) està respaldado 1:1 da real %(backed)s y puede ser depositado o retirado utilizando el servicio de puerta de enlace proporcionado por Blocktrades.",
             "win": "",
             "xbtsx": "El activo %(asset) està respaldado 1:1 da real %(backed)s y puede ser depositado o retirado utilizando el servicio de puerta de enlace proporcionado por XBTS."
@@ -1244,7 +1244,7 @@
         "receive_account": "Cuenta que recibe:",
         "recent_deposit": "Depósitos recientes",
         "recent_withdraw": "Retiros recientes",
-        "rudex": {
+        "leedex": {
             "coming_soon": "Próximamente",
             "min_amount": "Monto minimo: %(minamount)s %(symbol)s",
             "min_amount_error": "Por favor ingrese número >= mínimo",

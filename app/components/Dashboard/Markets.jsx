@@ -88,7 +88,7 @@ class FeaturedMarkets extends React.Component {
                 if (
                     obj.quote !== obj.base &&
                     !markets.has(marketKey) &&
-                    obj.base !== "RUDEX.RUBLE" &&
+                    obj.base !== "LEEDEX.RUBLE" &&
                     props.quotes[i] === "RUBLE"
                 ) {
                     markets = markets.set(marketKey, obj);

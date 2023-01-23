@@ -1148,7 +1148,7 @@
             "bridge": "The %(asset)s asset is backed 1:1 by real %(backed)s and can be deposited or withdrawn using the gateway service provided by CryptoBridge.",
             "gdex": "The %(asset)s asset is backed 1:1 by real %(backed)s and can be deposited or withdrawn using the gateway service provided by GDex.",
             "open": "The %(asset)s asset is backed 1:1 by real %(backed)s and can be deposited or withdrawn using the gateway service provided by Openledger.",
-            "rudex": "The %(asset)s asset is backed 1:1 by real %(backed)s and can be deposited or withdrawn using the gateway service provided by Rudex.",
+            "leedex": "The %(asset)s asset is backed 1:1 by real %(backed)s and can be deposited or withdrawn using the gateway service provided by leedex.",
             "trade": "The %(asset)s asset is backed 1:1 by real %(backed)s and can be deposited or withdrawn using the gateway service provided by Blocktrades.",
             "win": "",
             "xbtsx": "The %(asset)s asset is backed 1:1 by real %(backed)s and can be deposited or withdrawn using the gateway service provided by XBTS."
@@ -1237,7 +1237,7 @@
         "receive_account": "Receiving account:",
         "recent_deposit": "Recent deposits",
         "recent_withdraw": "Recent withdrawals",
-        "rudex": {
+        "leedex": {
             "coming_soon": "Coming soon",
             "min_amount": "Minimum amount: %(minamount)s %(symbol)s",
             "min_amount_error": "Please enter number >= minimum",

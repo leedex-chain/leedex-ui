@@ -248,7 +248,7 @@ class MarketCard extends React.Component {
 
             let symbol = asset.get("symbol");
 
-            if (symbol.startsWith("RUDEX.")) return symbol;
+            if (symbol.startsWith("LEEDEX.")) return symbol;
 
             if (
                 get_allTokens().nativeTokens.indexOf(symbol) !== -1 ||

@@ -138,7 +138,6 @@ function BindToChainState(Component, options = {}) {
                 ? Component.defaultProps.tempComponent || null
                 : null;
 
-            //console.log("----- Wrapper constructor ----->", this.all_chain_props);
             this.update = this.update.bind(this);
             this.state = {resolved: false};
         }
@@ -509,14 +508,12 @@ function BindToChainState(Component, options = {}) {
                         }
                         ++all_objects_counter;
                     });
-                    //console.log("-- Wrapper.chain_assets_list: ", prop_new_state);
                     if (changes) new_state[key] = prop_new_state;
                 } else {
                     if (this.state[key]) new_state[key] = null;
                 }
             }
 
-            //console.log("----- Wrapper update ----->", this.all_chain_props, this.all_chain_props.length, all_objects_counter, resolved_objects_counter);
             if (all_objects_counter <= resolved_objects_counter)
                 new_state.resolved = true;
 

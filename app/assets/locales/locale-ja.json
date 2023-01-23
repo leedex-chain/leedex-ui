@@ -1148,7 +1148,7 @@
             "bridge": "%(asset)sアセットは実際の%(backed)sと1：1に対応し、CryptoBridgeによって提供されるゲートウェイサービスによって入出金が可能です。",
             "gdex": "%(asset)sアセットは実際の%(backed)sと1：1に対応し、Gdexによって提供されるゲートウェイサービスによって入出金が可能です。",
             "open": "%(asset)sアセットは実際の%(backed)sと1：1に対応し、OpenLedgerによって提供されるゲートウェイサービスによって入出金が可能です。",
-            "rudex": "%(asset)sアセットは実際の%(backed)sと1：1に対応し、Rudexによって提供されるゲートウェイサービスによって入出金が可能です。",
+            "leedex": "%(asset)sアセットは実際の%(backed)sと1：1に対応し、Rudexによって提供されるゲートウェイサービスによって入出金が可能です。",
             "trade": "%(asset)sアセットは実際の%(backed)sと1：1に対応し、Blocktradesによって提供されるゲートウェイサービスによって入出金が可能です。",
             "win": "",
             "xbtsx": "%(asset)sアセットは実際の%(backed)sと1：1に対応し、XBTSによって提供されるゲートウェイサービスによって入出金が可能です。"
@@ -1237,7 +1237,7 @@
         "receive_account": "受け取りアカウント:",
         "recent_deposit": "最近の入金",
         "recent_withdraw": "最近の出金",
-        "rudex": {
+        "leedex": {
             "coming_soon": "近日公開",
             "min_amount": "最低数量: %(minamount)s %(symbol)s",
             "min_amount_error": "数字を入力してください >= minimum",

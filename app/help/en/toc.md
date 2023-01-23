@@ -27,4 +27,4 @@
      - [PercentUP ](bots/percent-up.md)
  * [Short Selling gpAssets](dex/shorting.md)
  * [Gateways](gateways/introduction.md)
-    * [Rudex](gateways/rudex.md)
+    * [Leedex](gateways/leedex.md)

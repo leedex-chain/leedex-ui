@@ -530,7 +530,6 @@ class AssetActions {
                     .then(assets => {
                         let bitAssetIDS = [];
                         let dynamicIDS = [];
-
                         assets.forEach(asset => {
                             ChainStore._updateObject(asset, false);
                             dynamicIDS.push(asset.dynamic_asset_data_id);
@@ -579,7 +578,6 @@ class AssetActions {
                         this.getAssetList(a + "." + start, 10);
                     });
                 }
-
                 return assets;
             }
         };

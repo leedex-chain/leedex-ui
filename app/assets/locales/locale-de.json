@@ -1155,7 +1155,7 @@
             "bridge": "Die %(asset)s Anlage ist 1:1 durch echte  %(backed)s hinterlegt und kann ein- oder ausgezahlt werden. Der Gateway-Dienst wird durch CryptoBridge bereitgestellt",
             "gdex": "Die %(asset)s Anlage ist 1:1 durch echte  %(backed)s hinterlegt und kann ein- oder ausgezahlt werden. Der Gateway-Dienst wird durch Gdex bereitgestellt",
             "open": "Die %(asset)s Anlage ist 1:1 durch echte  %(backed)s hinterlegt und kann ein- oder ausgezahlt werden. Der Gateway-Dienst wird durch OpenLedger bereitgestellt",
-            "rudex": "Die %(asset)s Anlage ist 1:1 durch echte  %(backed)s hinterlegt und kann ein- oder ausgezahlt werden. Der Gateway-Dienst wird durch Rudex bereitgestellt",
+            "leedex": "Die %(asset)s Anlage ist 1:1 durch echte  %(backed)s hinterlegt und kann ein- oder ausgezahlt werden. Der Gateway-Dienst wird durch leedex bereitgestellt",
             "trade": "Die %(asset)s Anlage ist 1:1 durch echte  %(backed)s hinterlegt und kann ein- oder ausgezahlt werden. Der Gateway-Dienst wird durch Blocktrades bereitgestellt",
             "win": "",
             "xbtsx": "Die %(asset)s Anlage ist 1:1 durch echte  %(backed)s hinterlegt und kann ein- oder ausgezahlt werden. Der Gateway-Dienst wird durch XBTS bereitgestellt"
@@ -1244,7 +1244,7 @@
         "receive_account": "Annahme Konto:",
         "recent_deposit": "Kürzliche Einzahlungen",
         "recent_withdraw": "Kürzliche Auszahlung",
-        "rudex": {
+        "leedex": {
             "coming_soon": "Kommt bald ...",
             "min_amount": "Minimaler Betrag: %(minamount)s %(symbol)s",
             "min_amount_error": "Bitte geben Sie eine Zahl ein >= Minimum!",
